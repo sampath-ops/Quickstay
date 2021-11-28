@@ -1,0 +1,143 @@
+.hero-container{
+    padding: 160px 116px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-container > div{
+    width: 100%;
+}
+.hero-container h2{
+    color: #000;
+    font-weight: 600;
+    font-family: 'Montserrat';
+    font-size: 28px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+.achievements{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    padding-bottom: 22px;
+}
+.achievement{
+    color: #FFFF;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+.achievement p{
+    margin: 0;
+}
+.search-bar-container{
+    padding: 30px 50px;
+    position: relative;
+    margin: 20px 0;
+}
+.search-bar-container::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    opacity: 0.5;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+}   
+.searchbar{
+    display: grid;
+    grid-template-columns: auto 2fr auto;
+    position: relative;
+}
+.searchbar select{
+    background: #e8e8e4;
+}
+.searchbar button{
+    padding: 10px 40px;
+    color: #FFF;
+    border: none;
+    font-size: 10px;
+    font-weight: 600;
+    background-color: #d00000;
+}
+.searchbar select{
+    padding: 10px;
+    border: none;
+}
+.searchbar input{
+    padding: 10px 20px;
+    border: none;
+    font-style: italic;
+}
+input[placeholder]{
+    text-overflow:ellipsis;
+}
+.second-searchbar{
+    text-align: center;
+}
+.second-searchbar > div{
+    display: inline-block;
+    position: relative;
+    width: 50%;
+}
+.second-searchbar input{
+    width: 90%;
+    background-color: #FFF;
+    color: black;
+    font-style: italic;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+}
+.circle{
+    padding: 10px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background-color: yellow;
+    padding: 10px;
+}
+
+
+
+
+ /* mobile  */
+@media(max-width:1023px){
+    .hero-container{
+     padding: 5px 30px;
+    }
+    .hero-container h2{
+        font-size: 20px;
+    }
+    .achievements {
+        flex-direction: column;
+    }
+    .achievement{
+        margin: 10px;
+    }
+    .searchbar{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .searchbar select,.searchbar input{
+        margin-bottom: 10px;
+    }
+    .second-searchbar input{
+        padding: 15px 40px;
+        width: auto;
+    }
+    .second-searchbar > div{
+        width: auto;
+    }
+ }
