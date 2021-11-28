@@ -1,0 +1,10 @@
+.favouritestays{
+    display: flex;
+    padding: 15px;
+}
+.template > div{
+    text-align: center;
+}
+.template > div img{
+    width: 75%;
+}

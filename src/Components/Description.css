@@ -1,0 +1,16 @@
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.description h2{
+    font-family: 'Montserrat';
+    border-left: solid 12px yellow;
+    padding-left: 15px;
+}
+.description p{
+    font-style: italic;
+    font-size: 18px;
+    margin: 0;
+    padding-left: 20px;
+}
