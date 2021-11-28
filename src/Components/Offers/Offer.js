@@ -1,6 +1,6 @@
 import './Offer.css';
 const Offer = () => {
-    const images = [
+    const offerimages = [
         {
             id:0,
             name:'2',
@@ -20,7 +20,7 @@ const Offer = () => {
     return ( 
         <div className="offer">
             {
-                images.map(image =>{
+                offerimages.map(image =>{
                     const imagename = require('../../WebsiteMaterial/'+ image.name + '.png');
                     return(
                        <div  key={image.id}>

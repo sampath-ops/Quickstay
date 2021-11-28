@@ -1,4 +1,4 @@
-import Template from "../ThreeBoxTemplate";
+import Template from "../BoxTemplate";
 import Description from "../Description";
 import '../Description.css';
 import './whystay.css';
