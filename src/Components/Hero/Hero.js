@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="hero" style={{
             background:`url(${heroImg}) no-repeat center center fixed`,
             backgroundSize: "cover",
-            height: "100vh",
+           
         }}>
             <div className="hero-container">
                <div>
