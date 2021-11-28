@@ -1,0 +1,16 @@
+.exclusive{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 15px;
+}
+@media(max-width:1023px){
+    .exclusive,.card{
+        display: block;
+    }
+    .card,.card-container{
+        margin: 0px;
+    }
+    .card-container:not(:last-child){
+        margin-bottom: 15px;
+    }
+}

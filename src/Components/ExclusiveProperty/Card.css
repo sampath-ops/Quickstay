@@ -1,0 +1,55 @@
+.card{
+    display: flex;
+    margin-left: 15px;
+}
+.fa-map-marker-alt{
+    margin-right: 5px;
+}
+.card-container{
+    display: flex;
+    flex-direction: column;
+}
+@media(min-width:1024px){
+    .card-container:not(:last-child){
+        margin-right: 15px;
+    }
+}
+.card-container img{
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+.room-details{
+    border-radius: 0px 0px 10px 10px;
+    border: 1px solid #e8e8e4;
+    border-top: none;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 'name amount'
+                          'location .'
+                          'type .';
+    padding: 25px 10px;
+    box-shadow: 0px 5px 2px #e8e8e4;
+}
+.room-details span{
+    font-family: 'Montserrat';
+}
+.room-details span:not(:last-child){
+    margin-bottom: 5px;
+}
+.room-details > span:nth-child(1){
+    grid-area: name;
+    font-weight: 600;
+}
+.room-details > span:nth-child(2){
+    grid-area: amount;
+    font-weight: 600;
+    justify-self: end;
+}
+.room-details > span:nth-child(3){
+    grid-area: location;
+    font-size: 14px;
+}
+.room-details > span:nth-child(4){
+    grid-area: type;
+}
