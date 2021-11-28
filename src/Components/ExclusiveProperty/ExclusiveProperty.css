@@ -7,6 +7,9 @@
     .exclusive,.card{
         display: block;
     }
+    .card{
+        margin-top: 10px;
+    }
     .card,.card-container{
         margin: 0px;
     }
