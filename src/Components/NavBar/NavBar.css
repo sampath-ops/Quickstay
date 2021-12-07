@@ -31,12 +31,49 @@
   width: 50px;
   height: 50px;
 }
+.custom-navbar{
+  padding: 20px 20px;
+}
+.custom-menubutton{
+  visibility: hidden;
+}
+.desktop-menu{
+  display: flex;
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 16px;
+  align-items: center;
+}
+.desktop-menu div a{ 
+  text-decoration: none;
+  color: #000000;
+}
+
+.active{
+  padding: 3px 15px;
+  border: 1.5px solid #A00500;
+}
+
+.desktop-menu div:not(:last-child){
+  margin-right: 30px;
+}
+
 @media(max-width:1023px){
+  .custom-menubutton{
+    visibility: visible;
+  }
+  .desktop-menu{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
   .logo img{
     width: 40px;
     height: 40px;
   }
   .custom-navbar{
-    padding: 8px 8px!important;
+    padding: 8px 8px;
   }
 }

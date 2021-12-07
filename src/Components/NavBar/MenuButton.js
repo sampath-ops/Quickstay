@@ -1,4 +1,5 @@
 import React from "react";
+import './NavBar.css';
 /* MenuButton.jsx */
 class MenuButton extends React.Component {
     constructor(props){
@@ -53,7 +54,7 @@ class MenuButton extends React.Component {
         },       
       }
       return(
-        <div style={styles.container} 
+        <div style={styles.container} className="custom-menubutton"
           onClick={this.props.onClick ? this.props.onClick: 
             ()=> {this.handleClick();}}>
           <div style={{...styles.line,...styles.lineTop}}/>

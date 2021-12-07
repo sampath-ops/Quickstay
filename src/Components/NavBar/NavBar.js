@@ -3,14 +3,18 @@ import MenuButton from './MenuButton';
 import Menu from './Menu';
 import React from 'react';
 import logo from '../../WebsiteMaterial/Logo.png';
+import './NavBar.css';
+import { Link } from 'react-router-dom';
+
 class NavBar extends React.Component {
+    
     constructor(props){
       super(props);
       this.state={
         menuOpen:false,
       }
     }
-    
+
     handleMenuClick() {
       this.setState({menuOpen:!this.state.menuOpen});
     }
@@ -25,7 +29,6 @@ class NavBar extends React.Component {
           container:{
             position: 'absolute',
             boxSizing:'border-box',
-            padding:'10px 22px',
             top: 0,
             left: 0,
             zIndex: '99',
@@ -77,15 +80,26 @@ class NavBar extends React.Component {
             delay={`${index * 0.1}s`}
             onClick={()=>{this.handleLinkClick();}}>{val}</MenuItem>)
       });
-      
+      const pathname =  window.location.pathname;
+
       return(
         <div>
           <div style={styles.container} className="custom-navbar">
             <div style={styles.logo} className="logo">
               <img src={logo} alt="logo" />
             </div>
-            <MenuButton open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='black'/>
-         
+            <MenuButton  open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='black'/>
+            <div className="desktop-menu">
+              {
+                menu.map((val,index)=>{
+                  return(
+                    <div className={pathname === val.link ? "active" : ""}  key={index} >
+                      <Link to="#">{val.route}</Link> 
+                    </div>
+                  )
+                })
+              }
+            </div>
           </div>
           <Menu open={this.state.menuOpen}>
             {menuItems}
