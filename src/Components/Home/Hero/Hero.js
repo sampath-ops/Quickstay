@@ -1,7 +1,7 @@
 import HeroTitle from './HeroTitle';
 import HeroSearchBar from './HeroSearchBar';
 import './Hero.css';
-import heroImg from '../../WebsiteMaterial/living-room.jpg';
+import heroImg from '../../../WebsiteMaterial/living-room.jpg';
 import SecondSearchbar from './SecondSearchbar';
 const Hero = () => {
     return ( 

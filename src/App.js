@@ -1,22 +1,16 @@
 import './App.css';
-import Hero from './Components/Hero/Hero';
-import Offer from './Components/Offers/Offer';
-import FavouriteStays from './Components/FavouriteStays/FavouriteStays';
-import WhyStay from './Components/WhyStay/WhyStay';
-import ReferEarn from './Components/ReferEarn/ReferEarn';
-import ExclusiveProperty from './Components/ExclusiveProperty/ExclusiveProperty';
+import Home from './Components/Home/Home';
 import Main from './Components/NavBar/Main';
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 function App() {
-  return (
-    <div>
+  return (  
+    <Router>
       <Main/>
-      <Hero/>
-      <Offer/>
-      <FavouriteStays/>
-      <ReferEarn/>
-      <ExclusiveProperty/>
-      <WhyStay/>
-    </div>
+      <Routes>
+         <Route exact path="/" element={<Home />}/>
+      </Routes>
+    </Router> 
+   
   );
 }
 

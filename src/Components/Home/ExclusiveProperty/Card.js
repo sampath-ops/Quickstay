@@ -29,7 +29,7 @@ const Card = () => {
         <div className="card">
             {
                 properties.map(property=>{
-                    const img = require('../../WebsiteMaterial/living-room.jpg');
+                    const img = require('../../../WebsiteMaterial/living-room.jpg');
                     return(
                         <div className="card-container" key={property.id}>
                             <img src={img.default} alt="living-room" />

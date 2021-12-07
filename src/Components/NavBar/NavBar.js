@@ -48,7 +48,28 @@ class NavBar extends React.Component {
             transition: 'filter 0.5s ease',
           },
         }
-      const menu = ['Home','About','BLog','Contact Us','Login']
+      const menu = [
+        {
+          route:'Home',
+          link:'/'
+        },
+        {
+          route:'About',
+          link:'#'
+        },
+        {
+          route:'Blog',
+          link:'#'
+        },
+        {
+          route:'Contact Us',
+          link:'#'
+        },
+        {
+          route:'Login',
+          link:'/signin'
+        },
+      ]
       const menuItems = menu.map((val,index)=>{
         return (
           <MenuItem 

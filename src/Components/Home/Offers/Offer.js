@@ -21,7 +21,7 @@ const Offer = () => {
         <div className="offer">
             {
                 offerimages.map(image =>{
-                    const imagename = require('../../WebsiteMaterial/'+ image.name + '.png');
+                    const imagename = require('../../../WebsiteMaterial/'+ image.name + '.png');
                     return(
                        <div  key={image.id}>
                             <img src={imagename.default} alt={image.alter}/>

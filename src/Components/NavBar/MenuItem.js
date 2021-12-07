@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 /* MenuItem.jsx*/
 class MenuItem extends React.Component{
     constructor(props){
@@ -39,6 +40,10 @@ class MenuItem extends React.Component{
           animation: '0.5s shrink forwards',
           animationDelay:this.props.delay,
           
+        },
+        link:{
+          color:'inherit',
+          textDecoration:'none'
         }
       }
       return(
@@ -49,7 +54,7 @@ class MenuItem extends React.Component{
             onMouseLeave={()=>{this.handleHover();}}
             onClick={this.props.onClick}
           >
-            {this.props.children}  
+             <Link style={styles.link} to={this.props.children.link}>{this.props.children.route} </Link>
           </div>
         <div style={styles.line}/>
       </div>  
