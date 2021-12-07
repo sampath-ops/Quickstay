@@ -4,6 +4,9 @@ import FavouriteStays from './FavouriteStays/FavouriteStays';
 import WhyStay from './WhyStay/WhyStay';
 import ReferEarn from './ReferEarn/ReferEarn';
 import ExclusiveProperty from './ExclusiveProperty/ExclusiveProperty';
+import Blogs from './Blogs/Blogs';
+import GetToKnow from './GetToKnow/GetToKnow';
+import PopularSearches from './PopularSearches/PopularSearches';
 const Home = () => {
     return ( 
         <div>
@@ -13,6 +16,9 @@ const Home = () => {
             <ReferEarn/>
             <ExclusiveProperty/>
             <WhyStay/>
+            <Blogs/>
+            <GetToKnow/>
+            <PopularSearches/>
         </div>
      );
 }

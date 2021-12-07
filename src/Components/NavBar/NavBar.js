@@ -58,19 +58,19 @@ class NavBar extends React.Component {
         },
         {
           route:'About',
-          link:'#'
+          link:'/about'
         },
         {
           route:'Blog',
-          link:'#'
+          link:'/blog'
         },
         {
           route:'Contact Us',
-          link:'#'
+          link:'/contact'
         },
         {
           route:'Login',
-          link:'/signin'
+          link:'/login'
         },
       ]
       const menuItems = menu.map((val,index)=>{

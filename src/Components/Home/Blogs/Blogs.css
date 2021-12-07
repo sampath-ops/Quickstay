@@ -1,0 +1,13 @@
+.blogs{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 15px;
+}
+.blogs h2{
+    padding: 14px;
+}
+@media(max-width:1023px){
+    .blogs{
+        display: block;
+    }
+}

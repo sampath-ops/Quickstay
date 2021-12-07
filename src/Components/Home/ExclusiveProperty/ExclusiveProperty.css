@@ -4,7 +4,7 @@
     padding: 15px;
 }
 @media(max-width:1023px){
-    .exclusive,.card{
+    .exclusive,.card,.blogs{
         display: block;
     }
     .card,.card-container{

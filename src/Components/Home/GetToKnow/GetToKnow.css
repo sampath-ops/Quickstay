@@ -1,0 +1,51 @@
+.get-to-know{
+    display: flex;
+    background-color: #A00500;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+.are-you_owner{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    color: #FFDE17;
+}
+.are-you_owner p{
+    margin: 0;
+}
+.are-you_owner button{
+    user-select: auto;
+    border: 2px solid #FFFFFF;
+    background: #A00500;
+    padding: 5px 20px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.get-to-know >p{
+    font-family: Open Sans;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 44px;
+    text-align: center;
+    color: #FFFFFF;
+}
+@media(max-width:1023px){
+    .get-to-know{
+       flex-direction: column;
+       align-items: center;
+    }
+    .get-to-know >p{
+        font-size: 24px;
+    }
+    .are-you_owner{
+        text-align: center;
+        font-size: 24px;
+    }
+    .are-you_owner button{
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}
