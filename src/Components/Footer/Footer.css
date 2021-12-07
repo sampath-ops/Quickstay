@@ -1,0 +1,41 @@
+.Footer{
+    background-color: #535353;
+    display: flex;
+    justify-content: space-around;
+    padding: 35px 0px;
+}
+.Footer > div a{
+    text-decoration: none;
+    font-family: "Open Sans";
+    font-style: italic;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+.Footer > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contact-ways {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+.contact-ways span{
+    margin-top: 3px;
+}
+.social-icons i{
+    font-weight: 400;
+    font-size: 25px;
+    margin-right: 20px;
+}
+@media(max-width:1023px){
+    .Footer{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-row-gap: 10px;
+    }
+}
