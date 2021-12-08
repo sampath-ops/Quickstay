@@ -24,7 +24,31 @@ const Find = () => {
         {
             name:"Hyderabad",
             alter:"Hyderabad-icon"
-        }
+        },
+        {
+            name:"Gurgaon",
+            alter:"Gurgaon-icon"
+        },
+        {
+            name:"Chandigarh",
+            alter:"Chandigarh-icon"
+        },
+        {
+            name:"Bangalore",
+            alter:"Bangalore-icon"
+        },
+        {
+            name:"Chandigarh",
+            alter:"Chandigarh-icon"
+        },
+        {
+            name:"Chennai",
+            alter:"Chennai-icon"
+        },
+        {
+            name:"Delhi",
+            alter:"Delhi-icon"
+        },
     ]
     return ( 
         <div className="Find">

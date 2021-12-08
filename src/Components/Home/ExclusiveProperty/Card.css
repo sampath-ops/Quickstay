@@ -1,6 +1,6 @@
 .card{
     display: flex;
-    margin-left: 15px;
+    margin-left: 50px;
 }
 .fa-map-marker-alt{
     margin-right: 5px;
@@ -26,13 +26,14 @@
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas: 'name amount'
-                          'location .'
-                          'type .';
+                          'location image'
+                          'type image';
     padding: 25px 10px;
     box-shadow: 0px 5px 2px #e8e8e4;
 }
 .room-details span{
-    font-family: 'Montserrat';
+    font-family: 'Open Sans';
+    font-style: normal;
 }
 .room-details span:not(:last-child){
     margin-bottom: 5px;
@@ -40,16 +41,28 @@
 .room-details > span:nth-child(1){
     grid-area: name;
     font-weight: 600;
+    font-size: 18px;
 }
 .room-details > span:nth-child(2){
     grid-area: amount;
     font-weight: 600;
-    justify-self: end;
+    justify-self: center;
+    font-size: 18px;
+    font-family: 'Open Sans';
+    font-style: normal;
 }
 .room-details > span:nth-child(3){
     grid-area: location;
-    font-size: 14px;
+    font-size: 16px;
 }
 .room-details > span:nth-child(4){
     grid-area: type;
+    font-size: 16px;
+}
+.room-details > span:nth-child(5) {
+    grid-area: image;
+    text-align: center;
+}
+.room-details span img{
+    width: 70%;
 }

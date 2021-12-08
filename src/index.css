@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;1,300;1,600&display=swap');
 body{
     margin: 0;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth;  
 }
 @media(max-width:1023px){
     .favouritestays,.template,.whystay{

@@ -1,17 +1,30 @@
 .locations{
-    box-shadow: 0px 0.5px 3px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.25);
     display: flex;
-    justify-content: space-around;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0px 20px;
+    box-sizing: border-box;
 }
-.locations > p{
+.locations > div{
     font-family: Open Sans;
     font-style: italic;
     font-weight: 600;
     font-size: 16px;
     color: #000000;
+    padding: 20px;
 }
-.locations > p:hover{
+.locations > div a:hover{
     color: #00C2FF;
+}
+.locations > div a{
+    text-decoration: none;
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
 }
 @media(max-width:1023px){
     .locations{
