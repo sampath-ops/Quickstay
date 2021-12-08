@@ -102,16 +102,19 @@ input[placeholder]{
     width: 90%;
     background-color: #FFF;
     color: black;
-    font-style: italic;
     border: none;
     padding: 15px 30px;
     border-radius: 25px;
+    font-family: Open Sans;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
 }
 .circle{
     padding: 10px;
     position: absolute;
     right: 5px;
-    top: 5px;
+    top: 8px;
     border-radius: 50%;
     width: 15px;
     height: 15px;
