@@ -1,0 +1,47 @@
+.download{
+    padding: 80px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.slogan{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.slogan p{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    margin: 0;
+}
+.slogan div:nth-child(2) img{
+    margin-top: 40px;
+}
+@media(max-width:1023px){
+    .slogan p{
+        font-size: 23px;
+    }
+    .slogan div{
+        margin-bottom: 15px;
+    }
+    .download{
+        padding-top: 35px;
+        padding-bottom: 35px;
+        margin: 0 20px;
+        display: block;
+    }
+    .slogan div:nth-child(2) img{
+        margin-top: 20px;
+    }
+    .slogan div:nth-child(2){
+        text-align: center;
+        margin-top: 25px;
+    }
+    .mobile{
+        text-align: center;
+    }
+    .mobile img{
+        width: 75%;
+    }
+}

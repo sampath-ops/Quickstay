@@ -7,6 +7,9 @@ import ExclusiveProperty from './ExclusiveProperty/ExclusiveProperty';
 import Blogs from './Blogs/Blogs';
 import GetToKnow from './GetToKnow/GetToKnow';
 import PopularSearches from './PopularSearches/PopularSearches';
+import Follow from './FollowAndFind/Follow';
+import Find from './FollowAndFind/Find';
+import Download from './Download/Download';
 const Home = () => {
     return ( 
         <div>
@@ -18,7 +21,11 @@ const Home = () => {
             <WhyStay/>
             <Blogs/>
             <GetToKnow/>
+            <Follow/>
+            <Find/>
+            <Download/>
             <PopularSearches/>
+            
         </div>
      );
 }

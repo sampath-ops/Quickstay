@@ -38,4 +38,10 @@
         grid-template-columns: auto auto;
         grid-row-gap: 10px;
     }
+    .contact-ways,.Footer > div a{
+        font-size: 14px;
+    }
+    .social-icons i{
+        font-size: 20px;
+    }
 }
