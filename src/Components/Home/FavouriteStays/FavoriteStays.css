@@ -1,6 +1,6 @@
 .favouritestays{
     display: flex;
-    padding: 15px;
+    padding: 30px 15px;
 }
 .template > div{
     text-align: center;

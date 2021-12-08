@@ -6,7 +6,7 @@ const Download = () => {
         <div className="download">
             <div className="slogan">
                 <div>
-                    <p>Book Long Stay Anytime, Anywhere with QuickStay!</p> 
+                    <p>Book Long Stay Anytime, Anywhere <br /> with QuickStay!</p> 
                     
                 </div> 
                 <div>

@@ -1,3 +1,6 @@
+.refer{
+    padding: 30px 0;
+}
 .referbox{
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -11,5 +14,8 @@
 @media(max-width:1023px){
     .referbox{
         margin: 0;
+    }
+    .referbox div:nth-child(1){
+        display: none;
     }
 }

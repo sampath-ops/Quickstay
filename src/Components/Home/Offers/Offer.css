@@ -1,6 +1,6 @@
 .offer{
     display: flex;
-    padding: 15px;
+    padding: 30px 15px;
 }
 .offer > div img{
     width: 100%;

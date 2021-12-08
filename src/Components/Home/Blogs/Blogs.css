@@ -1,7 +1,8 @@
 .blogs{
     display: grid;
     grid-template-columns: 1fr 3fr;
-    padding: 15px;
+    padding: 30px 15px;
+    padding-bottom: 80px;
 }
 .blogs h2{
     padding: 14px;
