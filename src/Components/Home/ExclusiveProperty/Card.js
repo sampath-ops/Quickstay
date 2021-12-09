@@ -43,7 +43,7 @@ const Card = () => {
                             <div className="room-details">
                                 <span>{property.name}</span>
                                 <span>&#8377;{property.amount}</span>
-                                <span><i className="fas fa-map-marker-alt"></i>{property.location}</span>
+                                <span><span><i className="fas fa-map-marker-alt"></i>{property.location}</span></span>
                                 <span>{property.type}</span>
                                 <span><img src={personimg.default} alt={property.alter} /></span>
                             </div>

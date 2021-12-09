@@ -34,10 +34,10 @@
 .room-details span{
     font-family: 'Open Sans';
     font-style: normal;
+    display: flex;
+    align-items: center;
 }
-.room-details span:not(:last-child){
-    margin-bottom: 5px;
-}
+
 .room-details > span:nth-child(1){
     grid-area: name;
     font-weight: 600;
