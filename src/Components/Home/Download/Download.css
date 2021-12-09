@@ -28,9 +28,11 @@
     .download{
         margin: 0 20px;
         display: block;
+        padding-top: 45px;
     }
     .slogan div:nth-child(2) img{
         margin-top: 20px;
+        width: 60%;
     }
     .slogan div:nth-child(2){
         text-align: center;

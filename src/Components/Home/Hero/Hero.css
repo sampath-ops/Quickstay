@@ -137,6 +137,7 @@ input[placeholder]{
     }
     .achievements {
         flex-direction: column;
+        margin: 0;
     }
     .achievement{
         margin: 10px;
