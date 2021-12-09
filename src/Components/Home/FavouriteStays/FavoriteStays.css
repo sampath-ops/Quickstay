@@ -9,3 +9,13 @@
 .template > div img{
     width: 75%;
 }
+@media(max-width:1023px){
+    .template > div{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .template > div img{
+        width: 50%;
+    }
+}

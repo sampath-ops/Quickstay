@@ -26,10 +26,4 @@
     .offer > div:nth-child(2){
         display: inline-block;
     }
-    /* .offer > div div{
-        padding: 0px;
-    }
-    .offer > div div:not(:last-child){
-        padding-bottom: 18px;
-    } */
 }

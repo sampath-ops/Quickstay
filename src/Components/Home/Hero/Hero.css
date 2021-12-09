@@ -132,6 +132,11 @@ input[placeholder]{
 
  /* mobile  */
 @media(max-width:1023px){
+    .hero{
+        background-position: center center!important;
+        background-repeat: no-repeat!important;
+        background-attachment: unset!important;
+    }
     .hero-container{
      padding: 75px 30px;
     }
