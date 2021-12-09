@@ -33,7 +33,7 @@ const Offer = () => {
                     })
                 }
             </div>
-            <Carousel showThumbs={false} showStatus={false}>
+            <Carousel showThumbs={false} showStatus={false} showArrows={false} showIndicators={false}>
             {
                 offerimages.map(image =>{
                     const imagename = require('../../../WebsiteMaterial/'+ image.name + '.png');
