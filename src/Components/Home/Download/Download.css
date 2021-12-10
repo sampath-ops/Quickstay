@@ -22,6 +22,10 @@
     margin-top: 40px;
 }
 @media(max-width:1023px){
+    .slogan > div:nth-child(1) > p:nth-child(1){
+        font-weight: 100;
+        margin-bottom: 0;
+    }
     .slogan p{
         font-size: 23px;
         margin-bottom: 15px;

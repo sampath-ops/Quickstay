@@ -43,4 +43,7 @@
         font-size: 15px;
         text-align: center;
     }
+    .places img{
+        width: 115px;
+    }
 }

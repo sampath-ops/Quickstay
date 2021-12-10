@@ -142,6 +142,8 @@ input[placeholder]{
     }
     .hero-container{
      padding: 75px 30px;
+     padding-top: 110px;
+     padding-bottom: 55px;
     }
     .hero-container h2{
         font-size: 20px;
@@ -176,18 +178,24 @@ input[placeholder]{
         display: none;
     }
     .searchbar input,.searchbar button{
-       padding: 10px;
+       padding: 7px;
+    }
+    .searchbar button{
+        padding: 7px 10px;
     }
     .second-searchbar button:nth-child(1){
         display: none;
     }
     .second-searchbar button:nth-child(2){
         display: inline-block;
-        padding: 15px 50px;
+        padding: 10px 50px;
         padding-left: 20px;
         width: auto;
     }
     .second-searchbar > div{
         width: auto;
+    }
+    .circle{
+        top: 3px;
     }
  }
