@@ -90,6 +90,9 @@
 input[placeholder]{
     text-overflow:ellipsis;
 }
+.search_icon{
+    display: none;
+}
 .second-searchbar{
     text-align: center;
 }
@@ -165,6 +168,12 @@ input[placeholder]{
     }
     .searchbar input{
         width: 100%;
+    }
+    .search_icon{
+        display: inline-block;
+    }
+    .search_text{
+        display: none;
     }
     .searchbar input,.searchbar button{
        padding: 10px;

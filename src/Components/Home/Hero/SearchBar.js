@@ -1,3 +1,4 @@
+import './Hero.css';
 const SearchBar = () => {
     return ( 
         <div className="searchbar">
@@ -7,7 +8,8 @@ const SearchBar = () => {
                 <option>Chennai</option>
             </select>
             <input type="text" placeholder="Search Locality..." />
-            <button>SEARCH</button>
+            <button className="search_icon"><i className="fas fa-search"></i></button>
+            <button className='search_text'>SEARCH</button>
         </div>
      );
 }
