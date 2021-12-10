@@ -1,13 +1,14 @@
-.locations{
-    box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.25);
+.locations > div:nth-child(1){
     display: flex;
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
+    
+    box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.25);
     padding: 0px 20px;
     box-sizing: border-box;
 }
-.locations > div{
+.locations > div:nth-child(1) div{
     font-family: Open Sans;
     font-style: italic;
     font-weight: 600;
@@ -15,10 +16,13 @@
     color: #000000;
     padding: 20px;
 }
-.locations > div a:hover{
+.locations > div:nth-child(2){
+    display: none;
+}
+.locations > div:nth-child(1) div a:hover{
     color: #00C2FF;
 }
-.locations > div a{
+.locations > div:nth-child(1) div a{
     text-decoration: none;
     font-family: 'Open Sans';
     font-style: italic;
@@ -27,8 +31,32 @@
     color: #000000;
 }
 @media(max-width:1023px){
+    .accordion{
+        border-top: none;
+    }
+    .accordion__button{
+        background-color: #ffff!important;
+        font-family: 'Open Sans';
+        font-style: italic;
+        font-weight: 600;
+        font-size: 16px;
+        color: #000000;
+    }
+    .accordion__button::before{
+        position: absolute;
+        right: 5px;
+    }
+    .accordion__panel{
+        padding: 0;
+    }
     .locations{
-        display: grid;
-        grid-template-columns: auto auto;
+        display: block;
+    }
+    .locations > div:nth-child(1){
+        display: none;
+    }
+    .locations > div:nth-child(2){
+        display: inline-block;
+        width: 100%;
     }
 }

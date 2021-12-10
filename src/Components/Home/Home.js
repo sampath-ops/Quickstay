@@ -10,6 +10,7 @@ import PopularSearches from './PopularSearches/PopularSearches';
 import Follow from './FollowAndFind/Follow';
 import Find from './FollowAndFind/Find';
 import Download from './Download/Download';
+import Locations from './PopularSearches/Locations/Location';
 const Home = () => {
     return ( 
         <div>
@@ -24,6 +25,7 @@ const Home = () => {
             <Follow/>
             <Find/>
             <Download/>
+            <Locations/>
             <PopularSearches/>
             
         </div>
