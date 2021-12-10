@@ -6,9 +6,11 @@ const GetToKnow = () => {
                 <p>Are you a <br /> home owner?</p>
                 <button>List Your Property</button>
             </div>
-            <p>Get Verified <br /> Tenant Leads.</p>
-            <p>Get Timely  <br /> Rents.</p>
-            <p>Get On-Demand <br /> House Maintenance.</p>
+            <div className="get-to-know-row">
+                <p>Get Verified <br /> Tenant Leads.</p>
+                <p>Get Timely  <br /> Rents.</p>
+                <p>Get On-Demand <br /> House Maintenance.</p>
+            </div>
         </div>
      );
 }

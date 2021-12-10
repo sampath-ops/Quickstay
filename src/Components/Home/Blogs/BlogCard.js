@@ -19,6 +19,7 @@ const BlogCard = () => {
 
     return ( 
         <div className="card"> 
+            <div className="row">
             {
                 blogs.map((blog,index) =>{
                     const img = require('../../../WebsiteMaterial/living-room.jpg');
@@ -37,6 +38,7 @@ const BlogCard = () => {
                     )
                 })
             }
+            </div>
         </div>
      );
 }

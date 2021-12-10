@@ -33,6 +33,7 @@ const Card = () => {
 
     return ( 
         <div className="card">
+            <div className="row">
             {
                 properties.map(property=>{
                     const img = require('../../../WebsiteMaterial/living-room.jpg');
@@ -51,6 +52,7 @@ const Card = () => {
                     )
                 })
             }
+            </div>
         </div>
      );
 }

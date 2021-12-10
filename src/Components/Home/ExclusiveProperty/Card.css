@@ -1,4 +1,4 @@
-.card{
+.row{
     display: flex;
     margin-left: 50px;
 }
@@ -61,8 +61,29 @@
 }
 .room-details > span:nth-child(5) {
     grid-area: image;
-    text-align: center;
+    justify-content: center;
 }
 .room-details span img{
     width: 70%;
+}
+
+@media(max-width:1023px){
+    .row{
+        margin-left: 0px;
+        align-items: stretch;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    .card-container{
+        max-width: 100%;
+        padding: .75rem;
+        margin-bottom: 2rem;
+        border: 0;
+        flex-basis: 95%;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
 }
