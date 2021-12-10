@@ -26,7 +26,7 @@ const Home = () => {
             <Find/>
             <Download/>
             <Locations/>
-            <PopularSearches/>
+            {/* <PopularSearches/> */}
             
         </div>
      );

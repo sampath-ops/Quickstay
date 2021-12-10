@@ -15,7 +15,9 @@ const Locations = () => {
                         <div  key={index}><Link to="#">{location}</Link></div>
                     ))
                 }
+             
             </div>
+            <PopularSearches/>
             <Accordion allowZeroExpanded={true}>
                 {
                     locations.map((location,index)=>(
