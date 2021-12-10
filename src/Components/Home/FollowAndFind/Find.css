@@ -39,17 +39,8 @@
     .Find > p{
         font-size: 25px;
     }
-    .locations-images{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        row-gap: 15px;
-    }
     .places{
         font-size: 15px;
         text-align: center;
     }
-    .places img{
-        width: 65%;
-    }
-   
 }
