@@ -40,10 +40,13 @@
         font-weight: 600;
         font-size: 16px;
         color: #000000;
+        position: relative;
+        width: inherit;
     }
     .accordion__button::before{
         position: absolute;
-        right: 5px;
+        right: 10px;
+        top: 24px;
     }
     .accordion__panel{
         padding: 0 20px;
