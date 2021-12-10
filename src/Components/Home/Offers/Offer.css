@@ -20,6 +20,9 @@
 }
 
 @media(max-width:1023px){
+    .offer{
+        padding-bottom: 0;
+    }
     .offer > div:nth-child(1){
         display: none;
     }

@@ -5,6 +5,9 @@
     padding-top: 0;
 }
 @media(max-width:1023px){
+    .exclusive{
+        padding-top: 30px;
+    }
     .exclusive,.card,.blogs{
         display: block;
     }
