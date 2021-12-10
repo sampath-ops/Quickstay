@@ -7,9 +7,9 @@ const Download = () => {
             <div className="slogan">
                 <div>
                     <p>Book Long Stay Anytime, Anywhere <br /> with QuickStay!</p> 
-                    
                 </div> 
-                <div>
+                <img src={mobileimg} alt="mobile-design" />
+                <div className="playstore-button">
                     <p>Download the App.</p>
                     <img src={playstore} alt="playstore" />
                 </div>
