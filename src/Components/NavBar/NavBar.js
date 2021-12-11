@@ -72,6 +72,10 @@ class NavBar extends React.Component {
           route:'Login',
           link:'/login'
         },
+        {
+          route:'Signup',
+          link:'/signup'
+        },
       ]
       const menuItems = menu.map((val,index)=>{
         return (
@@ -81,7 +85,7 @@ class NavBar extends React.Component {
             onClick={()=>{this.handleLinkClick();}}>{val}</MenuItem>)
       });
       const pathname =  window.location.pathname;
-
+      console.log(pathname);
       return(
         <div>
           <div style={styles.container} className="custom-navbar">
@@ -94,7 +98,7 @@ class NavBar extends React.Component {
                 menu.map((val,index)=>{
                   return(
                     <div className={pathname === val.link ? "active" : ""}  key={index} >
-                      <Link to="#">{val.route}</Link> 
+                      <Link to={val.link}>{val.route}</Link> 
                     </div>
                   )
                 })
