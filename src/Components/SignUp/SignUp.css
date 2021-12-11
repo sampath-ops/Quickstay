@@ -1,0 +1,123 @@
+.signUp{
+    font-family: Open Sans;
+    font-style: normal;
+    margin: 0 60px;
+    margin-top: 120px;
+    margin-bottom: 50px;
+}
+.signupform{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 50px;
+}
+.signupform h2{
+    margin: 0;
+    font-weight: bold;
+    font-size: 36px;
+}
+.input-boxes{
+    padding: 30px 0px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.input-boxes input{
+    display: block;
+    text-align: center;
+    border: 3px solid #FFDE17;
+    box-sizing: border-box;
+    border-radius: 40px;
+    width: 77.5%;
+    padding: 17px 0px;
+}
+.input-boxes input:not(:last-child){
+    margin-bottom: 16px;
+}
+.radio-title{
+    font-weight: 600;
+    font-size: 20px;
+    
+}
+.radio-title:nth-child(2){
+   margin-top: 20px;
+}
+input[type="radio"] {
+  /* remove standard background appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* create custom radiobutton appearance */
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  /* background-color only for content */
+  background-clip: content-box;
+  border: 2px solid #bbbbbb;
+  border-radius: 50%;
+}
+
+/* appearance for checked radiobutton */
+input[type="radio"]:checked {
+  background-color: #FFDE17;
+  border: 2px solid #FFDE17;
+}
+.radio-container{
+    display: flex;
+    justify-content: space-between;
+    width: 76%;
+}
+.radio-container > div{
+    display: inline-block;
+}
+.radio-container > div label{
+    font-weight: normal;
+    font-size: 18px;
+    vertical-align: top;
+}
+.you-are > div:nth-child(2){
+    margin-right: 25px;
+}
+.you-are > div:nth-child(3){
+    visibility: hidden;
+}
+.submit-btn{
+    text-align: center;
+    grid-column: span 2;
+}
+.submit-btn button{
+    background-color: #FFDE17;
+    font-weight: 600;
+    font-size: 20px;
+    border: none;
+    border-radius: 40px;
+    padding: 20px;
+    width: 33%;
+}
+@media(max-width:1023px){
+    .signUp{
+        margin: 0;
+        margin-top: 60px;
+        margin-bottom: 50px;
+    }
+    .signupform{
+        display: flex;
+        flex-direction: column;
+    }
+    .submit-btn button{
+        padding: 12px 0;
+        width: 50%;
+    }
+    .input-boxes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .signupform h2{
+        text-align: center;
+    }
+    .radio-title,.radio-container{
+        margin-left: 35px;
+    }
+    
+}
