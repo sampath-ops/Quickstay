@@ -58,4 +58,7 @@
     .login-input input{
         width: inherit;
     }
+    .lottie-container{
+        width: inherit;
+    }
 }
