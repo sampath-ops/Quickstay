@@ -59,6 +59,7 @@
 }
 
 .otp-container > input{
+    text-align: center;
     display: inline;
     border-top: none;
     border-left: none;
@@ -68,6 +69,7 @@
     margin-top: 30px;
     margin-bottom: 30px;
     width: 3.5%;
+    font-size: 20px;
 }
 .otp-container > input:not(:last-child){
     margin-right: 15px;
@@ -89,7 +91,6 @@
 @media(max-width:1023px){
     .input-container input{
         width: 75%;
-        font-size: 16px;
     }
     .lottie-container{
         width: inherit;
