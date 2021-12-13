@@ -116,7 +116,7 @@ input[type="radio"]:checked {
     }
     .submit-btn button{
         padding: 12px 0;
-        width:258px;
+        width:208px;
     }
     .input-boxes{
         display: flex;
