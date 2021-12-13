@@ -1,15 +1,53 @@
 import './SignUp.css';
 import KnowLittle from './KnowLittle';
+import Button from './Button';
+import { useState } from 'react';
 const SignUpForm = () => {
-    
+
+    const [enteredName,setEnteredName] = useState('');
+    const [enteredEmail,setEnteredEmail] = useState('');
+    const [enteredNumber,setEnteredNumber] = useState('');
+    const [isValid,setIsValid] = useState(true);
+
+    const nameChangeHandler = (event)=>{
+        if(event.target.value.trim().length > 0){
+            setIsValid(true);
+        }
+        setEnteredName(event.target.value);
+    }
+
+    const emailChangeHandler = (event)=>{
+        if(event.target.value.trim().length > 0){
+            setIsValid(true);
+        }
+        setEnteredEmail(event.target.value);
+    }
+
+    const numberChangeHandler = (event)=>{
+        if(event.target.value.trim().length > 0){
+            setIsValid(true);
+        }
+        setEnteredNumber(event.target.value);
+    }
+
+
+    const formSubmitHandler = (event)=>{
+        event.preventDefault();
+        if(enteredName.trim().length === 0 || enteredEmail.trim().length === 0 || enteredNumber.trim().length === 0){
+            setIsValid(false);
+            return;
+        }
+    }
+
+
     return ( 
-        <form className="signupform">
+        <form className={`signupform ${!isValid && "invalid"}`} onSubmit={formSubmitHandler}>
            <div>
                 <h2>SignUp</h2>
                     <div className="input-boxes">
-                        <input type="text" placeholder="Name"/>
-                        <input type="email" placeholder="Email"/>
-                        <input type="tel" placeholder="Age"/>
+                        <input name="name" type="text" placeholder="Name" value={enteredName} onChange={nameChangeHandler}/>
+                        <input name="email" type="email" placeholder="Email" value={enteredEmail} onChange={emailChangeHandler} />
+                        <input name="phone" type="number" placeholder="Age" value={enteredNumber} onChange={numberChangeHandler}/>
                     </div>
                 <p className='radio-title'>Select your gender</p>
                 <div className="gender radio-container">
@@ -43,9 +81,7 @@ const SignUpForm = () => {
                 </div>
            </div>
            <KnowLittle/>
-           <div className="submit-btn">
-                        <button>Save</button>
-           </div>
+          <Button type='submit' text='Save'/>
         </form>
      );
 }

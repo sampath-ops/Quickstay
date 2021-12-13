@@ -1,0 +1,61 @@
+.login{
+    font-family: Open Sans;
+    font-style: normal;
+    color: #000000;
+    margin-top: 120px;
+    margin-bottom: 50px;
+}
+.head{
+    text-align: center;
+}
+.head p{
+    font-weight: bold;
+    font-size: 26px;
+    margin: 0;
+}
+.head p:nth-child(2){
+    color: #A00500;
+}
+.lottie-container{
+    width: 50%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.login-input{
+    text-align: center;
+}
+.login-input p{
+    margin: 0;
+}
+.login-input p:nth-child(1){
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 7px;
+}
+.login-input p:nth-child(2){
+    font-weight: normal;
+    font-size: 18px;
+}
+.login-input input{
+    display: block;
+    text-align: center;
+    border: 3px solid #FFDE17;
+    box-sizing: border-box;
+    border-radius: 40px;
+    width: 40%;
+    padding: 14px 0px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 23px;
+    margin-top: 31px;
+}
+@media(max-width:1023px){
+    .login-input input{
+        width: inherit;
+    }
+}

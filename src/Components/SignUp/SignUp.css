@@ -10,6 +10,12 @@
     grid-template-columns: 1fr 1fr;
     row-gap: 50px;
 }
+.signupform.invalid .input-boxes > input{
+    border-color: red;
+}
+input:focus-visible{
+    outline: none;
+}
 .signupform h2{
     margin: 0;
     font-weight: bold;
@@ -27,8 +33,12 @@
     border: 3px solid #FFDE17;
     box-sizing: border-box;
     border-radius: 40px;
-    width: 77.5%;
-    padding: 17px 0px;
+    width: 80.5%;
+    padding: 14px 0px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
 }
 .input-boxes input:not(:last-child){
     margin-bottom: 16px;
@@ -92,7 +102,7 @@ input[type="radio"]:checked {
     border: none;
     border-radius: 40px;
     padding: 20px;
-    width: 33%;
+    width: 40%;
 }
 @media(max-width:1023px){
     .signUp{
@@ -106,12 +116,15 @@ input[type="radio"]:checked {
     }
     .submit-btn button{
         padding: 12px 0;
-        width: 50%;
+        width:258px;
     }
     .input-boxes{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .input-boxes input{
+        font-size: 16px;
     }
     .signupform h2{
         text-align: center;

@@ -7,6 +7,7 @@
     font-weight: bold;
     font-size: 24px;
     margin-left: 35px;
+    margin-top: 0;
 }
 .favourites_of_users{
     display: grid;
@@ -45,8 +46,9 @@
         flex-wrap: nowrap;
         overflow-x: auto;
         overflow-y: hidden;
-        padding: 20px 0px;
-        margin-left: 10px;
+        padding-bottom: 20px;
+        margin-left: 20px;
+        padding-left: 15px;
     }
     .favourites_of_users div{
         border: 0;

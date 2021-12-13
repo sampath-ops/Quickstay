@@ -85,7 +85,7 @@ class NavBar extends React.Component {
             onClick={()=>{this.handleLinkClick();}}>{val}</MenuItem>)
       });
       const pathname =  window.location.pathname;
-      console.log(pathname);
+      // console.log(pathname);
       return(
         <div>
           <div style={styles.container} className="custom-navbar">
