@@ -1,6 +1,8 @@
 import lottie from 'lottie-web';
 import { useEffect, useRef} from "react";
 import Button from '../SignUp/Button';
+import { Link } from 'react-router-dom';
+
 const Otp = () => {
 
     const lottieContainer = useRef(null);
@@ -42,6 +44,10 @@ const Otp = () => {
                         <input type="number" />
                     </div>
                     <Button type='submit' text='Verify'/>
+                    <div className="edit-method">
+                        <Link to="#">Change Number</Link>
+                        <Link to="#">Resend OTP</Link>
+                    </div>
                 </div>
         </form>
      );
