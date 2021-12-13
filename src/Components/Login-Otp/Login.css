@@ -22,22 +22,25 @@
     margin-left: auto;
     margin-right: auto;
 }
-.login-input{
+.input-container{
     text-align: center;
 }
-.login-input p{
+.input-container.invalid input{ 
+    border-color: red;
+}
+.input-container p{
     margin: 0;
 }
-.login-input p:nth-child(1){
+.input-container p:nth-child(1){
     font-weight: 600;
     font-size: 24px;
     margin-bottom: 7px;
 }
-.login-input p:nth-child(2){
+.input-container p:nth-child(2){
     font-weight: normal;
     font-size: 18px;
 }
-.login-input input{
+.input-container > input{
     display: block;
     text-align: center;
     border: 3px solid #FFDE17;
@@ -54,8 +57,31 @@
     margin-bottom: 23px;
     margin-top: 31px;
 }
+.otp-container{
+    display: flex;
+    width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.otp-container > input{
+    display: inline;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    border-bottom: 2px solid black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 50px;
+}
+.otp-container > input:nth-child(1){
+    margin-left:22px;
+}
+.otp-container > input:not(:last-child){
+    margin-right: 15px;
+}
 @media(max-width:1023px){
-    .login-input input{
+    .input-container input{
         width: 75%;
         font-size: 16px;
     }
