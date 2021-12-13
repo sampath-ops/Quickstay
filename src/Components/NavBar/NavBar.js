@@ -4,7 +4,7 @@ import Menu from './Menu';
 import React from 'react';
 import logo from '../../WebsiteMaterial/Logo.png';
 import './NavBar.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class NavBar extends React.Component {
     
@@ -84,8 +84,7 @@ class NavBar extends React.Component {
             delay={`${index * 0.1}s`}
             onClick={()=>{this.handleLinkClick();}}>{val}</MenuItem>)
       });
-      const pathname =  window.location.pathname;
-      // console.log(pathname);
+    
       return(
         <div>
           <div style={styles.container} className="custom-navbar">
@@ -97,8 +96,8 @@ class NavBar extends React.Component {
               {
                 menu.map((val,index)=>{
                   return(
-                    <div className={pathname === val.link ? "active" : ""}  key={index} >
-                      <Link to={val.link}>{val.route}</Link> 
+                    <div  key={index} >
+                      <NavLink to={val.link} >{val.route}</NavLink>
                     </div>
                   )
                 })

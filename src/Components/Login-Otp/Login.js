@@ -2,13 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import './Login.css';
 import Button from "../SignUp/Button";
 import lottie from 'lottie-web';
-import { useNavigate } from 'react-router-dom';
-
+import OTP from './Otp';
 const Login = () => {
 
     const [enteredNumber,setEnteredNumber] = useState('');
     const [isValid,setIsValid] = useState(true);
-    const navigate = useNavigate();
+    const [isRecievedOtp,setIsRecievedOtp] = useState(false);
 
     const mobileChangeHandler = (event)=>{
         if(enteredNumber.trim().length > 0){
@@ -35,28 +34,33 @@ const Login = () => {
             setIsValid(false);
             return;
         }
-        navigate('/otp');
+       setIsRecievedOtp(true);
        
     }
 
     return ( 
-        <form className="login"  onSubmit={loginFormSubmitHandler}>
-            <div className="form-container">
-                <div className="head">
-                    <p>Let us find you a</p>
-                    <p>Perfect Home!</p> 
-                </div>
-                <div className="lottie-container" ref={lottieContainer}>
+        <div>
+            {isRecievedOtp ? <OTP/> :
+            <form className="login"  onSubmit={loginFormSubmitHandler}>
+                <div className="form-container">
+                    <div className="head">
+                        <p>Let us find you a</p>
+                        <p>Perfect Home!</p> 
+                    </div>
+                    <div className="lottie-container" ref={lottieContainer}>
 
+                    </div>
+                    <div className={`input-container ${!isValid && "invalid"}`}>
+                        <p>Login</p>
+                        <p>Enter your mobile number to receive a verification code.</p>
+                        <input name="mobile" type="tel" placeholder="Mobile Number" value={enteredNumber} onChange={mobileChangeHandler} />
+                        <Button type='submit' text='Send OTP'/>
+                    </div>
                 </div>
-                <div className={`input-container ${!isValid && "invalid"}`}>
-                    <p>Login</p>
-                    <p>Enter your mobile number to receive a verification code.</p>
-                    <input name="mobile" type="tel" placeholder="Mobile Number" value={enteredNumber} onChange={mobileChangeHandler} />
-                    <Button type='submit' text='Send OTP'/>
-                </div>
-            </div>
-        </form>
+            </form>} 
+        
+        </div>
+        
      );
 }
  
