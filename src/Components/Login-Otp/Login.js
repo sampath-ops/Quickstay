@@ -3,6 +3,7 @@ import './Login.css';
 import Button from "../SignUp/Button";
 import lottie from 'lottie-web';
 import OTP from './Otp';
+import Main from "../NavBar/Main";
 const Login = () => {
 
     const [enteredNumber,setEnteredNumber] = useState('');
@@ -39,7 +40,7 @@ const Login = () => {
     }
 
     return ( 
-        <div>
+        <Main>
             {isRecievedOtp ? <OTP/> :
             <form className="login"  onSubmit={loginFormSubmitHandler}>
                 <div className="form-container">
@@ -59,7 +60,7 @@ const Login = () => {
                 </div>
             </form>} 
         
-        </div>
+        </Main>
         
      );
 }

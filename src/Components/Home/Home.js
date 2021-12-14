@@ -10,9 +10,10 @@ import Follow from './FollowAndFind/Follow';
 import Find from './FollowAndFind/Find';
 import Download from './Download/Download';
 import Locations from './PopularSearches/Locations/Location';
+import Main from '../NavBar/Main';
 const Home = () => {
     return ( 
-        <div>
+        <Main>
             <Hero/>
             <Offer/>
             <FavouriteStays/>
@@ -26,7 +27,7 @@ const Home = () => {
             <Download/>
             <Locations/>
             
-        </div>
+        </Main>
      );
 }
  

@@ -1,9 +1,12 @@
+import Main from "../NavBar/Main";
 import SignUpForm from "./SignUpForm";
 const Signin = () => {
 	return ( 
-			<div className="signUp">
+			<Main>
+				<div className="signUp">
 				<SignUpForm/>
-			</div>
+				</div>
+			</Main>
 	 );
 }
  
