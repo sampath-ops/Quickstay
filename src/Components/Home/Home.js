@@ -25,8 +25,7 @@ const Home = () => {
             <Follow/>
             <Find/>
             <Download/>
-            <Locations/>
-            
+            <Locations/>   
         </Main>
      );
 }

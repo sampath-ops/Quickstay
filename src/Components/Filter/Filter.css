@@ -1,0 +1,52 @@
+.filters-section-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin-top: 40px;
+    height: 1200px;
+    margin-bottom: 75px;
+}
+.filter-section{
+    padding: 0 35px;
+    border-right: 2px solid #D6D6D6;
+}
+.filter-results{
+    margin-left: 40px;
+    margin-right: 25px;
+}
+.filter-results-properties{
+    grid-template-columns: 4fr 1fr;
+    row-gap: 5px;
+}
+.filter-results-properties > span:nth-child(3),.filter-results-properties > span:nth-child(4){
+    font-size: 15px;
+}
+.filter-options{
+    font-family: Open Sans;
+    font-style: normal;
+    color: #000000;
+}
+.filter-options > p{
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+}
+.options-container >p{
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+.options-container > div > label{
+    font-weight: 400;
+    vertical-align: top;
+    margin-left: 10px;
+}
+.filter-cards{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 35px;
+}
+.options-container > div > input[type="radio"]:checked {
+    background-color: #A00500;
+    border: 2px solid #A00500;
+}

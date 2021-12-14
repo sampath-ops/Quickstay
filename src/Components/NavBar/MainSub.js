@@ -1,7 +1,9 @@
+import FilterNavBar from "./FilterNavBar";
+
 const MainSub = (props) => {
     return ( 
         <div>
-            sub main navbar
+            <FilterNavBar/>
             {props.children}
         </div>
      );

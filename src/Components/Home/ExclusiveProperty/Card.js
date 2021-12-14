@@ -1,9 +1,9 @@
 import './Card.css';
+import CardContainer from './CardContainer';
 const Card = () => {
 
     const properties = [
         {
-            id:0,
             name:'Private Room',
             amount:6500,
             location:"Sec 22, Chandigarh",
@@ -12,7 +12,6 @@ const Card = () => {
             alter:"male"
         },
         {
-            id:1,
             name:'PG',
             amount:5000,
             location:"Sec 46, Salem",
@@ -21,7 +20,6 @@ const Card = () => {
             alter:"female"
         },
         {
-            id:2,
             name:'Single Room',
             amount:8500,
             location:"VIP road, Chandigarh",
@@ -32,27 +30,8 @@ const Card = () => {
     ]
 
     return ( 
-        <div className="card">
-            <div className="row">
-            {
-                properties.map(property=>{
-                    const img = require('../../../WebsiteMaterial/living-room.jpg');
-                    const personimg = require(`../../../WebsiteMaterial/${property.person}.png`);
-                    return(
-                        <div className="card-container" key={property.id}>
-                            <img src={img.default} alt="living-room" />
-                            <div className="room-details">
-                                <span>{property.name}</span>
-                                <span>&#8377;{property.amount}</span>
-                                <span><span><i className="fas fa-map-marker-alt"></i>{property.location}</span></span>
-                                <span>{property.type}</span>
-                                <span><img src={personimg.default} alt={property.alter} /></span>
-                            </div>
-                        </div>
-                    )
-                })
-            }
-            </div>
+        <div className="card">   
+                <CardContainer properties ={properties} className="row"/>
         </div>
      );
 }
