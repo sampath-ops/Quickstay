@@ -46,6 +46,9 @@
     grid-template-columns: auto auto auto auto;
     row-gap: 35px;
 }
+.filter-cards > .card-container:last-child{
+    margin-right: 15px;
+}
 .options-container > div > input[type="radio"]:checked {
     background-color: #A00500;
     border: 2px solid #A00500;
