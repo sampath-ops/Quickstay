@@ -1,3 +1,4 @@
+import PriceRange from "./PriceRange";
 const FilterOptions = () => {
     return ( 
         <div className="filter-options">
@@ -51,6 +52,8 @@ const FilterOptions = () => {
                     <label htmlFor="Unfurnished">Unfurnished</label>
                 </div>
             </div>
+
+            <PriceRange></PriceRange>
 
             <div className="options-container">
                 <p>SORT BY</p>
