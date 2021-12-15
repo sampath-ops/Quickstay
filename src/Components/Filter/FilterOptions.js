@@ -1,4 +1,4 @@
-import PriceRange from "./PriceRange";
+import MultiRangeSlider from './MultiRangeSlider/MultiRangeSlider'
 const FilterOptions = () => {
     return ( 
         <div className="filter-options">
@@ -53,7 +53,17 @@ const FilterOptions = () => {
                 </div>
             </div>
 
-            <PriceRange></PriceRange>
+            <div className='options-container'>
+                <p>PRICE</p>
+                <MultiRangeSlider
+                    min={0}
+                    max={30}
+                    onChange={({ min, max }) =>{ 
+                        // console.log(`min = ${min}, max = ${max}`)
+                    }}
+                    />
+            </div>
+           
 
             <div className="options-container">
                 <p>SORT BY</p>
