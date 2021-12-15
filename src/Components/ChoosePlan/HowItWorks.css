@@ -1,0 +1,14 @@
+.how-it-works{
+    font-family: Open Sans;
+    font-style: normal;
+}
+.how-it-works > p{
+    font-weight: 600;
+    font-size: 22px;
+}
+.howWorksCard{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 14px;
+}

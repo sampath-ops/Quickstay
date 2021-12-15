@@ -14,7 +14,7 @@
     .offer > div:nth-child(2){
         display: none;
     }
-    .offer > div div:not(:last-child){
+    .offer > div a:not(:last-child){
         padding-right: 18px;
     }
 }

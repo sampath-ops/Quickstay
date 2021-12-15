@@ -1,0 +1,25 @@
+.plandetails{
+    margin-bottom: 40px;
+}
+.plan-types{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    margin-bottom: 35px;
+}
+.plan-types > div:nth-child(1){
+    visibility: hidden;
+}
+.plan-features{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;;
+}
+.plan-features p{
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 14px;
+}
+.plan-features span{
+    width: 155px;
+    text-align: center;
+    font-size: 14px;
+}

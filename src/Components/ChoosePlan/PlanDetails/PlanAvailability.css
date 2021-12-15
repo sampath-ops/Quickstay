@@ -1,0 +1,25 @@
+.plan-availability{
+    font-family: 'Open Sans';
+    font-style: normal;
+}
+.plan-active{
+    background-color: #A00500!important;
+    color: white;
+}
+.plan-type{
+    height: 145px;
+    width: 155px;
+    background-color: #FFDE17;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.plan-type p{
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+    
+}

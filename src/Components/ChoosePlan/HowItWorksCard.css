@@ -1,0 +1,30 @@
+.how-it-works-card{
+    display: flex;
+    padding: 14px;
+    border: 3px solid #A00500;
+    box-sizing: border-box;
+    border-radius: 50px;
+}
+.how-it-works-card > p{
+    padding-left: 15px;
+}
+.dotted{
+    border: 1px dashed #A00500;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dotted-inner{
+    font-size: 32px;
+    background: #A00500;
+    color: #FFFFFF;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
