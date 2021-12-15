@@ -12,7 +12,7 @@ const FilterNavBar = () => {
            </div>
            <div className="access-methods">
                <Link to="/login">Login</Link>/ 
-               <Link to="/sigup">Signup</Link>
+               <Link to="/signup">Signup</Link>
            </div>
         </div>
      );
