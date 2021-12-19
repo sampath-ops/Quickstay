@@ -2,6 +2,8 @@
 body{
     margin: 0;
     scroll-behavior: smooth;  
+    font-family: Open Sans;
+    font-style: normal;
 }
 #root{
     overflow-x: hidden;

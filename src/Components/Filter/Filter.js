@@ -3,6 +3,7 @@ import Locations from "../Home/PopularSearches/Locations/Location";
 import CardContainer from "../Home/ExclusiveProperty/CardContainer";
 import './Filter.css';
 import FilterOptions from "./FilterOptions";
+import FilterOptionsForMobile from "./FilterOptionForMobile/FilterOptionsForMobile";
 const Filter = () => {
     const properties = [
         {
@@ -114,12 +115,16 @@ const Filter = () => {
             alter:"Female"
         },
     ]
+
+  
+
     return ( 
         <MainSub>
             <div>
                 <div className="filters-section-container">
                     <div className="filter-section">
                         <FilterOptions/>
+                        <FilterOptionsForMobile/>
                     </div>
                     <div className="filter-results">
                         <CardContainer properties={properties} className="filter-cards" details="filter-results-properties" carousel="true"></CardContainer>

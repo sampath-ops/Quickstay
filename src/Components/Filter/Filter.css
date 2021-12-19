@@ -25,7 +25,7 @@
     font-style: normal;
     color: #000000;
 }
-.filter-options > p{
+.Filters{
     font-weight: 600;
     font-size: 18px;
     margin: 0;
@@ -55,4 +55,37 @@
 .options-container > div > input[type="radio"]:checked {
     background-color: #A00500;
     border: 2px solid #A00500;
+}
+.filter-mobile{
+    display: none;
+}
+@media(max-width:1023px){
+    .filters-section-container{
+        height: inherit;
+        display: block;
+        margin-top: 20px;
+    }
+    .filter-section{
+       padding: 0 10px;
+    }
+   
+    .filter-mobile i{
+        font-size: 20px;
+    }
+   
+    .Filters p{
+        text-align: end;
+    }
+    .filter-options{
+        display: none;
+    }
+    .filter-results{
+        margin: 0;
+    }
+    .filter-cards{
+        display: block;
+    }
+    .filter-cards > .card-container:last-child{
+        margin: 0;
+    }
 }
