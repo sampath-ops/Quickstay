@@ -8,8 +8,7 @@ const FilterOptionsForMobile = () => {
     const transition = useTransition(isVisible,{
         from:{ x:0, y:800, opacity:0 },
         enter:{ x:0, y:0, opacity:1 },
-        leave:{ x:0, y:800, opacity:0 },
-        delay:200
+        leave:{ x:0, y:800, opacity:0 }
     });
 
     const hideFilter = () => {
