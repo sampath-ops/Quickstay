@@ -56,7 +56,7 @@ const PlanDetails = () => {
     return ( 
         <div className="plandetails">
     
-            <div className='plan-types'>
+            <div className='plan-types-container'>
                 <PlanAvailability />
                 <PlanAvailability planType="FREE TRIAL" amount="0"/>
                 <PlanAvailability planType="MONTHLY" amount="199"/>

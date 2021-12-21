@@ -17,3 +17,12 @@
 .choose-plan h3 span{
     color: #A00500;
 }
+@media(max-width:1023px){
+    .choose-plan{
+        margin: 15px;
+    }
+    .choose-plan h3{
+        font-size: 20px;
+        margin: 25px 0;
+    }
+}

@@ -5,10 +5,8 @@ const PlanAvailability = (props) => {
     return ( 
         <div className="plan-availability">
             <div className={classname}>
-                <p>
-                    {props.planType} <br />
-                    &#8377;{props.amount}
-                </p>
+                <p>{props.planType}</p>
+                <p> &#8377;{props.amount}</p>
             </div>
         </div>
      );

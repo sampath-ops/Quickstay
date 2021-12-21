@@ -41,9 +41,11 @@ const Offer = () => {
                 offerimages.map(image =>{
                     const imagename = require('../../../WebsiteMaterial/'+ image.name + '.png');
                     return(
-                       <div  key={image.id}>
-                            <img src={imagename.default} alt={image.alter}/>
-                       </div>
+                        <Link to="/choose-plan"  key={image.id}>
+                            <div>
+                                <img src={imagename.default} alt={image.alter}/>
+                            </div>
+                        </Link>
                     )
                 })
             }

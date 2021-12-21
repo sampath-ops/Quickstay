@@ -1,12 +1,12 @@
 .plandetails{
     margin-bottom: 40px;
 }
-.plan-types{
+.plan-types-container{
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     margin-bottom: 35px;
 }
-.plan-types > div:nth-child(1){
+.plan-types-container > div:nth-child(1){
     visibility: hidden;
 }
 .plan-features{
@@ -22,4 +22,51 @@
     width: 155px;
     text-align: center;
     font-size: 14px;
+}
+@media(max-width:1023px){
+    .plan-type{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: auto;
+        height: auto;
+        padding: 0;
+        box-sizing: border-box;
+        padding: 2px 5px;
+        border-radius: 5px;
+    }
+    .plan-type > p:nth-child(2){
+        display: none;
+    }
+    .plan-type p{
+        font-size: 8px;
+        font-weight: 800;
+    }
+    .plan-types-container{
+        grid-template-columns: 130px repeat(3,1fr);
+        margin-bottom: 0;
+        column-gap: 4px;
+    }
+    .plan-types-container > div:nth-child(2){
+        display: none;
+    }
+    .plan-features{
+        margin-bottom: 5px;
+        grid-template-columns: 135px repeat(3,1fr);
+        padding: 10px 0;
+    }
+    .plan-features:not(:last-child){
+        border-bottom: 1px solid rgb(179, 178, 177);
+    }
+    .plan-features span{
+        width: auto;
+        align-self: center;
+        font-size: 10px;
+    }
+    .plan-features span:first-of-type{
+        display: none;
+    }
+    .plan-features p{
+        margin: 0;
+        align-self: center;
+        font-size: 11px;
+    }
 }
