@@ -20,6 +20,7 @@
 @media(max-width:1023px){
     .choose-plan{
         margin: 15px;
+        margin-bottom: 40px;
     }
     .choose-plan h3{
         font-size: 20px;

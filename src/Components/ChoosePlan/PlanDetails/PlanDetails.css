@@ -30,18 +30,19 @@
         height: auto;
         padding: 0;
         box-sizing: border-box;
-        padding: 2px 5px;
+        padding: 6px 5px;
         border-radius: 5px;
     }
     .plan-type > p:nth-child(2){
         display: none;
     }
     .plan-type p{
-        font-size: 8px;
+        font-size: 9px;
         font-weight: 800;
+        white-space: nowrap;
     }
     .plan-types-container{
-        grid-template-columns: 130px repeat(3,1fr);
+        grid-template-columns: 135px repeat(3,1fr);
         margin-bottom: 0;
         column-gap: 4px;
     }
@@ -60,6 +61,7 @@
         width: auto;
         align-self: center;
         font-size: 10px;
+        font-weight: 600;
     }
     .plan-features span:first-of-type{
         display: none;

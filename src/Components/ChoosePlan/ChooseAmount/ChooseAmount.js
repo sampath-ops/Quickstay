@@ -1,5 +1,6 @@
 import AmountCards from "./AmountCards";
 import './ChooseAmount.css';
+import {Link} from 'react-router-dom';
 const ChooseAmount = () => {
     const chooseAmount = [
         {
@@ -25,18 +26,20 @@ const ChooseAmount = () => {
     ]
     return ( 
         <div className="chooseamount">
-            {
-                chooseAmount.map((plan,index)=>{
-                   return(
-                    <AmountCards key={index} plantype={plan.type} cost={plan.amount} validity={plan.duration}/>
-                   )
-                })
-            }
-            <div className="choose-plan-buttons">
-                <button>Pay Now</button>
-                <button>Maybe Later</button>
-            </div>
-        </div>
+                    <div className="amountcards-container">
+                        {
+                        chooseAmount.map((plan,index)=>{
+                           return(
+                            <AmountCards key={index} plantype={plan.type} cost={plan.amount} validity={plan.duration}/>
+                           )
+                        })
+                        }   
+                    </div>
+                    <div className="choose-plan-buttons">
+                        <button>Pay Now</button>
+                        <button><Link to='/'>Maybe Later</Link></button>
+                    </div>
+                </div>
      );
 }
  

@@ -7,7 +7,7 @@ const HowItWorksCard = (props) => {
                    {props.number}
                 </div>
             </div>
-            <p>{props.txt1}<br />{props.txt2}</p>
+            <p>{props.txt1} {props.txt2}</p>
         </div>
      );
 }
