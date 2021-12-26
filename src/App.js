@@ -7,6 +7,7 @@ import Login from './Components/Login-Otp/Login';
 import Filter from './Components/Filter/Filter';
 import ChoosePlan from './Components/ChoosePlan/ChoosePlan';
 import SlideUpFilter from './Components/Filter/FilterOptionForMobile/SlideUpFilter';
+import PropertyDetails from './Components/PropertyDetails/PropertyDetails';
 function App() {
   return (  
     <Router>
@@ -17,6 +18,7 @@ function App() {
          <Route path="/filters" element={<Filter/>}/>
          <Route path="/choose-plan" element={<ChoosePlan/>}/>
          <Route path="/mobile-filter" element={<SlideUpFilter/>}/>
+         <Route path="/property-details" element={<PropertyDetails/>}/>
       </Routes>
       <Footer/>
     </Router> 

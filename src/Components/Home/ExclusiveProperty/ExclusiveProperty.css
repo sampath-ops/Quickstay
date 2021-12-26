@@ -6,7 +6,7 @@
     padding: 30px 15px;
     padding-top: 0;
 }
-.exclusive a {
+.exclusive > a {
     font-style: italic;
     font-weight: 600;
     font-size: 20px;

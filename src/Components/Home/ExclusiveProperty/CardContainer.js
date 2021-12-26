@@ -1,4 +1,5 @@
 import { Carousel } from 'react-responsive-carousel';
+import { Link } from 'react-router-dom';
 const CardContainer = (props) => {
     const classname = props.className;
 
@@ -18,7 +19,7 @@ const CardContainer = (props) => {
                     const personimg = require(`../../../WebsiteMaterial/${property.person}.png`);
                     return(
                         <div className="card-container" key={index}>
-                           {
+                         <Link to="/property-details">  {
                                carousel ?  
                                <Carousel showThumbs={false} showStatus={false} showArrows={true} showIndicators={false}>
                                     {
@@ -33,7 +34,7 @@ const CardContainer = (props) => {
                                     }
                                </Carousel> 
                                : <img src={img.default} alt="living-room" />
-                           }
+                           }</Link>
                             
                             <div className={`room-details ${details}`}>
                                 <span>{property.name}</span>
