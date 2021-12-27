@@ -46,7 +46,7 @@
     .accordion__button::before{
         position: absolute;
         right: 10px;
-        top: 24px;
+        top: 22px;
     }
     .accordion__panel{
         padding: 0 20px;

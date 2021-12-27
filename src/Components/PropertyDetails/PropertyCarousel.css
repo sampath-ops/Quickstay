@@ -1,0 +1,11 @@
+.property-carousle > .carousel .control-dots .dot{
+    width: 10px;
+    height: 10px;
+    background: #747474;
+    opacity: 0.6;
+    box-shadow: none;
+}
+.property-carousle > .carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover{
+    opacity: 1;
+    background: #A00500;
+}

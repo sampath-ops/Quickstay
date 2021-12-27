@@ -19,7 +19,7 @@ const CardContainer = (props) => {
                     const personimg = require(`../../../WebsiteMaterial/${property.person}.png`);
                     return(
                         <div className="card-container" key={index}>
-                         <Link to="/property-details">  {
+                          {
                                carousel ?  
                                <Carousel showThumbs={false} showStatus={false} showArrows={true} showIndicators={false}>
                                     {
@@ -33,16 +33,16 @@ const CardContainer = (props) => {
                                         })
                                     }
                                </Carousel> 
-                               : <img src={img.default} alt="living-room" />
-                           }</Link>
-                            
+                               : <Link to="/property-details"> <img src={img.default} alt="living-room" /></Link>
+                           }
+                           <Link to="/property-details" style={{textDecoration:'none',color:'black'}}>
                             <div className={`room-details ${details}`}>
                                 <span>{property.name}</span>
                                 <span>&#8377;{property.amount}</span>
                                 <span><span><i className="fas fa-map-marker-alt"></i>{property.location}</span></span>
                                 <span>{property.type}</span>
                                 <span><img src={personimg.default} alt={property.alter} /></span>
-                            </div>
+                            </div></Link> 
                         </div>
                     )
                 })

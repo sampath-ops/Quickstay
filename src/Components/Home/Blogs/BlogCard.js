@@ -25,7 +25,7 @@ const BlogCard = () => {
                     const img = require('../../../WebsiteMaterial/living-room.jpg');
                     return(
                         <div className="card-container" key={index}>
-                             <img src={img.default} alt="living-room" />
+                            <Link to="#"> <img src={img.default} alt="living-room" /></Link>
                                 <div className="blog-details">
                                      <p>{blog.text}</p>
                                      <hr />

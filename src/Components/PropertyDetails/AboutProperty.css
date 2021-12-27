@@ -1,4 +1,29 @@
 .about-property h2{
     font-weight: 600;
     font-size: 20px;
+    margin-top: 70px;
+    margin-bottom: 25px;
+}
+.about-property > p{
+    font-size: 14px;
+}
+.internal-details{
+    display: flex;
+    justify-content: space-between;
+}
+.internal-details{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+@media(max-width:1023px){
+    .about-property{
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+    .about-property h2{
+        margin-top: 45px;
+    }
 }
