@@ -1,6 +1,6 @@
 .property-details{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 3.5fr 3fr;
     padding: 50px;
 }
 .propertyAddContainer{
@@ -103,7 +103,20 @@
     display: none;
 }
 .details2{
-    padding-left: 40px;
+    position: relative;
+}
+.propertycontact{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    z-index: 10;
+}
+.float-rightpart{
+    position: fixed;
+    top: 0;
+    background: white;
+    z-index: 10;
+    box-sizing: border-box;
 }
 @media(max-width:1023px){
     .property-details{
@@ -150,5 +163,8 @@
         right: 5px;
         z-index: 10;
         margin: 0;
+    }
+    .float-rightpart{
+        position: relative;
     }
 }
