@@ -1,5 +1,5 @@
 import './FilterMobile.css';
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import SlideUpFilter from './SlideUpFilter';
 import {animated, useTransition} from 'react-spring';
 
@@ -21,9 +21,18 @@ const FilterOptionsForMobile = () => {
         setIsVisible(true);
     }
 
+    const [float, setFloat] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            setFloat(window.scrollY > 54);
+        }
+        window.addEventListener("scroll", handleScroll);
+        return ()=> window.removeEventListener("scroll", handleScroll);
+    });
+
     return ( 
         <div className="filter-mobile">
-            <div className="Filters">
+            <div className={`Filters ${float ? "float-filter-top": ""}`}>
                 <p onClick={showFilter}>FILTERS</p>
             </div>
             {

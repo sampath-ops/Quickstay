@@ -92,4 +92,13 @@
     .filter-mobile{
        display: block;
     }
+    .float-filter-top{
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: white;
+    }
 }

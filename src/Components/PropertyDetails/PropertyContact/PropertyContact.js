@@ -5,22 +5,13 @@ import ContactButton from './ContactButton';
 import React, { useEffect, useState } from 'react';
 const PropertyContact = () => {
 
-   // const [offset, setOffset] = useState(0);
-   // useEffect(() => {
-   //    window.onscroll = () => {
-   //       setOffset(window.pageYOffset)
-   //    }
-   // }, []);
-
    const [float, setFloat] = useState(false);
    useEffect(() => {
-     window.addEventListener("scroll", () => {
+      const handleScroll = () => {
          setFloat(window.scrollY > 132);
-     });
-//      return () => {
-//       // remove state when unmount
-//       setFloat(false);
-//   };
+     }
+     window.addEventListener("scroll",handleScroll);
+     return () => window.removeEventListener("scroll", handleScroll);
    }, []);
 
 
