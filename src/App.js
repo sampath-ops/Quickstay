@@ -8,7 +8,26 @@ import Filter from './Components/Filter/Filter';
 import ChoosePlan from './Components/ChoosePlan/ChoosePlan';
 import SlideUpFilter from './Components/Filter/FilterOptionForMobile/SlideUpFilter';
 import PropertyDetails from './Components/PropertyDetails/PropertyDetails';
+// import db from './firebase.config';
+// import React,{useState,useEffect} from 'react';
+
 function App() {
+
+  // const [property,setProperty]=useState([]);
+  // const fetchProperty = async ()=>{
+  //   const response = db.collection('properties');
+  //   const data = await response.get();
+   
+  //   data.docs.forEach(item=>{
+  //     setProperty([...property,item.data()]);
+  //     console.log(item.data());
+  //   })
+    
+  // }
+  // useEffect(()=>{
+  //   fetchProperty();
+  // },[])
+
   return (  
     <Router>
       <Routes>
