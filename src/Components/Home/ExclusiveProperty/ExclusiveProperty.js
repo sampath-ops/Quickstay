@@ -9,7 +9,7 @@ const ExclusiveProperty = () => {
         <div className="exclusive">
             <Description head={heading} para={description}/>
             <Card/>
-            <Link to="/filters">See all <i className="fas fa-chevron-right"></i></Link>
+            <div><Link to="/filters">See all <i className="fas fa-chevron-right"></i></Link></div>
         </div>
      );
 }

@@ -6,14 +6,16 @@
     padding: 30px 15px;
     padding-top: 0;
 }
-.exclusive > a {
+.exclusive > div:last-child{
+    grid-column: span 3;
+    justify-self: end;
+}
+.exclusive > div > a {
     font-style: italic;
     font-weight: 600;
     font-size: 20px;
     color: #A00500;
     text-decoration: none;
-    grid-column: span 3;
-    justify-self: end;
 }
 @media(max-width:1023px){
     .exclusive{

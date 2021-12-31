@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const FilterNavBar = () => {
     return ( 
         <div className='FilterNavBar'>
-            <img src={logo} alt="logo" />
+            <Link to="/"><img src={logo} alt="logo" /></Link>
            <div className="searchbar filter-searchbar">
                 <input type="text" placeholder="Search Locality..." />
                 <button className="search_icon"><i className="fas fa-search"></i></button>

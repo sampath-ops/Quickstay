@@ -5,6 +5,8 @@ import React from 'react';
 import logo from '../../WebsiteMaterial/Logo.png';
 import './NavBar.css';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 class NavBar extends React.Component {
     
@@ -89,7 +91,7 @@ class NavBar extends React.Component {
         <div>
           <div style={styles.container} className="custom-navbar">
             <div style={styles.logo} className="logo">
-              <img src={logo} alt="logo" />
+              <Link to="/"><img src={logo} alt="logo" /></Link>
             </div>
             <MenuButton  open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='black'/>
             <div className="desktop-menu">
