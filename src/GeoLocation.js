@@ -39,7 +39,7 @@ function success(pos) {
   console.log(`Longitude: ${crd.longitude}`);
   console.log(`More or less ${crd.accuracy} meters.`);
   const { latitude, longitude } = crd;
-  const range = getGeohashRange(11.642755911349438, 78.16196434142107, 0); // NEED TO USE USER LATLNG
+  const range = getGeohashRange(11.642755911349438, 78.16196434142107, 10); // NEED TO USE USER LATLNG
 
   db
     .collection("properties")
