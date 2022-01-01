@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from "react";
 import db from './firebase.config';
 import geohash from "ngeohash";
