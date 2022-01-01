@@ -9,6 +9,7 @@ import ChoosePlan from './Components/ChoosePlan/ChoosePlan';
 import SlideUpFilter from './Components/Filter/FilterOptionForMobile/SlideUpFilter';
 import PropertyDetails from './Components/PropertyDetails/PropertyDetails';
 import GeoLocation from './GeoLocation';
+import ScrollToTop from './ScrollToTop';
 // import db from './firebase.config';
 // import React,{useState,useEffect} from 'react';
 
@@ -32,6 +33,7 @@ function App() {
   return (  
     <Router>
       <GeoLocation/>
+      <ScrollToTop>
       <Routes>
          <Route exact path="/" element={<Home />}/>
          <Route path="/signup" element={<SignUp/>}/>
@@ -41,6 +43,7 @@ function App() {
          <Route path="/mobile-filter" element={<SlideUpFilter/>}/>
          <Route path="/property-details" element={<PropertyDetails/>}/>
       </Routes>
+      </ScrollToTop>
       <Footer/>
     </Router> 
    
