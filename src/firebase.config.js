@@ -1,5 +1,7 @@
+/* eslint-disable */
 import  firebase from "firebase/compat/app";
 import 'firebase/compat/firestore';
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -12,6 +14,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const db = firebase.firestore();
 export default db;

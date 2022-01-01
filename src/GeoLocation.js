@@ -40,15 +40,15 @@ function success(pos) {
   console.log(`Longitude: ${crd.longitude}`);
   console.log(`More or less ${crd.accuracy} meters.`);
   const { latitude, longitude } = crd;
-  const range = getGeohashRange(11.642755911349438, 78.16196434142107, 10); // NEED TO USE USER LATLNG
-
+  const range = getGeohashRange(25.622198992158612, 85.11519577716592, 7.45645); // NEED TO USE USER LATLNG
+  console.log(range.lower,range.upper);
   db
     .collection("properties")
-    .where("geohash", ">=", range.lower)
-    .where("geohash", "<=", range.upper)
+    .where("geolocation", ">=", range.lower)
+    .where("geolocation", "<=", range.upper)
     .onSnapshot(snapshot => {
       snapshot.docs.map(doc=>{
-        console.log(doc.data());
+        // console.log(doc.data());
       })
     })
 }
