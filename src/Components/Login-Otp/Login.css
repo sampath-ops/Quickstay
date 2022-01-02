@@ -91,6 +91,7 @@
 @media(max-width:1023px){
     .input-container input{
         width: 75%;
+        font-size: 16px;
     }
     .lottie-container{
         width: inherit;

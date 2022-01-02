@@ -49,7 +49,7 @@ class OtpInput extends React.Component {
 
           <input
             name="otp1"
-            type="text"
+            type="tel"
             autoComplete="off"
             className="otpInput"
             value={this.state.otp1}
@@ -60,7 +60,7 @@ class OtpInput extends React.Component {
           />
           <input
             name="otp2"
-            type="text"
+            type="tel"
             autoComplete="off"
             className="otpInput"
             value={this.state.otp2}
@@ -70,7 +70,7 @@ class OtpInput extends React.Component {
           />
           <input
             name="otp3"
-            type="text"
+            type="tel"
             autoComplete="off"
             className="otpInput"
             value={this.state.otp3}
@@ -80,7 +80,7 @@ class OtpInput extends React.Component {
           />
           <input
             name="otp4"
-            type="text"
+            type="tel"
             autoComplete="off"
             className="otpInput"
             value={this.state.otp4}
@@ -90,7 +90,7 @@ class OtpInput extends React.Component {
 
           <input
             name="otp5"
-            type="text"
+            type="tel"
             autoComplete="off"
             className="otpInput"
             value={this.state.otp5}
@@ -100,7 +100,7 @@ class OtpInput extends React.Component {
 
           <input
             name="otp6"
-            type="text"
+            type="tel"
             autoComplete="off"
             className="otpInput"
             value={this.state.otp6}

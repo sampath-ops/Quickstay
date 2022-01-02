@@ -129,7 +129,6 @@
     }
     .details1 > div:nth-child(2){
         display: block;
-        margin-top: 20px;
     }
     .details2{
         display: none;
@@ -140,15 +139,13 @@
     }
     .property-share-container{
         grid-template-columns: auto auto;
-        padding: 0 10px;
         margin-top: 25px;
     }
     .property-share-box{
         width: auto;
     }
     .propertyAddContainer{
-        padding: 0 10px;
-        margin-top: 25px;
+        column-gap: 0px;
     }
     .property-address > div{
         display: grid;
@@ -156,6 +153,7 @@
     }
     .property-address > div > p{
         font-size: 14px;
+        white-space: normal;
     }
     .contact-button-container{
         position: fixed;

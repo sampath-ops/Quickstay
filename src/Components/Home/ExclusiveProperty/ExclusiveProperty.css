@@ -21,6 +21,9 @@
     .exclusive{
         padding-top: 30px;
     }
+    .exclusive > div:last-child{
+       text-align: end;
+    }
     .exclusive,.card,.blogs{
         display: block;
     }
