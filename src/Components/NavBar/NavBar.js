@@ -56,7 +56,7 @@ class NavBar extends React.Component {
       const menu = [
         {
           route:'Home',
-          link:'/'
+          link:'/',
         },
         {
           route:'About',
@@ -72,19 +72,20 @@ class NavBar extends React.Component {
         },
         {
           route:'Login',
-          link:'/login'
+          link:'/login',
         },
-        {
-          route:'Signup',
-          link:'/signup'
-        },
+        
       ]
+
       const menuItems = menu.map((val,index)=>{
         return (
-          <MenuItem 
+          <MenuItem
             key={index} 
             delay={`${index * 0.1}s`}
-            onClick={()=>{this.handleLinkClick();}}>{val}</MenuItem>)
+            onClick={()=>{this.handleLinkClick();}}
+            >{val}
+
+          </MenuItem>)
       });
     
       return(

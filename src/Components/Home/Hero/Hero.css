@@ -1,5 +1,5 @@
 .hero-container{
-    padding: 160px 116px;
+    padding: 170px 116px 50px 116px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,13 +61,10 @@
     grid-template-columns: 1fr 4fr 1fr;;
     position: relative;
 }
-.searchbar select{
-    background: #E8E8E8;
-    font-family: 'Open Sans';
-    font-size: 16px;
-}
+
 .searchbar button{
     padding: 10px 40px;
+    width: 15vw;
     color: #FFF;
     border: none;
     font-size: 16px;
@@ -75,12 +72,9 @@
     font-weight: 600;
     background-color: #A00500;
 }
-.searchbar select{
-    padding: 10px;
-    border: none;
-}
 .searchbar input{
     padding: 10px 20px;
+    width: 56.4vw;
     border: none;
     font-family: 'Open Sans';
     font-style: italic;
