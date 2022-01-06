@@ -46,7 +46,7 @@
 }
 .filter-cards{
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 35px;
 }
 .filter-cards > .card-container:last-child{

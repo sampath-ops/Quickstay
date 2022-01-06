@@ -11,14 +11,14 @@ import Find from './FollowAndFind/Find';
 import Download from './Download/Download';
 import Locations from './PopularSearches/Locations/Location';
 import Main from '../NavBar/Main';
-const Home = () => {
+const Home = (props) => {
     return ( 
         <Main>
             <Hero/>
             <Offer/>
             <FavouriteStays/>
             <ReferEarn/>
-            <ExclusiveProperty/>
+            <ExclusiveProperty properties={props.properties}/>
             <WhyStay/>
             <Blogs/>
             <GetToKnow/>
