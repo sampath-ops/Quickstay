@@ -14,7 +14,7 @@ import Main from '../NavBar/Main';
 const Home = (props) => {
     return ( 
         <Main>
-            <Hero/>
+            <Hero searchedProperties={props.searchedProperties}/>
             <Offer/>
             <FavouriteStays/>
             <ReferEarn/>

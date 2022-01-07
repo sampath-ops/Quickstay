@@ -46,7 +46,6 @@ const ExclusiveProperty = () => {
     let ExclusiveProperties =[];
     if(propertydetails.length > 0){
         ExclusiveProperties = propertydetails.slice(0,3);
-        console.log(ExclusiveProperties)
     }
     
     return ( 

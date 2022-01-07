@@ -3,7 +3,7 @@ import HeroSearchBar from './HeroSearchBar';
 import './Hero.css';
 import heroImg from '../../../WebsiteMaterial/living-room.jpg';
 import SecondSearchbar from './SecondSearchbar';
-const Hero = () => {
+const Hero = (props) => {
     return ( 
         <div className="hero" style={{
             background:`url(${heroImg}) no-repeat center center fixed`,
@@ -13,7 +13,7 @@ const Hero = () => {
             <div className="hero-container">
                <div>
                     <HeroTitle/>
-                    <HeroSearchBar/>
+                    <HeroSearchBar searchedProperties={props.searchedProperties}/>
                     <SecondSearchbar/>
                </div>
             </div>
