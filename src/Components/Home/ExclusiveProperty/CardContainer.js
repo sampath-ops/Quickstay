@@ -2,7 +2,6 @@ import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
 const CardContainer = (props) => {
     const classname = props.className;
-
     let details ='';
     if( props.details){
         details =  props.details;
@@ -14,6 +13,7 @@ const CardContainer = (props) => {
         <div className={classname}>
             {
                 props.properties.map((property,index)=>{
+                    console.log(property)
                     const personimg = require(`../../../WebsiteMaterial/${property.propertyFor}.png`);
                     return(
                         <div className="card-container" key={index}>
@@ -30,13 +30,17 @@ const CardContainer = (props) => {
                                         })
                                     }
                                </Carousel> 
-                               : <Link to="/property-details"> <img src={property.images[1]} alt={property.furnishingStatus} /></Link>
+                               : <Link to="/property-details"> <img src={property.images[1]} alt={property.furnishingStatus} onClick={()=>{
+                                props.addPropDetailsHandler(property);
+                            }}/></Link>
                            }
                            <Link to="/property-details" style={{textDecoration:'none',color:'black'}}>
-                            <div className={`room-details ${details}`}>
-                                <span>{property.name}</span>
-                                <span>&#8377;{property.amount}</span>
-                                <span><span><i className="fas fa-map-marker-alt"></i>{property.location}</span></span>
+                            <div className={`room-details ${details}`} onClick={()=>{
+                                props.addPropDetailsHandler(property);
+                            }}>
+                                <span>{property.options[0].name}</span>
+                                <span>&#8377; {property.options[0].price}</span>
+                                <span><span><i className="fas fa-map-marker-alt"></i>{property.propertyFullAddress}</span></span>
                                 <span>{property.furnishingStatus}</span>
                                 <span><img src={personimg.default} alt={property.alter} /></span>
                             </div></Link> 

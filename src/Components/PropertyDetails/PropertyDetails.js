@@ -5,19 +5,36 @@ import Neighbourhood from "./Neighbourhood";
 import AboutProperty from "./AboutProperty";
 import PropertyCarousel from "./PropertyCarousel";
 import PropertyContact from "./PropertyContact/PropertyContact";
-const PropertyDetails = () => {
+const PropertyDetails = (props) => {
+
+    // const extract = (obj, ...keys) => {
+    //     const newObject = Object.assign({});
+    //     Object.keys(obj).forEach((key) => {
+    //        if(keys.includes(key)){
+    //           newObject[key] = obj[key];
+    //           delete obj[key];
+    //        };
+    //     });
+    //     return newObject;
+    //  };
+
+    console.log(props.propDetails)
+
+    const imagesarr = props.propDetails.images;
+    const facilities = props.propDetails.facilities;
+    const neighbourhoods = props.propDetails.nearByLocation
     return ( 
         <MainSub>
             <div className="property-details">
                 <div className="details1">
-                        <PropertyCarousel/>
-                        <PropertyContact/> 
-                        <Facilities/>
-                        <Neighbourhood/>
-                        <AboutProperty/>
+                        <PropertyCarousel images={imagesarr}/>
+                        <PropertyContact propDetails={props.propDetails}/> 
+                        <Facilities facilities={facilities}/>
+                        <Neighbourhood neighbourhoods={neighbourhoods}/>
+                        <AboutProperty propDetails={props.propDetails}/>
                 </div>
                 <div className="details2">
-                         <PropertyContact/>   
+                         <PropertyContact propDetails={props.propDetails}/>   
                 </div>
             </div>
             <Locations/>

@@ -20,13 +20,16 @@
     font-weight: 400;
     font-size: 16px;
     margin: 0;
-    white-space: nowrap;
 }
 .property-address > div{
     display: grid;
     grid-template-columns: 0fr 15fr;
     padding-bottom: 13px;
     column-gap: 5px;
+}
+.property-address > div> img{
+    width: 20px;
+    height: 20px;
 }
 .shar-fav{
     display: grid;
@@ -54,6 +57,10 @@
     border-radius: 5px;
     display: flex;
     width: 170px;
+}
+.property-share-box > img{
+    width: 50px;
+    height: 50px;
 }
 .share-text{
     align-self: center;

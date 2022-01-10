@@ -6,24 +6,13 @@ import { Link } from "react-router-dom";
 import db from '../../../firebase.config';
 import { useEffect,useState } from 'react';
 
-const ExclusiveProperty = () => {
+const ExclusiveProperty = (props) => {
 
     const heading = ["Quick Stay Exclusive","Properties"]
     const description = "We won't show you photos that are too good to be true. Find the best room for rent near you!";
 
     const [propertydetails,setPropertyDetails] = useState([]);
     const propertyarr = [];
-
-    const extract = (obj, ...keys) => {
-        const newObject = Object.assign({});
-        Object.keys(obj).forEach((key) => {
-           if(keys.includes(key)){
-              newObject[key] = obj[key];
-              delete obj[key];
-           };
-        });
-        return newObject;
-     };
 
     const fetchProperties = async()=>{
         const response = db.collection('properties');
@@ -32,7 +21,7 @@ const ExclusiveProperty = () => {
             if('images' in item.data()){
                 const images = item.data().images;
                 if(images.length > 0){
-                    propertyarr.push(extract(item.data(), 'furnishingStatus', 'options', 'images','orginalAddress','propertyFor'));
+                    propertyarr.push(item.data());
                 } 
             }       
         })
@@ -51,7 +40,7 @@ const ExclusiveProperty = () => {
     return ( 
         <div className="exclusive">
             <Description head={heading} para={description}/>
-            {ExclusiveProperties && <Card properties={ExclusiveProperties}/>}
+            {ExclusiveProperties && <Card properties={ExclusiveProperties} addPropDetailsHandler={props.addPropDetailsHandler}/>}
             <div><Link to="/filters">See all <i className="fas fa-chevron-right"></i></Link></div>
         </div>
      );

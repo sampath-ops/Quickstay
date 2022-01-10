@@ -18,7 +18,7 @@ const Home = (props) => {
             <Offer/>
             <FavouriteStays/>
             <ReferEarn/>
-            <ExclusiveProperty properties={props.properties}/>
+            <ExclusiveProperty properties={props.properties} addPropDetailsHandler={props.addPropDetailsHandler}/>
             <WhyStay/>
             <Blogs/>
             <GetToKnow/>

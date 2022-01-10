@@ -1,31 +1,10 @@
 import DetailsTemplate from "./DetailsTemplate";
 import './DetailsTemplate.css';
-const Neighbourhood = () => {
-    const neighbourhoods = [
-        {
-            path:"Neighbourhood/School",
-            name:"School"
-        },
-        {
-            path:"Neighbourhood/Gym",
-            name:"Gym"
-        },
-        {
-            path:"Neighbourhood/Airport",
-            name:"Airport"
-        },
-        {
-            path:"Neighbourhood/Train",
-            name:"Train"
-        },
-        {
-            path:"Neighbourhood/Park",
-            name:"Park"
-        }
-    ];
+const Neighbourhood = (props) => {
+    const neighbourhoods = props.neighbourhoods;
     const heading = "NEIGHBOURHOOD (Under 2 kms)";
     return ( 
-        <DetailsTemplate head={heading} elements={neighbourhoods}/>
+        <DetailsTemplate head={heading} facilitiesAndNeigh={neighbourhoods} />
      );
 }
  

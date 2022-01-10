@@ -14,7 +14,7 @@
     margin-right: 25px;
 }
 .filter-results-properties{
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 2fr 1fr;
     row-gap: 5px;
 }
 .filter-results-properties > span:nth-child(3),.filter-results-properties > span:nth-child(4){

@@ -32,7 +32,7 @@ const Card = (props) => {
     
     return ( 
         <div className="card">   
-                {props.properties.length > 0 && <CardContainer properties ={props.properties} className="row"/>}
+                {props.properties.length > 0 && <CardContainer properties ={props.properties} className="row" addPropDetailsHandler={props.addPropDetailsHandler}/>}
         </div>
      );
 }

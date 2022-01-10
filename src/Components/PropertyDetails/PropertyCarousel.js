@@ -1,16 +1,14 @@
 import { Carousel } from "react-responsive-carousel";
 import './PropertyCarousel.css';
-const PropertyCarousel = () => {
+const PropertyCarousel = (props) => {
 
-    const images = ["living-room","living-room","living-room"];
     return ( 
         <Carousel showThumbs={false} showStatus={false} showArrows={true} showIndicators={true} className="property-carousle">
         {
-            images.map((image,index) =>{
-            const imagename = require(`../../WebsiteMaterial/${image}.jpg`);
+            props.images.map((image,index) =>{
             return(
-                <div  key={index}>
-                        <img src={imagename.default} alt={image}/>
+                <div className="property-details-images" key={index}>
+                        <img src={image} alt="property-images"/>
                 </div>
                 )      
             })

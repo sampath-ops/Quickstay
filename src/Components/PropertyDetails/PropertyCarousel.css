@@ -9,3 +9,12 @@
     opacity: 1;
     background: #A00500;
 }
+.property-details-images > img{
+    height: 380px;
+    object-fit: cover;
+}
+@media (max-width:1023px){
+    .property-details-images > img{
+        height: 235px;
+    }
+}
