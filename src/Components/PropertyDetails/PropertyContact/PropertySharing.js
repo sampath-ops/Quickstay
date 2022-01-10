@@ -1,5 +1,5 @@
 const PropertySharing = ({sharing}) => {
-    const shares = ["Private","Private","Private","Private"]
+
     return ( 
         <div className='property-share-container'>
         {

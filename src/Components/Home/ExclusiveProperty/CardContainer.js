@@ -1,6 +1,8 @@
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
+
 const CardContainer = (props) => {
+
     const classname = props.className;
     let details ='';
     if( props.details){
@@ -13,8 +15,17 @@ const CardContainer = (props) => {
         <div className={classname}>
             {
                 props.properties.map((property,index)=>{
+
                     console.log(property)
+
+                    const addressarr = property.propertyFullAddress.split(",");
+                    let address = addressarr.slice(0,3);
+                    if(addressarr.length <= 4){
+                        address = addressarr.slice(0,2);
+                    }
+
                     const personimg = require(`../../../WebsiteMaterial/${property.propertyFor}.png`);
+
                     return(
                         <div className="card-container" key={index}>
                           {
@@ -40,7 +51,7 @@ const CardContainer = (props) => {
                             }}>
                                 <span>{property.options[0].name}</span>
                                 <span>&#8377; {property.options[0].price}</span>
-                                <span><span><i className="fas fa-map-marker-alt"></i>{property.propertyFullAddress}</span></span>
+                                <span><span><i className="fas fa-map-marker-alt"></i>{address.toString()}</span></span>
                                 <span>{property.furnishingStatus}</span>
                                 <span><img src={personimg.default} alt={property.alter} /></span>
                             </div></Link> 

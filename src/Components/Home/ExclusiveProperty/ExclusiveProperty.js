@@ -15,7 +15,8 @@ const ExclusiveProperty = (props) => {
     const propertyarr = [];
 
     const fetchProperties = async()=>{
-        const response = db.collection('properties');
+        const response = db.collection('properties').where("activeStatus","==",true)
+        .where("approved","==",true);
         const data = await response.get();
         data.docs.forEach(item =>{
             if('images' in item.data()){

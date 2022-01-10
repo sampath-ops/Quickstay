@@ -17,6 +17,8 @@ const GetGeoDocuments = async(latitude,longitude,distance)=>{
                 .collection("properties")
                 .where("geolocation", ">=",lower)
                 .where("geolocation", "<=",upper)
+                .where("activeStatus","==",true)
+                .where("approved","==",true)
     const docs = await response.get();
     return docs;
 }
