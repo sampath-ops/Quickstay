@@ -1,5 +1,6 @@
 import './App.css';
 import Home from './Components/Home/Home';
+import About from './Components/About/About';
 import SignUp from './Components/SignUp/SignUp';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
@@ -25,6 +26,7 @@ function App() {
          <Route path="/choose-plan" element={<ChoosePlan/>}/>
          <Route path="/mobile-filter" element={<SlideUpFilter/>}/>
          <Route path="/property-details" element={<PropertyDetails/>}/>
+         <Route path="/about" element={<About/>}/>
       </Routes>
       </ScrollToTop>
       <Footer/>
