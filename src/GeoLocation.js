@@ -59,26 +59,7 @@ function errors(err) {
 
 export default class GeoLocation extends Component {
   componentDidMount() {
-    if (navigator.geolocation) {
-      navigator.permissions
-        .query({ name: "geolocation" })
-        .then(function (result) {
-          if (result.state === "granted") {
-            navigator.geolocation.getCurrentPosition(success);
-          } 
-          else if (result.state === "prompt") {
-            navigator.geolocation.getCurrentPosition(success, errors, options);
-          } 
-          else if (result.state === "denied") {
-            //If denied then you have to show instructions to enable location
-          }
-          result.onchange = function () {
-            console.log(result.state);
-          };
-        });
-    } else {
-      alert("Sorry Not available!");
-    }
+    navigator.geolocation.getCurrentPosition(success, errors, options);
   }
 
   render() {
