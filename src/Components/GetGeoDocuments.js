@@ -1,6 +1,6 @@
 import db from '../firebase.config';
 import geohash from "ngeohash";
-const GetGeoDocuments =(latitude,longitude,distance)=>{
+const GetGeoDocuments = async(latitude,longitude,distance)=>{
     const lat = 0.0144927536231884; // degrees latitude per mile
     const lon = 0.0181818181818182; // degrees longitude per mile
   
@@ -13,10 +13,11 @@ const GetGeoDocuments =(latitude,longitude,distance)=>{
     const lower = geohash.encode(lowerLat, lowerLon);
     const upper = geohash.encode(upperLat, upperLon);
   
-    const docs = db
+    const response = db
                 .collection("properties")
                 .where("geolocation", ">=",lower)
                 .where("geolocation", "<=",upper)
+    const docs = await response.get();
     return docs;
 }
  

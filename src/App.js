@@ -16,17 +16,13 @@ import Properties from './Components/Properties/Properties';
 import { useState } from 'react';
 
 function App() {
+ 
+  let [documentSnap,setSnap] = useState();
 
-  // const [placesProperties,setPlacesProperties] =useState([]);
   const searchedPropertiesHandler = (docs)=>{
-    docs.onSnapshot(snapshot => {
-      snapshot.docs.map(doc=>{
-        console.log(doc.data());
-        // setPlacesProperties([...placesProperties,doc.data()]);
-      })
-    })
+    setSnap(docs);
   }
-
+    
   return (  
     <Router>
       <GeoLocation/>
@@ -40,10 +36,14 @@ function App() {
          <Route path="/mobile-filter" element={<SlideUpFilter/>}/>
          <Route path="/property-details" element={<PropertyDetails/>}/>
 <<<<<<< HEAD
+<<<<<<< HEAD
          <Route path="/about" element={<About/>}/>
 =======
          <Route path="/properties" element={<Properties />}/>
 >>>>>>> properties data is fetched from firebase based on searching result
+=======
+         <Route path="/properties" element={<Properties snap={documentSnap}/>}/>
+>>>>>>> get properties based on location implemented
       </Routes>
       </ScrollToTop>
       <Footer/>

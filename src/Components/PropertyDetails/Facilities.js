@@ -8,8 +8,8 @@ const Facilities = () => {
             name:"Wifi"
         },
         {
-            path:"Facilities/24*7 Water",
-            name:"24*7 Water"
+            path:"Facilities/Waterservice",
+            name:"Waterservice"
         },
         {
             path:"Facilities/Bed",
