@@ -26,8 +26,6 @@ function App() {
       })
     })
   }
-<<<<<<< HEAD
-=======
     
   const [propertyDetails,setPropertyDetails] = useState();
 
@@ -35,7 +33,6 @@ function App() {
     setPropertyDetails(property);
   }
   
->>>>>>> properties details from firebase integrated with frontend
 
   return (  
     <Router>
@@ -48,14 +45,11 @@ function App() {
          <Route path="/filters" element={<Filter/>}/>
          <Route path="/choose-plan" element={<ChoosePlan/>}/>
          <Route path="/mobile-filter" element={<SlideUpFilter/>}/>
-<<<<<<< HEAD
          <Route path="/property-details" element={<PropertyDetails/>}/>
          <Route path="/about" element={<About/>}/>
          <Route path="/properties" element={<Properties />}/>
-=======
          <Route path="/property-details" element={<PropertyDetails propDetails={propertyDetails}/>}/>
          <Route path="/properties" element={<Properties snap={documentSnap} addPropDetailsHandler={onAddPropertyDetails}/>}/>
->>>>>>> properties details from firebase integrated with frontend
       </Routes>
       </ScrollToTop>
       <Footer/>
