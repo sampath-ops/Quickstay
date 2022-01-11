@@ -17,14 +17,9 @@ import { useState } from 'react';
 
 function App() {
 
-  // const [placesProperties,setPlacesProperties] =useState([]);
+  const [documentSnap,setDocumentSnap] =useState([]);
   const searchedPropertiesHandler = (docs)=>{
-    docs.onSnapshot(snapshot => {
-      snapshot.docs.map(doc=>{
-        console.log(doc.data());
-        // setPlacesProperties([...placesProperties,doc.data()]);
-      })
-    })
+    setDocumentSnap(docs);
   }
     
   const [propertyDetails,setPropertyDetails] = useState();
@@ -45,9 +40,7 @@ function App() {
          <Route path="/filters" element={<Filter/>}/>
          <Route path="/choose-plan" element={<ChoosePlan/>}/>
          <Route path="/mobile-filter" element={<SlideUpFilter/>}/>
-         <Route path="/property-details" element={<PropertyDetails/>}/>
          <Route path="/about" element={<About/>}/>
-         <Route path="/properties" element={<Properties />}/>
          <Route path="/property-details" element={<PropertyDetails propDetails={propertyDetails}/>}/>
          <Route path="/properties" element={<Properties snap={documentSnap} addPropDetailsHandler={onAddPropertyDetails}/>}/>
       </Routes>
