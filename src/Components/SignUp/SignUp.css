@@ -132,7 +132,7 @@ input[type="radio"]:checked {
     }
     .radio-title,.radio-container{
         margin-left: 35px;
-        width: 82%;
+        width: 85%;
     }
     
 }
