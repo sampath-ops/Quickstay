@@ -12,6 +12,8 @@
 .filter-results{
     margin-left: 40px;
     margin-right: 25px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .filter-results-properties{
     grid-template-columns: 2fr 1fr;

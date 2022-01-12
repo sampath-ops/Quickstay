@@ -11,9 +11,13 @@ import Find from './FollowAndFind/Find';
 import Download from './Download/Download';
 import Locations from './PopularSearches/Locations/Location';
 import Main from '../NavBar/Main';
+import PopUpWrap from '../PopUp/PopUpWrap';
+
 const Home = (props) => {
+
     return ( 
         <Main>
+            <PopUpWrap/>
             <Hero searchedProperties={props.searchedProperties}/>
             <Offer/>
             <FavouriteStays/>

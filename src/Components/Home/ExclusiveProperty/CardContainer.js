@@ -16,12 +16,15 @@ const CardContainer = (props) => {
             {
                 props.properties.map((property,index)=>{
 
-                    console.log(property)
+                    console.log(property.propertyFullAddress)
 
                     const addressarr = property.propertyFullAddress.split(",");
-                    let address = addressarr.slice(0,3);
+                    let address = addressarr.slice(1,3);
                     if(addressarr.length <= 4){
                         address = addressarr.slice(0,2);
+                    }
+                    if(addressarr.length === 6){
+                        address = addressarr.slice(2,4);
                     }
 
                     const personimg = require(`../../../WebsiteMaterial/${property.propertyFor}.png`);
@@ -51,7 +54,7 @@ const CardContainer = (props) => {
                             }}>
                                 <span>{property.options[0].name}</span>
                                 <span>&#8377; {property.options[0].price}</span>
-                                <span><span><i className="fas fa-map-marker-alt"></i>{address.toString()}</span></span>
+                                <span><span><i className="fas fa-map-marker-alt"></i><p>{address.toString()}</p></span></span>
                                 <span>{property.furnishingStatus}</span>
                                 <span><img src={personimg.default} alt={property.alter} /></span>
                             </div></Link> 

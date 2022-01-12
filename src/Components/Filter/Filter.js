@@ -5,52 +5,23 @@ import CardContainer from "../Home/ExclusiveProperty/CardContainer";
 import './Filter.css';
 import FilterOptions from "./FilterOptions";
 import FilterOptionsForMobile from "./FilterOptionForMobile/FilterOptionsForMobile";
-import db from '../../firebase.config';
-import { useEffect,useState } from 'react';
-const Filter = () => {
 
-    const [propertydetails,setPropertyDetails] = useState([]);
+const Filter = (props) => {
+
     const propertyarr = [];
+    props.snap.forEach(item =>{
+        if('images' in item.data()){
+            const images = item.data().images;
+            if(images.length > 0){
+                propertyarr.push(item.data());
+            } 
+        }       
+    })
 
-    // const extract = (obj, ...keys) => {
-    //     const newObject = Object.assign({});
-    //     Object.keys(obj).forEach((key) => {
-    //        if(keys.includes(key)){
-    //           newObject[key] = obj[key];
-    //           delete obj[key];
-    //        };
-    //     });
-    //     return newObject;
-    //  };
-
-    const fetchProperties = async()=>{
-        const response = db.collection('properties').where("activeStatus","==",true)
-        .where("approved","==",true);
-        const data = await response.get();
-        data.docs.forEach(item =>{
-            if('images' in item.data()){
-                const images = item.data().images;
-                if(images.length > 0){
-                    propertyarr.push(item.data());
-                } 
-            }       
-        })
-        setPropertyDetails(propertyarr);
-    }
-
-    useEffect(()=>{
-        fetchProperties();
-    },[])
-
-    let properties =[];
-    if(propertydetails.length > 0){
-        properties = propertydetails.slice(0,12);
-    }
-  
 
     return ( 
         <MainSub>
-            {propertydetails &&
+            {propertyarr &&
             <div>
                 <div className="filters-section-container">
                     <div className="filter-section">
@@ -58,7 +29,7 @@ const Filter = () => {
                         <FilterOptionsForMobile/>
                     </div>
                     <div className="filter-results">
-                        <CardContainer properties={properties} className="filter-cards" details="filter-results-properties" carousel="true"></CardContainer>
+                        <CardContainer properties={propertyarr} className="filter-cards" addPropDetailsHandler={props.addPropDetailsHandler}details="filter-results-properties" carousel="true"></CardContainer>
                     </div>
                 </div>
                 <Locations/>

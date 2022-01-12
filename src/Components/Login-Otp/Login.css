@@ -21,6 +21,12 @@
     height: 50%;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+.lottie-container svg{
+    width: 70% !important;
+    height: 70% !important;
 }
 .input-container{
     text-align: center;

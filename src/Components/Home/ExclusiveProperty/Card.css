@@ -26,7 +26,7 @@
     border: 1px solid #e8e8e4;
     border-top: none;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas: 'name amount'
                           'location image'
@@ -44,30 +44,40 @@
 .room-details > span:nth-child(1){
     grid-area: name;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
 }
 .room-details > span:nth-child(2){
     grid-area: amount;
     font-weight: 600;
     justify-self: center;
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Open Sans';
     font-style: normal;
 }
 .room-details > span:nth-child(3){
     grid-area: location;
-    font-size: 16px;
 }
 .room-details > span:nth-child(4){
     grid-area: type;
-    font-size: 16px;
+    font-size: 14px;
 }
 .room-details > span:nth-child(5) {
     grid-area: image;
     justify-content: center;
 }
 .room-details span img{
-    width: 91%;
+    width: 100%;
+}
+
+.room-details > span:nth-child(3) > span > i,.room-details > span:nth-child(3) > span > p {
+        font-size: 14px;
+        margin: 0;
+        margin-right: 5px;
+        align-self: baseline;
+}
+
+.room-details > span:nth-child(3) > span > p {
+    margin:0;    
 }
 
 @media(max-width:1023px){

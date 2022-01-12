@@ -125,6 +125,7 @@
     background: white;
     z-index: 10;
     box-sizing: border-box;
+    width: 44.1%;
 }
 @media(max-width:1023px){
     .property-details{

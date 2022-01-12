@@ -46,7 +46,7 @@ function removeGoogleMapScript() {
 function handleScriptLoad(updateQuery, autoCompleteRef) {
     autoComplete = new window.google.maps.places.Autocomplete(
         autoCompleteRef.current,
-        { types: ["(regions)"], componentRestrictions: { country: "in" } }
+        { types: [], componentRestrictions: { country: "in" } }
     );
     autoComplete.setFields(["address_components", "formatted_address","geometry"]);
     autoComplete.addListener("place_changed", () =>
@@ -74,7 +74,7 @@ const SearchBar = (props) => {
         const lng = addressObject.geometry.location.lng();
         const docs = await GetGeoDocuments(lat,lng,7.45645);
         props.searchedProperties(docs);
-        navigate('/properties'); 
+        navigate('/filters'); 
     }
 
     useEffect(() => {
