@@ -22,7 +22,7 @@ const Home = (props) => {
             <Offer/>
             <FavouriteStays/>
             <ReferEarn/>
-            <ExclusiveProperty properties={props.properties} addPropDetailsHandler={props.addPropDetailsHandler}/>
+            <ExclusiveProperty addPropDetailsHandler={props.addPropDetailsHandler} getAllProperties={props.allProperties}/>
             <WhyStay/>
             <Blogs/>
             <GetToKnow/>

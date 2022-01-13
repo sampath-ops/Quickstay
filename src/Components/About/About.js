@@ -7,9 +7,9 @@ import BecomeFamily from './BecomeFamily';
 import MainSub from '../NavBar/MainSub';
 import Locations from '../Home/PopularSearches/Locations/Location'
 
-const About = () => {
+const About = (props) => {
     return (
-        <MainSub>
+        <MainSub searchedProperties={props.searchedProperties}>
             <Hero/>
             <AboutUs/>
             <OurDream/>

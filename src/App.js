@@ -15,18 +15,24 @@ import { useState } from 'react';
 
 function App() {
 
-  // GET DOCUMENTS ON SEARCH
-  const [documentSnap,setDocumentSnap] =useState([]);
-  const searchedPropertiesHandler = (docs)=>{
-    setDocumentSnap(docs);
-  }
-    
-  // PROPERTY DETAILS
-  const [propertyDetails,setPropertyDetails] = useState();
+    const [documentSnap,setDocumentSnap] =useState([]);
 
-  const onAddPropertyDetails = (property)=>{
-    setPropertyDetails(property);
-  }
+    //  GET ALL DOCUMENTS SNAP
+    const allProperties = (docs)=>{
+      setDocumentSnap(docs);
+    }
+
+    // GET DOCUMENTS ON SEARCH
+    const searchedPropertiesHandler = (docs)=>{
+      setDocumentSnap(docs);
+    }
+
+    // PROPERTY DETAILS
+    const [propertyDetails,setPropertyDetails] = useState();
+
+    const onAddPropertyDetails = (property)=>{
+      setPropertyDetails(property);
+    }
   
 
   return (  
@@ -34,13 +40,13 @@ function App() {
       <GeoLocation/>
       <ScrollToTop>
       <Routes>
-         <Route exact path="/" element={<Home searchedProperties={searchedPropertiesHandler} addPropDetailsHandler={onAddPropertyDetails}/>}/>
+         <Route exact path="/" element={<Home allProperties={allProperties} searchedProperties={searchedPropertiesHandler} addPropDetailsHandler={onAddPropertyDetails}/>}/>
          <Route path="/signup" element={<SignUp/>}/>
          <Route path="/login" element={<Login/>}/>
-         <Route path="/filters" element={<Filter snap={documentSnap} addPropDetailsHandler={onAddPropertyDetails}/>}/>
-         <Route path="/choose-plan" element={<ChoosePlan/>}/>
-         <Route path="/about" element={<About/>}/>
-         <Route path="/property-details" element={<PropertyDetails propDetails={propertyDetails} state={propertyDetails}/>}/>
+         <Route path="/filters" element={<Filter snap={documentSnap} addPropDetailsHandler={onAddPropertyDetails} searchedProperties={searchedPropertiesHandler}/>}/>
+         <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler}/>}/>
+         <Route path="/about" element={<About searchedProperties={searchedPropertiesHandler}/>}/>
+         <Route path="/property-details" element={<PropertyDetails propDetails={propertyDetails}   searchedProperties={searchedPropertiesHandler}/>}/>
       </Routes>
       </ScrollToTop>
       <Footer/>

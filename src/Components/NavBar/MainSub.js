@@ -1,9 +1,9 @@
 import FilterNavBar from "./FilterNavBar";
-
 const MainSub = (props) => {
+   
     return ( 
         <div>
-            <FilterNavBar/>
+            <FilterNavBar searchedProperties={props.searchedProperties}/>
             {props.children}
         </div>
      );

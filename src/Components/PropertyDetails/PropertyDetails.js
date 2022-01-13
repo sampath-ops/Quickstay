@@ -24,7 +24,7 @@ const PropertyDetails = (props) => {
     const facilities = props.propDetails.facilities;
     const neighbourhoods = props.propDetails.nearByLocation
     return ( 
-        <MainSub>
+        <MainSub  searchedProperties={props.searchedProperties}>
             <div className="property-details">
                 <div className="details1">
                         <PropertyCarousel images={imagesarr}/>

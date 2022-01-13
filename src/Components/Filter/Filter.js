@@ -5,10 +5,12 @@ import CardContainer from "../Home/ExclusiveProperty/CardContainer";
 import './Filter.css';
 import FilterOptions from "./FilterOptions";
 import FilterOptionsForMobile from "./FilterOptionForMobile/FilterOptionsForMobile";
+import { useState } from "react";
 
 const Filter = (props) => {
 
     const propertyarr = [];
+   
     props.snap.forEach(item =>{
         if('images' in item.data()){
             const images = item.data().images;
@@ -18,9 +20,8 @@ const Filter = (props) => {
         }       
     })
 
-
     return ( 
-        <MainSub>
+        <MainSub searchedProperties={props.searchedProperties}>
             {propertyarr &&
             <div>
                 <div className="filters-section-container">
