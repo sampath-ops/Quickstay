@@ -12,11 +12,12 @@
     justify-self: end;
     align-self: center;
 }
-.access-methods > a{
+.access-methods > a,.access-methods > span{
     font-family: 'Open Sans';
     font-style: italic;
     font-weight: 600;
     font-size: 14px;
     text-decoration: none;
     color: #000000;
+    cursor: pointer;
 }

@@ -1,15 +1,8 @@
-import { useState } from 'react';
 import Popup from './Popup';
 import Signin from '../SignUp/SignUp';
-const PopUpWrap = () => {
+const PopUpWrap = (props) => {
 
-    const [isOpen, setIsOpen] = useState(true);
- 
-    const togglePopup = () => {
-        setIsOpen(!isOpen);
-    }
-    
-    if(isOpen){
+    if(props.isOpen){
         document.body.classList.add('noscroll');
     }
     else{
@@ -18,9 +11,9 @@ const PopUpWrap = () => {
 
     return ( 
        <>
-        {isOpen && <Popup
+        {props.isOpen && <Popup
         content={<Signin/>}
-        handleClose={togglePopup}
+        handleClose={props.togglePopup}
         />}
        </>
      );

@@ -12,12 +12,19 @@ import Download from './Download/Download';
 import Locations from './PopularSearches/Locations/Location';
 import Main from '../NavBar/Main';
 import PopUpWrap from '../PopUp/PopUpWrap';
+import { useState } from 'react';
 
 const Home = (props) => {
 
+    const [isOpen, setIsOpen] = useState(true);
+    
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    }
+
     return ( 
         <Main>
-            <PopUpWrap/>
+            <PopUpWrap isOpen={isOpen} togglePopup={togglePopup}/>
             <Hero searchedProperties={props.searchedProperties}/>
             <Offer/>
             <FavouriteStays/>

@@ -9,7 +9,7 @@ const FilterNavBar = (props) => {
            <SearchBar searchedProperties={props.searchedProperties}></SearchBar>
            <div className="access-methods">
                <Link to="/login">Login</Link>/ 
-               <Link to="/signup">Signup</Link>
+               <span onClick={props.openSignUp}>Signup</span>
            </div>
         </div>
      );
