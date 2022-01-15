@@ -1,5 +1,6 @@
-import './KnowLittle.css';
-const KnowLittle = () => {
+import Favourite from './Favourite';
+
+const KnowLittle = (props) => {
     const images = [
         {
             name:'Music Lover',
@@ -39,22 +40,15 @@ const KnowLittle = () => {
         }
 
     ]
+
     return ( 
         <div className="know-little">
             <p>Let’s get to know you a little!</p>
             <div className="favourites_of_users">
                 {
-                    images.map((img,index)=>{
-                        const imagename = require(`../../WebsiteMaterial/SignUpImages/${img.name}.png`);
-                        return(
-                            <div key={index}>
-                                <div className='habits'>
-                                    <img src={imagename.default} alt={img} />
-                                    <span>{img.text}</span>
-                                </div>
-                            </div>
-                        )
-                    })
+                    images.map((img,index)=>(
+                        <Favourite img={img} key={index} index={index} getFav={props.getInterest}/>
+                    ))
                 }
             </div>
         </div>

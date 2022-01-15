@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { Component } from "react";
-import db from './firebase.config';
+import {db} from './firebase.config';
 import geohash from "ngeohash";
 // Calculate the upper and lower boundary geohashes for
 // a given latitude, longitude, and distance in miles

@@ -21,7 +21,7 @@ const Filter = (props) => {
     })
 
     return ( 
-        <MainSub searchedProperties={props.searchedProperties}>
+        <MainSub searchedProperties={props.searchedProperties} user={props.user}>
             {propertyarr &&
             <div>
                 <div className="filters-section-container">

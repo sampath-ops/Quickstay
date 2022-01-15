@@ -1,4 +1,4 @@
-import db from '../firebase.config';
+import {db} from '../firebase.config';
 import geohash from "ngeohash";
 const GetGeoDocuments = async(latitude,longitude,distance)=>{
     const lat = 0.0144927536231884; // degrees latitude per mile

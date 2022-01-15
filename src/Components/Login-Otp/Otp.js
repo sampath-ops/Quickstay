@@ -1,10 +1,8 @@
 import lottie from 'lottie-web';
 import { useEffect, useRef} from "react";
-
-import { Link } from 'react-router-dom';
 import OtpInput from './OtpInput';
 
-const Otp = () => {
+const Otp = (props) => {
 
     const lottieContainer = useRef(null);
 
@@ -18,9 +16,6 @@ const Otp = () => {
         })
     },[])
 
-    const otpFormSubmitHandler = (event)=>{
-        event.preventDefault();       
-    }
 
     return ( 
         <div className="login">
@@ -35,20 +30,13 @@ const Otp = () => {
                 </div>
                 <div className="input-container">
                     <p>Verification</p>
-                    <p>Enter the 6 digit code sent to <br />+919876543210</p>
-                    {/* <div className="otp-container">
-                        <input type="number" />
-                        <input type="number" />
-                        <input type="number" />
-                        <input type="number" />
-                        <input type="number" />
-                        <input type="number" />
-                    </div> */}
-                    <OtpInput submitHandler={otpFormSubmitHandler}/>
+                    <p>Enter the 6 digit code sent to <br />+91 {props.userNumber}</p>
+    
+                    <OtpInput submitHandler={props.onOtpSubmit}/>
                    
                     <div className="edit-method">
-                        <Link to="#">Change Number</Link>
-                        <Link to="#">Resend OTP</Link>
+                        <span >Change Number</span>
+                        <span >Resend OTP</span>
                     </div>
                 </div>
         </div>

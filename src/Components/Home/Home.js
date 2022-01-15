@@ -13,18 +13,45 @@ import Locations from './PopularSearches/Locations/Location';
 import Main from '../NavBar/Main';
 import PopUpWrap from '../PopUp/PopUpWrap';
 import { useState } from 'react';
+import { db } from '../../firebase.config';
+import { doc, getDoc } from "firebase/firestore";
 
 const Home = (props) => {
 
-    const [isOpen, setIsOpen] = useState(true);
-    
+    const [isOpen, setIsOpen] = useState();
+    const [show,setShow] = useState(true);
+
+    const closeForm = ()=>{
+        setIsOpen(false);
+    }
+
     const togglePopup = () => {
         setIsOpen(!isOpen);
     }
 
+    //CHECK DOCUMENT EXIST WITH UID IN USERS COLLECTION
+    const checkUserProfile = async(uid)=>{
+        const docRef = doc(db, "users", uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            console.log("Document data:", docSnap.data());
+        } else {
+            console.log("No such document!");
+            if(!isOpen){
+                setIsOpen(true);
+                setShow(false);
+            }
+        }
+    }
+
+    if(props.user && show){
+        checkUserProfile(props.user.id);
+    }
+
     return ( 
         <Main>
-            <PopUpWrap isOpen={isOpen} togglePopup={togglePopup}/>
+            <PopUpWrap isOpen={isOpen} togglePopup={togglePopup} user={props.user} closeForm={closeForm}/>
             <Hero searchedProperties={props.searchedProperties}/>
             <Offer/>
             <FavouriteStays/>

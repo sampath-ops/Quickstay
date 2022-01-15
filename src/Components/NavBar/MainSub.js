@@ -4,6 +4,10 @@ import { useState } from "react";
 const MainSub = (props) => {
    
     const [isOpen, setIsOpen] = useState(false);
+
+    const closeForm = ()=>{
+        setIsOpen(false);
+    }
     
     const togglePopup = () => {
         setIsOpen(!isOpen);
@@ -15,7 +19,7 @@ const MainSub = (props) => {
 
     return ( 
         <div>
-            <PopUpWrap isOpen={isOpen} togglePopup={togglePopup} />
+            <PopUpWrap isOpen={isOpen} togglePopup={togglePopup} user={props.user} closeForm={closeForm}/>
             <FilterNavBar searchedProperties={props.searchedProperties} openSignUp={openSignUp}/>
             {props.children} 
         </div>

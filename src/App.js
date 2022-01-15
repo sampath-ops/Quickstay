@@ -2,7 +2,6 @@
 import './App.css';
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
-import SignUp from './Components/SignUp/SignUp';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
 import Login from './Components/Login-Otp/Login';
@@ -15,7 +14,8 @@ import { useState } from 'react';
 
 function App() {
 
-    const [documentSnap,setDocumentSnap] =useState([]);
+    const [documentSnap,setDocumentSnap] = useState([]);
+    const [user,setUser] = useState();
 
     //  GET ALL DOCUMENTS SNAP
     const allProperties = (docs)=>{
@@ -34,19 +34,26 @@ function App() {
       setPropertyDetails(property);
     }
   
+    //GET USERID ON LOGIN
+    const getUserIdHandler = (userDoc)=>{
+      setUser({
+        id: userDoc.uid,
+        phn: userDoc.phoneNumber
+      });
+    }
+
 
   return (  
     <Router>
-      <GeoLocation/>
+      {/* <GeoLocation/> */}
       <ScrollToTop>
       <Routes>
-         <Route exact path="/" element={<Home allProperties={allProperties} searchedProperties={searchedPropertiesHandler} addPropDetailsHandler={onAddPropertyDetails}/>}/>
-         <Route path="/signup" element={<SignUp/>}/>
-         <Route path="/login" element={<Login/>}/>
-         <Route path="/filters" element={<Filter snap={documentSnap} addPropDetailsHandler={onAddPropertyDetails} searchedProperties={searchedPropertiesHandler}/>}/>
-         <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler}/>}/>
-         <Route path="/about" element={<About searchedProperties={searchedPropertiesHandler}/>}/>
-         <Route path="/property-details" element={<PropertyDetails propDetails={propertyDetails}   searchedProperties={searchedPropertiesHandler}/>}/>
+         <Route exact path="/" element={<Home user={user} allProperties={allProperties} searchedProperties={searchedPropertiesHandler} addPropDetailsHandler={onAddPropertyDetails}/>}/>
+         <Route path="/login" element={<Login getUserId={getUserIdHandler}/>}/>
+         <Route path="/filters" element={<Filter snap={documentSnap} addPropDetailsHandler={onAddPropertyDetails} searchedProperties={searchedPropertiesHandler} user={user}/>}/>
+         <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler} user={user}/>}/>
+         <Route path="/about" element={<About searchedProperties={searchedPropertiesHandler} user={user}/>}/>
+         <Route path="/property-details" element={<PropertyDetails propDetails={propertyDetails}   searchedProperties={searchedPropertiesHandler}/>} user={user}/>
       </Routes>
       </ScrollToTop>
       <Footer/>

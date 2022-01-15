@@ -33,8 +33,11 @@
 .habits span{
     font-size: 12px;
     padding-top: 5px;
-
 }
+.selected {
+    background-color: black;
+    color: #fff;
+  }
 @media(max-width:1023px){
     .know-little{
         border: none;

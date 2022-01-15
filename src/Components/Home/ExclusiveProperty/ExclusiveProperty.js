@@ -3,7 +3,7 @@ import Card from "./Card";
 import Description from "../Description";
 import './ExclusiveProperty.css';
 import { Link } from "react-router-dom";
-import db from '../../../firebase.config';
+import {db} from '../../../firebase.config';
 import { useEffect,useState } from 'react';
 
 const ExclusiveProperty = (props) => {

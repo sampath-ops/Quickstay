@@ -12,7 +12,7 @@ const PopUpWrap = (props) => {
     return ( 
        <>
         {props.isOpen && <Popup
-        content={<Signin/>}
+        content={<Signin user={props.user} closeForm={props.closeForm}/>}
         handleClose={props.togglePopup}
         />}
        </>
