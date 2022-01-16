@@ -36,8 +36,8 @@ const FilterOptionsForMobile = (props) => {
         <div className="filter-mobile">
             <div className={`Filters ${float ? "float-filter-top": ""}`}>
                 <div className="selectedFilters">
-                    {selectedFilters.map((selectedFilter)=>(
-                        <div>{selectedFilter}</div>
+                    {selectedFilters.map((selectedFilter,index)=>(
+                        <div key={index}>{selectedFilter}</div>
                     ))}
                 </div>
                 <p onClick={showFilter}>FILTERS</p>

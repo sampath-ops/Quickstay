@@ -16,14 +16,34 @@ const Login = (props) => {
 
     //CHANGE NUMBER
     const toggle = ()=>{
-        setIsRecievedOtp(!isRecievedOtp)
+        setIsRecievedOtp(!isRecievedOtp);
     }
 
     //RESEND OTP
-    const resendOtpHandler = (event)=>{
-        window.recaptchaVerifier.clear()
-        loginFormSubmitHandler(event);
+    const resendOtpHandler = ()=>{
+       sendOtp();
     }
+
+    //SEND OTP 
+    const sendOtp = ()=>{
+          // send otp
+          const phoneNumber = "+91" + enteredNumber;
+          const appVerifier = window.recaptchaVerifier;
+          signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+          .then((confirmationResult) => {
+            // SMS sent. Prompt user to type the code from the message, then sign the
+            // user in with confirmationResult.confirm(code).
+            window.confirmationResult = confirmationResult;
+            //show otp component
+            setIsRecievedOtp(true);
+          
+          }).catch((error) => {
+            // Error; SMS not sent
+            console.log(error)
+            console.log("otp is not sent")
+          });
+    }
+
 
     // MOBILE INPUT CHANGE HANDLER
     const mobileChangeHandler = (event)=>{
@@ -46,6 +66,7 @@ const Login = (props) => {
     },[])
 
     const auth = getAuth(app);
+
     const configureRecaptcha = ()=>{
         window.recaptchaVerifier = new RecaptchaVerifier('sign-in-button', {
             'size': 'invisible',
@@ -67,26 +88,13 @@ const Login = (props) => {
             return;
         }
 
-        const phoneNumber = "+91" + enteredNumber;
-
-        // solve recaptcha
-        configureRecaptcha();
+       if(!window.recaptchaVerifier){
+            // solve recaptcha
+             configureRecaptcha();
+       }
 
         // send otp
-        const appVerifier = window.recaptchaVerifier;
-        signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-        .then((confirmationResult) => {
-          // SMS sent. Prompt user to type the code from the message, then sign the
-          // user in with confirmationResult.confirm(code).
-          window.confirmationResult = confirmationResult;
-          //show otp component
-          setIsRecievedOtp(true);
-        
-        }).catch((error) => {
-          // Error; SMS not sent
-          console.log(error)
-          console.log("otp is not sent")
-        });
+        sendOtp();
         
     }
 
@@ -101,6 +109,7 @@ const Login = (props) => {
             // ...
           }).catch((error) => {
             // User couldn't sign in (bad verification code?)
+            alert("invalid otp");
           });
     }
 

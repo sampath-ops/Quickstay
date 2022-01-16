@@ -35,8 +35,8 @@ const Otp = (props) => {
                     <OtpInput submitHandler={props.onOtpSubmit}/>
                     <div className="edit-method">
                         <span onClick={props.handleClick}>Change Number</span>
-                        <span onClick={(event)=>{
-                            props.resendOtp(event)
+                        <span onClick={()=>{
+                            props.resendOtp()
                         }}>Resend OTP</span>
                     </div>
                 </div>
