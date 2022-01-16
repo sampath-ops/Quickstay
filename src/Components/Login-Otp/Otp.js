@@ -33,10 +33,11 @@ const Otp = (props) => {
                     <p>Enter the 6 digit code sent to <br />+91 {props.userNumber}</p>
     
                     <OtpInput submitHandler={props.onOtpSubmit}/>
-                   
                     <div className="edit-method">
-                        <span >Change Number</span>
-                        <span >Resend OTP</span>
+                        <span onClick={props.handleClick}>Change Number</span>
+                        <span onClick={(event)=>{
+                            props.resendOtp(event)
+                        }}>Resend OTP</span>
                     </div>
                 </div>
         </div>

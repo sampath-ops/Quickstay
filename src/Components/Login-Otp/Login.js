@@ -14,6 +14,17 @@ const Login = (props) => {
     const [isRecievedOtp,setIsRecievedOtp] = useState(false);
     const navigate = useNavigate();
 
+    //CHANGE NUMBER
+    const toggle = ()=>{
+        setIsRecievedOtp(!isRecievedOtp)
+    }
+
+    //RESEND OTP
+    const resendOtpHandler = (event)=>{
+        window.recaptchaVerifier.clear()
+        loginFormSubmitHandler(event);
+    }
+
     // MOBILE INPUT CHANGE HANDLER
     const mobileChangeHandler = (event)=>{
         if(enteredNumber.trim().length > 0){
@@ -40,6 +51,7 @@ const Login = (props) => {
             'size': 'invisible',
             'callback': () => {
               // reCAPTCHA solved, allow signInWithPhoneNumber.
+              console.log("recaptcha solved")
               loginFormSubmitHandler();
             }
           }, auth);
@@ -72,7 +84,7 @@ const Login = (props) => {
         
         }).catch((error) => {
           // Error; SMS not sent
-          window.grecaptcha.reset(window.recaptchaWidgetId);
+          console.log(error)
           console.log("otp is not sent")
         });
         
@@ -94,7 +106,7 @@ const Login = (props) => {
 
     return ( 
         <Main>
-            {isRecievedOtp ? <OTP onOtpSubmit={onOtpSubmitHandler} userNumber={enteredNumber}/> :
+            {isRecievedOtp ? <OTP onOtpSubmit={onOtpSubmitHandler} userNumber={enteredNumber} handleClick={toggle} resendOtp={resendOtpHandler}/> :
             <form className="login"  onSubmit={loginFormSubmitHandler}>
                 <div className="form-container">
                     <div className="head">
@@ -108,12 +120,12 @@ const Login = (props) => {
                         <p>Login</p>
                         <p>Enter your mobile number to receive a verification code.</p>
                         <input name="mobile" type="tel" placeholder="Mobile Number" value={enteredNumber} onChange={mobileChangeHandler} />
-                        <div id="sign-in-button"></div>
                         <Button type='submit' text='Send OTP'/>
                     </div>
                 </div>
-            </form>} 
-        
+            </form>
+            } 
+            <div id="sign-in-button"></div>
         </Main>
         
      );

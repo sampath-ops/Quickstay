@@ -3,7 +3,7 @@ import {useState,useEffect} from 'react';
 import SlideUpFilter from './SlideUpFilter';
 import {animated, useTransition} from 'react-spring';
 
-const FilterOptionsForMobile = () => {
+const FilterOptionsForMobile = (props) => {
     const [isVisible,setIsVisible] = useState(false);
     const transition = useTransition(isVisible,{
         from:{ x:0, y:800, opacity:0 },
@@ -30,14 +30,21 @@ const FilterOptionsForMobile = () => {
         return ()=> window.removeEventListener("scroll", handleScroll);
     });
 
+    const selectedFilters = ["Male","IndependentRooms","LowToHigh","Fully-Furnished"]
+
     return ( 
         <div className="filter-mobile">
             <div className={`Filters ${float ? "float-filter-top": ""}`}>
+                <div className="selectedFilters">
+                    {selectedFilters.map((selectedFilter)=>(
+                        <div>{selectedFilter}</div>
+                    ))}
+                </div>
                 <p onClick={showFilter}>FILTERS</p>
             </div>
             {
                 transition((style,item)=>
-                        item ? <animated.div style={style} className="slideupfilterContainer"><SlideUpFilter closeFilter={hideFilter}/></animated.div> : ''
+                        item ? <animated.div style={style} className="slideupfilterContainer"><SlideUpFilter closeFilter={hideFilter} getFilters={props.getFilters}/></animated.div> : ''
                 )
             }
         </div>

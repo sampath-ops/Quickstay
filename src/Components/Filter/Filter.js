@@ -9,8 +9,23 @@ import { useState } from "react";
 
 const Filter = (props) => {
 
-    const propertyarr = [];
-   
+    const [sort,setSort] = useState("");
+
+    // sort properties
+    const setSortHandler = (sortValue)=>{
+        setSort(sortValue);
+    }
+
+    let propertyarr = [];
+    let [filters,setFilters] = useState({})
+
+    // set filter values
+    const getFiltersHandler = (choosedFilters)=>{
+        setFilters({...filters,...choosedFilters});
+    }
+    console.log(filters)
+
+    // get documents from snap
     props.snap.forEach(item =>{
         if('images' in item.data()){
             const images = item.data().images;
@@ -20,14 +35,32 @@ const Filter = (props) => {
         }       
     })
 
+    propertyarr = propertyarr.filter((item)=>{
+        for(var key in filters){
+            if (item[key] === undefined || item[key] != filters[key])
+              return false;
+        }
+            return true;
+    });
+
+    // Ascending to Descending, Descending to Ascending
+    if(sort === "LTH"){
+        propertyarr.sort(function(a, b) {
+            return parseFloat(a.options[0].price) - parseFloat(b.options[0].price);
+        });
+    }
+    else{
+        propertyarr.sort((a, b) => parseFloat(b.options[0].price) - parseFloat(a.options[0].price));
+    }
+
     return ( 
         <MainSub searchedProperties={props.searchedProperties} user={props.user}>
             {propertyarr &&
             <div>
                 <div className="filters-section-container">
                     <div className="filter-section">
-                        <FilterOptions/>
-                        <FilterOptionsForMobile/>
+                        <FilterOptions getFilters={getFiltersHandler} sortProperties={setSortHandler}/>
+                        <FilterOptionsForMobile getFilters={getFiltersHandler}/>
                     </div>
                     <div className="filter-results">
                         <CardContainer properties={propertyarr} className="filter-cards" addPropDetailsHandler={props.addPropDetailsHandler}details="filter-results-properties" carousel="true"></CardContainer>

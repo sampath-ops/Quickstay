@@ -11,7 +11,7 @@ const SideUpFilter = (props) => {
                <button>clear All</button>
             </div>
             <div className="mobile-filter-options">
-                <AllOptions/>
+                <AllOptions getFilters={props.getFilters}/>
             </div>
             <div className="apply-cancle">
                 <button>Cancle</button>

@@ -137,6 +137,7 @@
     }
     .details1 > div:nth-child(2){
         display: block;
+        width: auto;
     }
     .details2{
         display: none;
