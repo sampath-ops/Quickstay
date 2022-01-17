@@ -19,7 +19,7 @@ const Favourite = ({img,index,getFav}) => {
 
     return(
         <div key={index} className={`${color}`} onClick={()=>{
-            handleClick("selected",img.text);
+            handleClick("interest-selected",img.text);
         }}>
             <div className='habits'>
                 <img src={imagename.default} alt={img} />

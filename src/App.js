@@ -45,7 +45,7 @@ function App() {
 
   return (  
     <Router>
-      {/* <GeoLocation/> */}
+      <GeoLocation/>
       <ScrollToTop>
       <Routes>
          <Route exact path="/" element={<Home user={user} allProperties={allProperties} searchedProperties={searchedPropertiesHandler} addPropDetailsHandler={onAddPropertyDetails}/>}/>

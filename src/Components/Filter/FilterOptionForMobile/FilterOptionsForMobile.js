@@ -24,13 +24,17 @@ const FilterOptionsForMobile = (props) => {
     const [float, setFloat] = useState(false);
     useEffect(() => {
         const handleScroll = () => {
-            setFloat(window.scrollY > 54);
+            setFloat(window.scrollY > 110);
         }
         window.addEventListener("scroll", handleScroll);
         return ()=> window.removeEventListener("scroll", handleScroll);
     });
 
-    const selectedFilters = ["Male","IndependentRooms","LowToHigh","Fully-Furnished"]
+    const selectedFilters = Object.keys(props.filters)
+    .map(function(key) {
+        return props.filters[key];
+    });
+    // const selectedFilters = ["Male","IndependentRooms","LowToHigh","Fully-Furnished"]
 
     return ( 
         <div className="filter-mobile">
@@ -42,11 +46,11 @@ const FilterOptionsForMobile = (props) => {
                 </div>
                 <p onClick={showFilter}>FILTERS</p>
             </div>
-            {
-                transition((style,item)=>
-                        item ? <animated.div style={style} className="slideupfilterContainer"><SlideUpFilter closeFilter={hideFilter} getFilters={props.getFilters}/></animated.div> : ''
-                )
-            }
+            
+            {setIsVisible ? transition((style,item)=>
+                    item ? <animated.div style={style} className="slideupfilterContainer"><SlideUpFilter closeFilter={hideFilter} getFilters={props.getFilters} sortProperties={props.sortProperties} clearFilters={props.clearFilters} filters={props.filters} sort={props.sort}/></animated.div> : ''
+            ) : "" }
+            
         </div>
      );
 }
