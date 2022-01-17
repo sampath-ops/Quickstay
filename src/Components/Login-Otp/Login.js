@@ -12,10 +12,12 @@ const Login = (props) => {
     const [enteredNumber,setEnteredNumber] = useState('');
     const [isValid,setIsValid] = useState(true);
     const [isRecievedOtp,setIsRecievedOtp] = useState(false);
+    const [showLottie,setShowLottie] = useState(true);
     const navigate = useNavigate();
 
     //CHANGE NUMBER
     const toggle = ()=>{
+        setShowLottie(true);
         setIsRecievedOtp(!isRecievedOtp);
     }
 
@@ -34,6 +36,7 @@ const Login = (props) => {
             // SMS sent. Prompt user to type the code from the message, then sign the
             // user in with confirmationResult.confirm(code).
             window.confirmationResult = confirmationResult;
+            setShowLottie(false);
             //show otp component
             setIsRecievedOtp(true);
           
@@ -56,14 +59,18 @@ const Login = (props) => {
     const lottieContainer = useRef(null);
 
     useEffect(()=>{
-        lottie.loadAnimation({
-            container:lottieContainer.current,
-            renderer:'svg',
-            loop:true,
-            autoplay:true,
-            animationData:require('../../WebsiteMaterial/QuickStayAnimated.json')
-        })
-    },[])
+     
+        if(showLottie){
+            lottie.loadAnimation({
+                container:lottieContainer.current,
+                renderer:'svg',
+                loop:true,
+                autoplay:true,
+                animationData:require('../../WebsiteMaterial/QuickStayAnimated.json')
+            })
+        }
+
+    },[showLottie])
 
     const auth = getAuth(app);
 

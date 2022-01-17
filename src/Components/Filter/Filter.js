@@ -49,7 +49,7 @@ const Filter = (props) => {
             return parseFloat(a.options[0].price) - parseFloat(b.options[0].price);
         });
     }
-    else{
+    if(sort === "HTL"){
         propertyarr.sort((a, b) => parseFloat(b.options[0].price) - parseFloat(a.options[0].price));
     }
 
