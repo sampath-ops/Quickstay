@@ -34,7 +34,13 @@ const FilterOptionsForMobile = (props) => {
     .map(function(key) {
         return props.filters[key];
     });
-    // const selectedFilters = ["Male","IndependentRooms","LowToHigh","Fully-Furnished"]
+   
+    if(props.sort && !props.showDistance){
+        selectedFilters.push(props.sort);
+    }
+    if(props.showDistance){
+        selectedFilters.push("Nearest")
+    }
 
     return ( 
         <div className="filter-mobile">
@@ -48,7 +54,7 @@ const FilterOptionsForMobile = (props) => {
             </div>
             
             {setIsVisible ? transition((style,item)=>
-                    item ? <animated.div style={style} className="slideupfilterContainer"><SlideUpFilter closeFilter={hideFilter} getFilters={props.getFilters} sortProperties={props.sortProperties} clearFilters={props.clearFilters} filters={props.filters} sort={props.sort}/></animated.div> : ''
+                    item ? <animated.div style={style} className="slideupfilterContainer"><SlideUpFilter closeFilter={hideFilter} getFilters={props.getFilters} sortProperties={props.sortProperties} clearFilters={props.clearFilters} propertyDistance={props.propertyDistance} filters={props.filters} sort={props.sort} showDistance={props.showDistance}/></animated.div> : ''
             ) : "" }
             
         </div>

@@ -11,11 +11,12 @@ const CardContainer = (props) => {
 
     let carousel = props.carousel;
 
+    
     return ( 
         <div className={classname}>
             {
                 props.properties.map((property,index)=>{
-
+                    
                     const addressarr = property.propertyFullAddress.split(",");
                     let address = addressarr.slice(1,3);
                     if(addressarr.length <= 4){
@@ -46,7 +47,7 @@ const CardContainer = (props) => {
                                 props.addPropDetailsHandler(property);
                             }}/></Link>
                            }
-                           <Link to="/property-details" style={{textDecoration:'none',color:'black'}}>
+                           <Link to="/property-details" style={{textDecoration:'none',color:'black',position:'relative'}}>
                             <div className={`room-details ${details}`} onClick={()=>{
                                 props.addPropDetailsHandler(property);
                             }}>
@@ -55,7 +56,9 @@ const CardContainer = (props) => {
                                 <span><span><i className="fas fa-map-marker-alt"></i><p>{address.toString()}</p></span></span>
                                 <span>{property.furnishingStatus}</span>
                                 <span><img src={personimg.default} alt={property.alter} /></span>
-                            </div></Link> 
+                            </div>
+                            {props.showDistance && <p className='distance'>{property.distance} KM</p>}
+                            </Link> 
                         </div>
                     )
                 })

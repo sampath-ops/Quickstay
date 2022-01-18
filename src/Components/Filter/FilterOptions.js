@@ -11,9 +11,10 @@ const FilterOptions = (props) => {
                  <button onClick={()=>{
                      props.clearFilters({});
                      childref.current.clear();
+                     props.propertyDistance(false)
                  }}>Clear</button>
             </div>
-            <AllOptions getFilters={props.getFilters} sortProperties={props.sortProperties} ref={childref} submitFilter={submitFilter}/>
+            <AllOptions getFilters={props.getFilters} sortProperties={props.sortProperties} propertyDistance={props.propertyDistance} ref={childref} submitFilter={submitFilter}/>
             
         </div>
      );

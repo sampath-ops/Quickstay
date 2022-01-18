@@ -58,13 +58,12 @@
 }   
 .searchbar{
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;;
+    grid-template-columns: 4fr 1fr;;
     position: relative;
 }
 
 .searchbar button{
     padding: 10px 40px;
-    width: 15vw;
     color: #FFF;
     border: none;
     font-size: 16px;
@@ -74,7 +73,6 @@
 }
 .searchbar input{
     padding: 10px 20px;
-    width: 56.4vw;
     border: none;
     font-family: 'Open Sans';
     font-style: italic;
@@ -177,7 +175,7 @@ input[placeholder]{
        padding: 7px;
     }
     .searchbar button{
-        padding: 7px 10px;
+        padding: 7px 13px;
     }
     .second-searchbar button:nth-child(1){
         display: none;

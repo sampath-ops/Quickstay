@@ -6,20 +6,31 @@ import './Filter.css';
 import FilterOptions from "./FilterOptions";
 import FilterOptionsForMobile from "./FilterOptionForMobile/FilterOptionsForMobile";
 import { useState } from "react";
+import geohash from "ngeohash";
+import geohashDistance from "geohash-distance";
 
 const Filter = (props) => {
 
     let propertyarr = [];
      // get documents from snap
-     props.snap.forEach(item =>{
-        if('images' in item.data()){
-            const images = item.data().images;
-            if(images.length > 0){
-                propertyarr.push(item.data());
-            } 
-        }       
-    })
-    
+    if(props.searchLatlng){ // as search latlng takes time to get
+        props.snap.forEach(item =>{
+            if('images' in item.data()){
+                const images = item.data().images;
+                if(images.length > 0){
+                    // add property distance field 
+                    const propGeohash = item.data().geolocation
+                    const searchedGeohash = geohash.encode(props.searchLatlng.lat,props.searchLatlng.lng);
+                    const distance = geohashDistance.inKm(propGeohash,searchedGeohash);
+                    const property  = item.data()
+                    property["distance"] = distance.toFixed(1);
+                    // push property to properties array
+                    propertyarr.push(property);
+                } 
+            }       
+        })
+    }
+
     //FILTER SECTION
     let [filters,setFilters] = useState({})
 
@@ -31,9 +42,8 @@ const Filter = (props) => {
     // clear filter values
     const clearFilters = (clear)=>{
         setFilters(clear);
+        setSort("");
     }
-
-    console.log(filters)
 
     //filtering property array
     propertyarr = propertyarr.filter((item)=>{
@@ -50,17 +60,27 @@ const Filter = (props) => {
 
     // sort properties
     const setSortHandler = (sortValue)=>{
-        setSort(sortValue);
+        if(sortValue !== undefined || sort===""){
+            setSort(sortValue);
+        }
     }
-    console.log(sort)
+    
     // Ascending to Descending, Descending to Ascending
-    if(sort === "LTH"){
+    if(sort === "LowToHigh"){
         propertyarr.sort(function(a, b) {
             return parseFloat(a.options[0].price) - parseFloat(b.options[0].price);
         });
     }
-    if(sort === "HTL"){
+    if(sort === "HighToLow"){
         propertyarr.sort((a, b) => parseFloat(b.options[0].price) - parseFloat(a.options[0].price));
+    }
+   
+    //DISTANCE SECTION
+    const [showDistance,setShowDistance] = useState(false);
+    const propertyDistanceHandler = (bool)=>{
+        if(bool !== undefined){
+            setShowDistance(bool);
+        }
     }
 
     return ( 
@@ -69,11 +89,11 @@ const Filter = (props) => {
             <div>
                 <div className="filters-section-container">
                     <div className="filter-section">
-                        <FilterOptions getFilters={getFiltersHandler} clearFilters={clearFilters} sortProperties={setSortHandler}/>
-                        <FilterOptionsForMobile getFilters={getFiltersHandler} clearFilters={clearFilters} sortProperties={setSortHandler} filters={filters} sort={sort}/>
+                        <FilterOptions getFilters={getFiltersHandler} clearFilters={clearFilters} sortProperties={setSortHandler} propertyDistance={propertyDistanceHandler}/>
+                        <FilterOptionsForMobile getFilters={getFiltersHandler} clearFilters={clearFilters} sortProperties={setSortHandler}  propertyDistance={propertyDistanceHandler} filters={filters} sort={sort} showDistance={showDistance}/>
                     </div>
                     <div className="filter-results">
-                        <CardContainer properties={propertyarr} className="filter-cards" addPropDetailsHandler={props.addPropDetailsHandler}details="filter-results-properties" carousel="true"></CardContainer>
+                        <CardContainer properties={propertyarr} className="filter-cards" addPropDetailsHandler={props.addPropDetailsHandler}details="filter-results-properties" carousel="true" showDistance={showDistance}></CardContainer>
                     </div>
                 </div>
                 <Locations/>

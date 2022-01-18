@@ -29,6 +29,9 @@ const AllOptionsMobile = forwardRef((props,ref) => {
         HTL:false
     })
 
+    const [nearCheck,setNearCheck] = useState({
+        Nearest:false
+    })
    
  
     const genderHandler = (event)=>{
@@ -41,7 +44,7 @@ const AllOptionsMobile = forwardRef((props,ref) => {
             }
         })
         filters.propertyFor = event.target.value;
-        handleClick();
+        props.getFilters(filters);
     }
 
     const typeHandler = (event)=>{ 
@@ -54,7 +57,7 @@ const AllOptionsMobile = forwardRef((props,ref) => {
             }
         })
         filters.propertyType = event.target.value;
-        handleClick();
+        props.getFilters(filters);
     }
 
     const statusHandler = (event)=>{
@@ -67,23 +70,27 @@ const AllOptionsMobile = forwardRef((props,ref) => {
             }
         })
         filters.furnishingStatus = event.target.value;
-        handleClick();
+        props.getFilters(filters);
     }
 
     const sortHandler = (event)=>{
         setSortCheck(()=>{
             return{
-                LTH:false,
-                HTL:false,
+                LowToHigh:false,
+                HighToLow:false,
                 [event.target.value]: true   
             }
         })
-        props.sortProperties(event.target.value)
+        props.sortProperties(event.target.value);
     }
 
-
-    const handleClick = ()=>{
-       props.getFilters(filters);
+    const nearestHandler = ()=>{
+        setNearCheck(()=>{
+            return{
+                Nearest:true
+            }
+        })
+       props.propertyDistance(true);
     }
 
     // clear filters
@@ -106,10 +113,14 @@ const AllOptionsMobile = forwardRef((props,ref) => {
                 Unfurnished:false
             }))
             setSortCheck(()=>({
-                LTH:false,
-                HTL:false,
+                LowToHigh:false,
+                HighToLow:false,
+                nearest:false
             }))
-            props.sortProperties("")
+            setNearCheck(()=>({
+                Nearest:false
+            }))
+          
         }
     
       }));
@@ -141,11 +152,18 @@ const AllOptionsMobile = forwardRef((props,ref) => {
             })
             setSortCheck(()=>{
                 return{
-                    LTH:false,
-                    HTL:false,
+                    LowToHigh:false,
+                    HighToLow:false,
                     [props.sort]: true   
                 }
             })
+            if(props.showDistance){
+                setNearCheck(()=>{
+                    return {
+                        Nearest:true
+                    }
+                })
+            }
         },[])
 
     return ( 
@@ -216,15 +234,16 @@ const AllOptionsMobile = forwardRef((props,ref) => {
                 <div className="options-container">
                     <p>SORT BY</p>
                     <div>
-                        <input type="radio" name="sort" id="LTH" value="LTH" onChange={sortHandler} checked={sortCheck.LTH}/>
+                        <input type="radio" name="sort" id="LTH" value="LowToHigh" onChange={sortHandler} checked={sortCheck.LowToHigh}/>
                         <label htmlFor="LTH">Price: Low to High</label>
                     </div>
                     <div>
-                        <input type="radio" name="sort" id="HTL" value="HTL" onChange={sortHandler} checked={sortCheck.HTL}/>
+                        <input type="radio" name="sort" id="HTL" value="HighToLow" onChange={sortHandler} checked={sortCheck.HighToLow}/>
                         <label htmlFor="HTL">Price: High to Low</label>
                     </div>
                     <div>
-                        <input type="radio" name="sort" id="near" value="Nearest" />
+                        <input type="radio" name="sort" id="near" value="Nearest" onChange={nearestHandler}
+                        checked={nearCheck.Nearest}/>
                         <label htmlFor="near">Distance: Nearest</label>
                     </div>
                 </div>

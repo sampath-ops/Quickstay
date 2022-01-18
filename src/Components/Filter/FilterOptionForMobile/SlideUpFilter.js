@@ -6,6 +6,7 @@ const SideUpFilter = (props) => {
     const childref = useRef();
     const [selected,setSelected] = useState();
     const [selectedSort,setSelectedSort] = useState();
+    const [nearest,setNearest] = useState(false);
 
     const getSlideFilters = (filters)=>{
         setSelected({...selected,...filters})
@@ -13,12 +14,18 @@ const SideUpFilter = (props) => {
 
     const getSlideSort = (sorting)=>{
         setSelectedSort(sorting);
+        setNearest(false);
+    }
+
+    const getNearest = (bool)=>{
+        setNearest(bool)
     }
 
     const applyFilters = ()=>{
         props.getFilters(selected)
         props.sortProperties(selectedSort);
-        setSelected({});
+        props.propertyDistance(nearest)
+        // setSelected({});
         props.closeFilter();
     }
     
@@ -32,11 +39,12 @@ const SideUpFilter = (props) => {
                <button onClick={()=>{
                      props.clearFilters({});
                      childref.current.clear();
-                     setSelected({});
+                     props.propertyDistance(false)
+                    //  setSelected({});
                  }}>clear All</button>
             </div>
             <div className="mobile-filter-options">
-                <AllOptionsMobile getFilters={getSlideFilters} sortProperties={getSlideSort} ref={childref} filters={props.filters} sort={props.sort}/>
+                <AllOptionsMobile getFilters={getSlideFilters} sortProperties={getSlideSort} propertyDistance={getNearest} ref={childref} filters={props.filters} sort={props.sort} showDistance={props.showDistance}/>
             </div>
             <div className="apply-cancle">
                 <button onClick={props.closeFilter}>Cancle</button>

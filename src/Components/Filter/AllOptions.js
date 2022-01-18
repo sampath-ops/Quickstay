@@ -9,10 +9,27 @@ const AllOptions = forwardRef((props,ref) => {
         gender:false,
         type:false,
         status:false,
-        sort:false
+        sort:false,
+        nearest:false
     });
 
+    const nearestHandler = (event)=>{
+        setChecked(()=>{
+            return {
+                [event.target.checked]:true
+            }
+        })
+        props.sortProperties("") // need to undo sort by price on click distance
+        props.propertyDistance(true);
+    }
+
     const sortHandler = (event)=>{
+        setChecked(() => {
+            return {
+                [event.target.checked]: true
+            };
+          });
+        props.propertyDistance(false); // need to undo distance on click sort by price
         props.sortProperties(event.target.value)
     }
 
@@ -23,7 +40,6 @@ const AllOptions = forwardRef((props,ref) => {
                 [event.target.checked]: true
             };
           });
-          console.log(checked);
 
         if(event.target.name === "gender"){
             filters.propertyFor = event.target.value;
@@ -49,7 +65,8 @@ const AllOptions = forwardRef((props,ref) => {
                gender:false,
                 type:false,
                 status:false,
-                sort:false
+                sort:false,
+                nearest:false
             }));
             props.sortProperties("")
         }
@@ -124,15 +141,15 @@ const AllOptions = forwardRef((props,ref) => {
                 <div className="options-container">
                     <p>SORT BY</p>
                     <div>
-                        <input type="radio" name="sort" id="Low to High" value="LTH" onChange={sortHandler} checked={checked.sort}/>
+                        <input type="radio" name="sort" id="Low to High" value="LowToHigh" onChange={sortHandler} checked={checked.sort}/>
                         <label htmlFor="Low to High">Price: Low to High</label>
                     </div>
                     <div>
-                        <input type="radio" name="sort" id="High to Low" value="HTL" onChange={sortHandler} checked={checked.sort}/>
+                        <input type="radio" name="sort" id="High to Low" value="HighToLow" onChange={sortHandler} checked={checked.sort}/>
                         <label htmlFor="High to Low">Price: High to Low</label>
                     </div>
                     <div>
-                        <input type="radio" name="sort" id="Nearest" value="Nearest" />
+                        <input type="radio" name="sort" id="Nearest" value="Nearest" checked={checked.nearest} onChange={nearestHandler}/>
                         <label htmlFor="Nearest">Distance: Nearest</label>
                     </div>
                 </div>

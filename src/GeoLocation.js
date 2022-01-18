@@ -35,13 +35,13 @@ var options = {
 
 function success(pos) {
   var crd = pos.coords;
-  console.log("Your current position is:");
-  console.log(`Latitude : ${crd.latitude}`);
-  console.log(`Longitude: ${crd.longitude}`);
-  console.log(`More or less ${crd.accuracy} meters.`);
+  // console.log("Your current position is:");
+  // console.log(`Latitude : ${crd.latitude}`);
+  // console.log(`Longitude: ${crd.longitude}`);
+  // console.log(`More or less ${crd.accuracy} meters.`);
   const { latitude, longitude } = crd;
   const range = getGeohashRange(25.622198992158612, 85.11519577716592, 7.45645); // NEED TO USE USER LATLNG
-  console.log(range.lower,range.upper);
+  // console.log(range.lower,range.upper);
   db
     .collection("properties")
     .where("geolocation", ">=", range.lower)

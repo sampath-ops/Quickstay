@@ -73,7 +73,10 @@ const SearchBar = (props) => {
         const lat = addressObject.geometry.location.lat();
         const lng = addressObject.geometry.location.lng();
         const docs = await GetGeoDocuments(lat,lng,7.45645);
-        props.searchedProperties(docs);
+        const latlng = {
+            lat,lng
+        }
+        props.searchedProperties(docs,latlng);
         navigate('/filters'); 
     }
 
