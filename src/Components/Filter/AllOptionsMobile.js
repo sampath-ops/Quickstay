@@ -25,8 +25,8 @@ const AllOptionsMobile = forwardRef((props,ref) => {
     })
 
     const [sortCheck,setSortCheck] = useState({
-        LTH:false,
-        HTL:false
+        LowToHigh:false,
+        HighToLow:false
     })
 
     const [nearCheck,setNearCheck] = useState({
@@ -81,6 +81,11 @@ const AllOptionsMobile = forwardRef((props,ref) => {
                 [event.target.value]: true   
             }
         })
+        setNearCheck(()=>{
+            return{
+                Nearest:false
+            }
+        })
         props.sortProperties(event.target.value);
     }
 
@@ -88,6 +93,12 @@ const AllOptionsMobile = forwardRef((props,ref) => {
         setNearCheck(()=>{
             return{
                 Nearest:true
+            }
+        })
+        setSortCheck(()=>{
+            return{
+                LowToHigh:false,
+                HighToLow:false, 
             }
         })
        props.propertyDistance(true);

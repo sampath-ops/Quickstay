@@ -60,7 +60,7 @@ const Filter = (props) => {
 
     // sort properties
     const setSortHandler = (sortValue)=>{
-        if(sortValue !== undefined || sort===""){
+        if(sortValue !== undefined){
             setSort(sortValue);
         }
     }

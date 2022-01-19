@@ -6,7 +6,7 @@ const SideUpFilter = (props) => {
     const childref = useRef();
     const [selected,setSelected] = useState();
     const [selectedSort,setSelectedSort] = useState();
-    const [nearest,setNearest] = useState(false);
+    const [nearest,setNearest] = useState();
 
     const getSlideFilters = (filters)=>{
         setSelected({...selected,...filters})
