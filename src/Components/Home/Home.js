@@ -35,7 +35,8 @@ const Home = (props) => {
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
-            console.log("Document data:", docSnap.data());
+            props.getUserProfile(docSnap.data());
+            setShow(false);
         } else {
             console.log("No such document!");
             if(!isOpen){

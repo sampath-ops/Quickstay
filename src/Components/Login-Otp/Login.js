@@ -110,7 +110,6 @@ const Login = (props) => {
         window.confirmationResult.confirm(otp).then((result) => {
             // User signed in successfully.
             const user = result.user;
-            console.log(user);
             props.getUserId(user);
             navigate('/')
             // ...

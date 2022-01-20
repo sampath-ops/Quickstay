@@ -44,18 +44,25 @@ function App() {
       });
     }
 
+    // GET USER PROFILE ON LOGIN
+    const [userProfile,setUserProfile] = useState();
+
+    const getUserProfileHandler = (profile)=>{
+        setUserProfile(profile);
+    }
+  
 
   return (  
     <Router>
       <GeoLocation/>
       <ScrollToTop>
       <Routes>
-         <Route exact path="/" element={<Home user={user} allProperties={allProperties} searchedProperties={searchedPropertiesHandler} addPropDetailsHandler={onAddPropertyDetails}/>}/>
+         <Route exact path="/" element={<Home user={user} getUserProfile={getUserProfileHandler}allProperties={allProperties} searchedProperties={searchedPropertiesHandler} addPropDetailsHandler={onAddPropertyDetails}/>}/>
          <Route path="/login" element={<Login getUserId={getUserIdHandler}/>}/>
-         <Route path="/filters" element={<Filter snap={documentSnap} addPropDetailsHandler={onAddPropertyDetails} searchedProperties={searchedPropertiesHandler} user={user} searchLatlng={searchLatlng}/>}/>
-         <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler} user={user}/>}/>
-         <Route path="/about" element={<About searchedProperties={searchedPropertiesHandler} user={user}/>}/>
-         <Route path="/property-details" element={<PropertyDetails propDetails={propertyDetails}   searchedProperties={searchedPropertiesHandler}/>} user={user}/>
+         <Route path="/filters" element={<Filter snap={documentSnap} addPropDetailsHandler={onAddPropertyDetails} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng}/>}/>
+         <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler}/>}/>
+         <Route path="/about" element={<About searchedProperties={searchedPropertiesHandler}/>}/>
+         <Route path="/property-details" element={<PropertyDetails propDetails={propertyDetails}   searchedProperties={searchedPropertiesHandler} userProfile={userProfile}/>}/>
       </Routes>
       </ScrollToTop>
       <Footer/>

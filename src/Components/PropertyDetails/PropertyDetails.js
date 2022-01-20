@@ -7,25 +7,24 @@ import PropertyCarousel from "./PropertyCarousel";
 import PropertyContact from "./PropertyContact/PropertyContact";
 const PropertyDetails = (props) => {
 
-    // const extract = (obj, ...keys) => {
-    //     const newObject = Object.assign({});
-    //     Object.keys(obj).forEach((key) => {
-    //        if(keys.includes(key)){
-    //           newObject[key] = obj[key];
-    //           delete obj[key];
-    //        };
-    //     });
-    //     return newObject;
-    //  };
-
     console.log(props.propDetails)
+    console.log(props.userProfile)
 
-    const imagesarr = props.propDetails.images;
-    const facilities = props.propDetails.facilities;
-    const neighbourhoods = props.propDetails.nearByLocation
+    let imagesarr;
+    let facilities;
+    let neighbourhoods;
+
+    if(props.propDetails){
+        imagesarr = props.propDetails.images;
+        facilities = props.propDetails.facilities;
+        neighbourhoods = props.propDetails.nearByLocation
+    }
+
+    
+ 
     return ( 
         <MainSub  searchedProperties={props.searchedProperties} user={props.user}>
-            <div className="property-details">
+            {props.propDetails && <div className="property-details">
                 <div className="details1">
                         <PropertyCarousel images={imagesarr}/>
                         <PropertyContact propDetails={props.propDetails}/> 
@@ -34,9 +33,9 @@ const PropertyDetails = (props) => {
                         <AboutProperty propDetails={props.propDetails}/>
                 </div>
                 <div className="details2">
-                         <PropertyContact propDetails={props.propDetails}/>   
+                         <PropertyContact propDetails={props.propDetails} userProfile={props.userProfile}/>   
                 </div>
-            </div>
+            </div>}
             <Locations/>
         </MainSub>
      );

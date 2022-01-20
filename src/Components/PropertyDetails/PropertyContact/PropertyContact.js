@@ -14,12 +14,11 @@ const PropertyContact = (props) => {
      return () => window.removeEventListener("scroll", handleScroll);
    }, []);
 
-
     return ( 
         <div className={`propertycontact ${float ? "float-rightpart": ""}`}>
            <PropertyAddress propDetails={props.propDetails}/>
            <PropertySharing sharing={props.propDetails.options}/>
-           <ContactButton/>
+           <ContactButton userProfile={props.userProfile} propDetails={props.propDetails}/>
         </div>
      );
 }
