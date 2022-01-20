@@ -1,36 +1,35 @@
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import whatsapp from "../../../WebsiteMaterial/PropertyDetailsImages/PropertyContact/whatsapp.png";
 const ContactButton = (props) => {
 
-    // const navigate = useNavigate();
-    console.log(props.userProfile)
+    const navigate = useNavigate();
 
     const contactWhatsappHandler = ()=>{    
-        window.open(`https://wa.me/+919361924485`,"_blank");
-        // if(!props.userProfile){
-        //     navigate("/login")
-        // }
-        // else if(!props.userProfile.premiumUser){    
-        //     navigate("/choose-plan")
-        // }
-        // else{
-        //     // contact owner if user is logged in and user should be a premium user
-        //     window.open(`https://wa.me/${props.propDetails.ownerPhoneNo}`,"_blank");
-        // }
+
+        if(!props.userProfile){
+            navigate("/login")
+        }
+        else if(!props.userProfile.premiumUser){    
+            navigate("/choose-plan")
+        }
+        else{
+            // contact owner if user is logged in and user should be a premium user
+            window.open(`https://wa.me/${props.propDetails.ownerPhoneNo}`,"_blank");
+        }
     }
 
     const contactWithCallHandler = ()=>{
-        window.open("tel:+919361924485","_blank")
-        // if(!props.userProfile){
-        //     navigate("/login")
-        // }
-        // else if(!props.userProfile.premiumUser){    
-        //     navigate("/choose-plan")
-        // }
-        // else{
-        //     // CALL OWNER
-        //     window.open(`tel:${props.propDetails.ownerPhoneNo}`,"_blank")
-        // }
+        
+        if(!props.userProfile){
+            navigate("/login")
+        }
+        else if(!props.userProfile.premiumUser){    
+            navigate("/choose-plan")
+        }
+        else{
+            // CALL OWNER
+            window.open(`tel:${props.propDetails.ownerPhoneNo}`,"_blank")
+        }
     }
     
     return ( 
