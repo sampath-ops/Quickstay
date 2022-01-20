@@ -8,6 +8,8 @@ import Login from './Components/Login-Otp/Login';
 import Filter from './Components/Filter/Filter';
 import ChoosePlan from './Components/ChoosePlan/ChoosePlan';
 import PropertyDetails from './Components/PropertyDetails/PropertyDetails';
+import ListProperty from './Components/Home/GetToKnow/ListProperty/ListProperty';
+import ContactUs from './Components/ContactUs/ContactUs';
 import GeoLocation from './GeoLocation';
 import ScrollToTop from './ScrollToTop';
 import { useState } from 'react';
@@ -63,6 +65,8 @@ function App() {
          <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler}/>}/>
          <Route path="/about" element={<About searchedProperties={searchedPropertiesHandler}/>}/>
          <Route path="/property-details" element={<PropertyDetails propDetails={propertyDetails}   searchedProperties={searchedPropertiesHandler} userProfile={userProfile}/>}/>
+         <Route path="/list-property" element={<ListProperty/>}/>
+         <Route path="/contact" element={<ContactUs/>}/>
       </Routes>
       </ScrollToTop>
       <Footer/>

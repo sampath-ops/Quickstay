@@ -2,17 +2,28 @@
 
 
 .heroSection{
-    display:flex;
-    justify-content: space-evenly;
+    /* display:flex; */
+    /* justify-content: space-between; */
+    /* display: block; */
+    height: 100vh;
+    /* width: 100vw; */
+    background-image: url('../../WebsiteMaterial/AboutImages/Global.png');
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    /* background-position-y: 0px; */
+    
+    /* margin-bottom:10vh; */
 }
 
 .heroText{
-    width: 27vw;
-    margin-top:90px;
-    margin-left:30px;
+    /* width: 27vw; */
+    margin-top:80px;
+    margin-left:100px;
     /* line-height: 20px; */
+    padding-top: 20px;
 }
-.heroText span:nth-child(1){
+.heroText span{
     font-size:37px;
     font-weight: 600;
 }
@@ -22,7 +33,7 @@
     margin-top:25px;
 }
 
-.heroImg{
+/* .heroImg{
     height:100vh;
     width: 60vw;
     margin-top:40px;
@@ -30,43 +41,54 @@
 .heroImg img{
     margin-top:5vh;
     height:95vh;
+} */
+
+.aboutUs{
+    /* height:100vh; */
 }
 
 .aboutUsBgImage{
     background-image: url('../../WebsiteMaterial/AboutImages/Photo.jpeg');
     background-size:100vw;
-    height:100vh;
+    /* width: 100vw; */
+    /* position: absolute; */
+    /* height:100vh; */
+    /* height:100vh; */
+    background-repeat: no-repeat;
+}
+.aboutUsContainer{
+    padding-top: 6.75%;
+    padding-bottom: 6.75%;
 }
 
 .aboutUsTextContainer{
-
-    content: "";
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.7);
-    position: absolute;
-    width: 50%;
-    top: 10%;
-    float: right;
-    height: 80%;
-    box-shadow: 0px 0px 20px 20px rgba(255, 255, 255, 0.7);;
-}
-.aboutUsTextContainer{
-    /* left: 50%; */
     display: flex;
     align-items: center;
     position: relative;
-    /* transform: translate(-50%, -50%); */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* position: absolute; */
+    width: 50%;
+    top: 10%;
+    margin-right:0px;
+    margin-left:auto;
+    /* height:100vh; */
+    /* float: right; */
+    /* height: 80%; */
+    box-shadow: 0px 0px 20px 20px rgba(255, 255, 255, 0.8);
 }
 
 .aboutUsText{
     color: rgb(0, 0, 0);
-    font-size: 17.5px;
+    font-size: 1.3vw;
     margin: auto 20px;
     font-family: 'Open Sans';
     font-weight: 800;
     text-align: right;
     position: relative;
-    line-height: 6vh;
+    line-height: 3vw;
+}
+.aboutUsText p span{
+    color:#A00500;
 }
 
 .ourDream h1:nth-child(1){
@@ -78,7 +100,7 @@
 .ourDream h1:nth-child(2){
     color:#A00500;
     text-align: center;
-
+    
 }
 .ourDream p{
     font-size: 25px;
@@ -87,7 +109,7 @@
     font-weight: 600;
     font-style: italic;
     text-align: center;
-
+    
 }
 
 .ourDreamImages{
@@ -129,15 +151,16 @@
 .becomeFamilyContainer{
     display: flex;
     align-items: center;
+    justify-content: space-around;
     margin-top: 2vh;
-    margin-bottom: 16vh;
+    margin-bottom: 2vh;
 }
 
 .becomeFamilyHead{
     font-size:25px;
     font-weight: 600;
-    margin-left: 5vw;
-    width: 22vw;
+    width: 15vw;
+    margin-top: 5vh;
 }
 
 .becomeFamilyText{
@@ -150,40 +173,161 @@
     margin-top:auto;
     margin-bottom: auto;
 }
+
+.becomeFamily{
+    display: flex;
+    align-items: center;
+}
+
 .becomeFamilyImg1{
     width: 250px;
 }
 .becomeFamilyImg2{
-    margin-left:9vw;
     width: 180px;
 }
-
+.becomeFamily div:nth-child(1){
+    width: 250px;
+    margin-left: auto;
+    margin-right:auto;
+    display:flex;
+    align-items: center;
+}
+@media(max-height:1300px){
+    .heroSection{
+        background-size: auto 80vh;
+        background-position-y: bottom;
+        height: 80vh;
+    }
+}
 @media(max-width:1023px){
-    /* .searchbar{
-        display: flex;
-        text-align: center;
-        align-items: center;
+    /* .aboutUsBgImage img{
+        display: none;
     } */
-    /* .search-bar-container{
-        padding: 0;
-    }
-    .search-bar-container::before{
-        background-color: transparent;
-    } */
-    /* .searchbar input{
-        width: 100%;
-    }
-    .search_icon{
-        display: inline-block;
-    }
-    .search_text{
+    .aboutUs br, .ourDream br {
         display: none;
     }
-    .searchbar input,.searchbar button{
-       padding: 7px;
+    .aboutUs{
+        height: auto;
     }
-    .searchbar button{
-        padding: 7px 10px;
+    .aboutUsBgImage {
+        height: auto;
+        background-size:0vw;
+    }
+    .aboutUsText{
+        color: rgb(0, 0, 0);
+        font-size: 17.5px;
+        /* margin: auto 20px; */
+        /* margin-top:40px; */
+        margin-top:0px;
+        font-family: 'Open Sans';
+        font-weight: 800;
+        text-align: left;
+        position: relative;
+        line-height:normal;
+    }
+    .aboutUsTextContainer{
+        
+        background-color: transparent;
+        font-size: 20px;
+        margin-top:40px;
+        width: 100%;
+        height:auto;
+        /* float: left; */
+        box-shadow: unset;
+    }
+    .ourDream h1:nth-child(1){
+        font-size: 18px;
+        font-weight: bolder;
+        font-style: italic;
+        border-left: 15px solid #FFDE17;
+        padding-left: 20px;
+        margin: 20px 0px 60px 24px;
+    }
+    .ourDreamImg{
+        height: 285px;
+    }
+    .ourDreamImg img{
+        width: 300px;
+    }
+    .ourDreamImg div{
+        font-size:24px;
+        margin-bottom: -50px;
+    }
+    .ourDreamImages{
+        display: flex;
+        /* justify-content: space-evenly; */
+        flex-direction: column;
+        align-items: center;
+    }
+    .becomeFamilyContainer{
+        /* display: flex; */
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5vh;
+
+        /* margin-top: 2vh;
+        margin-bottom: 16vh; */
+    }
+    .becomeFamily{
+        display: flex;
+        align-items: center;
+    }
+    .becomeFamilyHead{
+        width: 100vw;
+        text-align: center;
+    }
+    .becomeFamily div:nth-child(1){
+        width: 331px;
+        margin-left: auto;
+        margin-right:auto;
+        display:flex;
+        align-items: center;
+    }
+    .becomeFamilyImg2{
+        margin-left:40px;
+    }
+
+
+    .figuresContainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 15px;
+        row-gap: 15px;
+        margin-top:20px;
+    }
+    .heroSection{
+        display: block;
+        height: 35vh;
+        background-image: url('../../WebsiteMaterial/AboutImages/Global.png');
+        background-size: 70vw auto;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-position-y: 100px;
+        /* margin-top:20px; */
+    }
+    /* .heroImg img{
+        margin-top:5vh;
+        height:auto;
+        width:70vw;
     } */
+    .heroText{
+        margin-top: -20px;
+        margin-left:30px;
+        /* line-height: 18px; */
+        padding-top: 55px;
+    }
+    
+    /* .heroSection{ */
+        /* display:inline; */
+        /* height:auto; */
+        /* justify-content: space-evenly; */
+    /* } */
+    .heroText span{
+        font-size:20px;
+    }
+    .heroText p{
+        font-size: 15px;
+        margin-top: 8px;
+    }
     
  }

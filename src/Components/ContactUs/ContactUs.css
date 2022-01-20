@@ -1,0 +1,114 @@
+.contactUs_heroContainer{
+    display:flex;
+    justify-content: space-around;
+    height: auto;
+    width: 100%;
+    margin-bottom: 12vh;
+}
+.heroDetails, .heroMap{
+    width: 40%;
+    margin-top:10vh;
+}
+.heroDetails input, textarea{
+    display:block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-style: italic;
+    border: 1px solid #80808066;
+    padding: 10px;
+    border-radius: 3px;
+}
+.heroDetails p:first-child{
+    font-size:35px;
+    font-weight: 600;
+    margin:0;
+}
+.heroDetails p:nth-child(2){
+    font-size:14px;
+    font-weight: 600;
+    margin:14px 0px 25px;
+}
+.heroMap p:first-child{
+    font-size:25px;
+    font-weight: 600;
+    margin:0;
+}
+.heroMap p:nth-child(2){
+    font-size:14px;
+    font-weight: 600;
+    margin:10px 0px 25px;
+}
+.heroMap p:nth-child(4){
+    font-size:14px;
+    font-weight: 600;
+    margin-top:30px;
+}
+.heroMap p:nth-child(5){
+    font-size:14px;
+    font-weight: 600;
+}
+.heroMap p:nth-child(6){
+    font-size:14px;
+    font-weight: 800;
+    margin-top:30px;
+    margin-bottom: 20px;
+}
+textarea{
+    height:30vh;
+    resize:none;
+}
+.sendButton{
+    width: 104%;
+    font-size: 18px;
+    padding: 10px 0px;
+    background-color:#A00500;
+    color:white;
+    border:none;
+    border-radius: 3px;
+    margin-top: 30px;
+}
+.GoogleMapContainer{
+    height:40%;
+}
+.heroMap img{
+    width: 40px;
+    margin-right:20px;
+}
+@media (max-width:1023px){
+    textarea{
+        height:20vh;
+    }
+    .contactUs_heroContainer {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 3vh;
+        height: auto;
+    }
+    .heroDetails, .heroMap {
+        width: 80%;
+    }
+    .heroDetails div{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .heroDetails div:nth-child(3) input{
+        width: 41%;
+    }
+    .sendButton {
+        width: 60%;
+        font-size: 18px;
+        padding: 5px 0px;
+        background-color: #A00500;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        margin-top: 20px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .heroDetails, .heroMap {
+        margin-top: 4vh;
+    }
+}

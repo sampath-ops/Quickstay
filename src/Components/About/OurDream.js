@@ -7,7 +7,7 @@ export default function OurDream() {
     return (
         <>
         <div className='ourDream'>
-            <h1>QuickStay is a digital solution for students and young professionals<br/>searching for a long-term rental home in a new city.</h1>
+            <h1>QuickStay is a digital solution for students and young professionals <br/> searching for a long-term rental home in a new city.</h1>
             <h1>O&nbsp; U&nbsp; R&nbsp;&nbsp;  D&nbsp; R&nbsp; E&nbsp; A&nbsp; M</h1>
             <p>Comfort living for everyone!</p>
         </div>
