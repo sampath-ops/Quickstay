@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import whatsapp from "../../../WebsiteMaterial/PropertyDetailsImages/PropertyContact/whatsapp.png";
 const ContactButton = (props) => {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     console.log(props.userProfile)
 
     const contactWhatsappHandler = ()=>{    
