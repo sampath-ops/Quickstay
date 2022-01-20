@@ -23,6 +23,10 @@
     color: #FFFFFF;
     font-size: 18px;
 }
+.are-you_owner a:-webkit-any-link{
+    color:white;
+    text-decoration: none;
+}
 
 .get-to-know > div:nth-child(2) > p{
     font-family: 'Open Sans', sans-serif;

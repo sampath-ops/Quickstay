@@ -1,0 +1,172 @@
+.heroContainer{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.whyQuickStay{
+    width: 55vw;
+}
+.whyQuickStay h2{
+    margin-left:40px;
+}
+.listHere p:nth-child(1){
+    margin-left: 40px;
+    font-size:25px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+.listHere p:nth-child(2){
+    margin-left: 40px;
+    color: turquoise;
+}
+.whyListHere{
+    margin-bottom:40px;
+}
+.whyListHere p{
+    margin-left: 40px;
+    font-size:20px;
+    font-weight: 600;
+    /* margin-bottom: px; */
+}
+.listingPropertyDetails{
+    width: 45vw;
+    padding-left: 3vw;
+    padding-top:120px;
+    /* box-shadow: 0px 0.5px 4px rgb(0 0 0 / 25%); */
+    box-shadow: 0px 1.5px 3px rgb(0 0 0 / 25%);
+}
+.listingPropertyDetails input{
+    display: block;
+    height: 40px;
+    width: 95%;
+    margin-bottom: 10px;
+    font-style: italic;
+    border: 1px solid  #80808066;
+    border-radius: 3px;
+}
+.imageLabels{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top:-80px;
+
+}
+.imageLabels:nth-child(4){
+    margin-right:15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.imageLabels:nth-child(3){
+    margin-right: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: -70px;
+}
+.imageLabels div{
+    text-align: center;
+}
+.figuresContainer{
+    width: auto;
+}
+.heroContainer div img{
+    width: 100%;
+    margin-top: -70px;
+}
+.propertyType, .propertyFor{
+    display: flex;
+    justify-content: space-around;
+}
+.propertyType div{
+    background-color: #80808066;
+    border-radius: 20px;
+    width: 30%;
+    text-align: center;
+    padding:5px 0px;
+}
+
+.propertyFor div{
+    background-color: #80808066;
+    border-radius: 20px;
+    width: 18%;
+    text-align: center;
+    padding:5px 0px;
+}
+
+.submitButton{
+    font-size: 20px;
+    color: white;
+    padding: 11px 65px;
+    background-color: #A00500;
+    border: none;
+    border-radius: 5px;
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top:100px;
+}
+
+.Find p:first-child{
+    display: none;
+}
+.Find{
+    margin:0;
+    padding-top:50px;
+}
+.figures2{
+    display: none;
+}
+
+@media(max-width:1023px){
+    .figures1{
+        display: none;
+    }
+    .figures2{
+        display: block;
+    }
+    .heroContainer{
+        flex-direction: column;
+    }
+    .whyQuickStay{
+        width: 100vw;
+    }
+    .listingPropertyDetails{
+        width: 85vw;
+        padding-top:40px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow:none;
+    }
+    .heroContainer div img {
+        margin-top: -40px;
+    }
+    .imageLabels {
+        margin-top: -40px;
+    font-size: 7px;
+
+    }
+    .imageLabels:nth-child(4) {
+        margin-right: 12px;
+        font-size: 7px;
+    }
+    .imageLabels:nth-child(3) {
+        margin-right: 8px;
+        font-size: 6px;
+        margin-top:-35px;
+    }
+    .propertyType, .propertyFor{
+        font-size:10px;
+    }
+    .submitButton{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .figure{
+        padding: 0px 0px 35px;
+    }
+    .figure:nth-child(3) p, .figure:nth-child(4) p{
+        margin-top:0px;
+    }
+    .listHere h2{
+        font-size:12px;
+    }
+}

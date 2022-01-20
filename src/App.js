@@ -9,6 +9,8 @@ import Filter from './Components/Filter/Filter';
 import ChoosePlan from './Components/ChoosePlan/ChoosePlan';
 import SlideUpFilter from './Components/Filter/FilterOptionForMobile/SlideUpFilter';
 import PropertyDetails from './Components/PropertyDetails/PropertyDetails';
+import ListProperty from './Components/Home/GetToKnow/ListProperty/ListProperty';
+import ContactUs from './Components/ContactUs/ContactUs';
 import GeoLocation from './GeoLocation';
 import ScrollToTop from './ScrollToTop';
 
@@ -27,6 +29,8 @@ function App() {
          <Route path="/mobile-filter" element={<SlideUpFilter/>}/>
          <Route path="/property-details" element={<PropertyDetails/>}/>
          <Route path="/about" element={<About/>}/>
+         <Route path="/list-property" element={<ListProperty/>}/>
+         <Route path="/contact" element={<ContactUs/>}/>
       </Routes>
       </ScrollToTop>
       <Footer/>
