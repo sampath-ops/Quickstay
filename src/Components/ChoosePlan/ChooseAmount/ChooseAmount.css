@@ -60,9 +60,6 @@
       border-radius: 0;
       right: 0;
   }
-  .amountcards-container > div:first-child{
-      display: none;
-  }
   .amountcards-container{
       width: 100%;
       overflow-x: auto;

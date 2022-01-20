@@ -4,11 +4,6 @@ import {Link} from 'react-router-dom';
 const ChooseAmount = () => {
     const chooseAmount = [
         {
-            type:"FREE TRIAL",
-            amount:0,
-            duration:"lifetime"
-        },
-        {
             type:"MONTHLY",
             amount:199,
             duration:"30 Days"

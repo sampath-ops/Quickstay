@@ -3,7 +3,7 @@
 }
 .plan-types-container{
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     margin-bottom: 35px;
 }
 .plan-types-container > div:nth-child(1){
@@ -11,7 +11,7 @@
 }
 .plan-features{
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;;
+  grid-template-columns: 2fr 1fr 1fr 1fr;;
 }
 .plan-features p{
     margin-top: 0;
@@ -46,9 +46,6 @@
         margin-bottom: 0;
         column-gap: 4px;
     }
-    .plan-types-container > div:nth-child(2){
-        display: none;
-    }
     .plan-features{
         margin-bottom: 5px;
         grid-template-columns: 135px repeat(3,1fr);
@@ -62,9 +59,6 @@
         align-self: center;
         font-size: 10px;
         font-weight: 600;
-    }
-    .plan-features span:first-of-type{
-        display: none;
     }
     .plan-features p{
         margin: 0;
