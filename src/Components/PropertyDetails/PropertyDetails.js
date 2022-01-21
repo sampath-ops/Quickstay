@@ -5,35 +5,48 @@ import Neighbourhood from "./Neighbourhood";
 import AboutProperty from "./AboutProperty";
 import PropertyCarousel from "./PropertyCarousel";
 import PropertyContact from "./PropertyContact/PropertyContact";
+import { useParams } from "react-router";
+import {db} from "../../firebase.config";
+import {doc,getDoc} from "firebase/firestore";
+import { useState } from "react";
 const PropertyDetails = (props) => {
 
-    console.log(props.propDetails)
-    console.log(props.userProfile)
+    const [propDetails,setPropDetails] = useState();
 
     let imagesarr;
     let facilities;
     let neighbourhoods;
 
-    if(props.propDetails){
-        imagesarr = props.propDetails.images;
-        facilities = props.propDetails.facilities;
-        neighbourhoods = props.propDetails.nearByLocation
+    const {id} = useParams();
+
+    const getPropDetails = async()=>{
+        const docref = doc(db,"properties",id);
+        const document = await getDoc(docref);
+        setPropDetails(document.data());
     }
 
-    
+    if(!propDetails){
+        getPropDetails();
+    }
+
+    if(propDetails){
+        imagesarr = propDetails.images;
+        facilities = propDetails.facilities;
+        neighbourhoods = propDetails.nearByLocation
+    }
  
     return ( 
         <MainSub  searchedProperties={props.searchedProperties} user={props.user}>
-            {props.propDetails && <div className="property-details">
+            {propDetails && <div className="property-details">
                 <div className="details1">
                         <PropertyCarousel images={imagesarr}/>
-                        <PropertyContact propDetails={props.propDetails}/> 
+                        <PropertyContact propDetails={propDetails}/> 
                         <Facilities facilities={facilities}/>
                         <Neighbourhood neighbourhoods={neighbourhoods}/>
-                        <AboutProperty propDetails={props.propDetails}/>
+                        <AboutProperty propDetails={propDetails}/>
                 </div>
                 <div className="details2">
-                         <PropertyContact propDetails={props.propDetails} userProfile={props.userProfile}/>   
+                         <PropertyContact propDetails={propDetails} userProfile={props.userProfile}/>   
                 </div>
             </div>}
             <Locations/>

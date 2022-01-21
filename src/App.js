@@ -30,13 +30,6 @@ function App() {
       setDocumentSnap(docs);
       setSearchLatlng(latlng);
     }
-
-    // PROPERTY DETAILS
-    const [propertyDetails,setPropertyDetails] = useState();
-
-    const onAddPropertyDetails = (property)=>{
-      setPropertyDetails(property);
-    }
   
     //GET USERID ON LOGIN
     const getUserIdHandler = (userDoc)=>{
@@ -59,12 +52,12 @@ function App() {
       <GeoLocation/>
       <ScrollToTop>
       <Routes>
-         <Route exact path="/" element={<Home user={user} getUserProfile={getUserProfileHandler}allProperties={allProperties} searchedProperties={searchedPropertiesHandler} addPropDetailsHandler={onAddPropertyDetails}/>}/>
+         <Route exact path="/" element={<Home user={user} getUserProfile={getUserProfileHandler}allProperties={allProperties} searchedProperties={searchedPropertiesHandler} />}/>
          <Route path="/login" element={<Login getUserId={getUserIdHandler}/>}/>
-         <Route path="/filters" element={<Filter snap={documentSnap} addPropDetailsHandler={onAddPropertyDetails} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng}/>}/>
+         <Route path="/filters" element={<Filter snap={documentSnap} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng}/>}/>
          <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler}/>}/>
          <Route path="/about" element={<About searchedProperties={searchedPropertiesHandler}/>}/>
-         <Route path="/property-details" element={<PropertyDetails propDetails={propertyDetails}   searchedProperties={searchedPropertiesHandler} userProfile={userProfile}/>}/>
+         <Route path="/property-details/:id" element={<PropertyDetails  searchedProperties={searchedPropertiesHandler} userProfile={userProfile}/>}/>
          <Route path="/list-property" element={<ListProperty/>}/>
          <Route path="/contact" element={<ContactUs/>}/>
       </Routes>

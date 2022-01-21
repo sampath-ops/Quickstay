@@ -43,14 +43,10 @@ const CardContainer = (props) => {
                                         })
                                     }
                                </Carousel> 
-                               : <Link to="/property-details"> <img src={property.images[1]} alt={property.furnishingStatus} onClick={()=>{
-                                props.addPropDetailsHandler(property);
-                            }}/></Link>
+                               : <Link to={`/property-details/${property.listingId}`}> <img src={property.images[1]} alt={property.furnishingStatus}/></Link>
                            }
-                           <Link to="/property-details" style={{textDecoration:'none',color:'black',position:'relative'}}>
-                            <div className={`room-details ${details}`} onClick={()=>{
-                                props.addPropDetailsHandler(property);
-                            }}>
+                           <Link to={`/property-details/${property.listingId}`} style={{textDecoration:'none',color:'black',position:'relative'}}>
+                            <div className={`room-details ${details}`}>
                                 <span>{property.options[0].name}</span>
                                 <span>&#8377; {property.options[0].price}</span>
                                 <span><span><i className="fas fa-map-marker-alt"></i><p>{address.toString()}</p></span></span>
