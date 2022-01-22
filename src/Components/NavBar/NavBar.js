@@ -6,7 +6,9 @@ import logo from '../../WebsiteMaterial/Logo.png';
 import './NavBar.css';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-
+import {getAuth,signOut} from "firebase/auth";
+import {app} from "../../firebase.config";
+import Popover from './PopOver';
 
 class NavBar extends React.Component {
     
@@ -14,6 +16,7 @@ class NavBar extends React.Component {
       super(props);
       this.state={
         menuOpen:false,
+        showProfile: false
       }
     }
 
@@ -77,6 +80,22 @@ class NavBar extends React.Component {
         
       ]
 
+      const auth = getAuth(app);
+  
+      if(!this.state.showProfile && auth.currentUser){
+        this.setState({showProfile:true});
+      }
+    
+      //SIGNOUT
+      const signout = ()=>{
+        signOut(auth).then(() => {
+          console.log("signed out")
+          this.setState({showProfile:false});
+        }).catch((error) => {
+          // An error happened.
+        });
+      }
+
       const menuItems = menu.map((val,index)=>{
         return (
           <MenuItem
@@ -95,7 +114,7 @@ class NavBar extends React.Component {
               <Link to="/"><img src={logo} alt="logo" /></Link>
             </div>
             <MenuButton  open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='black'/>
-            <div className="desktop-menu">
+            <div className={`desktop-menu  ${this.state.showProfile ? "hide-login":""}`}>
               {
                 menu.map((val,index)=>{
                   return(
@@ -103,9 +122,14 @@ class NavBar extends React.Component {
                       <NavLink to={val.link} >{val.route}</NavLink>
                     </div>
                   )
-                })
+                }) 
               }
+              {
+                 this.state.showProfile && <Popover signout={signout}/>
+              }
+              
             </div>
+           
           </div>
           <Menu open={this.state.menuOpen}>
             {menuItems}

@@ -15,6 +15,8 @@ import PopUpWrap from '../PopUp/PopUpWrap';
 import { useState } from 'react';
 import { db } from '../../firebase.config';
 import { doc, getDoc } from "firebase/firestore";
+import { getAuth } from 'firebase/auth';
+import { app } from '../../firebase.config';
 
 const Home = (props) => {
 
@@ -46,8 +48,9 @@ const Home = (props) => {
         }
     }
 
-    if(props.user && show){
-        checkUserProfile(props.user.id);
+    const auth = getAuth(app);
+    if(auth.currentUser && show){
+        checkUserProfile(auth.currentUser.uid);
     }
 
     return ( 

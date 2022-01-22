@@ -5,9 +5,9 @@ import lottie from 'lottie-web';
 import OTP from './Otp';
 import Main from "../NavBar/Main";
 import {app} from "../../firebase.config"
-import { getAuth,signInWithPhoneNumber,RecaptchaVerifier } from "firebase/auth";
+import { getAuth,signInWithPhoneNumber,RecaptchaVerifier} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-const Login = (props) => {
+const Login = () => {
 
     const [enteredNumber,setEnteredNumber] = useState('');
     const [isValid,setIsValid] = useState(true);
@@ -41,9 +41,10 @@ const Login = (props) => {
             setIsRecievedOtp(true);
           
           }).catch((error) => {
-            // Error; SMS not sent
-            console.log(error)
-            console.log("otp is not sent")
+            console.log(error);
+            // window.recaptchaVerifier.render().then(function(widgetId) {
+            //     window.grecaptcha.reset(widgetId);
+            //   })
           });
     }
 
@@ -109,9 +110,8 @@ const Login = (props) => {
     const onOtpSubmitHandler = (otp)=>{
         window.confirmationResult.confirm(otp).then((result) => {
             // User signed in successfully.
-            const user = result.user;
-            props.getUserId(user);
-            navigate('/')
+            console.log("user signed in");
+            navigate("/");
             // ...
           }).catch((error) => {
             // User couldn't sign in (bad verification code?)

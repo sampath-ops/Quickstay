@@ -30,14 +30,6 @@ function App() {
       setDocumentSnap(docs);
       setSearchLatlng(latlng);
     }
-  
-    //GET USERID ON LOGIN
-    const getUserIdHandler = (userDoc)=>{
-      setUser({
-        id: userDoc.uid,
-        phn: userDoc.phoneNumber
-      });
-    }
 
     // GET USER PROFILE ON LOGIN
     const [userProfile,setUserProfile] = useState();
@@ -53,7 +45,7 @@ function App() {
       <ScrollToTop>
       <Routes>
          <Route exact path="/" element={<Home user={user} getUserProfile={getUserProfileHandler}allProperties={allProperties} searchedProperties={searchedPropertiesHandler} />}/>
-         <Route path="/login" element={<Login getUserId={getUserIdHandler}/>}/>
+         <Route path="/login" element={<Login/>}/>
          <Route path="/filters" element={<Filter snap={documentSnap} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng}/>}/>
          <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler}/>}/>
          <Route path="/about" element={<About searchedProperties={searchedPropertiesHandler}/>}/>

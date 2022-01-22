@@ -1,15 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import whatsapp from "../../../WebsiteMaterial/PropertyDetailsImages/PropertyContact/whatsapp.png";
+import { app,db } from "../../../firebase.config";
+import { getAuth } from "firebase/auth";
+import {doc,getDoc} from "firebase/firestore"
 const ContactButton = (props) => {
 
+    const auth = getAuth(app);
+   
     const navigate = useNavigate();
 
-    const contactWhatsappHandler = ()=>{    
+    const contactWhatsappHandler = async()=>{    
 
-        if(!props.userProfile){
+        const docRef = doc(db, "users", auth.currentUser.uid);
+        const docSnap = await getDoc(docRef);
+    
+        if(!auth.currentUser){
             navigate("/login")
         }
-        else if(!props.userProfile.premiumUser){    
+        else if(!docSnap.exists() || !docSnap.data().premiumUser){    
             navigate("/choose-plan")
         }
         else{

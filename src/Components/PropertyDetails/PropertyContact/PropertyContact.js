@@ -18,7 +18,7 @@ const PropertyContact = (props) => {
         <div className={`propertycontact ${float ? "float-rightpart": ""}`}>
            <PropertyAddress propDetails={props.propDetails}/>
            <PropertySharing sharing={props.propDetails.options}/>
-           <ContactButton userProfile={props.userProfile} propDetails={props.propDetails}/>
+           <ContactButton  propDetails={props.propDetails}/>
         </div>
      );
 }

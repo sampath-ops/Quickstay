@@ -21,3 +21,6 @@
     color: #000000;
     cursor: pointer;
 }
+.hide-access-methods{
+    display: none;
+}

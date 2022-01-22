@@ -46,7 +46,7 @@ const PropertyDetails = (props) => {
                         <AboutProperty propDetails={propDetails}/>
                 </div>
                 <div className="details2">
-                         <PropertyContact propDetails={propDetails} userProfile={props.userProfile}/>   
+                         <PropertyContact propDetails={propDetails}/>   
                 </div>
             </div>}
             <Locations/>
