@@ -43,7 +43,7 @@ function App() {
     <Router>
       <GeoLocation/>
       <ScrollToTop>
-      <Routes>
+      <Routes id="outer-container">
          <Route exact path="/" element={<Home user={user} getUserProfile={getUserProfileHandler}allProperties={allProperties} searchedProperties={searchedPropertiesHandler} />}/>
          <Route path="/login" element={<Login/>}/>
          <Route path="/filters" element={<Filter snap={documentSnap} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng}/>}/>

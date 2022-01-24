@@ -10,12 +10,14 @@ import Locations from '../Home/PopularSearches/Locations/Location'
 const About = (props) => {
     return (
         <MainSub searchedProperties={props.searchedProperties} user={props.user}>
+            <div id="page-wrap">
             <Hero/>
             <AboutUs/>
             <OurDream/>
             <Figures/>
             <BecomeFamily/>
             <Locations/>
+            </div>
         </MainSub>
     )
 }
