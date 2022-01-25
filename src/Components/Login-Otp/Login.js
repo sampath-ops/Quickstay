@@ -42,6 +42,7 @@ const Login = () => {
           
           }).catch((error) => {
             console.log(error);
+            alert("otp not send, need to refresh the page");
             // window.recaptchaVerifier.render().then(function(widgetId) {
             //     window.grecaptcha.reset(widgetId);
             //   })

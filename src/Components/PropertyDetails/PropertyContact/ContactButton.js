@@ -10,37 +10,46 @@ const ContactButton = (props) => {
     const navigate = useNavigate();
 
     const contactWhatsappHandler = async()=>{    
-
-        const docRef = doc(db, "users", auth.currentUser.uid);
-        const docSnap = await getDoc(docRef);
     
-        if(!auth.currentUser){
-            navigate("/login")
-        }
-        else if(!docSnap.exists() || !docSnap.data().premiumUser){    
-            navigate("/choose-plan")
+        if(auth.currentUser){
+
+            const docRef = doc(db, "users", auth.currentUser.uid);
+            const docSnap = await getDoc(docRef);
+            
+            if(!docSnap.exists() || !docSnap.data().premiumUser){    
+                navigate("/choose-plan")
+            }
+            else{
+                // contact owner if user is logged in and user should be a premium user
+                window.open(`https://wa.me/${props.propDetails.ownerPhoneNo}`,"_blank");
+            }
         }
         else{
-            // contact owner if user is logged in and user should be a premium user
-            window.open(`https://wa.me/${props.propDetails.ownerPhoneNo}`,"_blank");
+            navigate("/login")
         }
+
     }
 
     const contactWithCallHandler = async()=>{
 
-        const docRef = doc(db, "users", auth.currentUser.uid);
-        const docSnap = await getDoc(docRef);
 
-        if(!auth.currentUser){
-            navigate("/login")
-        }
-        else if(!docSnap.exists() || !docSnap.data().premiumUser){    
-            navigate("/choose-plan")
+        if(auth.currentUser){
+
+            const docRef = doc(db, "users", auth.currentUser.uid);
+            const docSnap = await getDoc(docRef);
+
+            if(!docSnap.exists() || !docSnap.data().premiumUser){    
+                navigate("/choose-plan")
+            }
+            else{
+                // CALL OWNER
+                window.open(`tel:${props.propDetails.ownerPhoneNo}`,"_blank")
+            }
         }
         else{
-            // CALL OWNER
-            window.open(`tel:${props.propDetails.ownerPhoneNo}`,"_blank")
+            navigate("/login")
         }
+
     }
     
     return ( 
