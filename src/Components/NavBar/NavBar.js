@@ -74,8 +74,8 @@ class NavBar extends React.Component {
           link:'/contact'
         },
         {
-          route:'Login',
-          link:'/login',
+          route: 'List Property',
+          link:'/list-property'
         },
         
       ]
@@ -114,7 +114,7 @@ class NavBar extends React.Component {
               <Link to="/"><img src={logo} alt="logo" /></Link>
             </div>
             <MenuButton  open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='black'/>
-            <div className={`desktop-menu  ${this.state.showProfile ? "hide-login":""}`}>
+            <div className="desktop-menu">
               {
                 menu.map((val,index)=>{
                   return(
@@ -125,7 +125,9 @@ class NavBar extends React.Component {
                 }) 
               }
               {
-                 this.state.showProfile && <Popover signout={signout}/>
+                 this.state.showProfile ? <Popover signout={signout} /> :  <div>
+                 <NavLink to="/login" >Login</NavLink>
+                 </div>
               }
               
             </div>

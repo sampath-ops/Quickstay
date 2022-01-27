@@ -17,7 +17,6 @@ import { useState } from 'react';
 function App() {
 
     const [documentSnap,setDocumentSnap] = useState([]);
-    const [user,setUser] = useState();
 
     //  GET ALL DOCUMENTS SNAP
     const allProperties = (docs)=>{
@@ -41,10 +40,10 @@ function App() {
 
   return (  
     <Router>
-      <GeoLocation/>
+      {/* <GeoLocation/> */}
       <ScrollToTop>
       <Routes id="outer-container">
-         <Route exact path="/" element={<Home user={user} getUserProfile={getUserProfileHandler}allProperties={allProperties} searchedProperties={searchedPropertiesHandler} />}/>
+         <Route exact path="/" element={<Home getUserProfile={getUserProfileHandler}allProperties={allProperties} searchedProperties={searchedPropertiesHandler} />}/>
          <Route path="/login" element={<Login/>}/>
          <Route path="/filters" element={<Filter snap={documentSnap} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng}/>}/>
          <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler}/>}/>

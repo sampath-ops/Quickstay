@@ -66,12 +66,12 @@ const SignUpForm = (props) => {
             premiumUser: false,
             type:type,
             interests:interest,
-            uid:props.user.id,
-            phoneNo:props.user.phn
+            uid:props.user.uid,
+            phoneNo:props.user.phoneNumber
         }
         console.log(profile);
         // create document with uid 
-        await setDoc(doc(db, "users", props.user.id),profile);
+        await setDoc(doc(db, "users", props.user.uid),profile);
         props.closeForm();
     }
 

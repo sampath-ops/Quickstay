@@ -53,7 +53,7 @@
   color: #000000;
 }
 
-.desktop-menu div:nth-child(5) a{
+.desktop-menu div:nth-child(6) a{
   padding: 3px 15px;
   border: 2px solid #A00500;
 }
@@ -91,9 +91,7 @@
   padding: 20px;
   font-weight: 600;
 }
-.hide-login > div:nth-child(5){
-    display: none;
-}
+
 @media(max-width:1023px){
   .logo{
     margin-left:0px;

@@ -55,7 +55,7 @@ const Home = (props) => {
 
     return ( 
         <Main>
-            <PopUpWrap isOpen={isOpen} togglePopup={togglePopup} user={props.user} closeForm={closeForm}/>
+            <PopUpWrap isOpen={isOpen} togglePopup={togglePopup} user={auth.currentUser} closeForm={closeForm}/>
             <Hero searchedProperties={props.searchedProperties}/>
             <Offer/>
             <FavouriteStays/>

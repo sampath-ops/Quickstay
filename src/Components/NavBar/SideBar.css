@@ -22,6 +22,7 @@
     height: 30px;
     right: 25px;
     top: 36px;
+    z-index: 13 !important;
   }
   
   .bm-burger-bars {
@@ -58,3 +59,11 @@
     right: 15px !important;
     top: 15px !important;
   }
+
+@media(max-width:1023px){
+  .bm-burger-button{
+    right: 12px;
+    width: 30px;
+    height: 30px;
+  }
+}
