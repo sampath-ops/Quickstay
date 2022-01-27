@@ -6,8 +6,8 @@ import linkedin from '../../WebsiteMaterial/ContactUsImages/linkedin.png'
 import twitter from '../../WebsiteMaterial/ContactUsImages/twitter.png'
 import youtube from '../../WebsiteMaterial/ContactUsImages/youtube.png';
 import {useState} from "react";
-// import {doc,setDoc} from "firebase/firestore";
-// import { db } from '../../firebase.config';
+import {collection,addDoc} from "firebase/firestore";
+import { db } from '../../firebase.config';
 
 export default function Hero() {
 
@@ -69,14 +69,16 @@ export default function Hero() {
 
         console.log(userQuery);
 
-        // RESET FIELD VALUES
-        setUserName('');
-        setUserPhn('');
-        setUserEmail('');
-        setUserMessage('');
-
         // PUSH DATA TO DATABASE
-        // await setDoc(doc(db,"websiteQueries"),userQuery);
+       const query = await addDoc(collection(db,"websiteQueries"),userQuery);
+
+       if(query){
+            // RESET FIELD VALUES
+            setUserName('');
+            setUserPhn('');
+            setUserEmail('');
+            setUserMessage('');
+       }
     }
 
 

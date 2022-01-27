@@ -44,6 +44,7 @@
     font-style: italic;
     border: 1px solid  #80808066;
     border-radius: 3px;
+    padding: 0px 12px;
 }
 .imageLabels{
     display: flex;
@@ -82,6 +83,12 @@
     width: 30%;
     text-align: center;
     padding:5px 0px;
+    cursor: pointer;
+}
+
+.select-property{
+    background-color: #A00500 !important;
+    color: white;
 }
 
 .propertyFor div{
