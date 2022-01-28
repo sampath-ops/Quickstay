@@ -1,8 +1,8 @@
-.Find{
+.Find-us{
     margin: 0 80px;
     padding-top: 80px;
 }
-.Find > p{
+.Find-us > p{
     display: inline-block;
     font-family: Open Sans;
     font-style: normal;
@@ -20,6 +20,7 @@
     overflow-y: hidden;
     padding-bottom: 20px;
 }
+::-webkit-scrollbar { display: none !important; }
 .places{
     font-family: Open Sans;
     font-style: italic;
@@ -27,16 +28,19 @@
     font-size: 24px;
     margin: 0 25px;
 } 
+.places img{
+    width: 150px;
+}
 .places > p{
     margin: 0;
     text-align: center;
 }
 @media(max-width:1023px){
-    .Find{
+    .Find-us{
         margin: 0 20px;
         padding-top: 45px;
     }
-    .Find > p{
+    .Find-us > p{
         font-size: 25px;
     }
     .places{

@@ -11,7 +11,7 @@ export default function Hero() {
     const propertyTypes = ["PG","Flat","Independent Rooms"];
     const propertyForGender = ["Male","Female","Unisex","Family"];
 
-    const [ownerName,setOwnerName] = useState("");
+    const [ownerEmail,setOwnerEmail] = useState("");
     const [ownerPhnNo,setOwnerPhnNo] = useState("");
     const [propertyAddress,setPropertyAddress] = useState("");
     const [propertyCity,setPropertyCity] = useState("");
@@ -21,11 +21,11 @@ export default function Hero() {
     const [propertForSelected,setPropertyForSelected] = useState("");
     const [isValid,setIsValid] = useState(true);
 
-    const ownerNameHandler = (e)=>{
+    const ownerEmailHandler = (e)=>{
         if(e.target.value.length > 0){
             setIsValid(true);
         }
-        setOwnerName(e.target.value);
+        setOwnerEmail(e.target.value);
     }
 
     const ownerPhnHandler = (e)=>{
@@ -76,13 +76,13 @@ export default function Hero() {
 
         e.preventDefault();
 
-        if(ownerName.trim().length === 0 || ownerPhnNo.trim().length === 0 || propertyAddress.trim().length === 0 || propertyCity.trim().length === 0){
+        if(ownerEmail.trim().length === 0 || ownerPhnNo.trim().length === 0 || propertyAddress.trim().length === 0 || propertyCity.trim().length === 0){
             setIsValid(false);
             return;
         }
 
         const propertyDetails = {
-            ownerName,
+            ownerEmail,
             ownerPhnNo,
             propertyAddress,
             propertyCity,
@@ -96,7 +96,7 @@ export default function Hero() {
         await addDoc(collection(db,"propertyListingLeads"),propertyDetails);
 
         // RESET FILEDS
-        setOwnerName("");
+        setOwnerEmail("");
         setOwnerPhnNo("");
         setPropertyAddress("");
         setPropertyCity("");
@@ -135,7 +135,7 @@ export default function Hero() {
             </div>
             <form onSubmit={listPropertyHandler} className={isValid ? "": "invalid"}>
                 <div className='listingPropertyDetails'>
-                    <input type="text" placeholder='Name' value={ownerName} onChange={ownerNameHandler}/>
+                    <input type="email" placeholder='Email' value={ownerEmail} onChange={ownerEmailHandler}/>
                     <input type="tel" placeholder='Phone No.' value={ownerPhnNo} onChange={ownerPhnHandler}/>
                     <input type="text" placeholder='Address' value={propertyAddress} onChange={propertyAddressHandler}/>
                     <input type="text" placeholder='City' value={propertyCity} onChange={propertyCityHandler}/>

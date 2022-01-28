@@ -32,7 +32,7 @@ const ExclusiveProperty = (props) => {
 
     useEffect(()=>{
         fetchProperties();
-    },[])
+    },[]);
 
     let ExclusivePropertiesArr =[];
     if(exclusiveProperties.length > 0){
