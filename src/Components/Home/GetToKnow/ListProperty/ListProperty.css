@@ -80,6 +80,8 @@
     width: 30%;
     text-align: center;
     padding:5px 2px;
+    margin-top:auto;
+    margin-bottom:auto;
 }
 
 .propertyForOptions div{
