@@ -27,13 +27,11 @@
     margin-left: 40px;
     font-size:20px;
     font-weight: 600;
-    /* margin-bottom: px; */
 }
 .listingPropertyDetails{
     width: 45vw;
     padding-left: 3vw;
     padding-top:120px;
-    /* box-shadow: 0px 0.5px 4px rgb(0 0 0 / 25%); */
     box-shadow: 0px 1.5px 3px rgb(0 0 0 / 25%);
 }
 .listingPropertyDetails input{
@@ -68,23 +66,23 @@
 .figuresContainer{
     width: auto;
 }
-.heroContainer div img{
-    width: 100%;
+.listHere img{
     margin-top: -70px;
+    width: 100%;
 }
-.propertyType, .propertyFor{
+.propertyTypeOptions, .propertyForOptions{
     display: flex;
     justify-content: space-around;
 }
-.propertyType div{
+.propertyTypeOptions div{
     background-color: #80808066;
     border-radius: 20px;
     width: 30%;
     text-align: center;
-    padding:5px 0px;
+    padding:5px 2px;
 }
 
-.propertyFor div{
+.propertyForOptions div{
     background-color: #80808066;
     border-radius: 20px;
     width: 18%;
@@ -115,6 +113,13 @@
 .figures2{
     display: none;
 }
+.whyListHereImg {
+    width: 90%;
+    display: table;
+    margin-left: auto;
+    margin-top: -70px;
+    margin-right: auto;
+}
 
 @media(max-width:1023px){
     .figures1{
@@ -131,13 +136,19 @@
     }
     .listingPropertyDetails{
         width: 85vw;
-        padding-top:40px;
+        padding-top:0px;
         margin-left: auto;
         margin-right: auto;
         box-shadow:none;
     }
-    .heroContainer div img {
-        margin-top: -40px;
+    .listingPropertyDetails input {
+        height: auto;
+        padding: 6px 0px;
+        font-size: 11px;
+        border-radius: 5px;
+    }
+    .listHere img {
+        margin-top: -45px;
     }
     .imageLabels {
         margin-top: -40px;
@@ -149,16 +160,25 @@
         font-size: 7px;
     }
     .imageLabels:nth-child(3) {
+        width: 80%;
         margin-right: 8px;
         font-size: 6px;
-        margin-top:-35px;
+        margin-top:-25px;
+        margin-right: auto;
+        margin-left: auto;
     }
-    .propertyType, .propertyFor{
+    .propertyTypeOptions, .propertyForOptions{
         font-size:10px;
     }
-    .submitButton{
+    .propertyType, .propertyFor{
+        font-size:11px;
+        margin-top:15px;
+    }
+    .submitButton {
+        font-size: 15px;
         margin-top: 50px;
         margin-bottom: 50px;
+        padding: 7px 47px;
     }
     .figure{
         padding: 0px 0px 35px;
@@ -168,5 +188,33 @@
     }
     .listHere h2{
         font-size:12px;
+    }
+    .listHere p:nth-child(1) {
+        font-size: 13px;
+    }
+    .listHere p:nth-child(2) {
+        font-size: 11px;
+    }
+    .whyListHere p {
+        font-size: 12px;
+        margin-top: 30px;
+
+    }
+    .whyListHereImg{
+        width: 85%;
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -30px;
+    }
+    .whyListHere .imageLabels div:first-child{
+        margin-left:-8px;
+    }
+    .propertyTypeOptions, .propertyForOptions{
+        display: flex;
+        justify-content: space-between;
+    }
+    .propertyForOptions div{
+        width: 23%;
     }
 }

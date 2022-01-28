@@ -27,15 +27,17 @@ export default function Hero() {
             </div>
             <div className='heroMap'>
                 <p>QUICKSTAY PRIVATE LIMITED</p>
-                <p>Chitkara Innovation Incubator Foundation, SCO 46, Sector 80, Mohali, Punjab.</p>
+                <p>Chitkara Innovation Incubator Foundation,<br/> SCO 46, Sector 80, Mohali, Punjab.</p>
                 <GoogleMaps/>
                 <p>Call: +91-8387868880</p><p>Email: support@quickstayrooms.com</p>
-                <p>CONNECT WITH US ON SOCIAL MEDIA!</p>
-                <img src={facebook} alt="facebook"/>
-                <img src={instagram} alt="instagram"/>
-                <img src={linkedin} alt="linkedin"/>
-                <img src={twitter} alt="twitter"/>
-                <img src={youtube} alt="youtube"/>
+                <div className='connectWithUs'>
+                    <p>CONNECT WITH US ON SOCIAL MEDIA!</p>
+                    <img src={facebook} alt="facebook"/>
+                    <img src={instagram} alt="instagram"/>
+                    <img src={linkedin} alt="linkedin"/>
+                    <img src={twitter} alt="twitter"/>
+                    <img src={youtube} alt="youtube"/>
+                </div>
             </div>
         </div>
     )

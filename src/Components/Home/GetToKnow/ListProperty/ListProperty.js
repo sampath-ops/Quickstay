@@ -7,6 +7,7 @@ import Hero from './Hero';
 import './ListProperty.css';
 
 export default function ListProperty() {
+    
     return (
         <MainSub>
             <Hero/>
