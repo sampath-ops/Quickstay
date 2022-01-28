@@ -13,23 +13,23 @@ const Filter = (props) => {
 
     let propertyarr = [];
      // get documents from snap
-    if(props.searchLatlng){ // as search latlng takes time to get
         props.snap.forEach(item =>{
             if('images' in item.data()){
                 const images = item.data().images;
                 if(images.length > 0){
+                    const property  = item.data();
                     // add property distance field 
-                    const propGeohash = item.data().geolocation
-                    const searchedGeohash = geohash.encode(props.searchLatlng.lat,props.searchLatlng.lng);
-                    const distance = geohashDistance.inKm(propGeohash,searchedGeohash);
-                    const property  = item.data()
-                    property["distance"] = distance.toFixed(1);
+                    if(props.searchLatlng){
+                        const propGeohash = item.data().geolocation
+                        const searchedGeohash = geohash.encode(props.searchLatlng.lat,props.searchLatlng.lng);
+                        const distance = geohashDistance.inKm(propGeohash,searchedGeohash);
+                        property["distance"] = distance.toFixed(1);
+                    }
                     // push property to properties array
                     propertyarr.push(property);
                 } 
             }       
         })
-    }
 
     //FILTER SECTION
     let [filters,setFilters] = useState({})
