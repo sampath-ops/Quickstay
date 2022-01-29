@@ -13,8 +13,10 @@ export default function BecomeFamily() {
                     <img className='becomeFamilyImg1' src={SearchHomes} alt="SearchHomes" />
                 </div>
                 <div className='becomeFamilyText'>
-                    Looking for a rental stay?<br/>
-                    <a href="/">SEARCH HOMES</a>
+                    <p>
+                        Looking for a<br/>rental stay?<br/>
+                        <a href="/">SEARCH HOMES</a>
+                    </p>
                 </div>
                 
                 
@@ -25,8 +27,10 @@ export default function BecomeFamily() {
                     <img className='becomeFamilyImg2' src={ListHome} alt="ListHome" />
                 </div>
                 <div className='becomeFamilyText'>
-                    Are you a home owner?<br/>
-                    <a href="/">LIST YOUR HOME</a>
+                    <p>
+                        Are you a home<br/>owner?<br/>
+                        <a href="/">LIST YOUR HOME</a>
+                    </p>
                 </div>
             </div>
             

@@ -18,36 +18,39 @@
     padding: 10px;
     border-radius: 3px;
 }
-.heroDetails p:first-child{
+.heroDetails>p:nth-child(1){
     font-size:35px;
     font-weight: 600;
     margin:0;
 }
-.heroDetails p:nth-child(2){
+.heroDetails>p:nth-child(2){
     font-size:14px;
     font-weight: 600;
     margin:14px 0px 25px;
 }
-.heroMap p:first-child{
+.heroMap>p:first-child{
     font-size:25px;
     font-weight: 600;
     margin:0;
 }
-.heroMap p:nth-child(2){
+.heroMap>p:nth-child(2){
     font-size:14px;
     font-weight: 600;
     margin:10px 0px 25px;
 }
-.heroMap p:nth-child(4){
+.heroMap>p:nth-child(4){
     font-size:14px;
     font-weight: 600;
     margin-top:30px;
 }
-.heroMap p:nth-child(5){
+.heroMap>p:nth-child(5){
     font-size:14px;
     font-weight: 600;
 }
-.heroMap p:nth-child(6){
+.heroMap>p:nth-child(2) br{
+    display: none;
+}
+.connectWithUs p{
     font-size:14px;
     font-weight: 800;
     margin-top:30px;
@@ -68,7 +71,7 @@ textarea{
     margin-top: 30px;
 }
 .GoogleMapContainer{
-    height:40%;
+    height:45%;
 }
 .heroMap img{
     width: 40px;
@@ -79,7 +82,7 @@ textarea{
 }
 @media (max-width:1023px){
     textarea{
-        height:20vh;
+        height:12vh;
     }
     .contactUs_heroContainer {
         flex-direction: column;
@@ -87,21 +90,26 @@ textarea{
         width: 100%;
         margin-top: 3vh;
         height: auto;
+        margin-bottom: 5vh;
     }
     .heroDetails, .heroMap {
-        width: 80%;
+        width: 85%;
     }
     .heroDetails div{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    .heroDetails div:nth-child(3) input{
-        width: 41%;
+    .heroDetails>div:nth-child(3) input{
+        width: 42%;
+    }
+    .heroDetails>p:nth-child(2) {
+        margin-top: 5px;
+        font-size: 8.5px;
     }
     .sendButton {
-        width: 60%;
-        font-size: 18px;
+        width: 55%;
+        font-size: 16px;
         padding: 5px 0px;
         background-color: #A00500;
         color: white;
@@ -111,7 +119,35 @@ textarea{
         margin-left: auto;
         margin-right: auto;
     }
-    .heroDetails, .heroMap {
+    .heroDetails{
         margin-top: 4vh;
+    }
+    .heroDetails>p:first-child {
+        font-size: 20px;
+    }
+    .heroMap>p:first-child {
+        font-size: 15px;
+    }
+    .connectWithUs{
+        display: table;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .heroMap>p:nth-child(5),
+    .heroMap>p:nth-child(4),
+    .heroMap>p:nth-child(2){
+        font-size: 12px;
+    }
+    .heroMap>p:nth-child(2) br{
+        display: inline;
+    }
+    .GoogleMapContainer {
+        height: 25vh;
+    }
+    .heroDetails input, textarea {
+        font-size: 10px;
+        padding: 6px 10px 6px;
+        border-radius: 4px;
+
     }
 }

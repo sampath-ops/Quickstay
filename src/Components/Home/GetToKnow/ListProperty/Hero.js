@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState } from 'react'
+=======
+import React,{useState} from 'react'
+>>>>>>> master
 import Figures from '../../../About/Figures';
 import ListHere from '../../../../WebsiteMaterial/ListPropertyImages/4.png'
 import WhyListHere from '../../../../WebsiteMaterial/ListPropertyImages/6.png'
@@ -123,7 +127,7 @@ export default function Hero() {
                 </div>
                 <div className='whyListHere'>
                     <p>Why list on QuickStay?</p>
-                    <img className='' src={WhyListHere} alt="WhyListHere" />
+                    <img className='whyListHereImg' src={WhyListHere} alt="WhyListHere" />
                     <div className="imageLabels">
                         <div>List your property<br/>FOR FREE.<br/>Earn Monthly!</div>
                         <div>Reach to<br/>wider Audience.</div>
