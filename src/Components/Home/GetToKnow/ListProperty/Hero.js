@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { useState } from 'react'
-=======
-import React,{useState} from 'react'
->>>>>>> master
 import Figures from '../../../About/Figures';
 import ListHere from '../../../../WebsiteMaterial/ListPropertyImages/4.png'
 import WhyListHere from '../../../../WebsiteMaterial/ListPropertyImages/6.png'
@@ -163,7 +159,7 @@ export default function Hero() {
                         }
                     </div>
 
-                    <button className='submitButton' type="submit">SUBMIT</button>
+                    <button className='submitButton' type="submit">SEND</button>
                 </div>
             </form>
             <div className='figures2'><Figures/></div>
