@@ -145,12 +145,12 @@
     }
     .listingPropertyDetails input {
         height: auto;
-        padding: 6px 9px;
-        font-size: 11px;
+        padding: 8px 8px;
+        font-size: 12px;
         border-radius: 5px;
     }
     .listingPropertyDetails > p{
-        font-size: 14px;
+        font-size: 13px;
         margin: 18px 0;
     }
     .listHere img {
@@ -185,7 +185,7 @@
     }
     .propertyFor div, .propertyType div{
         width: 100%;
-        font-size: 10px;
+        font-size: 11px;
         padding: 4px 0px;
     }
     .submitButton {
@@ -209,18 +209,18 @@
         font-size:12px;
     }
     .listHere p:nth-child(1) {
-        font-size: 14px;
+        font-size: 16px;
         margin: 0;
     }
     .listHere p:nth-child(2) {
-        font-size: 12px;
+        font-size: 15px;
         margin-left: 0;
     }
     .whyListHere{
         padding: 0 30px;
     }
     .whyListHere p {
-        font-size: 12px;
+        font-size: 15px;
        margin: 0;
 
     }
