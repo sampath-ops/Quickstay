@@ -56,6 +56,9 @@ class NavBar extends React.Component {
             transition: 'filter 0.5s ease',
           },
         }
+
+      const auth = getAuth(app);
+
       const menu = [
         {
           route:'Home',
@@ -77,10 +80,12 @@ class NavBar extends React.Component {
           route: 'List Property',
           link:'/list-property'
         },
+        {
+          route:`${auth.currentUser ? 'Logout' : 'Login'}`,
+          link:`${auth.currentUser ? '' : '/login'}`
+        }
         
       ]
-
-      const auth = getAuth(app);
   
       if(!this.state.showProfile && auth.currentUser){
         this.setState({showProfile:true});
@@ -88,6 +93,7 @@ class NavBar extends React.Component {
     
       //SIGNOUT
       const signout = ()=>{
+        this.setState({menuOpen: false});
         signOut(auth).then(() => {
           console.log("signed out")
           this.setState({showProfile:false});
@@ -101,7 +107,7 @@ class NavBar extends React.Component {
           <MenuItem
             key={index} 
             delay={`${index * 0.1}s`}
-            onClick={()=>{this.handleLinkClick();}}
+            onClick={val.route === 'Logout' ? ()=>{signout()}:()=>{this.handleLinkClick();}}
             >{val}
 
           </MenuItem>)
@@ -133,7 +139,7 @@ class NavBar extends React.Component {
             </div>
            
           </div>
-          <Menu open={this.state.menuOpen}>
+          <Menu open={this.state.menuOpen} className="mobile-menu">
             {menuItems}
           </Menu>
         </div>
