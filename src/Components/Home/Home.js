@@ -33,11 +33,13 @@ const Home = (props) => {
 
     //CHECK DOCUMENT EXIST WITH UID IN USERS COLLECTION
     const checkUserProfile = async(uid)=>{
+        console.log("hello")
         const docRef = doc(db, "users", uid);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
             props.getUserProfile(docSnap.data());
+            console.log(docSnap.data())
             setShow(false);
         } else {
             console.log("No such document!");

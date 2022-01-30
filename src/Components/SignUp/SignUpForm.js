@@ -12,7 +12,7 @@ const SignUpForm = (props) => {
     const [isValid,setIsValid] = useState(true);
     const [gender,setGender] = useState('');
     const [type,setType] = useState('');
-
+    const [loading,setLoading] = useState(false);
 
     const nameChangeHandler = (event)=>{
         if(event.target.value.trim().length > 0){
@@ -58,6 +58,7 @@ const SignUpForm = (props) => {
             setIsValid(false);
             return;
         }
+        setLoading(true);
         const profile = {
             name:enteredName,
             email:enteredEmail,
@@ -117,7 +118,7 @@ const SignUpForm = (props) => {
                 </div>
            </div>
            <KnowLittle getInterest={getInteresthandler}/>
-          <Button type='submit' text='Save'/>
+          <Button type='submit' text='Save' load={loading}/>
         </form>
      );
 }

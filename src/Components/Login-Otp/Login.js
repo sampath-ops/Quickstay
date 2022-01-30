@@ -7,12 +7,14 @@ import Main from "../NavBar/Main";
 import {app} from "../../firebase.config"
 import { getAuth,signInWithPhoneNumber,RecaptchaVerifier} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+
 const Login = () => {
 
     const [enteredNumber,setEnteredNumber] = useState('');
     const [isValid,setIsValid] = useState(true);
     const [isRecievedOtp,setIsRecievedOtp] = useState(false);
     const [showLottie,setShowLottie] = useState(true);
+    const [loading,setLoading] = useState(false);
     const navigate = useNavigate();
 
     //CHANGE NUMBER
@@ -37,6 +39,7 @@ const Login = () => {
             // user in with confirmationResult.confirm(code).
             window.confirmationResult = confirmationResult;
             setShowLottie(false);
+            setLoading(false);
             //show otp component
             setIsRecievedOtp(true);
           
@@ -96,7 +99,7 @@ const Login = () => {
             setIsValid(false);
             return;
         }
-
+       setLoading(true);
        if(!window.recaptchaVerifier){
             // solve recaptcha
              configureRecaptcha();
@@ -136,7 +139,7 @@ const Login = () => {
                         <p>Login</p>
                         <p>Enter your mobile number to receive a verification code.</p>
                         <input name="mobile" type="tel" placeholder="Mobile Number" value={enteredNumber} onChange={mobileChangeHandler} />
-                        <Button type='submit' text='Send OTP'/>
+                        <Button type='submit' text='Send OTP' load={loading}/>
                     </div>
                 </div>
             </form>
