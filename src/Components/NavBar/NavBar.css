@@ -31,11 +31,11 @@
   margin-left:35px;
 }
 .logo img{
-  width: 55px;
-  height: 55px;
+  width: 46px;
+  height: 46px;
 }
 .custom-navbar{
-  padding: 20px 20px;
+  padding: 8px 20px;
 }
 .custom-menubutton{
   visibility: hidden;
@@ -62,6 +62,15 @@
   padding: 3px 1px;
   border: 1.5px solid #A00500;
   border-width: 0px 0px 2px 0px;
+}
+.desktop-menu div:nth-child(5){
+  background: #a00500;
+  padding: 4px 14px;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.desktop-menu div:nth-child(5) > a{
+  color: #ffff;
 }
 .desktop-menu div:nth-child(6){
   display: none;

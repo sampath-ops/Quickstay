@@ -77,7 +77,7 @@ class NavBar extends React.Component {
           link:'/contact'
         },
         {
-          route: 'List Property',
+          route: 'List your Property',
           link:'/list-property'
         },
         {

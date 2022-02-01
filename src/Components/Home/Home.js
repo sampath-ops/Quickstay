@@ -2,7 +2,7 @@ import Hero from './Hero/Hero';
 import Offer from './Offers/Offer';
 import FavouriteStays from './FavouriteStays/FavouriteStays';
 import WhyStay from './WhyStay/WhyStay';
-import ReferEarn from './ReferEarn/ReferEarn';
+// import ReferEarn from './ReferEarn/ReferEarn';
 import ExclusiveProperty from './ExclusiveProperty/ExclusiveProperty';
 import Blogs from './Blogs/Blogs';
 import GetToKnow from './GetToKnow/GetToKnow';
@@ -33,7 +33,7 @@ const Home = (props) => {
 
     //CHECK DOCUMENT EXIST WITH UID IN USERS COLLECTION
     const checkUserProfile = async(uid)=>{
-        console.log("hello")
+       
         const docRef = doc(db, "users", uid);
         const docSnap = await getDoc(docRef);
 
@@ -61,7 +61,7 @@ const Home = (props) => {
             <Hero searchedProperties={props.searchedProperties}/>
             <Offer/>
             <FavouriteStays/>
-            <ReferEarn/>
+            {/* <ReferEarn/> */}
             <ExclusiveProperty addPropDetailsHandler={props.addPropDetailsHandler} getAllProperties={props.allProperties}/>
             <WhyStay/>
             <Blogs/>

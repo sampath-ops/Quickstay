@@ -4,7 +4,6 @@
     row-gap: 20px;
     grid-template-columns: 1fr 3fr;
     padding: 30px 15px;
-    padding-top: 0;
 }
 .exclusive > div:last-child{
     grid-column: span 3;

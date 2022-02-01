@@ -1,6 +1,6 @@
 .follow-us{
     margin: 0 80px;
-    padding-top: 80px;
+    padding-top: 30px;
 }
 .follow-us  >  div p{
     display: inline-block;
@@ -18,7 +18,7 @@
     margin-left: 55px;
 }
 .social-icons-follow img:not(:last-child){
-    margin-right: 15px;
+    margin-right: 25px;
 }
 .social-logos{
     display: flex;
@@ -37,15 +37,15 @@
         padding-top: 45px;
     }
     .like-share{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        display: grid;
+        row-gap: 16px;
     }
     .follow-us  >  div p{
         font-size: 25px;
     }
     .social-icons-follow{
         margin: 0;
+        justify-self: self-start;
     }
     .social-icons-follow img{
         width: 20%;

@@ -100,27 +100,28 @@ input[placeholder]{
     background-color: #FFF;
     color: black;
     border: none;
-    padding: 15px 30px;
+    padding: 8px 30px;
     border-radius: 25px;
     font-family: Open Sans;
     font-style: italic;
     font-weight: normal;
     font-size: 16px;
+    cursor: pointer;
 }
 .circle{
     padding: 10px;
     position: absolute;
     right: 5px;
-    top: 8px;
+    top: 4px;
     border-radius: 50%;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     background-color: #FFDE17;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.second-searchbar button:nth-child(2){
+.second-searchbar > div > a:nth-child(2) > button{
     display: none;
 }
 
@@ -163,7 +164,7 @@ input[placeholder]{
     }
     .searchbar input{
         width: 100%;
-        font-size: 16px;
+        font-size: 14px;
     }
     .search_icon{
         display: inline-block;
@@ -175,21 +176,25 @@ input[placeholder]{
        padding: 7px;
     }
     .searchbar button{
-        padding: 7px 13px;
+        padding: 6px 13px;
     }
     .second-searchbar button:nth-child(1){
         display: none;
     }
-    .second-searchbar button:nth-child(2){
+    .second-searchbar > div > a:nth-child(2) > button{
         display: inline-block;
-        padding: 10px 50px;
+        padding: 6px 50px;
         padding-left: 20px;
         width: auto;
+        font-size: 14px;
     }
     .second-searchbar > div{
         width: auto;
     }
     .circle{
-        top: 3px;
+        right: 3px;
+        top: 2px;
+        width: 7px;
+        height: 7px;
     }
  }

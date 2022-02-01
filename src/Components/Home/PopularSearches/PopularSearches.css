@@ -1,16 +1,17 @@
 .concat-box{
     padding: 30px 0;
+    display: grid;
+    padding: 50px 80px;
 }
 .concat-box > p{
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
-    padding-left: 130px;
 }
 .popular-searches-container{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .pop-container > a{
     font-family: Open Sans;

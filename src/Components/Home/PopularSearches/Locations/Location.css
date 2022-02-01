@@ -4,7 +4,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.25);
-    padding: 0px 20px;
+    padding: 0px 80px;
     box-sizing: border-box;
 }
 .locations > div:nth-child(1) div{
@@ -14,6 +14,9 @@
     font-size: 16px;
     color: #000000;
     padding: 20px;
+}
+.locations > div:nth-child(1) > div:nth-child(1){
+    padding-left: 0;
 }
 .locations > div:nth-child(3){
     display: none;

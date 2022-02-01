@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 .Footer{
     background-color: #535353;
     display: flex;
@@ -8,7 +9,7 @@
     text-decoration: none;
     font-family: "Open Sans";
     font-style: italic;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 16px;
     color: #FFFFFF;
 }
@@ -20,7 +21,7 @@
 .contact-ways {
     font-family: Open Sans;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 16px;
     color: #FFFFFF;
 }

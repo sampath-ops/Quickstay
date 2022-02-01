@@ -1,6 +1,4 @@
 import './Offer.css';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
 const Offer = () => {
     const offerimages = [
@@ -36,20 +34,6 @@ const Offer = () => {
                     })
                 }
             </div>
-            <Carousel showThumbs={false} showStatus={false} showArrows={false} showIndicators={false}>
-            {
-                offerimages.map(image =>{
-                    const imagename = require('../../../WebsiteMaterial/'+ image.name + '.png');
-                    return(
-                        <Link to="/choose-plan"  key={image.id}>
-                            <div>
-                                <img src={imagename.default} alt={image.alter}/>
-                            </div>
-                        </Link>
-                    )
-                })
-            }
-            </Carousel>
         </div>
      );
 }

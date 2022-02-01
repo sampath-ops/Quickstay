@@ -13,6 +13,7 @@ import ContactUs from './Components/ContactUs/ContactUs';
 import GeoLocation from './GeoLocation';
 import ScrollToTop from './ScrollToTop';
 import { useState } from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function App() {
 
@@ -40,7 +41,7 @@ function App() {
 
   return (  
     <Router>
-      {/* <GeoLocation/> */}
+      <GeoLocation/>
       <ScrollToTop>
       <Routes id="outer-container">
          <Route exact path="/" element={<Home getUserProfile={getUserProfileHandler}allProperties={allProperties} searchedProperties={searchedPropertiesHandler} />}/>
