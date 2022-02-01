@@ -24,7 +24,7 @@ class Menu extends React.Component {
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
-          background: 'black',
+          background: 'white',
           opacity: 0.95,
           color: '#fafafa',
           transition: 'height 0.3s ease',
