@@ -39,7 +39,6 @@ const Home = (props) => {
 
         if (docSnap.exists()) {
             props.getUserProfile(docSnap.data());
-            console.log(docSnap.data())
             setShow(false);
         } else {
             console.log("No such document!");

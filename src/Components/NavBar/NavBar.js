@@ -131,7 +131,7 @@ class NavBar extends React.Component {
                 }) 
               }
               {
-                 this.state.showProfile ? <Popover signout={signout} /> :  <div>
+                 this.state.showProfile ? <Popover signout={signout} auth={auth}/> :  <div>
                  <NavLink to="/login" >Login</NavLink>
                  </div>
               }
