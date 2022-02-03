@@ -9,7 +9,8 @@
 
 @media(min-width:1024px){
     .offer > div:nth-child(1){
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
     .offer > div:nth-child(2){
         display: none;
@@ -30,7 +31,6 @@
     }
     .offer > div:nth-child(1){
         display: flex;
-        column-gap: 10px;
         overflow-x: auto;
     }
 }

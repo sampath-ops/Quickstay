@@ -21,8 +21,8 @@
     width: 36px;
     height: 30px;
     right: 25px;
-    top: 36px;
-    z-index: 13 !important;
+    top: 25px;
+    z-index: 100 !important;
   }
   
   .bm-burger-bars {
@@ -63,7 +63,7 @@
 @media(max-width:1023px){
   .bm-burger-button{
     right: 12px;
-    width: 30px;
+    width: 24px;
     height: 30px;
   }
 }

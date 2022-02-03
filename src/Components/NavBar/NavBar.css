@@ -31,7 +31,7 @@
   margin-left:35px;
 }
 .logo img{
-  width: 46px;
+  width: 125px;
   height: 46px;
 }
 .custom-navbar{
@@ -103,6 +103,10 @@
   font-weight: 600;
 }
 
+.home_menu .bm-burger-button{
+  display: none;
+}
+
 @media(max-width:1023px){
   .logo{
     margin-left:0px;
@@ -117,10 +121,16 @@
     position: absolute;
   }
   .logo img{
-    width: 40px;
+    width: 110px;
     height: 40px;
   }
   .custom-navbar{
     padding: 8px 8px;
+  }
+  .home_menu .bm-burger-button{
+    display: block;
+  }
+  .home_menu .bm-burger-button{
+    top: 18px;
   }
 }

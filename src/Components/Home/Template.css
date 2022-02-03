@@ -18,4 +18,10 @@
         column-gap: 15px;
         overflow-x: auto;
     }
+    .template > div{
+        align-self: end;
+    }
+    .template > div p{
+        font-size: 12px;
+    }
 }

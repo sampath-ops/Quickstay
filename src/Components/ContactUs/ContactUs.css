@@ -12,6 +12,7 @@
 .heroDetails input, textarea{
     display:block;
     width: 100%;
+    font-size: 15px;
     margin-bottom: 10px;
     font-style: italic;
     border: 1px solid #80808066;
@@ -24,7 +25,7 @@
     margin:0;
 }
 .heroDetails>p:nth-child(2){
-    font-size:14px;
+    font-size:16px;
     font-weight: 600;
     margin:14px 0px 25px;
 }
@@ -34,7 +35,7 @@
     margin:0;
 }
 .heroMap>p:nth-child(2){
-    font-size:14px;
+    font-size:16px;
     font-weight: 600;
     margin:10px 0px 25px;
 }

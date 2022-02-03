@@ -15,6 +15,9 @@
     font-size: 28px;
     margin: 0;
 }
+.slogan > div:nth-child(1) > p:nth-child(1){
+    font-weight: 600;
+}
 .slogan > img{
     display: none;
 }

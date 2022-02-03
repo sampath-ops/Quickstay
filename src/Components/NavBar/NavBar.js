@@ -1,6 +1,7 @@
-import MenuItem from './MenuItem';
-import MenuButton from './MenuButton';
-import Menu from './Menu';
+// import MenuItem from './MenuItem';
+// import MenuButton from './MenuButton';
+// import Menu from './Menu';
+import Sidebar from "./SideBar";
 import React from 'react';
 import logo from '../../WebsiteMaterial/Logo.png';
 import './NavBar.css';
@@ -15,18 +16,18 @@ class NavBar extends React.Component {
     constructor(props){
       super(props);
       this.state={
-        menuOpen:false,
+        // menuOpen:false,
         showProfile: false
       }
     }
 
-    handleMenuClick() {
-      this.setState({menuOpen:!this.state.menuOpen});
-    }
+    // handleMenuClick() {
+    //   this.setState({menuOpen:!this.state.menuOpen});
+    // }
     
-    handleLinkClick() {
-      this.setState({menuOpen: false});
-    }
+    // handleLinkClick() {
+    //   this.setState({menuOpen: false});
+    // }
     
     render(){
       const styles= 
@@ -102,24 +103,24 @@ class NavBar extends React.Component {
         });
       }
 
-      const menuItems = menu.map((val,index)=>{
-        return (
-          <MenuItem
-            key={index} 
-            delay={`${index * 0.1}s`}
-            onClick={val.route === 'Logout' ? ()=>{signout()}:()=>{this.handleLinkClick();}}
-            >{val}
+      // const menuItems = menu.map((val,index)=>{
+      //   return (
+      //     <MenuItem
+      //       key={index} 
+      //       delay={`${index * 0.1}s`}
+      //       onClick={val.route === 'Logout' ? ()=>{signout()}:()=>{this.handleLinkClick();}}
+      //       >{val}
 
-          </MenuItem>)
-      });
+      //     </MenuItem>)
+      // });
     
       return(
-        <div>
+        <div className="home_menu">
           <div style={styles.container} className="custom-navbar">
             <div style={styles.logo} className="logo">
               <Link to="/"><img src={logo} alt="logo" /></Link>
             </div>
-            <MenuButton  open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='black'/>
+            {/* <MenuButton  open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='black'/> */}
             <div className="desktop-menu">
               {
                 menu.map((val,index)=>{
@@ -139,9 +140,10 @@ class NavBar extends React.Component {
             </div>
            
           </div>
-          <Menu open={this.state.menuOpen} className="mobile-menu">
+          {/* <Menu open={this.state.menuOpen} className="mobile-menu">
             {menuItems}
-          </Menu>
+          </Menu> */}
+           <Sidebar pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } className="home_menu"/>
         </div>
       )
     }

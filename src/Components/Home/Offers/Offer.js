@@ -1,33 +1,34 @@
 import './Offer.css';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { db } from '../../../firebase.config';
+import { collection, getDocs } from 'firebase/firestore';
+
 const Offer = () => {
-    const offerimages = [
-        {
-            id:0,
-            name:'2',
-            alter:'quick verified'
-        },
-        {
-            id:1,
-            name:'5',
-            alter:'diwali offer'
-        },
-        {
-            id:2,
-            name:'3',
-            alter:'tension free'
-        },
-    ]
+
+    const [banners,setBanners] = useState([]);
+
+    useEffect(()=>{
+        async function fetchData(){
+            const documentsSnap = await getDocs(collection(db,"banners"));
+            documentsSnap.forEach((doc)=>{
+                setBanners((prev)=>{
+                    return [...prev,doc.data()];
+                })
+            })
+        }
+        fetchData();
+    },[])
+
     return ( 
         <div className="offer">
             <div>
                 {
-                    offerimages.map(image =>{
-                        const imagename = require('../../../WebsiteMaterial/'+ image.name + '.png');
+                    banners.map(banner =>{
                         return(
-                        <Link to="/choose-plan"  key={image.id}>
+                        <Link to="/choose-plan"  key={banner.id}>
                             <div>
-                                <img src={imagename.default} alt={image.alter}/>
+                                <img src={banner.url} alt={banner.type}/>
                             </div>
                         </Link>
                         )
