@@ -1,4 +1,4 @@
-.how-it-works{
+.how-it-works-container{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     margin-left: -22px;
@@ -26,7 +26,7 @@
 }
 
 @media(max-width:1023px){
-    .how-it-works{
+    .how-it-works-container{
         grid-template-columns: auto auto auto auto;
         margin-left: -8px;
         margin-right: 10px;

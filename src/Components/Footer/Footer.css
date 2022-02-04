@@ -45,4 +45,7 @@
     .social-icons i{
         font-size: 20px;
     }
+    .Footer > img{
+        width: 60%;
+    }
 }

@@ -48,7 +48,7 @@
     font-size: 1.3vw;
     margin: auto 20px;
     font-family: 'Open Sans';
-    font-weight: 800;
+    font-weight: 600;
     text-align: right;
     position: relative;
     line-height: 3vw;
@@ -58,6 +58,7 @@
 }
 
 .ourDream h1:nth-child(1){
+    text-align: start;
     font-style: italic;
     border-left: 12px solid #FFDE17;
     padding-left: 40px;
@@ -130,6 +131,9 @@
 .becomeFamilyText{
     font-weight: 600;
 }
+.becomeFamilyText > p{
+    line-height: 25px;
+}
 .becomeFamilyText a{
     color:rgb(0, 211, 211);
     text-decoration:none;
@@ -152,8 +156,6 @@
     width: 250px;
     margin-left: auto;
     margin-right:auto;
-    display:flex;
-    align-items: center;
 }
 .becomeFamilyText p br:first-child{
     display: none;
@@ -166,6 +168,12 @@
     }
 }
 @media(max-width:1023px){
+    .ourDream h1:nth-child(2){
+       font-size: 28px;
+    }
+    .ourDream p{
+        font-size: 21px;
+    }
     .aboutUs br, .ourDream br {
         display: none;
     }
@@ -178,13 +186,16 @@
     }
     .aboutUsText{
         color: rgb(0, 0, 0);
-        font-size: 17.5px;
+        font-size: 16px;
         margin-top:0px;
         font-family: 'Open Sans';
-        font-weight: 800;
+        font-weight: 500;
         text-align: left;
         position: relative;
         line-height:normal;
+    }
+    .aboutUsText > p{
+        text-align: justify;
     }
     .aboutUsTextContainer{
         background-color: transparent;
@@ -196,21 +207,21 @@
         margin-top:0;
     }
     .ourDream h1:nth-child(1){
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bolder;
         font-style: italic;
         border-left: 15px solid #FFDE17;
-        padding-left: 20px;
+        padding-left: 16px;
         margin: 20px 0px 60px 24px;
     }
     .ourDreamImg{
-        height: 285px;
+        height: 218px;
     }
     .ourDreamImg img{
-        width: 300px;
+        width: 250px;
     }
     .ourDreamImg div{
-        font-size:24px;
+        font-size:18px;
         margin-bottom: -50px;
     }
     .ourDreamImages{
@@ -252,7 +263,7 @@
     }
     .heroSection{
         display: block;
-        height: 35vh;
+        height: 38vh;
         background-image: url('../../WebsiteMaterial/AboutImages/Global.png');
         background-size: 70vw auto;
         background-repeat: no-repeat;

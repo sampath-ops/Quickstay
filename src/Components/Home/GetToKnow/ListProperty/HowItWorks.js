@@ -21,7 +21,7 @@ const HowItWorks = () => {
     ]
 
     return ( 
-        <div className="how-it-works">
+        <div className="how-it-works-container">
             {
                 howItWorks.map((element,index)=>{
                     const image = require(`../../../../WebsiteMaterial/ListPropertyImages/HowItWorks/${element.image}.png`);
