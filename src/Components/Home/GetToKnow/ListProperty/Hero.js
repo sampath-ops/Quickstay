@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import Figures from '../../../About/Figures';
-import ListHere from '../../../../WebsiteMaterial/ListPropertyImages/4.png'
-import WhyListHere from '../../../../WebsiteMaterial/ListPropertyImages/6.png'
+// import ListHere from '../../../../WebsiteMaterial/ListPropertyImages/4.png'
+// import WhyListHere from '../../../../WebsiteMaterial/ListPropertyImages/6.png'
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../../../firebase.config';
+import WhyList from './WhyList';
+import HowItWorks from './HowItWorks';
 
 
 export default function Hero() {
@@ -113,23 +115,25 @@ export default function Hero() {
                 <div className='listHere'>
                     <p>List your home with QuickStay!</p>
                     <p>How it works?</p>
-                    <img className='' src={ListHere} alt="ListHere" />
+                    <HowItWorks/>
+                    {/* <img className='' src={ListHere} alt="ListHere" />
                     <div className="imageLabels">
                         <div>Register on<br/>QuickStay.</div>
                         <div>Fill in all the<br/>property details.</div>
                         <div>Submit for<br/>QuickVerification.</div>
                         <div>Start getting<br/>tenants!</div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='whyListHere'>
                     <p>Why list on QuickStay?</p>
-                    <img className='whyListHereImg' src={WhyListHere} alt="WhyListHere" />
+                    <WhyList/>
+                    {/* <img className='whyListHereImg' src={WhyListHere} alt="WhyListHere" />
                     <div className="imageLabels">
                         <div>List your property<br/>FOR FREE.<br/>Earn Monthly!</div>
                         <div>Reach to<br/>wider Audience.</div>
                         <div>Tenants can<br/>contact you directly.</div>
                         <div>Customer care<br/>support.</div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='figures1'><Figures/></div>
             </div>
@@ -159,7 +163,7 @@ export default function Hero() {
                         }
                     </div>
 
-                    <button className='submitButton' type="submit">SEND</button>
+                    <button className='submitButton' type="submit">SUBMIT</button>
                 </div>
             </form>
             <div className='figures2'><Figures/></div>

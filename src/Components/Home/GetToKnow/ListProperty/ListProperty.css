@@ -59,6 +59,10 @@
 .figuresContainer{
     width: auto;
 }
+.figuresContainer > div{
+    display: flex;
+    justify-content: space-around;
+}
 .listHere img{
     margin-top: -70px;
     width: 100%;
@@ -230,6 +234,11 @@
         margin-left: -15px;
         margin-top: -12px;
         margin-bottom: -22px;
+    }
+    .figuresContainer > div{
+        display: grid;
+        grid-template-columns: auto auto;
+        row-gap: 25px;
     }
     
 }

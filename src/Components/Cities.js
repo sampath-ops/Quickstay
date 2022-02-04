@@ -2,7 +2,7 @@ const Cities = () => {
 
     const Locations = [
         {
-            name:"Bangaluru",
+            name:"Bengaluru",
             alter:"Bangalore-icon"
         },
         {

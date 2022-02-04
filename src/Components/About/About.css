@@ -95,18 +95,16 @@
 .figuresContainer{
     width: 100vw;
     background-color:#A00500;
-    display:flex;
-    justify-content: space-around;
 }
 .figure{
     text-align: center;
-    padding: 15px 0px 35px;
+    padding: 35px 0px;
 }
 .figure p{
     font-size:27px;
     color: white;
     font-weight: 800;
-    margin-bottom: 0px;
+    margin: 0;
 }
 .figure span{
     font-size: 18px;
@@ -246,12 +244,11 @@
         margin-right: auto;
         margin-left: auto;
     }
-    .figuresContainer{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-row-gap: 15px;
-        row-gap: 15px;
-        margin-top:20px;
+    .figuresContainer > div{
+        padding: 35px 0;
+    }
+    .figure{
+        padding: 0 !important;
     }
     .heroSection{
         display: block;
