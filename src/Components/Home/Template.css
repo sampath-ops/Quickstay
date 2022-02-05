@@ -15,7 +15,7 @@
     .template{
         display: grid !important;
         grid-template-columns: auto auto auto;
-        column-gap: 15px;
+        column-gap: 0px;
         overflow-x: auto;
     }
     .template > div{

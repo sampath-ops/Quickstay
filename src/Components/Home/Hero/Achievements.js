@@ -4,17 +4,17 @@ const Achievements = () => {
     const achievements = [
         {
             id:0,
-            count: "25000",
+            count: "30000",
             text: "Trusted Users"
         },
         {
             id:1,
-            count: "4000",
+            count: "10000",
             text: "Verified Properties PAN India"
         },
         {
             id:2,
-            count: "17.5",
+            count: "18",
             text: "Total Brokerage Saved"
         },
     ]

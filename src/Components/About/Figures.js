@@ -5,11 +5,11 @@ export default function Figures() {
 
     const achievements = [
         {
-            count: "1000",
-            text:"Happy Users"
+            count: "30000",
+            text:"Trusted Users"
         },
         {
-            count: "1200",
+            count: "10000",
             text:"Verified Properties"
         },
         {
@@ -17,8 +17,8 @@ export default function Figures() {
             text:"and Counting"
         },
         {
-            count: "20000",
-            text:"Trusted User"
+            count: "18",
+            text:"Brokerage Saved"
         },  
     ]
 
@@ -37,6 +37,7 @@ export default function Figures() {
                                             <div className='achievement-counter'>
                                                 <p ref={countUpRef}/>
                                                 {index === 2 ? <p>&#160;Cities</p>  : <p> +</p> }
+                                                {index === 3 && <p>&#160;Lakhs</p>}
                                             </div>
                                         )
                                     }

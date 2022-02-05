@@ -106,7 +106,7 @@ textarea{
     }
     .heroDetails>p:nth-child(2) {
         margin-top: 5px;
-        font-size: 8.5px;
+        font-size: 10px;
     }
     .sendButton {
         width: 55%;
@@ -146,7 +146,7 @@ textarea{
         height: 25vh;
     }
     .heroDetails input, textarea {
-        font-size: 10px;
+        font-size: 12px;
         padding: 6px 10px 6px;
         border-radius: 4px;
 

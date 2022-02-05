@@ -77,7 +77,7 @@
 }
 .slideupfilterContainer{
     position: fixed;
-    z-index: 15;
+    z-index: 110;
     background: white;
     left: 0;
     right: 0;
