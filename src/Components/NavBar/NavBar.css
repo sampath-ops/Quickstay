@@ -31,11 +31,11 @@
   margin-left:35px;
 }
 .logo img{
-  width: 125px;
-  height: 50px;
+  width: 165px;
+  height: 65px;
 }
 .custom-navbar{
-  padding: 8px 20px;
+  padding: 2px 20px;
 }
 .custom-menubutton{
   visibility: hidden;
@@ -121,16 +121,16 @@
     position: absolute;
   }
   .logo img{
-    width: 110px;
-    height: 50px;
+    width: 100px;
+    height: 52px;
   }
   .custom-navbar{
-    padding: 0px 8px;
+    padding: 4.5px 8px;
   }
   .home_menu .bm-burger-button{
     display: block;
   }
   .home_menu .bm-burger-button{
-    top: 16px;
+    top: 18px;
   }
 }

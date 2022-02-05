@@ -1,11 +1,28 @@
 const Contact = () => {
+
     const icons = [
-        "fab fa-facebook-f",
-        "fab fa-instagram",
-        "fab fa-whatsapp",
-        "fab fa-linkedin-in",
-        "fab fa-twitter"
+        {
+            icon:"fab fa-facebook-f",
+            to:"https://www.facebook.com/quickstayrooms"
+        },
+        {
+            icon:"fab fa-instagram",
+            to:"https://www.instagram.com/quickstayrooms/"
+        },
+        {
+            icon:"fab fa-whatsapp",
+            to:"https://wa.me/+918387868880"
+        },
+        {
+            icon:"fab fa-linkedin-in",
+            to:"https://www.linkedin.com/company/quickstayrooms"
+        },
+        {
+            icon:"fab fa-twitter",
+            to:"https://twitter.com/quickstayrooms"
+        }
     ]
+
     return ( 
         <div className="contact-ways">
             <span>+91-8387868880</span>
@@ -14,7 +31,7 @@ const Contact = () => {
             <div className="social-icons">
                 {
                     icons.map((icon,index)=>(
-                        <i className={icon} key={index}></i>
+                        <a key={index} href={icon.to} target="_blank" rel="noopener noreferrer"><i className={icon.icon} ></i></a>
                     ))
                 }
             </div>

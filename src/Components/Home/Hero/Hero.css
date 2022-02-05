@@ -58,6 +58,8 @@
     display: grid;
     grid-template-columns: 4fr 1fr;;
     position: relative;
+    height: 50px;
+    align-self: center;
 }
 
 .searchbar button{

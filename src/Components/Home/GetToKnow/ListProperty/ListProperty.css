@@ -150,7 +150,7 @@
     .listingPropertyDetails input {
         height: auto;
         padding: 8px 8px;
-        font-size: 12px;
+        font-size: 14px;
         border-radius: 5px;
     }
     .listingPropertyDetails > p{
@@ -189,8 +189,8 @@
     }
     .propertyFor div, .propertyType div{
         width: 100%;
-        font-size: 11px;
-        padding: 4px 0px;
+        font-size: 12px;
+        padding: 4px 2px;
     }
     .submitButton {
         font-size: 12px;

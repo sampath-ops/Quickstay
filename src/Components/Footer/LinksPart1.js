@@ -1,11 +1,26 @@
 import LinksTemplate from "./LinksTemplate";
 const LinksPart1 = () => {
     const links = [
-        "Home",
-        "About",
-        "Blog",
-        "Refer & Earn",
-        "List your Property"
+        {
+            link:"Home",
+            to:"/"
+        },
+        {
+            link:"About",
+            to:"/about"
+        },
+        {
+            link:"Blog",
+            to:"/blog"
+        },
+        {
+            link:"Refer & Earn",
+            to:"/"
+        },
+        {
+            link:"List your Property",
+            to:"/list-property"
+        }
     ]
     return ( 
         <LinksTemplate array={links}/>

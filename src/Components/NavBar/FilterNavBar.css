@@ -1,12 +1,15 @@
 .FilterNavBar{
-    padding: 15px;
+    padding: 2px 20px;
     display: grid;
-    grid-template-columns: 1fr 7fr 1fr;
+    grid-template-columns: 1fr 4fr 0.5fr;
     box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.25);
 }
+.FilterNavBar > a{
+    margin-left: 35px;
+}
 .FilterNavBar > a img{
-    width: 125px;
-    height: 45px
+    width: 165px;
+    height: 65px;
 }
 .access-methods{
     justify-self: end;
@@ -23,4 +26,19 @@
 }
 .hide-access-methods{
     display: none;
+}
+@media(max-width:1023px){
+    .FilterNavBar{
+        grid-template-columns: 1fr 7fr 1fr;
+        column-gap: 10px;
+        padding: 4px 10px;
+        box-sizing: border-box;
+    }
+    .FilterNavBar > a{
+        margin-left: 0;
+    }
+    .FilterNavBar > a img{
+        width: 100px;
+        height: 55px;
+    }
 }

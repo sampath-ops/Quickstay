@@ -57,6 +57,7 @@
 
 @media(max-width:1023px){
   .bm-burger-button{
+    top: 18px;
     right: 12px;
     width: 24px;
     height: 30px;

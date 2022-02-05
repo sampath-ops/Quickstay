@@ -29,11 +29,15 @@
     .how-it-works-container{
         grid-template-columns: auto auto auto auto;
         margin-left: -8px;
-        margin-right: 10px;
+        margin-right: 18px;
     }
     .how-it-works-steps{
         width: 145%;
-        padding: 2px 2px;
+        padding: 0;
+        padding-bottom: 3px;
+    }
+    .how-it-works-steps:nth-child(4){
+        padding-left: 6px;
     }
     .how-it-works-steps > p:first-child{
         font-size: 18px !important;

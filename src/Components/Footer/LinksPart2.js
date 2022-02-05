@@ -1,11 +1,27 @@
 import LinksTemplate from "./LinksTemplate";
 const LinksPart2 = () => {
+
     const links = [
-        "Contact Us",
-        "Terms & Conditions",
-        "Privacy Policy",
-        "Refund Policy",
-        "FAQs"
+        {
+            link:"Contact Us",
+            to:"/contact"
+        },
+        {
+            link:"Terms & Conditions",
+            to:"/"
+        },
+        {
+            link:"Privacy Policy",
+            to:"/"
+        },
+        {
+            link:"Refund Policy",
+            to:"/"
+        },
+        {
+            link:"FAQs",
+            to:"/"
+        }
     ]
     return ( 
         <LinksTemplate array={links}/>
