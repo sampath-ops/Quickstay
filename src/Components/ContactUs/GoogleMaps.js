@@ -12,11 +12,6 @@ class SimpleMap extends Component {
     zoom: 11
   };
 
-
-  componentDidMount(){
-
-  }
-
   render() {
 
     return (
