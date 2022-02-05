@@ -26,7 +26,12 @@ const Offer = () => {
                 {
                     banners.map(banner =>{
                         return(
+                        banner.id === "pGFguINs4xfjnQX1dI19" ? 
                         <Link to="/choose-plan"  key={banner.id}>
+                            <div>
+                                <img src={banner.url} alt={banner.type}/>
+                            </div>
+                        </Link> : <Link to="/contact"  key={banner.id}>
                             <div>
                                 <img src={banner.url} alt={banner.type}/>
                             </div>
