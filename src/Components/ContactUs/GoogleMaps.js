@@ -13,7 +13,9 @@ class SimpleMap extends Component {
   };
 
   render() {
-
+      if(window.google){
+        window.google = undefined;
+      }
     return (
       // Important! Always set the container height explicitly
       <div className='GoogleMapContainer' style={{width: '100%'}}>

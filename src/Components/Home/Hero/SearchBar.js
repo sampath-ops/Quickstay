@@ -82,6 +82,7 @@ const SearchBar = (props) => {
             props.searchedProperties(docs,latlng);
             navigate('/filters'); 
         }
+        addressObject = undefined;
     }
 
     useEffect(() => {
@@ -98,6 +99,7 @@ const SearchBar = (props) => {
             onChange={event => setQuery(event.target.value)} value={query}/>
             <button className="search_icon" onClick={handleClick}><i className="fas fa-search"></i></button>
             <button className='search_text' onClick={handleClick}>SEARCH</button>
+            <span></span>
         </div>
      );
 }

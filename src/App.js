@@ -50,8 +50,8 @@ function App() {
          <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler}/>}/>
          <Route path="/about" element={<About searchedProperties={searchedPropertiesHandler}/>}/>
          <Route path="/property-details/:id" element={<PropertyDetails  searchedProperties={searchedPropertiesHandler} userProfile={userProfile}/>}/>
-         <Route path="/list-property" element={<ListProperty/>}/>
-         <Route path="/contact" element={<ContactUs/>}/>
+         <Route path="/list-property" element={<ListProperty searchedProperties={searchedPropertiesHandler}/>}/>
+         <Route path="/contact" element={<ContactUs searchedProperties={searchedPropertiesHandler}/>}/>
       </Routes>
       </ScrollToTop>
       <Footer/>

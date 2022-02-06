@@ -9,7 +9,7 @@ import Locations from '../Home/PopularSearches/Locations/Location'
 
 const About = (props) => {
     return (
-        <MainSub searchedProperties={props.searchedProperties} user={props.user}>
+        <MainSub searchedProperties={props.searchedProperties}  >
             <div id="page-wrap">
             <Hero/>
             <AboutUs/>

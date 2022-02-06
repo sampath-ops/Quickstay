@@ -6,10 +6,10 @@ import Find from '../../FollowAndFind/Find';
 import Hero from './Hero';
 import './ListProperty.css';
 
-export default function ListProperty() {
+export default function ListProperty(props) {
     
     return (
-        <MainSub>
+        <MainSub searchedProperties={props.searchedProperties} >
             <Hero/>
             <Find/>
             <Locations/>
