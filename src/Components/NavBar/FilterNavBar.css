@@ -11,6 +11,9 @@
     width: 165px;
     height: 65px;
 }
+.sub_search{
+    display: none;
+}
 .access-methods{
     justify-self: end;
     align-self: center;
@@ -40,5 +43,27 @@
     .FilterNavBar > a img{
         width: 125px;
         height: 50px;
+    }
+    .FilterNavBar > .searchbar{
+        justify-self: flex-end;
+    }
+    .FilterNavBar > .searchbar > input{
+        border: none;
+        box-shadow: none;
+        padding: 7px 0;
+        display: none;
+        transition:  border 0.2s ease-in;
+    }
+    .FilterNavBar > .searchbar.search_active > input{
+        border-bottom: 2px solid;
+        display: block;
+    }
+    .FilterNavBar > .searchbar > button{
+        background: none;
+        padding: 6px 6px;
+        padding-left: 0;    
+    }
+    .FilterNavBar > .searchbar > button > i{
+        color: black;
     }
 }

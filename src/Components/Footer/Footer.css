@@ -51,5 +51,6 @@
     }
     .Footer > img{
         width: 55%;
+        height: auto;
     }
 }

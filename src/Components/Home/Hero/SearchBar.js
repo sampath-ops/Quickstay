@@ -67,17 +67,21 @@ const SearchBar = (props) => {
 
     const navigate = useNavigate();
     const [query, setQuery] = useState("");
+    const [isActive,setIsActive] = useState(false);
     const autoCompleteRef = useRef(null);
 
     const handleClick = async()=>{
-        const lat = addressObject.geometry.location.lat();
-        const lng = addressObject.geometry.location.lng();
-        const docs = await GetGeoDocuments(lat,lng,7.45645);
-        const latlng = {
-            lat,lng
+        setIsActive(!isActive);
+        if(addressObject){
+            const lat = addressObject.geometry.location.lat();
+            const lng = addressObject.geometry.location.lng();
+            const docs = await GetGeoDocuments(lat,lng,7.45645);
+            const latlng = {
+                lat,lng
+            }
+            props.searchedProperties(docs,latlng);
+            navigate('/filters'); 
         }
-        props.searchedProperties(docs,latlng);
-        navigate('/filters'); 
     }
 
     useEffect(() => {
@@ -89,7 +93,7 @@ const SearchBar = (props) => {
     }, []);
 
     return ( 
-        <div className="searchbar">
+        <div className={`searchbar ${isActive ? "search_active" : ""}`}>
             <input type="text" placeholder="Search Locality..." ref={autoCompleteRef}
             onChange={event => setQuery(event.target.value)} value={query}/>
             <button className="search_icon" onClick={handleClick}><i className="fas fa-search"></i></button>
