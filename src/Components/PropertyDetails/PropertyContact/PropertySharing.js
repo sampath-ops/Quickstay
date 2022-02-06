@@ -1,16 +1,16 @@
-const PropertySharing = () => {
-    const shares = ["Private","Private","Private","Private"]
+const PropertySharing = ({sharing}) => {
+
     return ( 
         <div className='property-share-container'>
         {
-            shares.map((share,index)=>{
-                const image = require('../../../WebsiteMaterial/PropertyDetailsImages/PropertyContact/Private.png');
+            sharing.map((share,index)=>{
+                const image = require(`../../../WebsiteMaterial/PropertyDetailsImages/RoomSharing/${share.name}.svg`);
                 return(
                     <div className="property-share-box" key={index}>
                         <img src={image.default} alt={share} />
                         <div className="share-text">
-                            <p>Single Room</p>
-                            <p>&#8377; 8000</p>
+                            <p>{share.name}</p>
+                            <p>&#8377; {share.price}</p>
                         </div>
                     </div>
                 )

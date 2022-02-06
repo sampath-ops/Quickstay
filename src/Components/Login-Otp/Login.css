@@ -21,6 +21,12 @@
     height: 50%;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+.lottie-container svg{
+    width: 70% !important;
+    height: 70% !important;
 }
 .input-container{
     text-align: center;
@@ -74,11 +80,12 @@
 .otp-container > input:not(:last-child){
     margin-right: 15px;
 }
-.edit-method > a{
+.edit-method > span{
     color: #00C2FF;
     font-weight: 600;
     font-size: 16px;
     text-decoration: none;
+    cursor: pointer;
 }
 .edit-method{
     display: flex;

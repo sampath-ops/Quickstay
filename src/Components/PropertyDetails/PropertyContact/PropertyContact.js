@@ -3,7 +3,7 @@ import PropertyAddress from './PropertyAddress';
 import PropertySharing from './PropertySharing';
 import ContactButton from './ContactButton';
 import React, { useEffect, useState } from 'react';
-const PropertyContact = () => {
+const PropertyContact = (props) => {
 
    const [float, setFloat] = useState(false);
    useEffect(() => {
@@ -14,12 +14,11 @@ const PropertyContact = () => {
      return () => window.removeEventListener("scroll", handleScroll);
    }, []);
 
-
     return ( 
         <div className={`propertycontact ${float ? "float-rightpart": ""}`}>
-           <PropertyAddress/>
-           <PropertySharing/>
-           <ContactButton/>
+           <PropertyAddress propDetails={props.propDetails}/>
+           <PropertySharing sharing={props.propDetails.options}/>
+           <ContactButton  propDetails={props.propDetails}/>
         </div>
      );
 }

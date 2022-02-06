@@ -15,11 +15,18 @@
     font-size: 28px;
     margin: 0;
 }
+.slogan > div:nth-child(1) > p:nth-child(1){
+    font-weight: 600;
+}
 .slogan > img{
     display: none;
 }
 .slogan div:nth-child(2) img{
     margin-top: 40px;
+}
+.playstore-button{
+    display: grid;
+    row-gap: 16px;
 }
 @media(max-width:1023px){
     .slogan > div:nth-child(1) > p:nth-child(1){
@@ -27,11 +34,12 @@
         margin-bottom: 0;
     }
     .slogan p{
-        font-size: 23px;
+        font-size: 23px !important;
         margin-bottom: 15px;
     }
     .slogan div{
         margin-bottom: 15px;
+        row-gap: 0px;
     }
     .playstore-button{
         text-align: center;
@@ -39,6 +47,7 @@
     }
     .playstore-button img{
         width: 55%;
+        justify-self: center;
     }
     .download{
         margin: 0 20px;
@@ -49,7 +58,7 @@
     .slogan > img{
         display: inline-block;
         margin-top: 20px;
-        width: 75%;
+        width: 85%;
         margin-left: auto;
         margin-right: auto;
     }

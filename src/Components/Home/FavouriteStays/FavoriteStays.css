@@ -10,12 +10,10 @@
     width: 75%;
 }
 @media(max-width:1023px){
-    .template > div{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+    .favouritestays{
+        display: block;
     }
     .template > div img{
-        width: 50%;
+        width: 100%;
     }
 }

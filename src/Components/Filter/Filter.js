@@ -1,137 +1,104 @@
+/* eslint-disable */
 import MainSub from "../NavBar/MainSub";
 import Locations from "../Home/PopularSearches/Locations/Location";
 import CardContainer from "../Home/ExclusiveProperty/CardContainer";
 import './Filter.css';
 import FilterOptions from "./FilterOptions";
 import FilterOptionsForMobile from "./FilterOptionForMobile/FilterOptionsForMobile";
-const Filter = () => {
-    const properties = [
-        {
-            images:["living-room.jpg","living-room.jpg","living-room.jpg"],
-            name:'Private Room',
-            amount:6500,
-            location:"Sec 22, Chandigarh",
-            type:"Fully-Furnished",
-            person:"Male",
-            alter:"male"
-        },
-        {
-            images:["living-room.jpg","living-room.jpg","living-room.jpg"],
-            name:'PG',
-            amount:5000,
-            location:"Sec 46, Chandigarh",
-            type:"Fully-Furnished",
-            person:"Female",
-            alter:"female"
-        },
-        {
-            images:["living-room.jpg","living-room.jpg","living-room.jpg"],
-            name:'Single Room',
-            amount:8500,
-            location:"VIP road, Chandigarh",
-            type:"Fully-Furnished",
-            person:"Unisex",
-            alter:"unisex"
-        },
-        {
-            images:["living-room.jpg","living-room.jpg","living-room.jpg"],
-            name:'1RK',
-            amount:"10,500",
-            location:"VIP road, Zirakpur",
-            type:"Fully-Furnished",
-            person:"Female",
-            alter:"Female"
-        },
-        {
-            images:["living-room.jpg","living-room.jpg","living-room.jpg"],
-            name:'Private Room',
-            amount:6500,
-            location:"Sec 22, Chandigarh",
-            type:"Fully-Furnished",
-            person:"Male",
-            alter:"male"
-        },
-        {
-            images:["living-room.jpg","living-room.jpg","living-room.jpg"],
-            name:'PG',
-            amount:5000,
-            location:"Sec 46, Chandigarh",
-            type:"Fully-Furnished",
-            person:"Female",
-            alter:"female"
-        },
-        {
-            images:["living-room.jpg","living-room.jpg","living-room.jpg"],
-            name:'Single Room',
-            amount:8500,
-            location:"VIP road, Chandigarh",
-            type:"Fully-Furnished",
-            person:"Unisex",
-            alter:"unisex"
-        },
-        {
-            images:["living-room.jpg","living-room.jpg","living-room.jpg"],
-            name:'1RK',
-            amount:"10,500",
-            location:"VIP road, Zirakpur",
-            type:"Fully-Furnished",
-            person:"Female",
-            alter:"Female"
-        },
-        {
-            images:["living-room.jpg","living-room.jpg","living-room.jpg"],
-            name:'Private Room',
-            amount:6500,
-            location:"Sec 22, Chandigarh",
-            type:"Fully-Furnished",
-            person:"Male",
-            alter:"male"
-        },
-        {
-            images:["living-room.jpg","living-room.jpg","living-room.jpg"],
-            name:'PG',
-            amount:5000,
-            location:"Sec 46, Chandigarh",
-            type:"Fully-Furnished",
-            person:"Female",
-            alter:"female"
-        },
-        {
-            images:["living-room.jpg","living-room.jpg","living-room.jpg"],
-            name:'Single Room',
-            amount:8500,
-            location:"VIP road, Chandigarh",
-            type:"Fully-Furnished",
-            person:"Unisex",
-            alter:"unisex"
-        },
-        {
-            images:["living-room.jpg","living-room.jpg","living-room.jpg"],
-            name:'1RK',
-            amount:"10,500",
-            location:"VIP road, Zirakpur",
-            type:"Fully-Furnished",
-            person:"Female",
-            alter:"Female"
-        },
-    ]
+import { useState } from "react";
+import geohash from "ngeohash";
+import geohashDistance from "geohash-distance";
 
-  
+const Filter = (props) => {
+
+    let propertyarr = [];
+     // get documents from snap
+        props.snap.forEach(item =>{
+            if('images' in item.data()){
+                const images = item.data().images;
+                if(images.length > 0){
+                    const property  = item.data();
+                    // add property distance field 
+                    if(props.searchLatlng){
+                        const propGeohash = item.data().geolocation
+                        const searchedGeohash = geohash.encode(props.searchLatlng.lat,props.searchLatlng.lng);
+                        const distance = geohashDistance.inKm(propGeohash,searchedGeohash);
+                        property["distance"] = distance.toFixed(1);
+                    }
+                    // push property to properties array
+                    propertyarr.push(property);
+                } 
+            }       
+        })
+
+    //FILTER SECTION
+    let [filters,setFilters] = useState({})
+
+    // set filter values
+    const getFiltersHandler = (choosedFilters)=>{
+        setFilters({...filters,...choosedFilters});
+    }
+
+    // clear filter values
+    const clearFilters = (clear)=>{
+        setFilters(clear);
+        setSort("");
+    }
+
+    //filtering property array
+    propertyarr = propertyarr.filter((item)=>{
+        for(var key in filters){
+            if (item[key] === undefined || item[key] != filters[key])
+              return false;
+        }
+            return true;
+    });
+
+
+    // SORT SECTION
+    const [sort,setSort] = useState("");
+
+    // sort properties
+    const setSortHandler = (sortValue)=>{
+        if(sortValue !== undefined){
+            setSort(sortValue);
+        }
+    }
+    
+    // Ascending to Descending, Descending to Ascending
+    if(sort === "LowToHigh"){
+        propertyarr.sort(function(a, b) {
+            return parseFloat(a.options[0].price) - parseFloat(b.options[0].price);
+        });
+    }
+    if(sort === "HighToLow"){
+        propertyarr.sort((a, b) => parseFloat(b.options[0].price) - parseFloat(a.options[0].price));
+    }
+   
+    //DISTANCE SECTION
+    const [showDistance,setShowDistance] = useState(false);
+    const propertyDistanceHandler = (bool)=>{
+        if(bool !== undefined){
+            setShowDistance(bool);
+        }
+    }
 
     return ( 
-        <MainSub>
+        <MainSub searchedProperties={props.searchedProperties} user={props.user}>
+            {propertyarr &&
             <div>
                 <div className="filters-section-container">
                     <div className="filter-section">
-                        <FilterOptions/>
-                        <FilterOptionsForMobile/>
+                        <FilterOptions getFilters={getFiltersHandler} clearFilters={clearFilters} sortProperties={setSortHandler} propertyDistance={propertyDistanceHandler}/>
+                        <FilterOptionsForMobile getFilters={getFiltersHandler} clearFilters={clearFilters} sortProperties={setSortHandler}  propertyDistance={propertyDistanceHandler} filters={filters} sort={sort} showDistance={showDistance}/>
                     </div>
                     <div className="filter-results">
-                        <CardContainer properties={properties} className="filter-cards" details="filter-results-properties" carousel="true"></CardContainer>
+                        <CardContainer properties={propertyarr} className="filter-cards" addPropDetailsHandler={props.addPropDetailsHandler}details="filter-results-properties" carousel="true" showDistance={showDistance}></CardContainer>
                     </div>
                 </div>
-               <Locations/>
+                <Locations/>
             </div>
+            }
         </MainSub>
      );
 }

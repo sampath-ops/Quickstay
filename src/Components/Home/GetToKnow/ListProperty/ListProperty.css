@@ -1,6 +1,6 @@
 .heroContainer{
-    display:flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin-top: 10px;
 }
 
@@ -10,14 +10,15 @@
 .whyQuickStay h2{
     margin-left:40px;
 }
+.listHere{
+    padding: 0 40px;
+}
 .listHere p:nth-child(1){
-    margin-left: 40px;
     font-size:25px;
     font-weight: 600;
     margin-bottom: 0px;
 }
 .listHere p:nth-child(2){
-    margin-left: 40px;
     color: turquoise;
 }
 .whyListHere{
@@ -29,9 +30,10 @@
     font-weight: 600;
 }
 .listingPropertyDetails{
-    width: 45vw;
-    padding-left: 3vw;
-    padding-top:120px;
+    padding: 0 30px;
+    padding-top: 65px;
+    box-sizing: border-box;
+    height: 100%;
     box-shadow: 0px 1.5px 3px rgb(0 0 0 / 25%);
 }
 .listingPropertyDetails input{
@@ -42,54 +44,52 @@
     font-style: italic;
     border: 1px solid  #80808066;
     border-radius: 3px;
+    padding: 0px 12px;
 }
 .imageLabels{
     display: flex;
     justify-content: space-evenly;
-    margin-top:-80px;
-
-}
-.imageLabels:nth-child(4){
-    margin-right:15px;
     font-size: 12px;
     font-weight: 600;
 }
-.imageLabels:nth-child(3){
-    margin-right: 10px;
-    font-size: 10px;
-    font-weight: 600;
-    margin-top: -70px;
-}
+
 .imageLabels div{
     text-align: center;
 }
 .figuresContainer{
     width: auto;
 }
-.listHere img{
-    margin-top: -70px;
-    width: 100%;
-}
-.propertyTypeOptions, .propertyForOptions{
+.figuresContainer > div{
     display: flex;
     justify-content: space-around;
 }
-.propertyTypeOptions div{
+.listHere img{
+    margin-top: -70px;
+    width: 100%;
+    margin-bottom: -64px
+}
+.propertyType{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 15px;
+}
+.propertyFor{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 15px;
+}
+.propertyType div,.propertyFor div{
+    font-size: 14px;
     background-color: #80808066;
     border-radius: 20px;
-    width: 30%;
     text-align: center;
-    padding:5px 2px;
-    margin-top:auto;
-    margin-bottom:auto;
+    cursor: pointer;
+    padding:10px 0px;
 }
 
-.propertyForOptions div{
-    background-color: #80808066;
-    border-radius: 20px;
-    width: 18%;
-    text-align: center;
-    padding:5px 0px;
+.select-property{
+    background-color: #A00500 !important;
+    color: white;
 }
 
 .submitButton{
@@ -119,11 +119,15 @@
     width: 90%;
     display: table;
     margin-left: auto;
-    margin-top: -70px;
+    margin-top: -60px;
     margin-right: auto;
+    margin-bottom: -48px;
 }
 
 @media(max-width:1023px){
+    .heroContainer{
+        display: flex;
+    }
     .figures1{
         display: none;
     }
@@ -132,55 +136,68 @@
     }
     .heroContainer{
         flex-direction: column;
+        margin-top: 30px;
     }
     .whyQuickStay{
         width: 100vw;
     }
     .listingPropertyDetails{
-        width: 85vw;
-        padding-top:0px;
+        padding-top: 0px;
         margin-left: auto;
         margin-right: auto;
         box-shadow:none;
     }
     .listingPropertyDetails input {
         height: auto;
-        padding: 6px 0px;
-        font-size: 11px;
+        padding: 8px 8px;
+        font-size: 14px;
         border-radius: 5px;
     }
+    .listingPropertyDetails > p{
+        font-size: 13px;
+        margin: 18px 0;
+    }
     .listHere img {
-        margin-top: -45px;
+        margin-top: -35px;
+        margin-left: -10px;
+        margin-bottom: -35px;
+        width: 111%;
     }
-    .imageLabels {
-        margin-top: -40px;
-    font-size: 7px;
-
+   
+    .imageLabels  {
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
     }
-    .imageLabels:nth-child(4) {
-        margin-right: 12px;
-        font-size: 7px;
-    }
-    .imageLabels:nth-child(3) {
-        width: 80%;
-        margin-right: 8px;
-        font-size: 6px;
-        margin-top:-25px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-    .propertyTypeOptions, .propertyForOptions{
-        font-size:10px;
+    .imageLabels div{
+        font-size: 7.65px;
+        margin: 0;
     }
     .propertyType, .propertyFor{
-        font-size:11px;
+        font-size:10px;
+        column-gap: 8px;
+    }
+    .propertyType{
         margin-top:15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.5fr;
+    }
+    .propertyFor{
+        margin-top:15px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+    .propertyFor div, .propertyType div{
+        width: 100%;
+        font-size: 12px;
+        padding: 4px 2px;
     }
     .submitButton {
-        font-size: 15px;
-        margin-top: 50px;
-        margin-bottom: 50px;
-        padding: 7px 47px;
+        font-size: 12px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        padding: 8px 56px;
+        border-radius: 4px
     }
     .figure{
         padding: 0px 0px 35px;
@@ -188,35 +205,40 @@
     .figure:nth-child(3) p, .figure:nth-child(4) p{
         margin-top:0px;
     }
+    .listHere{
+        padding: 0 30px;
+        margin-bottom: 25px;
+    }
     .listHere h2{
         font-size:12px;
     }
     .listHere p:nth-child(1) {
-        font-size: 13px;
+        font-size: 16px;
+        margin: 0;
     }
     .listHere p:nth-child(2) {
-        font-size: 11px;
+        font-size: 15px;
+        margin-left: 0;
+    }
+    .whyListHere{
+        padding: 0 30px;
     }
     .whyListHere p {
-        font-size: 12px;
-        margin-top: 30px;
+        font-size: 15px;
+       margin: 0;
 
     }
     .whyListHereImg{
-        width: 85%;
-        display: table;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: -30px;
+        width: 110%;
+        margin: 0;
+        margin-left: -15px;
+        margin-top: -12px;
+        margin-bottom: -22px;
     }
-    .whyListHere .imageLabels div:first-child{
-        margin-left:-8px;
+    .figuresContainer > div{
+        display: grid;
+        grid-template-columns: auto auto;
+        row-gap: 25px;
     }
-    .propertyTypeOptions, .propertyForOptions{
-        display: flex;
-        justify-content: space-between;
-    }
-    .propertyForOptions div{
-        width: 23%;
-    }
+    
 }

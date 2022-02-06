@@ -12,6 +12,7 @@
 .heroDetails input, textarea{
     display:block;
     width: 100%;
+    font-size: 15px;
     margin-bottom: 10px;
     font-style: italic;
     border: 1px solid #80808066;
@@ -24,7 +25,7 @@
     margin:0;
 }
 .heroDetails>p:nth-child(2){
-    font-size:14px;
+    font-size:16px;
     font-weight: 600;
     margin:14px 0px 25px;
 }
@@ -34,7 +35,7 @@
     margin:0;
 }
 .heroMap>p:nth-child(2){
-    font-size:14px;
+    font-size:16px;
     font-weight: 600;
     margin:10px 0px 25px;
 }
@@ -77,6 +78,9 @@ textarea{
     width: 40px;
     margin-right:20px;
 }
+.invalid > div > input,.invalid > div > textarea{
+    border-color: red;
+}
 @media (max-width:1023px){
     textarea{
         height:12vh;
@@ -102,7 +106,7 @@ textarea{
     }
     .heroDetails>p:nth-child(2) {
         margin-top: 5px;
-        font-size: 8.5px;
+        font-size: 10px;
     }
     .sendButton {
         width: 55%;
@@ -142,7 +146,7 @@ textarea{
         height: 25vh;
     }
     .heroDetails input, textarea {
-        font-size: 10px;
+        font-size: 12px;
         padding: 6px 10px 6px;
         border-radius: 4px;
 

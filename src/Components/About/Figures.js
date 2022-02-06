@@ -1,24 +1,54 @@
 import React from 'react'
-
+import CountUp from "react-countup";
+import VisibilitySensor from 'react-visibility-sensor';
 export default function Figures() {
+
+    const achievements = [
+        {
+            count: "30000",
+            text:"Trusted Users"
+        },
+        {
+            count: "10000",
+            text:"Verified Properties"
+        },
+        {
+            count: "10",
+            text:"and Counting"
+        },
+        {
+            count: "18",
+            text:"Brokerage Saved"
+        },  
+    ]
+
+
     return (
-        <div className="figuresContainer">
-            <div className="figure">
-                <p>1000+</p>
-                <span>Happy Users</span>
-            </div>
-            <div className="figure">
-                <p>1200+</p>
-                <span>Verified Properties</span>
-            </div>
-            <div className="figure">
-                <p>10 Cities</p>
-                <span>and Counting</span>
-            </div>
-            <div className="figure">
-                <p>20,000+</p>
-                <span>Trusted User</span>
-            </div>
+        <div  className="figuresContainer">
+            <VisibilitySensor partialVisibility>
+                {
+                    ({isVisible})=>
+                        <div>  
+                            {achievements.map((achievement,index)=>(
+                                <div className='figure' key={index}>
+                                {isVisible ? <CountUp start={0} end={achievement.count} delay={0} duration={1}>
+                                    {
+                                        ({ countUpRef })=>(
+                                            <div className='achievement-counter'>
+                                                <p ref={countUpRef}/>
+                                                {index === 2 ? <p>&#160;Cities</p>  : <p> +</p> }
+                                                {index === 3 && <p>&#160;Lakhs</p>}
+                                            </div>
+                                        )
+                                    }
+                                </CountUp> : ''}
+                                <span>{achievement.text}</span>
+                                </div>
+                            ))}  
+                        </div>
+                }
+            </VisibilitySensor>
+
         </div>
     )
 }

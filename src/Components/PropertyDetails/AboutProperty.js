@@ -1,18 +1,19 @@
 import './AboutProperty.css';
 
-const AboutProperty = () => {
+const AboutProperty = (props) => {
+    const about = props.propDetails;
     return ( 
         <div className="about-property">
             <h2>ABOUT THIS PROPERTY</h2>
-            <p><b>PROPERTY CODE:</b> QS13012</p>
-            <p><b>LOCATION:</b> House no. 2889, Near shemrock school, Sector 69, Mohali</p>
+            <p><b>PROPERTY CODE:</b> {about.propertyCode}</p>
+            <p><b>LOCATION:</b> {about.originalAddress}</p>
             <div className="internal-details">
-                    <p>TOTAL FLOORS: 6</p>
-                    <p>FLOOR NO.: 2</p>
-                    <p>BATHROOM TYPE: Attached</p>
-                    <p>SECURITY DEPOSIT: ₹8000</p>
-                    <p>MAINTENANCE CHARGES: ₹0</p>
-                    <p>ELECTRICICTY CHARGES: Included</p>
+                    <p>TOTAL FLOORS: {about.totalFloors}</p>
+                    <p>FLOOR NO: 2</p>
+                    <p>BATHROOM TYPE: {about.bathroomType.toString()}</p>
+                    <p>SECURITY DEPOSIT: {about.securityDeposit}</p>
+                    <p>MAINTENANCE CHARGES: {about.maintenanceCharges}</p>
+                    <p>ELECTRICICTY CHARGES: {about.electricityCharges}</p>
                 
             </div>
         </div>

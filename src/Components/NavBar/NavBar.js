@@ -1,29 +1,33 @@
-import MenuItem from './MenuItem';
-import MenuButton from './MenuButton';
-import Menu from './Menu';
+// import MenuItem from './MenuItem';
+// import MenuButton from './MenuButton';
+// import Menu from './Menu';
+import Sidebar from "./SideBar";
 import React from 'react';
 import logo from '../../WebsiteMaterial/Logo.png';
 import './NavBar.css';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-
+import {getAuth,signOut} from "firebase/auth";
+import {app} from "../../firebase.config";
+import Popover from './PopOver';
 
 class NavBar extends React.Component {
     
     constructor(props){
       super(props);
       this.state={
-        menuOpen:false,
+        // menuOpen:false,
+        showProfile: false
       }
     }
 
-    handleMenuClick() {
-      this.setState({menuOpen:!this.state.menuOpen});
-    }
+    // handleMenuClick() {
+    //   this.setState({menuOpen:!this.state.menuOpen});
+    // }
     
-    handleLinkClick() {
-      this.setState({menuOpen: false});
-    }
+    // handleLinkClick() {
+    //   this.setState({menuOpen: false});
+    // }
     
     render(){
       const styles= 
@@ -53,6 +57,9 @@ class NavBar extends React.Component {
             transition: 'filter 0.5s ease',
           },
         }
+
+      const auth = getAuth(app);
+
       const menu = [
         {
           route:'Home',
@@ -71,30 +78,49 @@ class NavBar extends React.Component {
           link:'/contact'
         },
         {
-          route:'Login',
-          link:'/login',
+          route: 'List your Property',
+          link:'/list-property'
         },
+        {
+          route:`${auth.currentUser ? 'Logout' : 'Login'}`,
+          link:`${auth.currentUser ? '' : '/login'}`
+        }
         
       ]
+  
+      if(!this.state.showProfile && auth.currentUser){
+        this.setState({showProfile:true});
+      }
+    
+      //SIGNOUT
+      const signout = ()=>{
+        this.setState({menuOpen: false});
+        signOut(auth).then(() => {
+          console.log("signed out")
+          this.setState({showProfile:false});
+        }).catch((error) => {
+          // An error happened.
+        });
+      }
 
-      const menuItems = menu.map((val,index)=>{
-        return (
-          <MenuItem
-            key={index} 
-            delay={`${index * 0.1}s`}
-            onClick={()=>{this.handleLinkClick();}}
-            >{val}
+      // const menuItems = menu.map((val,index)=>{
+      //   return (
+      //     <MenuItem
+      //       key={index} 
+      //       delay={`${index * 0.1}s`}
+      //       onClick={val.route === 'Logout' ? ()=>{signout()}:()=>{this.handleLinkClick();}}
+      //       >{val}
 
-          </MenuItem>)
-      });
+      //     </MenuItem>)
+      // });
     
       return(
-        <div>
+        <div className="home_menu">
           <div style={styles.container} className="custom-navbar">
             <div style={styles.logo} className="logo">
               <Link to="/"><img src={logo} alt="logo" /></Link>
             </div>
-            <MenuButton  open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='black'/>
+            {/* <MenuButton  open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='black'/> */}
             <div className="desktop-menu">
               {
                 menu.map((val,index)=>{
@@ -103,13 +129,21 @@ class NavBar extends React.Component {
                       <NavLink to={val.link} >{val.route}</NavLink>
                     </div>
                   )
-                })
+                }) 
               }
+              {
+                 this.state.showProfile ? <Popover signout={signout} auth={auth}/> :  <div>
+                 <NavLink to="/login" >Login</NavLink>
+                 </div>
+              }
+              
             </div>
+           
           </div>
-          <Menu open={this.state.menuOpen}>
+          {/* <Menu open={this.state.menuOpen} className="mobile-menu">
             {menuItems}
-          </Menu>
+          </Menu> */}
+           <Sidebar pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } className="home_menu"/>
         </div>
       )
     }

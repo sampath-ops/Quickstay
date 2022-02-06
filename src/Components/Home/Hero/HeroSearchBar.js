@@ -1,10 +1,10 @@
 import Achievements from "./Achievements";
 import SearchBar from "./SearchBar";
-const HeroSearchBar = () => {
+const HeroSearchBar = (props) => {
     return ( 
         <div className="search-bar-container">
             <Achievements/>
-            <SearchBar/>
+            <SearchBar searchedProperties={props.searchedProperties}/>
         </div>
      );
 }

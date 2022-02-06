@@ -12,9 +12,11 @@
 .filter-results{
     margin-left: 40px;
     margin-right: 25px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .filter-results-properties{
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 2fr 1fr;
     row-gap: 5px;
 }
 .filter-results-properties > span:nth-child(3),.filter-results-properties > span:nth-child(4){
@@ -28,7 +30,33 @@
 .Filters{
     font-weight: 600;
     font-size: 18px;
+    padding: 10px 0;
     margin: 0;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.Filters > button{
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #A00500;
+    cursor: pointer;
+}
+.selectedFilters{
+    display: flex;
+    column-gap: 8px;
+    padding-left: 10px;
+    overflow-x:auto;
+}
+.selectedFilters > div{
+    font-size: 14px;
+    color: white;
+    background-color: #A00500;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    white-space: nowrap;
 }
 .options-container >p{
     font-weight: 600;
@@ -46,7 +74,7 @@
 }
 .filter-cards{
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 35px;
 }
 .filter-cards > .card-container:last-child{
@@ -75,6 +103,8 @@
    
     .Filters p{
         text-align: end;
+        margin: 0;
+        align-self: center;
         padding: 0 10px;
     }
     .filter-options{

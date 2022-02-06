@@ -8,6 +8,8 @@
 .card-container{
     display: flex;
     flex-direction: column;
+    flex-grow: 0;
+    flex-basis: 50%;
 }
 @media(min-width:1024px){
     .card-container:not(:last-child){
@@ -16,7 +18,7 @@
 }
 .card-container > a >img{
     width: 100%;
-    height: 100%;
+    height: 175px;
     border-radius: 10px 10px 0px 0px;
 }
 .room-details{
@@ -24,12 +26,12 @@
     border: 1px solid #e8e8e4;
     border-top: none;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas: 'name amount'
                           'location image'
                           'type image';
-    padding: 25px 10px;
+    padding: 10px 10px;
     box-shadow: 0px 5px 2px #e8e8e4;
 }
 .room-details span{
@@ -42,30 +44,52 @@
 .room-details > span:nth-child(1){
     grid-area: name;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
 }
 .room-details > span:nth-child(2){
     grid-area: amount;
     font-weight: 600;
     justify-self: center;
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Open Sans';
     font-style: normal;
 }
 .room-details > span:nth-child(3){
     grid-area: location;
-    font-size: 16px;
 }
 .room-details > span:nth-child(4){
     grid-area: type;
-    font-size: 16px;
+    font-size: 14px;
 }
 .room-details > span:nth-child(5) {
     grid-area: image;
     justify-content: center;
 }
 .room-details span img{
-    width: 70%;
+    width: 95%;
+}
+
+.room-details > span:nth-child(3) > span > i,.room-details > span:nth-child(3) > span > p {
+        font-size: 14px;
+        margin: 0;
+        margin-right: 5px;
+        align-self: baseline;
+}
+
+.room-details > span:nth-child(3) > span > p {
+    margin:0;    
+}
+.distance{
+    position: absolute;
+    bottom: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    right: 0px;
+    margin: 0;
+    padding: 1px 12px;
+    border-radius: 6px 0px 0px 6px;
+    color: white;
+    background: #A00500;
 }
 
 @media(max-width:1023px){

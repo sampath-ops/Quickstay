@@ -1,29 +1,28 @@
+import Counter from "./Counter";
+
 const Achievements = () => {
     const achievements = [
         {
             id:0,
-            count: "25000+",
+            count: "30000",
             text: "Trusted Users"
         },
         {
             id:1,
-            count: "4000+",
+            count: "10000",
             text: "Verified Properties PAN India"
         },
         {
             id:2,
-            count: "17.5+ Lakhs",
+            count: "18",
             text: "Total Brokerage Saved"
         },
     ]
     return ( 
         <div className="achievements">
             {
-                achievements.map((achievement)=>(
-                   <div className="achievement" key={achievement.id}>
-                        <p>{achievement.count}</p>
-                        <p>{achievement.text}</p>
-                   </div>
+                achievements.map((achievement,index)=>(
+                  <Counter text={achievement.text} key={index} id={index} count={achievement.count}/>
                 ))
             }
         </div>

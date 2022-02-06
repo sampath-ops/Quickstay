@@ -1,0 +1,52 @@
+.how-it-works-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-left: -22px;
+    margin-right: 35px;
+}
+.how-it-works-steps > p:nth-child(2), .how-it-works-steps > p:nth-child(3) {
+  font-size: 12px !important;
+  color: #ffff !important;
+  font-weight: 600;
+  margin: 0;
+}
+.how-it-works-steps > p:first-child{
+    font-size: 35px !important;
+    font-weight: 700 !important;
+    color: #ffff;
+    margin: 0;
+}
+.how-it-works-steps{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 120%;
+}
+
+@media(max-width:1023px){
+    .how-it-works-container{
+        grid-template-columns: auto auto auto auto;
+        margin-left: -8px;
+        margin-right: 18px;
+    }
+    .how-it-works-steps{
+        width: 145%;
+        padding: 0;
+        padding-bottom: 3px;
+    }
+    .how-it-works-steps:nth-child(4){
+        padding-left: 6px;
+    }
+    .how-it-works-steps > p:first-child{
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: #ffff;
+        margin: 0;
+        margin-top: 6px;
+    }
+    .how-it-works-steps > p:nth-child(2), .how-it-works-steps > p:nth-child(3){
+        font-size: 9px !important;
+    }
+}

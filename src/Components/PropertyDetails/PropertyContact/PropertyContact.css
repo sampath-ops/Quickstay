@@ -20,13 +20,16 @@
     font-weight: 400;
     font-size: 16px;
     margin: 0;
-    white-space: nowrap;
 }
 .property-address > div{
     display: grid;
     grid-template-columns: 0fr 15fr;
     padding-bottom: 13px;
     column-gap: 5px;
+}
+.property-address > div> img{
+    width: 20px;
+    height: 20px;
 }
 .shar-fav{
     display: grid;
@@ -55,6 +58,10 @@
     display: flex;
     width: 170px;
 }
+.property-share-box > img{
+    width: 50px;
+    height: 50px;
+}
 .share-text{
     align-self: center;
 }
@@ -76,6 +83,7 @@
     border-radius: 5px;
     font-weight: bold;
     font-size: 16px;
+    cursor: pointer;
 }
 .contact-button-container button:first-child{
     background: #A00500;
@@ -118,6 +126,7 @@
     background: white;
     z-index: 10;
     box-sizing: border-box;
+    width: 44.1%;
 }
 @media(max-width:1023px){
     .property-details{
@@ -129,6 +138,7 @@
     }
     .details1 > div:nth-child(2){
         display: block;
+        width: auto;
     }
     .details2{
         display: none;

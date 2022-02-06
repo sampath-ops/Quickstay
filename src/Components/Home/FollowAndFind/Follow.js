@@ -1,5 +1,5 @@
 import './Follow.css';
-import SocialLogos from './SocialLogos';
+// import SocialLogos from './SocialLogos';
 const Follow = () => {
     const icons = [
         {
@@ -31,7 +31,7 @@ const Follow = () => {
                 </div>
             </div>
            
-           <SocialLogos/>
+           {/* <SocialLogos/> */}
         </div>
      );
 }

@@ -5,7 +5,7 @@ class OtpInput extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { value: '', otp1: "", otp2: "", otp3: "", otp4: "", otp5: "", otp6:"", disable: true };
+    this.state = { value: '', otp1: "", otp2: "", otp3: "", otp4: "", otp5: "", otp6:"", disable: true,loading:false };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -19,10 +19,10 @@ class OtpInput extends React.Component {
   }
 
   handleSubmit(event) {
-    // const data = new FormData(event.target);
-    // console.log(this.state);
+    this.setState({loading:true});
+    const otp = this.state.otp1+this.state.otp2+this.state.otp3+this.state.otp4+this.state.otp5+this.state.otp6;
     event.preventDefault();
-    this.props.submitHandler(event);
+    this.props.submitHandler(otp);
   }
 
   inputfocus = (elmnt) => {
@@ -33,7 +33,6 @@ class OtpInput extends React.Component {
       }
     }
     else {
-    //   console.log("next");
         const next = elmnt.target.tabIndex;
         if (next < 6) {
           elmnt.target.form.elements[next].focus()
@@ -108,7 +107,7 @@ class OtpInput extends React.Component {
             tabIndex="6" maxLength="1" onKeyUp={e => this.inputfocus(e)}
           />
         </div>
-        <Button type='submit' text='Verify'/>
+        <Button type='submit' text='Verify' load = {this.state.loading}/>
       </form>
     );
   }

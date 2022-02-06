@@ -48,7 +48,7 @@
     font-size: 1.3vw;
     margin: auto 20px;
     font-family: 'Open Sans';
-    font-weight: 800;
+    font-weight: 600;
     text-align: right;
     position: relative;
     line-height: 3vw;
@@ -58,6 +58,7 @@
 }
 
 .ourDream h1:nth-child(1){
+    text-align: start;
     font-style: italic;
     border-left: 12px solid #FFDE17;
     padding-left: 40px;
@@ -95,18 +96,16 @@
 .figuresContainer{
     width: 100vw;
     background-color:#A00500;
-    display:flex;
-    justify-content: space-around;
 }
 .figure{
     text-align: center;
-    padding: 15px 0px 35px;
+    padding: 35px 0px;
 }
 .figure p{
     font-size:27px;
     color: white;
     font-weight: 800;
-    margin-bottom: 0px;
+    margin: 0;
 }
 .figure span{
     font-size: 18px;
@@ -132,6 +131,9 @@
 .becomeFamilyText{
     font-weight: 600;
 }
+.becomeFamilyText > p{
+    line-height: 25px;
+}
 .becomeFamilyText a{
     color:rgb(0, 211, 211);
     text-decoration:none;
@@ -154,8 +156,6 @@
     width: 250px;
     margin-left: auto;
     margin-right:auto;
-    display:flex;
-    align-items: center;
 }
 .becomeFamilyText p br:first-child{
     display: none;
@@ -168,6 +168,12 @@
     }
 }
 @media(max-width:1023px){
+    .ourDream h1:nth-child(2){
+       font-size: 28px;
+    }
+    .ourDream p{
+        font-size: 21px;
+    }
     .aboutUs br, .ourDream br {
         display: none;
     }
@@ -180,13 +186,16 @@
     }
     .aboutUsText{
         color: rgb(0, 0, 0);
-        font-size: 17.5px;
+        font-size: 16px;
         margin-top:0px;
         font-family: 'Open Sans';
-        font-weight: 800;
+        font-weight: 500;
         text-align: left;
         position: relative;
         line-height:normal;
+    }
+    .aboutUsText > p{
+        text-align: justify;
     }
     .aboutUsTextContainer{
         background-color: transparent;
@@ -198,21 +207,21 @@
         margin-top:0;
     }
     .ourDream h1:nth-child(1){
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bolder;
         font-style: italic;
         border-left: 15px solid #FFDE17;
-        padding-left: 20px;
-        margin: 20px 0px 60px 24px;
+        padding-left: 15px;
+        margin: 20px 20px 60px 24px;
     }
     .ourDreamImg{
-        height: 285px;
+        height: 218px;
     }
     .ourDreamImg img{
-        width: 300px;
+        width: 250px;
     }
     .ourDreamImg div{
-        font-size:24px;
+        font-size:18px;
         margin-bottom: -50px;
     }
     .ourDreamImages{
@@ -222,7 +231,8 @@
     }
     .becomeFamilyContainer{
         flex-direction: column;
-        align-items: center;
+        align-items: inherit;
+        margin: 0 10px;
         margin-bottom: 5vh;
     }
     .becomeFamily{
@@ -235,36 +245,33 @@
         font-size: 20px;
     }
     .becomeFamily div:nth-child(1){
-        width: 215px;
+        width: auto;
         margin-left: auto;
         margin-right:auto;
-        display:flex;
-        align-items: center;
     }
     .becomeFamilyImg2{
-        width: 165px;
+        width: 140px;
         margin-right: auto;
         margin-left: auto;
     }
-    .figuresContainer{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-row-gap: 15px;
-        row-gap: 15px;
-        margin-top:20px;
+    .figuresContainer > div{
+        padding: 35px 0;
+    }
+    .figure{
+        padding: 0 !important;
     }
     .heroSection{
         display: block;
-        height: 35vh;
+        height: 40vh;
         background-image: url('../../WebsiteMaterial/AboutImages/Global.png');
         background-size: 70vw auto;
         background-repeat: no-repeat;
         background-position: right;
-        background-position-y: 100px;
+        background-position-y: 72px;
      }
     .heroText{
         margin-top: -20px;
-        margin-left:30px;
+        margin-left:20px;
         padding-top: 55px;
     }
     .heroText span{
@@ -278,7 +285,7 @@
         padding-top: 0;
     }
     .becomeFamilyImg1{
-        width: 215px;
+        width: 204px;
     }
     .becomeFamilyText{
         font-size: 15px;

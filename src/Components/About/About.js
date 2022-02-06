@@ -7,15 +7,17 @@ import BecomeFamily from './BecomeFamily';
 import MainSub from '../NavBar/MainSub';
 import Locations from '../Home/PopularSearches/Locations/Location'
 
-const About = () => {
+const About = (props) => {
     return (
-        <MainSub>
+        <MainSub searchedProperties={props.searchedProperties} user={props.user}>
+            <div id="page-wrap">
             <Hero/>
             <AboutUs/>
             <OurDream/>
             <Figures/>
             <BecomeFamily/>
             <Locations/>
+            </div>
         </MainSub>
     )
 }
