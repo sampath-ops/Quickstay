@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import Figures from '../../../About/Figures';
-// import ListHere from '../../../../WebsiteMaterial/ListPropertyImages/4.png'
-// import WhyListHere from '../../../../WebsiteMaterial/ListPropertyImages/6.png'
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../../../firebase.config';
 import WhyList from './WhyList';
@@ -13,7 +11,7 @@ export default function Hero() {
     const propertyTypes = ["PG","Flat","Independent Rooms"];
     const propertyForGender = ["Male","Female","Unisex","Family"];
 
-    const [ownerEmail,setOwnerEmail] = useState("");
+    const [ownerName,setownerName] = useState("");
     const [ownerPhnNo,setOwnerPhnNo] = useState("");
     const [propertyAddress,setPropertyAddress] = useState("");
     const [propertyCity,setPropertyCity] = useState("");
@@ -22,12 +20,13 @@ export default function Hero() {
     const [propertyFor,setPropertyFor] = useState("");
     const [propertForSelected,setPropertyForSelected] = useState("");
     const [isValid,setIsValid] = useState(true);
+    const [isSubmitted,setIsSubmitted] = useState(false);
 
-    const ownerEmailHandler = (e)=>{
+    const ownerNameHandler = (e)=>{
         if(e.target.value.length > 0){
             setIsValid(true);
         }
-        setOwnerEmail(e.target.value);
+        setownerName(e.target.value);
     }
 
     const ownerPhnHandler = (e)=>{
@@ -62,7 +61,6 @@ export default function Hero() {
         setPropertyTypeSelected(index);
     }
 
-
     // property for handler
     const propertyForHandler = (gender,index)=>{
         selectPropertyForColor(index);
@@ -78,27 +76,36 @@ export default function Hero() {
 
         e.preventDefault();
 
-        if(ownerEmail.trim().length === 0 || ownerPhnNo.trim().length === 0 || propertyAddress.trim().length === 0 || propertyCity.trim().length === 0){
+        if(ownerName.trim().length === 0 || ownerPhnNo.trim().length === 0 || propertyAddress.trim().length === 0 || propertyCity.trim().length === 0){
             setIsValid(false);
             return;
         }
 
         const propertyDetails = {
-            ownerEmail,
+            ownerName,
             ownerPhnNo,
             propertyAddress,
             propertyCity,
             propertyType,
-            propertyFor
+            propertyFor,
         }
 
         console.log(propertyDetails);
-
+       
         // push data to database
-        await addDoc(collection(db,"propertyListingLeads"),propertyDetails);
+        await addDoc(collection(db,"propertyListingLeads"),propertyDetails).then(()=>{
+            setIsSubmitted(true);
+            
+        }).catch(()=>{
+            alert("form not submitted :(");
+        })
+
+        window.setTimeout(()=>{
+            setIsSubmitted(false);
+        },3000)
 
         // RESET FILEDS
-        setOwnerEmail("");
+        setownerName("");
         setOwnerPhnNo("");
         setPropertyAddress("");
         setPropertyCity("");
@@ -116,30 +123,16 @@ export default function Hero() {
                     <p>List your home with QuickStay!</p>
                     <p>How it works?</p>
                     <HowItWorks/>
-                    {/* <img className='' src={ListHere} alt="ListHere" />
-                    <div className="imageLabels">
-                        <div>Register on<br/>QuickStay.</div>
-                        <div>Fill in all the<br/>property details.</div>
-                        <div>Submit for<br/>QuickVerification.</div>
-                        <div>Start getting<br/>tenants!</div>
-                    </div> */}
                 </div>
                 <div className='whyListHere'>
                     <p>Why list on QuickStay?</p>
                     <WhyList/>
-                    {/* <img className='whyListHereImg' src={WhyListHere} alt="WhyListHere" />
-                    <div className="imageLabels">
-                        <div>List your property<br/>FOR FREE.<br/>Earn Monthly!</div>
-                        <div>Reach to<br/>wider Audience.</div>
-                        <div>Tenants can<br/>contact you directly.</div>
-                        <div>Customer care<br/>support.</div>
-                    </div> */}
                 </div>
                 <div className='figures1'><Figures/></div>
             </div>
             <form onSubmit={listPropertyHandler} className={isValid ? "": "invalid"}>
                 <div className='listingPropertyDetails'>
-                    <input type="email" placeholder='Email' value={ownerEmail} onChange={ownerEmailHandler}/>
+                    <input type="text" placeholder='Name' value={ownerName} onChange={ownerNameHandler}/>
                     <input type="tel" placeholder='Phone No.' value={ownerPhnNo} onChange={ownerPhnHandler}/>
                     <input type="text" placeholder='Address' value={propertyAddress} onChange={propertyAddressHandler}/>
                     <input type="text" placeholder='City' value={propertyCity} onChange={propertyCityHandler}/>
@@ -164,6 +157,9 @@ export default function Hero() {
                     </div>
 
                     <button className='submitButton' type="submit">SUBMIT</button>
+                    <div className="success-message">
+                         {isSubmitted && <span>Thank you for the response</span>}
+                    </div>
                 </div>
             </form>
             <div className='figures2'><Figures/></div>

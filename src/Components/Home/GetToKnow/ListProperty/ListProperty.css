@@ -105,6 +105,13 @@
     margin-top:100px;
 }
 
+.success-message{
+    text-align: center;
+    margin-top: 10px;
+    color: #a00500;
+    font-size: 14px;
+}
+
 .Find p:first-child{
     display: none;
 }

@@ -31,11 +31,11 @@
   margin-left:35px;
 }
 .logo img{
-  width: 165px;
-  height: 65px;
+  width: 125px;
+  height: 48px;
 }
 .custom-navbar{
-  padding: 2px 20px;
+  padding: 10px 20px;
 }
 .custom-menubutton{
   visibility: hidden;

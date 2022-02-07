@@ -28,7 +28,7 @@ const HowItWorks = () => {
                     return(
                         <div className="how-it-works-steps" style={{backgroundImage:`url(${image.default})`,backgroundPosition: 'center',
                         backgroundSize: 'cover',
-                        backgroundRepeat: 'no-repeat'}}>
+                        backgroundRepeat: 'no-repeat'}} key={index}>
                              {
                                  element.texts.map(((text,index)=>(
                                      <p key={index}>{text}</p>

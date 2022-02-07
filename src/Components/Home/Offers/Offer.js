@@ -31,7 +31,7 @@ const Offer = () => {
                             <div>
                                 <img src={banner.url} alt={banner.type}/>
                             </div>
-                        </Link> : <Link to="/contact"  key={banner.id}>
+                        </Link> : <Link to="/list-property"  key={banner.id}>
                             <div>
                                 <img src={banner.url} alt={banner.type}/>
                             </div>
