@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Figures from '../../../About/Figures';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../../../firebase.config';
+import firebase from 'firebase/compat/app';
 import WhyList from './WhyList';
 import HowItWorks from './HowItWorks';
 
@@ -88,6 +89,7 @@ export default function Hero() {
             propertyCity,
             propertyType,
             propertyFor,
+            timestamp:firebase.firestore.FieldValue.serverTimestamp()
         }
 
         console.log(propertyDetails);
