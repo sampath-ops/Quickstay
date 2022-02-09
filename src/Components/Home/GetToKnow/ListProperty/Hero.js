@@ -5,6 +5,8 @@ import { db } from '../../../../firebase.config';
 import firebase from 'firebase/compat/app';
 import WhyList from './WhyList';
 import HowItWorks from './HowItWorks';
+import { getAuth } from 'firebase/auth';
+import { app } from '../../../../firebase.config';
 
 
 export default function Hero() {
@@ -22,6 +24,12 @@ export default function Hero() {
     const [propertForSelected,setPropertyForSelected] = useState("");
     const [isValid,setIsValid] = useState(true);
     const [isSubmitted,setIsSubmitted] = useState(false);
+    const auth = getAuth(app);
+    let userId = "";
+
+    if(auth.currentUser){
+        userId = auth.currentUser.uid;
+    }
 
     const ownerNameHandler = (e)=>{
         if(e.target.value.length > 0){
@@ -83,12 +91,14 @@ export default function Hero() {
         }
 
         const propertyDetails = {
-            ownerName,
-            ownerPhnNo,
-            propertyAddress,
-            propertyCity,
+            approved: false,
+            name:ownerName,
+            phoneNo:"+91"+ownerPhnNo,
+            originalAddress:propertyAddress,
+            city:propertyCity,
             propertyType,
             propertyFor,
+            uid:userId,
             timestamp:firebase.firestore.FieldValue.serverTimestamp()
         }
 

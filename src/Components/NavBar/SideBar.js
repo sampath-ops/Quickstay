@@ -36,7 +36,6 @@ export default class Sidebar extends React.Component {
       this.setState({ isLogin:true });
     }
 
-
     return (
       <Menu right width={'300px'}
         isOpen={this.state.menuOpen}
