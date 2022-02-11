@@ -6,7 +6,7 @@ const ResultTemplate = (props) => {
     const navigate = useNavigate();
 
     const getDocuments = async()=>{
-        const q = query(collection(db,"properties"),where("city","==",props.city));
+        const q = query(collection(db,"properties"),where("city","==",props.city),where("activeStatus","==",true),where("approved","==",true));
         const snap = await getDocs(q);
         props.getAllProperties(snap);
         navigate("/filters");

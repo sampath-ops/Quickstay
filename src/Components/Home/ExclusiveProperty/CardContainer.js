@@ -16,7 +16,12 @@ const CardContainer = (props) => {
         <div className={classname}>
             {
                 props.properties.map((property,index)=>{
-                    console.log(property);
+                    
+                    // is there any not approved property
+                    if(property.options.length < 1){
+                        console.log(property);
+                    }
+
                     const addressarr = property.propertyFullAddress.split(",");
                     let address = addressarr.slice(1,3);
                     if(addressarr.length <= 4){

@@ -49,7 +49,7 @@ const PropertyDetails = (props) => {
                          <PropertyContact propDetails={propDetails}/>   
                 </div>
             </div>}
-            <Locations/>
+            <Locations getAllProperties={props.allProperties}/>
         </MainSub>
      );
 }

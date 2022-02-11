@@ -12,7 +12,7 @@ export default function ListProperty(props) {
         <MainSub searchedProperties={props.searchedProperties} >
             <Hero/>
             <Find/>
-            <Locations/>
+            <Locations getAllProperties={props.allProperties}/>
         </MainSub>
     )
 }

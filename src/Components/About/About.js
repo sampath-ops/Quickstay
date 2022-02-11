@@ -16,7 +16,7 @@ const About = (props) => {
             <OurDream/>
             <Figures/>
             <BecomeFamily/>
-            <Locations/>
+            <Locations getAllProperties={props.allProperties}/>
             </div>
         </MainSub>
     )

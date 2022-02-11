@@ -8,7 +8,7 @@ export default function ContactUs(props) {
     return (
         <MainSub searchedProperties={props.searchedProperties} >
             <Hero/>
-            <Locations/>
+            <Locations getAllProperties={props.allProperties}/>
         </MainSub>
     )
 }

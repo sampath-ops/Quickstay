@@ -14,7 +14,7 @@ const ChoosePlan = (props) => {
                     <ChooseAmount/>
                     <HowItWorks/>
                 </div>
-                <Locations/>
+                <Locations getAllProperties={props.allProperties}/>
              </div>
         </MainSub>
       );

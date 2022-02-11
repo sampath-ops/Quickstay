@@ -96,7 +96,7 @@ const Filter = (props) => {
                         <CardContainer properties={propertyarr} className="filter-cards" addPropDetailsHandler={props.addPropDetailsHandler}details="filter-results-properties" carousel="true" showDistance={showDistance}></CardContainer>
                     </div>
                 </div>
-                <Locations/>
+                <Locations getAllProperties={props.allProperties}/>
             </div>
             }
         </MainSub>

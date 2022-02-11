@@ -44,14 +44,14 @@ function App() {
       <GeoLocation/>
       <ScrollToTop>
       <Routes id="outer-container">
-         <Route exact path="/" element={<Home getUserProfile={getUserProfileHandler}allProperties={allProperties} searchedProperties={searchedPropertiesHandler} />}/>
+         <Route exact path="/" element={<Home getUserProfile={getUserProfileHandler} allProperties={allProperties} searchedProperties={searchedPropertiesHandler} />}/>
          <Route path="/login" element={<Login/>}/>
-         <Route path="/filters" element={<Filter snap={documentSnap} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng}/>}/>
-         <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler}/>}/>
-         <Route path="/about" element={<About searchedProperties={searchedPropertiesHandler}/>}/>
-         <Route path="/property-details/:id" element={<PropertyDetails  searchedProperties={searchedPropertiesHandler} userProfile={userProfile}/>}/>
-         <Route path="/list-property" element={<ListProperty searchedProperties={searchedPropertiesHandler}/>}/>
-         <Route path="/contact" element={<ContactUs searchedProperties={searchedPropertiesHandler}/>}/>
+         <Route path="/filters" element={<Filter snap={documentSnap} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng} allProperties={allProperties}/>}/>
+         <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
+         <Route path="/about" element={<About searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
+         <Route path="/property-details/:id" element={<PropertyDetails  searchedProperties={searchedPropertiesHandler} userProfile={userProfile} allProperties={allProperties}/>}/>
+         <Route path="/list-property" element={<ListProperty searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
+         <Route path="/contact" element={<ContactUs searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
       </Routes>
       </ScrollToTop>
       <Footer/>
