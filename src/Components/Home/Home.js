@@ -68,7 +68,7 @@ const Home = (props) => {
             <Follow/>
             <Find/>
             <Download/>
-            <Locations/>   
+            <Locations getAllProperties={props.allProperties}/>   
         </Main>
      );
 }

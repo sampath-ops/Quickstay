@@ -13,7 +13,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-.pop-container > a{
+.pop-container > span{
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
@@ -23,6 +23,7 @@
     text-decoration: none;
     color: #000000;
     display: block;
+    cursor: pointer;
 }
 @media(max-width:1023px){
     .popular-searches-container{
@@ -34,7 +35,7 @@
     .pop-container{
         margin-bottom: 20px;
     }
-    .pop-container a{
+    .pop-container span{
         line-height:30px;
     }
     .concat-box{

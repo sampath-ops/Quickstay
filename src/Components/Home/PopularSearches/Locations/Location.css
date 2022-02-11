@@ -21,16 +21,17 @@
 .locations > div:nth-child(3){
     display: none;
 }
-.locations > div:nth-child(1) div a:hover{
+.locations > div:nth-child(1) div:hover{
     color: #00C2FF;
 }
-.locations > div:nth-child(1) div a{
+.locations > div:nth-child(1) div{
     text-decoration: none;
     font-family: 'Open Sans';
     font-style: italic;
     font-weight: 600;
     font-size: 16px;
     color: #000000;
+    cursor: pointer;
 }
 @media(max-width:1023px){
     .accordion{

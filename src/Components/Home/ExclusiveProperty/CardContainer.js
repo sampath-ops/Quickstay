@@ -16,7 +16,7 @@ const CardContainer = (props) => {
         <div className={classname}>
             {
                 props.properties.map((property,index)=>{
-                    
+                    console.log(property);
                     const addressarr = property.propertyFullAddress.split(",");
                     let address = addressarr.slice(1,3);
                     if(addressarr.length <= 4){
