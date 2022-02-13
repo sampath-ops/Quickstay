@@ -3,13 +3,13 @@ import './App.css';
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
-import Footer from './Components/Footer/Footer';
 import Login from './Components/Login-Otp/Login';
 import Filter from './Components/Filter/Filter';
 import ChoosePlan from './Components/ChoosePlan/ChoosePlan';
 import PropertyDetails from './Components/PropertyDetails/PropertyDetails';
 import ListProperty from './Components/Home/GetToKnow/ListProperty/ListProperty';
 import ContactUs from './Components/ContactUs/ContactUs';
+import PageNotFound from './Components/404/404';
 import GeoLocation from './GeoLocation';
 import ScrollToTop from './ScrollToTop';
 import { useState } from 'react';
@@ -52,9 +52,9 @@ function App() {
          <Route path="/property-details/:id" element={<PropertyDetails  searchedProperties={searchedPropertiesHandler} userProfile={userProfile} allProperties={allProperties}/>}/>
          <Route path="/list-property" element={<ListProperty searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
          <Route path="/contact" element={<ContactUs searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
+         <Route path="*" element={<PageNotFound/>}></Route>
       </Routes>
       </ScrollToTop>
-      <Footer/>
     </Router> 
    
   );

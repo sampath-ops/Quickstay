@@ -3,19 +3,19 @@ const HowItWorks = () => {
 
     const howItWorks = [
         {
-            image:"first",
+            image:"1",
             texts:["1","Register on","QuickStay."]
         },
         {
-            image:"second",
+            image:"2",
             texts:["2","Fill in all the","property details."]
         },
         {
-            image:"third",
+            image:"3",
             texts:["3","Submit for","QuickVerification."]
         },
         {
-            image:"four",
+            image:"4",
             texts:["4","Start getting","tenants!"]
         },
     ]
@@ -24,7 +24,7 @@ const HowItWorks = () => {
         <div className="how-it-works-container">
             {
                 howItWorks.map((element,index)=>{
-                    const image = require(`../../../../WebsiteMaterial/ListPropertyImages/HowItWorks/${element.image}.png`);
+                    const image = require(`../../../../WebsiteMaterial/ListPropertyImages/HowItWorks/${element.image}.svg`);
                     return(
                         <div className="how-it-works-steps" style={{backgroundImage:`url(${image.default})`,backgroundPosition: 'center',
                         backgroundSize: 'cover',

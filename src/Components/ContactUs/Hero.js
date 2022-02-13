@@ -1,10 +1,11 @@
 import React from 'react'
 import GoogleMaps from './GoogleMaps';
-import facebook from '../../WebsiteMaterial/ContactUsImages/facebook.png'
-import instagram from '../../WebsiteMaterial/ContactUsImages/instagram.png'
-import linkedin from '../../WebsiteMaterial/ContactUsImages/linkedin.png'
-import twitter from '../../WebsiteMaterial/ContactUsImages/twitter.png'
-import youtube from '../../WebsiteMaterial/ContactUsImages/youtube.png';
+import facebook from '../../WebsiteMaterial/ContactUsImages/facebook.svg'
+import instagram from '../../WebsiteMaterial/ContactUsImages/instagram.svg'
+import linkedin from '../../WebsiteMaterial/ContactUsImages/linkedIn.svg'
+import twitter from '../../WebsiteMaterial/ContactUsImages/twitter.svg'
+import youtube from '../../WebsiteMaterial/ContactUsImages/youtube.svg';
+import whatsapp from '../../WebsiteMaterial/ContactUsImages/WhatsApp.svg';
 import {useState} from "react";
 import {collection,addDoc} from "firebase/firestore";
 import { db } from '../../firebase.config';
@@ -111,6 +112,7 @@ export default function Hero() {
                     <img src={facebook} alt="facebook"/>
                     <img src={instagram} alt="instagram"/>
                     <img src={linkedin} alt="linkedin"/>
+                    <img src={whatsapp} alt="whatsapp"/>
                     <img src={twitter} alt="twitter"/>
                     <img src={youtube} alt="youtube"/>
                 </div>

@@ -1,12 +1,20 @@
 .download{
     padding: 80px 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .slogan{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+.mobile{
+    text-align: center;
+    user-select: auto;
+    flex-basis: 48%;
+}
+.mobile > img{
+    width: 80%;
 }
 .slogan p{
     font-family: Open Sans;

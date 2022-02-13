@@ -1,5 +1,6 @@
 import NavBar from './NavBar';
 import './NavBar.css';
+import Footer from '../Footer/Footer';
 import React from 'react';
 
 const Main = (props) => {
@@ -7,6 +8,7 @@ const Main = (props) => {
         <div>
            <NavBar />
            {props.children}
+           <Footer/>
         </div>
    );
 }

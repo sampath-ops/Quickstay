@@ -3,19 +3,19 @@ const WhyList = () => {
 
     const whyList = [
         {
-            image:"for-free",
+            image:"List property",
             texts:["List your property","FOR FREE.","Earn Monthly!"]
         },
         {
-            image:"reach-to",
+            image:"Reach audience",
             texts:["Reach to","wider Audience."]
         },
         {
-            image:"contact-you",
+            image:"Reach tenants",
             texts:["Tenants can","contact you directly."]
         },
         {
-            image:"customer-care",
+            image:"Customer care",
             texts:["Customer care","support."]
         },
     ]
@@ -24,7 +24,7 @@ const WhyList = () => {
         <div className="whyList">
                 {
                     whyList.map((element,index)=>{
-                        const image = require(`../../../../WebsiteMaterial/ListPropertyImages/Why List on QuickStay/${element.image}.png`);
+                        const image = require(`../../../../WebsiteMaterial/ListPropertyImages/Why List on QuickStay/${element.image}.svg`);
                         return(
                             <div className="whyList_reasons" key={index}>
                                 <img src={image.default} alt={element.image} />

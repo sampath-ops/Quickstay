@@ -58,7 +58,7 @@ export default class Sidebar extends React.Component {
           className="menu-item"
           to="/list-property"
         >
-          List Property
+          List your Property
         </Link>
         <Link
           onClick={() => this.closeMenu()}
