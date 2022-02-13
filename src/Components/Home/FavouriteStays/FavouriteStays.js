@@ -8,19 +8,19 @@ const FavouriteStays = () => {
     const favStays = [
         {
             id:0,
-            name:'PG',
+            name:'FavouriteStays/PG',
             alter:'Paying Guest',
             text:'Paying Guest(PG)'
         },
         {
             id:1,
-            name:'Apartment',
+            name:'FavouriteStays/Flat',
             alter:'Flat/Apartment',
             text:'Flat/Apartment'
         },
         {
             id:2,
-            name:'IndependentRoom',
+            name:'FavouriteStays/IndependentRoom',
             alter:'IndependentRoom',
             text:'Independent Room'
         },

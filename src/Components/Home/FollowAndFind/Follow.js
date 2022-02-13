@@ -13,7 +13,15 @@ const Follow = () => {
         {
             name:"LinkedIn",
             alter:"LinkedIn-icon"
-        }
+        },
+        {
+            name:"Twitter",
+            alter:"Twitter-icon"
+        },
+        {
+            name:"YouTube",
+            alter:"YouTube-icon"
+        },
     ]
     return ( 
         <div className="follow-us">
@@ -22,7 +30,7 @@ const Follow = () => {
                 <div className="social-icons-follow">
                 {
                     icons.map((icon,index)=>{
-                        const imagename = require(`../../../WebsiteMaterial/${icon.name}.png`);
+                        const imagename = require(`../../../WebsiteMaterial/Home/Follow/${icon.name}.svg`);
                         return(
                             <img src={imagename.default} alt={icon.alter} key={index} />
                         )

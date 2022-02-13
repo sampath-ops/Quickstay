@@ -12,13 +12,15 @@
     color: #A00500;
 }
 .social-icons-follow{
-    display: inline-block;
+    display: flex;
 }
 .social-icons-follow{
     margin-left: 55px;
 }
-.social-icons-follow img:not(:last-child){
+.social-icons-follow img{
     margin-right: 25px;
+    width: 65px;
+    height: 65px
 }
 .social-logos{
     display: flex;
@@ -30,6 +32,10 @@
 }
 .social-logos > div:not(:last-child){
     margin-right: 20px;
+}
+.like-share{
+    display: flex;
+    align-items: center;
 }
 @media(max-width:1023px){
     .follow-us{
@@ -48,7 +54,8 @@
         justify-self: self-start;
     }
     .social-icons-follow img{
-        width: 20%;
+        width: 13%;
+        margin-right: 18px;
     }
     .social-logos{
         display: grid;

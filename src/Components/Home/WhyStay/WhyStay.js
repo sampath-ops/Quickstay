@@ -8,19 +8,19 @@ const WhyStay = () => {
     const WhyStay = [
         {
             id:0,
-            name:'GenuinePropertyDetails',
+            name:'WhyStay/Genuine Property Details',
             alter:'GenuinePropertyDetails',
             text:'Genuine Property Details'
         },
         {
             id:1,
-            name:'CustomerSupport',
+            name:'WhyStay/Customer Support',
             alter:'CustomerSupport',
             text:'End to End Customer Support'
         },
         {
             id:2,
-            name:'TimeSaving',
+            name:'WhyStay/Time Saving',
             alter:'TimeSaving',
             text:'Time Saving & Hassle-Free '
         },

@@ -2,7 +2,7 @@ const Cities = () => {
 
     const Locations = [
         {
-            name:"Bengaluru",
+            name:"Bangalore",
             alter:"Bangalore-icon"
         },
         {
@@ -51,7 +51,7 @@ const Cities = () => {
         <div className="locations-images">
             {
                 Locations.map((location,index)=>{
-                    const img = require(`../WebsiteMaterial/Home/Cities/${location.name}.png`);
+                    const img = require(`../WebsiteMaterial/Home/Cities/${location.name}.svg`);
                     return(
                         <div key={index} className="places">
                             <img src={img.default} alt={location.alter} />
