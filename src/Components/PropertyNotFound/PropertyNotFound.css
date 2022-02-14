@@ -1,0 +1,55 @@
+.property_not_found_container > h2{
+    position: absolute;
+    right: 35%;
+    font-size: 35px;
+}
+.property_not_found{
+    text-align: center;
+    padding: 50px;
+    padding-top: 0;
+}
+.property_not_found > img{
+    width: 50%;
+    height: 100%;
+}
+.we_are_sorry{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: #5A5857;
+}
+.go_home > a > button{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    background-color: #A00500;
+    border: none;
+    padding: 10px 75px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+@media(max-width:1023px){
+    .property_not_found_container > h2{
+        right: 12%;
+        font-size: 20px;
+    }
+    .property_not_found > img{
+        width: 100%;
+    }
+    .we_are_sorry{
+        font-size: 16px;
+        line-height: inherit;
+    }
+    .go_home > a > button{
+        font-size: 14px;
+        padding: 6px 50px;
+    }
+}

@@ -8,10 +8,19 @@ import FilterOptionsForMobile from "./FilterOptionForMobile/FilterOptionsForMobi
 import { useState } from "react";
 import geohash from "ngeohash";
 import geohashDistance from "geohash-distance";
+import PropertyNotFound from "../PropertyNotFound/PropertyNotFound";
 
 const Filter = (props) => {
 
     let propertyarr = [];
+
+      // show not found page 
+      if(props.snap.size < 1){
+          return(
+              <PropertyNotFound/>
+          )
+      }
+
      // get documents from snap
         props.snap.forEach(item =>{
             if('images' in item.data()){
