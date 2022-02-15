@@ -46,10 +46,11 @@
     }
     .FilterNavBar > .searchbar{
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr auto;
     }
     .FilterNavBar > .searchbar > input{
         border: none;
+        display: none;
         box-shadow: none;
         padding: 7px 0;
         padding-bottom: 4px;
@@ -73,9 +74,11 @@
     }
     .FilterNavBar > .searchbar.search_active > input{
         opacity: 1;
+        display: block;
     }
     .FilterNavBar > .searchbar > button{
         background: none;
+        grid-column: 2/3;
         padding: 6px 6px;
         padding-left: 0;  
         padding-bottom: 0;  

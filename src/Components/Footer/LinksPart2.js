@@ -8,11 +8,13 @@ const LinksPart2 = () => {
         },
         {
             link:"Terms & Conditions",
-            to:"/"
+            to:"/terms",
+            newTab:true
         },
         {
             link:"Privacy Policy",
-            to:"/privacy-policy"
+            to:"/privacy-policy",
+            newTab:true
         },
         {
             link:"Refund Policy",

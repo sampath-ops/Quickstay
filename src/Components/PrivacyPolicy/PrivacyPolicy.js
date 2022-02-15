@@ -3,7 +3,7 @@ import "./PrivacyPolicy.css";
 import Locations from "../Home/PopularSearches/Locations/Location";
 const PrivacyPolicy = (props) => {
     return ( 
-       <MainSub>
+       <MainSub searchedProperties={props.searchedProperties}>
             <div className="privacy_policy">
                 <h1 className="policy_head">QuickStay’s Privacy Policy</h1>
                

@@ -96,7 +96,6 @@ class NavBar extends React.Component {
       const signout = ()=>{
         this.setState({menuOpen: false});
         signOut(auth).then(() => {
-          console.log("signed out")
           this.setState({showProfile:false});
         }).catch((error) => {
           // An error happened.
