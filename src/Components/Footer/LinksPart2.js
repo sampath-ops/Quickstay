@@ -12,7 +12,7 @@ const LinksPart2 = () => {
         },
         {
             link:"Privacy Policy",
-            to:"/"
+            to:"/privacy-policy"
         },
         {
             link:"Refund Policy",
