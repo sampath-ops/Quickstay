@@ -6,7 +6,7 @@ const GetToKnow = () => {
         <div className="get-to-know">
             <div className="are-you_owner">
                 <p>Are you a <br /> home owner?</p>
-                <button><Link to="/list-property">List Your Property <i className="fas fa-chevron-right"></i></Link></button>
+                <Link to="/list-property"><button>List Your Property <i className="fas fa-chevron-right"></i></button></Link>
             </div>
             <div className="get-to-know-row">
                 <p>Get Verified <br /> Tenant Leads.</p>
