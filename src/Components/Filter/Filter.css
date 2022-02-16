@@ -5,6 +5,13 @@
     height: 1200px;
     margin-bottom: 75px;
 }
+.filters-section-container_notFound{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin-top: 40px;
+    height: 800px;
+    margin-bottom: 75px;
+}
 .filter-section{
     padding: 0 35px;
     border-right: 2px solid #D6D6D6;
@@ -88,7 +95,7 @@
     display: none;
 }
 @media(max-width:1023px){
-    .filters-section-container{
+    .filters-section-container,.filters-section-container_notFound{
         height: inherit;
         display: block;
         margin-top: 20px;

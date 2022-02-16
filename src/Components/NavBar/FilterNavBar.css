@@ -1,7 +1,7 @@
 .FilterNavBar{
     padding: 10px 20px;
     display: grid;
-    grid-template-columns: 1fr 4fr 0.5fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
     box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.25);
 }
 .FilterNavBar > a{
@@ -30,6 +30,19 @@
 .hide-access-methods{
     display: none;
 }
+.FilterNavBar > .searchbar{
+    height: 35px;
+}
+.FilterNavBar > .searchbar input{
+    padding: 0 20px;
+    font-size: 14px;
+}
+.FilterNavBar > .searchbar button{
+    padding: 0 40px;
+}
+.FilterNavBar > .searchbar span{
+    display: none;
+}
 @media(max-width:1023px){
     .FilterNavBar{
         grid-template-columns: 1fr 7fr 1fr;
@@ -47,6 +60,7 @@
     .FilterNavBar > .searchbar{
         display: grid;
         grid-template-columns: 1fr auto;
+        height: 50px;
     }
     .FilterNavBar > .searchbar > input{
         border: none;

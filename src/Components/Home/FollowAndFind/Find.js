@@ -1,11 +1,11 @@
 import './Find.css';
 import Cities from '../../Cities';
-const Find = () => {
+const Find = (props) => {
 
     return ( 
         <div className="Find-us">
              <p>YOU CAN FIND US HERE:</p>
-             <Cities/>
+             <Cities searchedProperties={props.searchedProperties}/>
         </div>
      );
 }

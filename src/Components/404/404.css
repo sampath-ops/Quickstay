@@ -8,14 +8,7 @@
 .pagenotfound > img{
     width: 55%;
 }
-.pagenotfound > div > a > button{
-    background: #a00500;
-    border: none;
-    padding: 8px 50px;
-    color: white;
-    border-radius: 20px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    font-size: 16px;
-    cursor: pointer;
+.pagenotfound > div{
+    position: absolute;
+    bottom: 18px;
 }

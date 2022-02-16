@@ -66,7 +66,7 @@ const Home = (props) => {
             <Blogs/>
             <GetToKnow/>
             <Follow/>
-            <Find/>
+            <Find searchedProperties={props.searchedProperties}/>
             <Download/>
             <Locations getAllProperties={props.allProperties}/>   
         </Main>

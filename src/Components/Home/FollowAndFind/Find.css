@@ -27,6 +27,7 @@
     font-weight: 600;
     font-size: 24px;
     margin: 0 25px;
+    cursor: pointer;
 } 
 .places img{
     width: 140px;

@@ -1,6 +1,6 @@
 import React from 'react'
-import SearchHomes from '../../WebsiteMaterial/AboutImages/SearchHomes.svg'
-import ListHome from '../../WebsiteMaterial/AboutImages/ListYourHome.svg'
+import SearchHomes from '../../WebsiteMaterial/AboutImages/SearchHomes.png'
+import ListHome from '../../WebsiteMaterial/AboutImages/ListHome.png'
 
 export default function BecomeFamily() {
     return (

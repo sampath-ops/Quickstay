@@ -79,6 +79,7 @@ const SearchBar = (props) => {
             const latlng = {
                 lat,lng
             }
+            console.log(latlng);
             props.searchedProperties(docs,latlng);
             navigate('/filters'); 
         }

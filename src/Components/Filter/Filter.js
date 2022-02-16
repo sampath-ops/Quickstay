@@ -14,13 +14,6 @@ const Filter = (props) => {
 
     let propertyarr = [];
 
-      // show not found page 
-      if(props.snap.size < 1){
-          return(
-              <PropertyNotFound/>
-          )
-      }
-
      // get documents from snap
         props.snap.forEach(item =>{
             if('images' in item.data()){
@@ -90,6 +83,28 @@ const Filter = (props) => {
         if(bool !== undefined){
             setShowDistance(bool);
         }
+    }
+
+    // show not found page 
+    if(props.snap.size < 1){
+        return(
+        <MainSub searchedProperties={props.searchedProperties} user={props.user}>
+            {propertyarr &&
+            <div>
+                <div className="filters-section-container_notFound">
+                    <div className="filter-section">
+                        <FilterOptions getFilters={getFiltersHandler} clearFilters={clearFilters} sortProperties={setSortHandler} propertyDistance={propertyDistanceHandler}/>
+                        <FilterOptionsForMobile getFilters={getFiltersHandler} clearFilters={clearFilters} sortProperties={setSortHandler}  propertyDistance={propertyDistanceHandler} filters={filters} sort={sort} showDistance={showDistance}/>
+                    </div>
+                    <div className="filter-results">
+                        <PropertyNotFound/>
+                    </div>
+                </div>
+                <Locations getAllProperties={props.allProperties}/>
+            </div>
+            }
+        </MainSub>
+        )
     }
 
     return ( 

@@ -44,7 +44,7 @@
   }
   
   .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
+    background: none !important;
   }
   .bm-menu-wrap{
     top:0;

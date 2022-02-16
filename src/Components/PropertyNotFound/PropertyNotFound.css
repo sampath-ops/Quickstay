@@ -1,6 +1,7 @@
 .property_not_found_container > h2{
     position: absolute;
-    right: 35%;
+    right: 26%;
+    margin: 0;
     font-size: 35px;
 }
 .property_not_found{
@@ -14,6 +15,7 @@
 }
 .we_are_sorry{
     font-family: Roboto;
+    margin-top: 32px;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -21,6 +23,9 @@
     text-align: center;
     letter-spacing: 0.08em;
     color: #5A5857;
+}
+.go_home{
+    padding-top: 10px;
 }
 .go_home > a > button{
     font-family: Open Sans;
@@ -39,14 +44,19 @@
 @media(max-width:1023px){
     .property_not_found_container > h2{
         right: 12%;
+        top: 12%;
         font-size: 20px;
     }
     .property_not_found > img{
         width: 100%;
     }
+    .property_not_found{
+        padding-top: 30px;
+    }
     .we_are_sorry{
         font-size: 16px;
         line-height: inherit;
+        margin: 10px 0;
     }
     .go_home > a > button{
         font-size: 14px;
