@@ -4,6 +4,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 .pagenotfound > img{
     width: 55%;
@@ -11,4 +12,15 @@
 .pagenotfound > div{
     position: absolute;
     bottom: 18px;
+}
+@media(max-width:1023px){
+    .pagenotfound{
+        height: 100vh;
+    }
+    .pagenotfound > img{
+        width: 100%;
+    }
+    .pagenotfound > div{
+        bottom: 18%;
+    }
 }

@@ -1,13 +1,13 @@
 .property_not_found_container > h2{
     position: absolute;
     right: 26%;
+    top: 9%;
     margin: 0;
     font-size: 35px;
 }
 .property_not_found{
     text-align: center;
     padding: 50px;
-    padding-top: 0;
 }
 .property_not_found > img{
     width: 50%;
@@ -15,7 +15,7 @@
 }
 .we_are_sorry{
     font-family: Roboto;
-    margin-top: 32px;
+    margin-top: 26px;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;

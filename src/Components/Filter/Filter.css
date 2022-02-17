@@ -2,14 +2,14 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
     margin-top: 40px;
-    height: 1200px;
+    height: 760px;
     margin-bottom: 75px;
 }
 .filters-section-container_notFound{
     display: grid;
     grid-template-columns: 1fr 4fr;
     margin-top: 40px;
-    height: 800px;
+    height: 760px;
     margin-bottom: 75px;
 }
 .filter-section{

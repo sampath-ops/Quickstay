@@ -8,7 +8,7 @@
     margin: 0;
     color: rgb(128, 128, 128);
     font-weight: 500;
-    font-size: 13px;
+    font-size: 15px;
 }
 .privacy_policy ul{
     padding-left: 40px;
@@ -51,5 +51,10 @@
     }
     .privacy_policy ul{
         padding-left: 25px;
+    }
+}
+@media(max-width:1023px){
+    .policy_text,.privacy_policy ul{
+        font-size: 14px;
     }
 }

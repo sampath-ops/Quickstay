@@ -94,7 +94,6 @@ const Filter = (props) => {
                 <div className="filters-section-container_notFound">
                     <div className="filter-section">
                         <FilterOptions getFilters={getFiltersHandler} clearFilters={clearFilters} sortProperties={setSortHandler} propertyDistance={propertyDistanceHandler}/>
-                        <FilterOptionsForMobile getFilters={getFiltersHandler} clearFilters={clearFilters} sortProperties={setSortHandler}  propertyDistance={propertyDistanceHandler} filters={filters} sort={sort} showDistance={showDistance}/>
                     </div>
                     <div className="filter-results">
                         <PropertyNotFound/>

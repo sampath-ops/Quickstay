@@ -11,7 +11,7 @@ const Download = () => {
                 <img src={mobileimg} alt="mobile-design" />
                 <div className="playstore-button">
                     <p>Download the App.</p>
-                    <img src={playstore} alt="playstore" />
+                    <a href="https://play.google.com/store/apps/details?id=com.quickstayrooms.flat_and_flatmates" target="_blank" rel="noreferrer"><img src={playstore} alt="playstore" /></a>
                 </div>
             </div>
             <div className="mobile">

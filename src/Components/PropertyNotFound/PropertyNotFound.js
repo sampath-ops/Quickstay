@@ -7,8 +7,8 @@ const PropertyNotFound = () => {
             <h2>Property <br /> Not found!</h2>
             <div className="property_not_found">
                 <img src={notFound} alt="property-not-found" />
-                <p className="we_are_sorry">We’re sorry, the page you requested could not be found.</p>
-                <p className="we_are_sorry">Please go back to the homepage.</p>
+                <p className="we_are_sorry">We’re sorry, no property found in this area right now.</p>
+                <p className="we_are_sorry">Hold tight, We’ll be available soon!</p>
                 <div className="go_home"><Link to="/"><button>GO HOME</button></Link></div>
             </div>
         </div>
