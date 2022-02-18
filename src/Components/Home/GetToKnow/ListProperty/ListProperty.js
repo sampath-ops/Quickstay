@@ -5,11 +5,15 @@ import Locations from '../../PopularSearches/Locations/Location'
 import Find from '../../FollowAndFind/Find';
 import Hero from './Hero';
 import './ListProperty.css';
-
+import {Helmet} from "react-helmet";
 export default function ListProperty(props) {
     
     return (
         <MainSub searchedProperties={props.searchedProperties} >
+            <Helmet>
+                <title>List your property for FREE | QuickStay</title>
+                <meta name="description" content="We help you list your rental property in a few easy steps. Let us market, manage and maintain your property to save your unnecessary headache."/>
+            </Helmet>
             <Hero/>
             <Find/>
             <Locations getAllProperties={props.allProperties}/>

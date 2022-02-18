@@ -9,7 +9,7 @@ import { useState } from "react";
 import geohash from "ngeohash";
 import geohashDistance from "geohash-distance";
 import PropertyNotFound from "../PropertyNotFound/PropertyNotFound";
-
+import { Helmet } from "react-helmet";
 const Filter = (props) => {
 
     let propertyarr = [];
@@ -89,6 +89,9 @@ const Filter = (props) => {
     if(props.snap.size < 1){
         return(
         <MainSub searchedProperties={props.searchedProperties} user={props.user}>
+            <Helmet>
+                <title>QuickStay</title>
+            </Helmet>
             {propertyarr &&
             <div>
                 <div className="filters-section-container_notFound">
@@ -108,6 +111,9 @@ const Filter = (props) => {
 
     return ( 
         <MainSub searchedProperties={props.searchedProperties} user={props.user}>
+            <Helmet>
+                <title>QuickStay</title>
+            </Helmet>
             {propertyarr &&
             <div>
                 <div className="filters-section-container">

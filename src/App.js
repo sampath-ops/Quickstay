@@ -2,6 +2,7 @@
 import './App.css';
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
+import Blogs from './Components/Blogs/Blogs';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import Login from './Components/Login-Otp/Login';
 import Filter from './Components/Filter/Filter';
@@ -48,6 +49,7 @@ function App() {
       <Routes id="outer-container">
          <Route exact path="/" element={<Home getUserProfile={getUserProfileHandler} allProperties={allProperties} searchedProperties={searchedPropertiesHandler} />}/>
          <Route path="/login" element={<Login/>}/>
+         <Route path="/blogs" element={<Blogs searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
          <Route path="/cities/:id" element={<Filter snap={documentSnap} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng} allProperties={allProperties}/>}/>
          <Route path="/filters" element={<Filter snap={documentSnap} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng} allProperties={allProperties}/>}/>
          <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>

@@ -1,9 +1,14 @@
 import MainSub from "../NavBar/MainSub";
 import "./PrivacyPolicy.css";
 import Locations from "../Home/PopularSearches/Locations/Location";
+import { Helmet } from "react-helmet";
 const PrivacyPolicy = (props) => {
     return ( 
        <MainSub searchedProperties={props.searchedProperties}>
+           <Helmet>
+                <title>Privacy Policy | QuickStay</title>
+                <meta  name="description" content="QuickStay is committed to maintaining robust privacy protections for its users. Our Privacy Policy is designed to help you understand how we collect, use and safeguard the information you provide to us and to assist you in making informed decisions when using our Service."/>
+           </Helmet>
             <div className="privacy_policy">
                 <h1 className="policy_head">QuickStay’s Privacy Policy</h1>
                

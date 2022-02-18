@@ -1,8 +1,13 @@
 import MainSub from "../NavBar/MainSub";
 import Locations from "../Home/PopularSearches/Locations/Location";
+import { Helmet } from "react-helmet";
 const Terms = (props) => {
     return ( 
         <MainSub searchedProperties={props.searchedProperties}>
+            <Helmet>
+                <title>Terms & Conditions | QuickStay</title>
+                <meta name="description" content="The following Terms of Use apply when you view or use the Service via our website located at https://www.quickstayrooms.com/ or by accessing the Service through clicking on the application “QuickStay” on your mobile device."/>
+            </Helmet>
             <div className="privacy_policy">
                 <h1 className="policy_head">TERMS &#38; CONDITIONS</h1>
                 <p className="policy_text">Welcome to the QUICKSTAY ROOMS Terms of Use agreement. For purposes of this agreement, “Site” refers to the Company’s website/mobile application, which can be accessed at <a href="https://www.quickstayrooms.com/">www.quickstayrooms.com</a> or through our mobile application “QuickStay Rooms”. “Service” refers to the Company’s services accessed via the Site, in which users can . The terms “QuickStay”, “we,” “us,” and “our” refer to the Company. “You” refers to you, as a user of our Site or our Service.</p>

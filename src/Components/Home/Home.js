@@ -17,6 +17,7 @@ import { db } from '../../firebase.config';
 import { doc, getDoc } from "firebase/firestore";
 import { getAuth } from 'firebase/auth';
 import { app } from '../../firebase.config';
+import {Helmet} from "react-helmet";
 
 const Home = (props) => {
 
@@ -56,6 +57,10 @@ const Home = (props) => {
 
     return ( 
         <Main>
+            <Helmet>
+                <title>QuickStay: PG, Flat, Coliving, Room for rent without brokerage</title>
+                <meta name="description" content="Live in the best rental stays like PG, Flat, Coliving or Room without brokerage. Choose from Unfurnished, Semi-Furnished, Furnished long-term accommodations only on QuickStay" />
+            </Helmet>
             <PopUpWrap isOpen={isOpen} togglePopup={togglePopup} user={auth.currentUser} closeForm={closeForm}/>
             <Hero searchedProperties={props.searchedProperties}/>
             <Offer/>

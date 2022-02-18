@@ -7,6 +7,7 @@ import Main from "../NavBar/Main";
 import {app} from "../../firebase.config"
 import { getAuth,signInWithPhoneNumber,RecaptchaVerifier} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import {Helmet} from "react-helmet";
 
 const Login = () => {
 
@@ -125,6 +126,9 @@ const Login = () => {
 
     return ( 
         <Main>
+            <Helmet>
+                <title>QuickStay</title>
+            </Helmet>
             {isRecievedOtp ? <OTP onOtpSubmit={onOtpSubmitHandler} userNumber={enteredNumber} handleClick={toggle} resendOtp={resendOtpHandler}/> :
             <form className="login"  onSubmit={loginFormSubmitHandler}>
                 <div className="form-container">

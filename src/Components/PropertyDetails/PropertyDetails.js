@@ -9,6 +9,7 @@ import { useParams } from "react-router";
 import {db} from "../../firebase.config";
 import {doc,getDoc} from "firebase/firestore";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 const PropertyDetails = (props) => {
 
     const [propDetails,setPropDetails] = useState();
@@ -37,6 +38,9 @@ const PropertyDetails = (props) => {
  
     return ( 
         <MainSub  searchedProperties={props.searchedProperties} user={props.user}>
+            <Helmet>
+                <title>QuickStay</title>
+            </Helmet>
             {propDetails && <div className="property-details">
                 <div className="details1">
                         <PropertyCarousel images={imagesarr}/>
