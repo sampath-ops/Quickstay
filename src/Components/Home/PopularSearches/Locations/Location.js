@@ -12,7 +12,10 @@ const Locations = (props) => {
 
     const [cityName,setCityName] = useState("Bengaluru");
 
-    const cityNameHandler = async(name)=>{
+    const [id,setId] = useState(0);
+
+    const cityNameHandler = async(name,id)=>{
+       setId(id);
        setCityName(name);
     }
 
@@ -21,7 +24,7 @@ const Locations = (props) => {
             <div>
                 {
                     locations.map((location,index)=>(
-                        <div  key={index} onClick={()=>cityNameHandler(location)}>{location}</div>
+                        <div  key={index} onClick={()=>cityNameHandler(location,index)} className={index === id ? "city_links_active":""}>{location}</div>
                     ))
                 }
              

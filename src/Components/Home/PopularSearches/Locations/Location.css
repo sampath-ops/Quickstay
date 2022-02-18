@@ -24,6 +24,9 @@
 .locations > div:nth-child(1) div:hover{
     color: #00C2FF;
 }
+.city_links_active{
+    color: #00C2FF !important;
+}
 .locations > div:nth-child(1) div{
     text-decoration: none;
     font-family: 'Open Sans';
