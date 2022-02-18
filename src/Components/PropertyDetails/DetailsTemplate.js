@@ -6,7 +6,13 @@ const DetailsTemplate = (props) => {
             <div className="DetailsTemplate">
                 {
                     props.facilitiesAndNeigh.map((element,index)=>{
-                    const image = require(`../../WebsiteMaterial/PropertyDetailsImages/FacilitiesAndNeighBourhood/${element}.svg`)
+                        let image;
+                        if(element === "24*7 Water"){
+                             image = require(`../../WebsiteMaterial/PropertyDetailsImages/FacilitiesAndNeighBourhood/Water.svg`) 
+                        }
+                        else{
+                             image = require(`../../WebsiteMaterial/PropertyDetailsImages/FacilitiesAndNeighBourhood/${element}.svg`)
+                        }
                         return(
                             <div key={index}>
                                 <img src={image.default} alt={element} />
