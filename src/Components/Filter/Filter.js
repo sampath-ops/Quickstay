@@ -9,13 +9,36 @@ import { useState } from "react";
 import geohash from "ngeohash";
 import geohashDistance from "geohash-distance";
 import PropertyNotFound from "../PropertyNotFound/PropertyNotFound";
-import { Helmet } from "react-helmet";
+import { useParams } from "react-router-dom";
+import { query,collection,where,getDocs } from 'firebase/firestore';
+import {db} from "../../firebase.config";
+
 const Filter = (props) => {
 
     let propertyarr = [];
 
+    let documentsSnap = props.snap;
+
+    let {id} = useParams();
+
+    const [isDocSnap,setDocSnap] = useState(false); 
+    
+    const fetchLinksData = async(cityName)=>{
+        const q = query(collection(db,"properties"),where("city","==",cityName),where("activeStatus","==",true),where("approved","==",true));
+
+        documentsSnap = await getDocs(q);
+        props.allProperties(documentsSnap);
+    }
+
+    if(id && !isDocSnap){
+       setDocSnap(true);
+       const urlArr = id.split("-")
+       const cityName = urlArr[urlArr.length-1].charAt(0).toUpperCase() + urlArr[urlArr.length-1].slice(1);
+       fetchLinksData(cityName);
+    }
+
      // get documents from snap
-        props.snap.forEach(item =>{
+     documentsSnap.forEach(item =>{
             if('images' in item.data()){
                 const images = item.data().images;
                 if(images.length > 0){
@@ -89,9 +112,6 @@ const Filter = (props) => {
     if(props.snap.size < 1){
         return(
         <MainSub searchedProperties={props.searchedProperties} user={props.user}>
-            <Helmet>
-                <title>QuickStay</title>
-            </Helmet>
             {propertyarr &&
             <div>
                 <div className="filters-section-container_notFound">
@@ -111,9 +131,7 @@ const Filter = (props) => {
 
     return ( 
         <MainSub searchedProperties={props.searchedProperties} user={props.user}>
-            <Helmet>
-                <title>QuickStay</title>
-            </Helmet>
+            
             {propertyarr &&
             <div>
                 <div className="filters-section-container">

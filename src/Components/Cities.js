@@ -75,7 +75,7 @@ const Cities = (props) => {
         <div className="locations-images">
             {
                 Locations.map((location,index)=>(
-                    <CitiesTemplate location={location} index={index} searchedProperties={props.searchedProperties}/>
+                    <CitiesTemplate key={index} location={location} index={index} searchedProperties={props.searchedProperties}/>
                 ))
             }
         </div>

@@ -63,7 +63,7 @@ export default class Sidebar extends React.Component {
         <Link
           onClick={() => this.closeMenu()}
           className="menu-item"
-          to="/blog"
+          to="/blogs"
         >
           Blog
         </Link>
