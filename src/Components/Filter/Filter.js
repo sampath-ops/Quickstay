@@ -23,8 +23,7 @@ const Filter = (props) => {
 
     const [isDocSnap,setDocSnap] = useState(false); 
     
-    const fetchLinksData = async(cityName)=>{  
-        console.log(cityName)     
+    const fetchLinksData = async(cityName)=>{    
         let location = CityLatLng[cityName];
         documentsSnap = await GetGeoDocuments(location.lat,location.lng,7.45645);
         props.allProperties(documentsSnap);
@@ -34,7 +33,8 @@ const Filter = (props) => {
        setDocSnap(true);
        const urlArr = id.split("-")
        let cityName = urlArr[urlArr.length-1].charAt(0).toUpperCase() + urlArr[urlArr.length-1].slice(1);
-       if(cityName == "1" || cityName == "3" || cityName == "East" || cityName == "West" || cityName == "Nagar" || cityName == "Vihar"){
+      
+       if(urlArr[urlArr.length-2] == "kailash" || urlArr[urlArr.length-2] == "phase" || cityName == "East" || cityName == "West" || cityName == "Nagar" || cityName == "Vihar" || urlArr[urlArr.length-2] == "sector" ){
            cityName = urlArr[urlArr.length-2].charAt(0).toUpperCase() + urlArr[urlArr.length-2].slice(1);
            cityName += urlArr[urlArr.length-1].charAt(0).toUpperCase() + urlArr[urlArr.length-1].slice(1);
        }
