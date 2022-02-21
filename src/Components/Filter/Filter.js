@@ -10,8 +10,8 @@ import geohash from "ngeohash";
 import geohashDistance from "geohash-distance";
 import PropertyNotFound from "../PropertyNotFound/PropertyNotFound";
 import { useParams } from "react-router-dom";
-import { query,collection,where,getDocs } from 'firebase/firestore';
-import {db} from "../../firebase.config";
+import CityLatLng from "./CityLatLng";
+import GetGeoDocuments from "../GetGeoDocuments";
 
 const Filter = (props) => {
 
@@ -23,17 +23,21 @@ const Filter = (props) => {
 
     const [isDocSnap,setDocSnap] = useState(false); 
     
-    const fetchLinksData = async(cityName)=>{
-        const q = query(collection(db,"properties"),where("city","==",cityName),where("activeStatus","==",true),where("approved","==",true));
-
-        documentsSnap = await getDocs(q);
+    const fetchLinksData = async(cityName)=>{  
+        console.log(cityName)     
+        let location = CityLatLng[cityName];
+        documentsSnap = await GetGeoDocuments(location.lat,location.lng,7.45645);
         props.allProperties(documentsSnap);
     }
 
     if(id && !isDocSnap){
        setDocSnap(true);
        const urlArr = id.split("-")
-       const cityName = urlArr[urlArr.length-1].charAt(0).toUpperCase() + urlArr[urlArr.length-1].slice(1);
+       let cityName = urlArr[urlArr.length-1].charAt(0).toUpperCase() + urlArr[urlArr.length-1].slice(1);
+       if(cityName == "1" || cityName == "3" || cityName == "East" || cityName == "West" || cityName == "Nagar" || cityName == "Vihar"){
+           cityName = urlArr[urlArr.length-2].charAt(0).toUpperCase() + urlArr[urlArr.length-2].slice(1);
+           cityName += urlArr[urlArr.length-1].charAt(0).toUpperCase() + urlArr[urlArr.length-1].slice(1);
+       }
        fetchLinksData(cityName);
     }
 
