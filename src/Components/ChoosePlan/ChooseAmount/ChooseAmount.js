@@ -1,7 +1,11 @@
 import AmountCards from "./AmountCards";
 import './ChooseAmount.css';
 import {Link} from 'react-router-dom';
+import { useState } from "react";
 const ChooseAmount = () => {
+
+    const [planAmount,setPlanAmount] = useState("");
+
     const chooseAmount = [
         {
             type:"MONTHLY",
@@ -19,22 +23,32 @@ const ChooseAmount = () => {
             duration:"3 Months"
         },
     ]
+
+    const setPlanHandler = (plan)=>{
+        setPlanAmount(plan);
+    }
+
+    const payNow = ()=>{
+        console.log(planAmount);
+    }
+
+
     return ( 
         <div className="chooseamount">
-                    <div className="amountcards-container">
-                        {
-                        chooseAmount.map((plan,index)=>{
-                           return(
-                            <AmountCards key={index} plantype={plan.type} cost={plan.amount} validity={plan.duration}/>
-                           )
-                        })
-                        }   
-                    </div>
-                    <div className="choose-plan-buttons">
-                        <button>Pay Now</button>
-                        <button><Link to='/'>Maybe Later</Link></button>
-                    </div>
-                </div>
+            <div className="amountcards-container">
+                {
+                chooseAmount.map((plan,index)=>{
+                    return(
+                    <AmountCards setPlan={setPlanHandler} key={index} plantype={plan.type} cost={plan.amount} validity={plan.duration}/>
+                    )
+                })
+                }   
+            </div>
+            <div className="choose-plan-buttons">
+                <button onClick={payNow}>Pay Now</button>
+                <button><Link to='/'>Maybe Later</Link></button>
+            </div>
+        </div>
      );
 }
  

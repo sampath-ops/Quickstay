@@ -11,8 +11,9 @@
     transition: none!important;
 }
 .amountcards-container{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
 }
 .choose-plan-buttons{
     align-self: center;
