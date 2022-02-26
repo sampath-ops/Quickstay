@@ -2,9 +2,18 @@ const path = require("path");
 const express = require("express");
 const app =express();
 const fs = require("fs");
+const cors = require("cors");
 const {FooterLinks} = require("./FooterLinksMeta.js");
 
 const indexPath  = path.resolve(__dirname,'./build', 'index.html');
+
+app.use(cors());
+
+// middlewares
+app.use(express.json({ extended: false }));
+
+// payment route included
+app.use("/payment", require("./routes/payment"));
 
 app.get('/', (req, res, next) => {
     fs.readFile(indexPath, 'utf8', (err, htmlData) => {
@@ -189,6 +198,26 @@ app.get('/terms', (req, res, next) => {
             `<title>${pageTitle}</title>`
         )
         .replace('__META_DESCRIPTION__', pageDescription).replace('__META_OG_TITLE__', pageTitle).replace('__META_OG_DESCRIPTION__', pageDescription);
+        return res.send(htmlData);
+    });
+});
+
+
+// CHOOSE-PLAN
+app.get('/choose-plan', (req, res, next) => {
+    fs.readFile(indexPath, 'utf8', (err, htmlData) => {
+        if (err) {
+            console.error('Error during file reading', err);
+            return res.status(404).end()
+        }
+        const pageTitle = "QuickStay";
+       
+        // inject meta tags
+        htmlData = htmlData.replace(
+            "<title>QuickStay</title>",
+            `<title>${pageTitle}</title>`
+        )
+        .replace('__META_OG_TITLE__', pageTitle)
         return res.send(htmlData);
     });
 });

@@ -7,11 +7,11 @@ const AmountCards = (props) => {
 
     return ( 
         <label htmlFor={props.validity}>
-            <div className="amountcards" onClick={()=>selectPlan(props.cost)}>
+            <div className={`amountcards ${props.class}`} onClick={()=>selectPlan(props.cost)}>
                 
                 <div className="card-tag">
                     <div>{props.plantype}</div>
-                    <input type="radio" name="plan" id={props.validity} value='0' />
+                    <input type="radio" name="plan" id={props.validity}/>
                 </div>
                 <div className="card-amount">
                     <span> &#8377;{props.cost}</span> <br />

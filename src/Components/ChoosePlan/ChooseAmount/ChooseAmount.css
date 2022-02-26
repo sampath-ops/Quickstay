@@ -19,9 +19,13 @@
     align-self: center;
     justify-self: center;
 }
+.invalid_plan{
+    border-color: red;
+}
 .choose-plan-buttons button:nth-child(1){
     display: block;
     color: white;
+    cursor: pointer;
     padding: 8px 0;
     font-weight: 600;
     font-size: 14px;

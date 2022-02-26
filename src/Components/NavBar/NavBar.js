@@ -16,18 +16,9 @@ class NavBar extends React.Component {
     constructor(props){
       super(props);
       this.state={
-        // menuOpen:false,
         showProfile: false
       }
     }
-
-    // handleMenuClick() {
-    //   this.setState({menuOpen:!this.state.menuOpen});
-    // }
-    
-    // handleLinkClick() {
-    //   this.setState({menuOpen: false});
-    // }
     
     render(){
       const styles= 
@@ -101,17 +92,6 @@ class NavBar extends React.Component {
           // An error happened.
         });
       }
-
-      // const menuItems = menu.map((val,index)=>{
-      //   return (
-      //     <MenuItem
-      //       key={index} 
-      //       delay={`${index * 0.1}s`}
-      //       onClick={val.route === 'Logout' ? ()=>{signout()}:()=>{this.handleLinkClick();}}
-      //       >{val}
-
-      //     </MenuItem>)
-      // });
     
       return(
         <div className="home_menu">
@@ -119,7 +99,7 @@ class NavBar extends React.Component {
             <div style={styles.logo} className="logo">
               <Link to="/"><img src={logo} alt="logo" /></Link>
             </div>
-            {/* <MenuButton  open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='black'/> */}
+        
             <div className="desktop-menu">
               {
                 menu.map((val,index)=>{
@@ -139,9 +119,6 @@ class NavBar extends React.Component {
             </div>
            
           </div>
-          {/* <Menu open={this.state.menuOpen} className="mobile-menu">
-            {menuItems}
-          </Menu> */}
            <Sidebar pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } className="home_menu"/>
         </div>
       )

@@ -43,6 +43,12 @@ const ContactButton = (props) => {
             }
             else{
                 // CALL OWNER
+                // check plan exipiration
+                // if(docSnap.data().validTill < new Date()){
+                //     alert("Plan Expired :(");
+                //     navigate("/choose-plan");
+                //     return;
+                // }
                 window.open(`tel:${props.propDetails.ownerPhoneNo}`,"_blank")
             }
         }

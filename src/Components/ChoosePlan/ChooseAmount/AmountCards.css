@@ -4,6 +4,7 @@
     padding: 10px;
     font-family: Open Sans;
     font-style: normal;
+    cursor: pointer;
 }
 .card-tag{
     display: flex;
