@@ -1,0 +1,11 @@
+.premium_user{
+    text-align: center;
+}
+.get_help{
+    padding: 10px 25px;
+    border-radius: 14px;
+    border: none;
+    background: #a00500;
+    color: white;
+    font-weight: 600;
+}

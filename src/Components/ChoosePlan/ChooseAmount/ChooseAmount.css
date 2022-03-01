@@ -70,7 +70,8 @@
       overflow-x: auto;
       overflow-y: hidden;
       flex-wrap: nowrap;
-      justify-content: start;
+      justify-content: flex-start;
       column-gap: 10px;
+      display: flex;
   }
 }

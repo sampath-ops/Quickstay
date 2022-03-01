@@ -22,7 +22,7 @@ const BlogCard = () => {
             <div className="row">
             {
                 blogs.map((blog,index) =>{
-                    const img = require('../../../WebsiteMaterial/living-room.jpg');
+                    const img = require('../../../WebsiteMaterial/Home/living-room.jpg');
                     return(
                         <div className="card-container" key={index}>
                             <Link to="#"> <img src={img.default} alt="living-room" /></Link>

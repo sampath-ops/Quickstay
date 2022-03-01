@@ -222,6 +222,66 @@ app.get('/choose-plan', (req, res, next) => {
     });
 });
 
+
+// login
+app.get('/login', (req, res, next) => {
+    fs.readFile(indexPath, 'utf8', (err, htmlData) => {
+        if (err) {
+            console.error('Error during file reading', err);
+            return res.status(404).end()
+        }
+        const pageTitle = "QuickStay";
+       
+        // inject meta tags
+        htmlData = htmlData.replace(
+            "<title>QuickStay</title>",
+            `<title>${pageTitle}</title>`
+        )
+        .replace('__META_OG_TITLE__', pageTitle)
+        return res.send(htmlData);
+    });
+});
+
+
+// Property Details
+app.get("/property-details/:id", (req, res, next) => {
+    fs.readFile(indexPath, 'utf8', (err, htmlData) => {
+        if (err) {
+            console.error('Error during file reading', err);
+            return res.status(404).end()
+        }
+        const pageTitle = "QuickStay";
+       
+        // inject meta tags
+        htmlData = htmlData.replace(
+            "<title>QuickStay</title>",
+            `<title>${pageTitle}</title>`
+        )
+        .replace('__META_OG_TITLE__', pageTitle)
+        return res.send(htmlData);
+    });
+});
+
+
+// Filters
+app.get('/filters', (req, res, next) => {
+    fs.readFile(indexPath, 'utf8', (err, htmlData) => {
+        if (err) {
+            console.error('Error during file reading', err);
+            return res.status(404).end()
+        }
+        const pageTitle = "QuickStay";
+       
+        // inject meta tags
+        htmlData = htmlData.replace(
+            "<title>QuickStay</title>",
+            `<title>${pageTitle}</title>`
+        )
+        .replace('__META_OG_TITLE__', pageTitle)
+        return res.send(htmlData);
+    });
+});
+
 app.get('/blogs', (req, res, next) => {
     fs.readFile(indexPath, 'utf8', (err, htmlData) => {
         if (err) {

@@ -17,6 +17,7 @@ import GeoLocation from './GeoLocation';
 import ScrollToTop from './ScrollToTop';
 import { useState } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Premium from "./Components/PremiumUser/PremiumUser";
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
       <Routes id="outer-container">
          <Route exact path="/" element={<Home getUserProfile={getUserProfileHandler} allProperties={allProperties} searchedProperties={searchedPropertiesHandler} />}/>
          <Route path="/login" element={<Login/>}/>
+         <Route path="/premium" element={<Premium/>}/>
          <Route path="/blogs" element={<Blogs searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
          <Route path="/cities/:id" element={<Filter snap={documentSnap} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng} allProperties={allProperties}/>}/>
          <Route path="/filters" element={<Filter snap={documentSnap} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng} allProperties={allProperties}/>}/>

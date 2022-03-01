@@ -6,8 +6,8 @@ const AmountCards = (props) => {
     }
 
     return ( 
-        <label htmlFor={props.validity}>
-            <div className={`amountcards ${props.class}`} onClick={()=>selectPlan(props.cost)}>
+        <label htmlFor={props.validity} className={`amountcards ${props.class}`}>
+            <div onClick={()=>selectPlan(props.cost)}>
                 
                 <div className="card-tag">
                     <div>{props.plantype}</div>

@@ -31,7 +31,7 @@ const CardContainer = (props) => {
                         address = addressarr.slice(2,4);
                     }
 
-                    const personimg = require(`../../../WebsiteMaterial/${property.propertyFor}.png`);
+                    const personimg = require(`../../../WebsiteMaterial/CardDetailsImages/${property.propertyFor}.png`);
 
                     return(
                         <div className="card-container" key={index}>
