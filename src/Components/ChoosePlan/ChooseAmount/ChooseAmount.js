@@ -8,7 +8,7 @@ import { setDoc,doc,serverTimestamp,getDoc} from "firebase/firestore";
 import { updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-const ChooseAmount = () => {
+const ChooseAmount = (props) => {
 
     const [planAmount,setPlanAmount] = useState();
     const [isValid,setIsValid] = useState(true);
@@ -128,9 +128,9 @@ const ChooseAmount = () => {
                         razorpaySignature: response.razorpay_signature,
                     };
     
-                    const result = await axios.post("/payment/success", data);
+                    await axios.post("/payment/success", data);
                    
-                    alert(result.data.msg);
+                    // alert(result.data.msg);
 
                     // plan validity
                     var Today = new Date();
@@ -154,6 +154,7 @@ const ChooseAmount = () => {
                         premiumUser:true,
                         validTill: new Date(validTill)
                     })
+                    props.fetchUserDataHandler();
                 },
                 prefill:{
                     name: docSnap.data().name,

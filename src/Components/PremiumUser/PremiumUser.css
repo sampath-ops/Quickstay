@@ -1,5 +1,9 @@
 .premium_user{
     text-align: center;
+    padding: 20px;
+}
+.premium_user > img{
+    width: 34%;
 }
 .get_help{
     padding: 10px 25px;
@@ -8,4 +12,9 @@
     background: #a00500;
     color: white;
     font-weight: 600;
+}
+@media(max-width:1023px){
+    .premium_user > img{
+        width: 100%;
+    }
 }

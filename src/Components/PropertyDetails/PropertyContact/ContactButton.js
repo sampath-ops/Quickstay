@@ -20,6 +20,12 @@ const ContactButton = (props) => {
                 navigate("/choose-plan")
             }
             else{
+                 // check plan exipiration
+                 if(docSnap.data().validTill < new Date()){
+                    alert("Plan Expired :(");
+                    navigate("/choose-plan");
+                    return;
+                }
                 // contact owner if user is logged in and user should be a premium user
                 window.open(`https://wa.me/${props.propDetails.ownerPhoneNo}`,"_blank");
             }
@@ -44,11 +50,11 @@ const ContactButton = (props) => {
             else{
                 // CALL OWNER
                 // check plan exipiration
-                // if(docSnap.data().validTill < new Date()){
-                //     alert("Plan Expired :(");
-                //     navigate("/choose-plan");
-                //     return;
-                // }
+                if(docSnap.data().validTill < new Date()){
+                    alert("Plan Expired :(");
+                    navigate("/choose-plan");
+                    return;
+                }
                 window.open(`tel:${props.propDetails.ownerPhoneNo}`,"_blank")
             }
         }
