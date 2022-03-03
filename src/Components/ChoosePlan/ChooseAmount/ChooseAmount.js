@@ -110,12 +110,13 @@ const ChooseAmount = (props) => {
                 return;
             }
     
+
             // Getting the order details back
             const { amount, id: order_id, currency } = result.data;
-    
+
             const options = {
-                key: "rzp_live_pYFmL87XheLUWd", // Enter the Key ID generated from the Dashboard
-                amount: amount.toString(),
+                key: process.env.REACT_APP_RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
+                amount: amount,
                 currency: currency,
                 name: docSnap.data().name,
                 description: "Upgrading plan",
