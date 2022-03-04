@@ -105,6 +105,8 @@ const ChooseAmount = (props) => {
             // creating a new order
             const result = await axios.post("/payment/orders",planData);
     
+            console.log(result);
+
             if (!result) {
                 alert("Server error. Are you online?");
                 return;
@@ -116,7 +118,7 @@ const ChooseAmount = (props) => {
 
             const options = {
                 key: process.env.REACT_APP_RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
-                amount: amount,
+                amount: amount.toString(),
                 currency: currency,
                 name: docSnap.data().name,
                 description: "Upgrading plan",
