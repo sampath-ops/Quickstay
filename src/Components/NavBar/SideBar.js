@@ -60,17 +60,19 @@ export default class Sidebar extends React.Component {
         >
           List your Property
         </Link>
-        <Link
+        <a
           onClick={() => this.closeMenu()}
           className="menu-item"
-          to="/blogs"
+          href="https://blogs.quickstayrooms.com/"
+          target="_blank"
+          rel="noreferrer"
         >
           Blog
-        </Link>
+        </a>
         <Link
           onClick={() => this.closeMenu()}
           className="menu-item"
-          to="/contact"
+          to="/contact-us"
         >
           Contact us
         </Link>

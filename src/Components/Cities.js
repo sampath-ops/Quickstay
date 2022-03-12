@@ -36,8 +36,8 @@ const Cities = (props) => {
         {
             name:"Hyderabad",
             alter:"Hyderabad-icon",
-            lat:"17.385",
-            lon:"78.4867"
+            lat:17.385,
+            lon:78.4867
         },
         {
             name:"Jaipur",

@@ -12,6 +12,7 @@ import PropertyNotFound from "../PropertyNotFound/PropertyNotFound";
 import { useParams } from "react-router-dom";
 import CityLatLng from "./CityLatLng";
 import GetGeoDocuments from "../GetGeoDocuments";
+import {Helmet} from "react-helmet";
 
 const Filter = (props) => {
 
@@ -135,7 +136,12 @@ const Filter = (props) => {
 
     return ( 
         <MainSub searchedProperties={props.searchedProperties} user={props.user}>
-            
+
+            <Helmet>
+                <title>QuickStay</title>
+                <meta name="description" content="Live in the best rental stays like PG, Flat, Coliving or Room without brokerage. Choose from Unfurnished, Semi-Furnished, Furnished long-term accommodations only on QuickStay" />
+            </Helmet>
+
             {propertyarr &&
             <div>
                 <div className="filters-section-container">

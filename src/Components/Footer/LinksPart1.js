@@ -11,7 +11,8 @@ const LinksPart1 = () => {
         },
         {
             link:"Blog",
-            to:"/blog"
+            to:"http://blogs.quickstayrooms.com/",
+            newTab:true
         },
         {
             link:"Refer & Earn",

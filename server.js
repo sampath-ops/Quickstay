@@ -7,7 +7,7 @@ const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const {FooterLinks} = require("./FooterLinksMeta.js");
 require("dotenv").config();
-const indexPath  = path.resolve(__dirname,'./build', 'index.html');
+const indexPath  = path.resolve(__dirname,'./public', 'index.html');
 
 app.use(cors());
 
@@ -370,7 +370,7 @@ app.get('/blogs', (req, res, next) => {
 
 // static resources should just be served as they are
 app.use(express.static(
-    path.resolve(__dirname,'build')
+    path.resolve(__dirname,'..','build')
 ));
 
 const port = process.env.PORT || 5000;

@@ -1,38 +1,38 @@
-import React, { Component } from 'react';
+/* eslint-disable */
+import React from 'react';
 import GoogleMapReact from 'google-map-react';
+import Marker from './Marker';
+import { useState } from 'react';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
-class SimpleMap extends Component {
-  static defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33
-    },
-    zoom: 11
+const SimpleMap = (props) => {
+  const getMapOptions = (maps) => {
+    return {
+      disableDefaultUI: true,
+      mapTypeControl: true,
+      streetViewControl: true,
+      styles: [{ featureType: 'poi', elementType: 'labels', stylers: [{ visibility: 'on' }] }],
+    };
   };
 
-  render() {
-      if(window.google){
-        window.google = undefined;
-      }
+    const [center, setCenter] = useState({lat: 30.637535671590687, lng: 76.81357756676962 });
+    const [zoom, setZoom] = useState(11);
     return (
-      // Important! Always set the container height explicitly
-      <div className='GoogleMapContainer' style={{width: '100%'}}>
+        <div style={{ height: '42vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyC0iGHXPczH9Zla7iJUKC97ytWgawQMLDk", libraries: ['places'], id: '__googleMapsScriptId' }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          bootstrapURLKeys={{ key: 'replace your api key' }}
+          defaultCenter={center}
+          defaultZoom={zoom}
+          options={getMapOptions}
         >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text="My Marker"
+          <Marker
+            lat={30.637535671590687}
+            lng={76.81357756676962}
+            name="Quickstay"
+            color="#960A0A"
           />
         </GoogleMapReact>
       </div>
     );
-  }
 }
 
 export default SimpleMap;

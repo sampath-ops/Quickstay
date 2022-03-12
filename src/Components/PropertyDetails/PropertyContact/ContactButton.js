@@ -20,14 +20,26 @@ const ContactButton = (props) => {
                 navigate("/choose-plan")
             }
             else{
-                 // check plan exipiration
-                 if(docSnap.data().validTill < new Date()){
+
+                let currentTime;
+                let planValidity;
+                
+                if(docSnap.data()){
+                    currentTime = new Date();
+                    planValidity = new Date(docSnap.data().validTill.seconds * 1000);
+                    // console.log(currentTime.getTime(),planValidity.getTime());
+                }
+
+                // check plan exipiration
+                 if(planValidity.getTime() < currentTime.getTime()){
                     alert("Plan Expired :(");
                     navigate("/choose-plan");
                     return;
                 }
-                // contact owner if user is logged in and user should be a premium user
-                window.open(`https://wa.me/${props.propDetails.ownerPhoneNo}`,"_blank");
+                else{
+                    // contact owner if user is logged in and user should be a premium user
+                    window.open(`https://wa.me/${props.propDetails.ownerPhoneNo}`,"_blank");
+                }
             }
         }
         else{
@@ -49,13 +61,25 @@ const ContactButton = (props) => {
             }
             else{
                 // CALL OWNER
+
+                let currentTime;
+                let planValidity;
+                
+                if(docSnap.data()){
+                    currentTime = new Date();
+                    planValidity = new Date(docSnap.data().validTill.seconds * 1000);
+                    // console.log(currentTime.getTime(),planValidity.getTime());
+                }
+
                 // check plan exipiration
-                if(docSnap.data().validTill < new Date()){
+                if(planValidity.getTime() < currentTime.getTime()){
                     alert("Plan Expired :(");
                     navigate("/choose-plan");
                     return;
                 }
-                window.open(`tel:${props.propDetails.ownerPhoneNo}`,"_blank")
+               else{
+                    window.open(`tel:${props.propDetails.ownerPhoneNo}`,"_blank")
+               }
             }
         }
         else{

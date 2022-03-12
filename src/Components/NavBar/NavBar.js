@@ -62,11 +62,11 @@ class NavBar extends React.Component {
         },
         {
           route:'Blog',
-          link:'/blog'
+          link:'http://blogs.quickstayrooms.com/'
         },
         {
           route:'Contact Us',
-          link:'/contact'
+          link:'/contact-us'
         },
         {
           route: 'List your Property',
@@ -103,11 +103,22 @@ class NavBar extends React.Component {
             <div className="desktop-menu">
               {
                 menu.map((val,index)=>{
-                  return(
-                    <div  key={index} >
-                      <NavLink to={val.link} >{val.route}</NavLink>
+                  
+                  if(val.route === "Blog"){
+                    return(
+                      <div key={index} >
+                      <a href={val.link} target="_blank" rel="noreferrer">{val.route}</a>
                     </div>
-                  )
+                    )
+                  }
+                  else{
+                    return(
+                      <div  key={index} >
+                        <NavLink to={val.link} >{val.route}</NavLink>
+                      </div>
+                    )
+                  }
+                 
                 }) 
               }
               {

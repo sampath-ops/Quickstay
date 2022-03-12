@@ -4,7 +4,7 @@ import FavouriteStays from './FavouriteStays/FavouriteStays';
 import WhyStay from './WhyStay/WhyStay';
 // import ReferEarn from './ReferEarn/ReferEarn';
 import ExclusiveProperty from './ExclusiveProperty/ExclusiveProperty';
-import Blogs from './Blogs/Blogs';
+// import Blogs from './Blogs/Blogs';
 import GetToKnow from './GetToKnow/GetToKnow';
 import Follow from './FollowAndFind/Follow';
 import Find from './FollowAndFind/Find';
@@ -68,7 +68,7 @@ const Home = (props) => {
             {/* <ReferEarn/> */}
             <ExclusiveProperty addPropDetailsHandler={props.addPropDetailsHandler} getAllProperties={props.allProperties}/>
             <WhyStay/>
-            <Blogs/>
+            {/* <Blogs/> */}
             <GetToKnow/>
             <Follow/>
             <Find searchedProperties={props.searchedProperties}/>

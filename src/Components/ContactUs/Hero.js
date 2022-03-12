@@ -109,12 +109,12 @@ export default function Hero() {
                 <p>Call: +91-8387868880</p><p>Email: support@quickstayrooms.com</p>
                 <div className='connectWithUs'>
                     <p>CONNECT WITH US ON SOCIAL MEDIA!</p>
-                    <img src={facebook} alt="facebook"/>
-                    <img src={instagram} alt="instagram"/>
-                    <img src={linkedin} alt="linkedin"/>
-                    <img src={whatsapp} alt="whatsapp"/>
-                    <img src={twitter} alt="twitter"/>
-                    <img src={youtube} alt="youtube"/>
+                    <a href="https://www.facebook.com/quickstayrooms" target="_blank" rel="noreferrer"><img src={facebook} alt="facebook"/></a>
+                    <a href="https://www.instagram.com/quickstayrooms/" target="_blank" rel="noreferrer"><img src={instagram} alt="instagram"/></a>
+                    <a href="https://www.linkedin.com/company/quickstayrooms" target="_blank" rel="noreferrer"><img src={linkedin} alt="linkedin"/></a>
+                    <a href="https://wa.me/+918387868880" target="_blank" rel="noreferrer"><img src={whatsapp} alt="whatsapp"/></a>
+                    <a href="https://twitter.com/quickstayrooms" target="_blank" rel="noreferrer"><img src={twitter} alt="twitter"/></a>
+                    <a href="https://www.youtube.com/channel/UCJHwAKT6eaCMR7ubvYuKxUA" target="_blank" rel="noreferrer"><img src={youtube} alt="youtube"/></a>                    
                 </div>
             </div>
         </div>

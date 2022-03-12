@@ -58,7 +58,7 @@ function App() {
          <Route path="/about" element={<About searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
          <Route path="/property-details/:id" element={<PropertyDetails  searchedProperties={searchedPropertiesHandler} userProfile={userProfile} allProperties={allProperties}/>}/>
          <Route path="/list-property" element={<ListProperty searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
-         <Route path="/contact" element={<ContactUs searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
+         <Route path="/contact-us" element={<ContactUs searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
          <Route path="/privacy-policy" element={<PrivacyPolicy allProperties={allProperties} searchedProperties={searchedPropertiesHandler}/>}/>
          <Route path="/terms" element={<Terms allProperties={allProperties} searchedProperties={searchedPropertiesHandler}/>}/>
          <Route path="*" element={<PageNotFound/>}></Route>
