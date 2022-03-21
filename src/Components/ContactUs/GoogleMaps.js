@@ -16,10 +16,15 @@ const SimpleMap = (props) => {
 
     const [center, setCenter] = useState({lat: 30.637535671590687, lng: 76.81357756676962 });
     const [zoom, setZoom] = useState(11);
+
+    if(window.google){
+      window.google = undefined;
+    }
+
     return (
         <div style={{ height: '42vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'replace your api key' }}
+          bootstrapURLKeys={{ key: "AIzaSyC0iGHXPczH9Zla7iJUKC97ytWgawQMLDk", libraries: ['places'], id: '__googleMapsScriptId' }}
           defaultCenter={center}
           defaultZoom={zoom}
           options={getMapOptions}
