@@ -79,9 +79,9 @@ const SearchBar = (props) => {
             const latlng = {
                 lat,lng
             }
-            console.log(latlng);
+            // console.log(latlng);
             props.searchedProperties(docs,latlng);
-            navigate('/filters'); 
+            navigate('/properties'); 
         }
         addressObject = undefined;
     }

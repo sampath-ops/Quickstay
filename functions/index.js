@@ -283,6 +283,30 @@ app.get("/choose-plan",(request,response)=>{
   response.status(200).send(index);
 });
 
+app.get("/properties",(request,response)=>{
+    
+    // Getting index.html text
+    let index = fs.readFileSync('./web/index.html').toString();
+  
+    const pageTitle = "Quickstay";
+  
+    const pageDescription = "Quickstay"
+    // Changing metas function
+    const setMetas = (title, description) => {
+        
+        index = index.replace('__META_OG_TITLE__', title);
+        index = index.replace('__META_DESCRIPTION__', description);
+        index = index.replace('__META_OG_DESCRIPTION__', description);
+        
+    }
+    
+    setMetas(pageTitle, pageDescription);
+  
+    // Sending index.html    
+   
+    response.status(200).send(index);
+  });
+
 app.get("/property-details/:id",(request,response)=>{
     
   // Getting index.html text

@@ -37,8 +37,7 @@ const Follow = () => {
                     icons.map((icon,index)=>{
                         const imagename = require(`../../../WebsiteMaterial/Home/Follow/${icon.name}.svg`);
                         return(
-                            <a href={icon.to} target="_blank" rel="noopener noreferrer"> <img src={imagename.default} alt={icon.alter} key={index} /></a>
-                           
+                            <a href={icon.to} target="_blank" rel="noopener noreferrer" key={index}> <img src={imagename.default} alt={icon.alter}/></a>  
                         )
                     })
                 }

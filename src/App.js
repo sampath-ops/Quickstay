@@ -53,7 +53,7 @@ function App() {
          <Route path="/premium" element={<Premium/>}/>
          <Route path="/blogs" element={<Blogs searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
          <Route path="/cities/:id" element={<Filter snap={documentSnap} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng} allProperties={allProperties}/>}/>
-         <Route path="/filters" element={<Filter snap={documentSnap} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng} allProperties={allProperties}/>}/>
+         <Route path="/properties" element={<Filter snap={documentSnap} searchedProperties={searchedPropertiesHandler} searchLatlng={searchLatlng} allProperties={allProperties}/>}/>
          <Route path="/choose-plan" element={<ChoosePlan searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
          <Route path="/about" element={<About searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
          <Route path="/property-details/:id" element={<PropertyDetails  searchedProperties={searchedPropertiesHandler} userProfile={userProfile} allProperties={allProperties}/>}/>

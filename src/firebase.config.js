@@ -1,8 +1,11 @@
 /* eslint-disable */
-import  firebase from "firebase/compat/app";
-import 'firebase/compat/firestore';
-import 'firebase/compat/auth';
-import { getAnalytics } from "firebase/analytics";
+// import  firebase from "firebase/compat/app";
+// import 'firebase/compat/firestore';
+// import 'firebase/compat/auth';
+import { initializeApp } from "firebase/app"
+// import { getFirestore } from "firebase/firestore"
+import { enableIndexedDbPersistence } from "firebase/firestore"; 
+import { initializeFirestore, CACHE_SIZE_UNLIMITED } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -25,7 +28,25 @@ const firebaseConfig = {
 // };
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const db = firebase.firestore();
+const app = initializeApp(firebaseConfig);
+// const db = getFirestore();
+const db = initializeFirestore(app, {
+  cacheSizeBytes: CACHE_SIZE_UNLIMITED
+});
+
+// ENABLE OFFLINE PERSISTANCE
+enableIndexedDbPersistence(db)
+  .catch((err) => {
+      if (err.code == 'failed-precondition') {
+          // Multiple tabs open, persistence can only be enabled
+          // in one tab at a a time.
+          // ...
+      } else if (err.code == 'unimplemented') {
+          // The current browser does not support all of the
+          // features required to enable persistence
+          // ...
+      }
+  });
+// Subsequent queries will use persistence, if it was enabled successfully
+
 export {app,db};

@@ -6,7 +6,7 @@
 <url> <loc>https://quickstayrooms.com/premium</loc> </url>
 <url> <loc>https://quickstayrooms.com/blogs</loc> </url>
 <url> <loc>https://quickstayrooms.com/cities/:id</loc> </url>
-<url> <loc>https://quickstayrooms.com/filters</loc> </url>
+<url> <loc>https://quickstayrooms.com/properties</loc> </url>
 <url> <loc>https://quickstayrooms.com/choose-plan</loc> </url>
 <url> <loc>https://quickstayrooms.com/about</loc> </url>
 <url> <loc>https://quickstayrooms.com/property-details/:id</loc> </url>

@@ -5,6 +5,7 @@ import './ExclusiveProperty.css';
 import { Link } from "react-router-dom";
 import {db} from '../../../firebase.config';
 import { useEffect,useState } from 'react';
+import { collection, query, where, getDocs, onSnapshot, getDocsFromCache } from "firebase/firestore";
 
 const ExclusiveProperty = (props) => {
 
@@ -15,10 +16,26 @@ const ExclusiveProperty = (props) => {
     const propertyarr = [];
 
     const fetchProperties = async()=>{
-        const response = db.collection('properties').where("activeStatus","==",true)
-        .where("approved","==",true);
-        const data = await response.get();
+
+        const response = query(collection(db, "properties"), where("activeStatus","==",true),
+        where("approved","==",true));
+
+        // get data from cache first if not then get from server
+        let data = await getDocs(response);
+
+        // if(!data){
+        //     data = await getDocs(response);
+        // }
+
+        // CHECK WHERE DATA COME FROM
+        // onSnapshot(response,{includeMetadataChanges:true},(snapshot)=>{
+        //     const source = snapshot.metadata.fromCache ? "local cache" : "server";
+        //     console.log("Data came from " + source);
+        // })
+        
+
         props.getAllProperties(data);
+
         data.docs.forEach(item =>{
             if('images' in item.data()){
                 const images = item.data().images;
@@ -43,7 +60,7 @@ const ExclusiveProperty = (props) => {
         <div className="exclusive">
             <Description head={heading} para={description}/>
             {ExclusivePropertiesArr && <Card properties={ExclusivePropertiesArr} addPropDetailsHandler={props.addPropDetailsHandler}/>}
-            <div><Link to="/filters">See all <i className="fas fa-chevron-right"></i></Link></div>
+            <div><Link to="/properties">See all <i className="fas fa-chevron-right"></i></Link></div>
         </div>
      );
 }

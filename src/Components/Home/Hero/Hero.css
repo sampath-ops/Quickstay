@@ -1,3 +1,6 @@
+.hero{
+    height: 100vh;
+}
 .hero-container{
     padding: 170px 116px 50px 116px;
     display: flex;
@@ -70,6 +73,7 @@
     font-family: 'Open Sans';
     font-weight: 600;
     background-color: #A00500;
+    cursor: pointer;
 }
 .searchbar input{
     padding: 10px 20px;
@@ -133,6 +137,7 @@ input[placeholder]{
         background-position: center center!important;
         background-repeat: no-repeat!important;
         background-attachment: unset!important;
+        height: auto;
     }
     .hero-container{
      padding: 75px 30px;

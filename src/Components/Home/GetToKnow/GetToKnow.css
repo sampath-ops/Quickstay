@@ -23,6 +23,7 @@
     padding: 5px 20px;
     color: #FFFFFF;
     font-size: 18px;
+    cursor: pointer;
 }
 .are-you_owner a:-webkit-any-link{
     color:white;

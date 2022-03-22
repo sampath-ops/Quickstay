@@ -330,7 +330,7 @@ app.get("/property-details/:id", (req, res, next) => {
 
 
 // Filters
-app.get('/filters', (req, res, next) => {
+app.get('/properties', (req, res, next) => {
     fs.readFile(indexPath, 'utf8', (err, htmlData) => {
         if (err) {
             console.error('Error during file reading', err);

@@ -2,6 +2,8 @@
 import React, { Component } from "react";
 import {db} from './firebase.config';
 import geohash from "ngeohash";
+import { collection, query, where, getDocs } from "firebase/firestore";
+
 // Calculate the upper and lower boundary geohashes for
 // a given latitude, longitude, and distance in miles
 const getGeohashRange = (
@@ -33,7 +35,7 @@ var options = {
   maximumAge: 0,
 };
 
-function success(pos) {
+async function success(pos) {
   var crd = pos.coords;
   // console.log("Your current position is:");
   // console.log(`Latitude : ${crd.latitude}`);
@@ -41,16 +43,27 @@ function success(pos) {
   // console.log(`More or less ${crd.accuracy} meters.`);
   const { latitude, longitude } = crd;
   const range = getGeohashRange(25.622198992158612, 85.11519577716592, 7.45645); // NEED TO USE USER LATLNG
-  // console.log(range.lower,range.upper);
-  db
-    .collection("properties")
-    .where("geolocation", ">=", range.lower)
-    .where("geolocation", "<=", range.upper)
-    .onSnapshot(snapshot => {
-      snapshot.docs.map(doc=>{
-        // console.log(doc.data());
-      })
-    })
+
+  const q = query(collection(db, "properties"), where("geolocation", ">=", range.lower),
+  where("geolocation", "<=", range.upper), where("activeStatus","==",true),
+  where("approved","==",true));
+
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    // console.log(doc.data());
+  });
+
+
+  // db
+  //   .collection("properties")
+  //   .where("geolocation", ">=", range.lower)
+  //   .where("geolocation", "<=", range.upper)
+  //   .onSnapshot(snapshot => {
+  //     snapshot.docs.map(doc=>{
+  //       // console.log(doc.data());
+  //     })
+  //   })
 }
 
 function errors(err) {

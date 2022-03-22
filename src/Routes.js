@@ -7,7 +7,7 @@ export default (
         <Route path="/premium"/>
         <Route path="/blogs" />
         <Route path="/cities/:id"/>
-        <Route path="/filters" />
+        <Route path="/properties" />
         <Route path="/choose-plan" />
         <Route path="/about" />
         <Route path="/property-details/:id"/>

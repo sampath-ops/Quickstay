@@ -6,7 +6,7 @@ import SecondSearchbar from './SecondSearchbar';
 const Hero = (props) => {
     return ( 
         <div className="hero" style={{
-            background:`url(${heroImg}) no-repeat center center fixed`,
+            background:`url(${heroImg}) no-repeat center center`,
             backgroundSize: "cover",
            
         }}>
