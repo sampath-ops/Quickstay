@@ -1,15 +1,16 @@
 /* eslint-disable */
+import React, {Suspense,lazy} from 'react';
 import './App.css';
-import Home from './Components/Home/Home';
-import About from './Components/About/About';
+// import Home from './Components/Home/Home';
+// import About from './Components/About/About';
 import Blogs from './Components/Blogs/Blogs';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
-import Login from './Components/Login-Otp/Login';
+// import Login from './Components/Login-Otp/Login';
 import Filter from './Components/Filter/Filter';
 import ChoosePlan from './Components/ChoosePlan/ChoosePlan';
 import PropertyDetails from './Components/PropertyDetails/PropertyDetails';
-import ListProperty from './Components/Home/GetToKnow/ListProperty/ListProperty';
-import ContactUs from './Components/ContactUs/ContactUs';
+// import ListProperty from './Components/Home/GetToKnow/ListProperty/ListProperty';
+// import ContactUs from './Components/ContactUs/ContactUs';
 import PageNotFound from './Components/404/404';
 import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy';
 import Terms from './Components/Terms/Terms';
@@ -18,6 +19,12 @@ import ScrollToTop from './ScrollToTop';
 import { useState } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Premium from "./Components/PremiumUser/PremiumUser";
+
+const Home = lazy(()=> import('./Components/Home/Home'));
+const About = lazy(()=> import('./Components/About/About'));
+const Login = lazy(()=> import('./Components/Login-Otp/Login'));
+const ContactUs = lazy(()=> import('./Components/ContactUs/ContactUs'));
+const ListProperty = lazy(()=> import('./Components/Home/GetToKnow/ListProperty/ListProperty'));
 
 function App() {
 
@@ -47,6 +54,7 @@ function App() {
     <Router>
       <GeoLocation/>
       <ScrollToTop>
+      <Suspense fallback={<div>Loading...</div>}>
       <Routes id="outer-container">
          <Route exact path="/" element={<Home getUserProfile={getUserProfileHandler} allProperties={allProperties} searchedProperties={searchedPropertiesHandler} />}/>
          <Route path="/login" element={<Login/>}/>
@@ -63,6 +71,7 @@ function App() {
          <Route path="/terms" element={<Terms allProperties={allProperties} searchedProperties={searchedPropertiesHandler}/>}/>
          <Route path="*" element={<PageNotFound/>}></Route>
       </Routes>
+      </Suspense>
       </ScrollToTop>
     </Router> 
    
