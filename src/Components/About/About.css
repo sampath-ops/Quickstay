@@ -1,6 +1,6 @@
 .heroSection{
     height: 100vh;
-    background-image: url('../../WebsiteMaterial/AboutImages/Global.png');
+    background-image: url('../../WebsiteMaterial/AboutImages/Global.webp');
     background-size: auto 100vh;
     background-repeat: no-repeat;
     background-position-x: right;
@@ -22,7 +22,7 @@
     margin-top:25px;
 }
 .aboutUsBgImage{
-    background-image: url('../../WebsiteMaterial/AboutImages/Photo.jpeg');
+    background-image: url('../../WebsiteMaterial/AboutImages/Photo.webp');
     background-size:100vw;
     background-repeat: no-repeat;
 }
@@ -263,7 +263,7 @@
     .heroSection{
         display: block;
         height: 36vh;
-        background-image: url('../../WebsiteMaterial/AboutImages/Global.png');
+        background-image: url('../../WebsiteMaterial/AboutImages/Global.webp');
         background-size: 70vw auto;
         background-repeat: no-repeat;
         background-position: right;

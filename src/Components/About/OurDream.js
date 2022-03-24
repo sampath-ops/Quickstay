@@ -1,7 +1,7 @@
 import React from 'react';
-import Img1 from '../../WebsiteMaterial/AboutImages/VerifiedRentalStays.png';
-import Img2 from '../../WebsiteMaterial/AboutImages/HomemadeFood.png';
-import Img3 from '../../WebsiteMaterial/AboutImages/HomeServices.png';
+import Img1 from '../../WebsiteMaterial/AboutImages/VerifiedRentalStays.webp';
+import Img2 from '../../WebsiteMaterial/AboutImages/HomemadeFood.webp';
+import Img3 from '../../WebsiteMaterial/AboutImages/HomeServices.webp';
 
 export default function OurDream() {
     return (

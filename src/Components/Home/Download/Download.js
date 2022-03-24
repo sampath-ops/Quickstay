@@ -1,6 +1,6 @@
 import './Download.css';
 import playstore from '../../../WebsiteMaterial/Home/Google Play.webp';
-import mobileimg from '../../../WebsiteMaterial/Home/DownloadApp.png';
+import mobileimg from '../../../WebsiteMaterial/Home/DownloadApp.webp';
 const Download = () => {
     return ( 
         <div className="download">
