@@ -1,5 +1,5 @@
 import './Download.css';
-import playstore from '../../../WebsiteMaterial/Home/Google Play.png';
+import playstore from '../../../WebsiteMaterial/Home/Google Play.webp';
 import mobileimg from '../../../WebsiteMaterial/Home/DownloadApp.png';
 const Download = () => {
     return ( 

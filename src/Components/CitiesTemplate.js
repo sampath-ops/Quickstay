@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import GetGeoDocuments from "./GetGeoDocuments";
 const CitiesTemplate = (props) => {
     const navigate = useNavigate();
-    const img = require(`../WebsiteMaterial/Home/Cities/${props.location.name}.png`);
+    const img = require(`../WebsiteMaterial/Cities/${props.location.name}.webp`);
     const cityPropertyhandler = async(lat,lon)=>{
         const docs = await GetGeoDocuments(lat,lon,7.45645);
         const latlng = {

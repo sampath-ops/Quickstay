@@ -1,7 +1,7 @@
 import LinksPart1 from "./LinksPart1";
 import LinksPart2 from "./LinksPart2";
 import Contact from "./Contact";
-import logo from "../../WebsiteMaterial/footer-logo.png";
+import logo from "../../WebsiteMaterial/FooterImages/footer-logo.png";
 import './Footer.css';
 const Footer = () => {
     return ( 

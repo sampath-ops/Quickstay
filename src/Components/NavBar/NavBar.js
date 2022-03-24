@@ -3,7 +3,7 @@
 // import Menu from './Menu';
 import Sidebar from "./SideBar";
 import React from 'react';
-import logo from '../../WebsiteMaterial/Logo.png';
+import logo from '../../WebsiteMaterial/Logo.webp';
 import './NavBar.css';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';

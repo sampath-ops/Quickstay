@@ -1,5 +1,5 @@
 import './FilterNavBar.css';
-import logo from '../../WebsiteMaterial/Logo.png'
+import logo from '../../WebsiteMaterial/Logo.webp'
 import { Link } from 'react-router-dom';
 import SearchBar from '../Home/Hero/SearchBar';
 import './SideBar.css';
