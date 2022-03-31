@@ -60,6 +60,7 @@ const Home = (props) => {
             <Helmet>
                 <title>QuickStay: PG, Flat, Coliving, Room for rent without brokerage</title>
                 <meta name="description" content="Live in the best rental stays like PG, Flat, Coliving or Room without brokerage. Choose from Unfurnished, Semi-Furnished, Furnished long-term accommodations only on QuickStay" />
+                <meta name="keywords" content="quickstay, quick stay, quickstay rooms, Co-Living Website, PG Accommodation Services, Hostel Accommodation Services, Rental Room Accommodation, Flats for Rent, Room for Rent, Apartment for Rent, PG for Men, PG for Women, Coliving Space in India, Best PG Website in India, Coliving, best property management company in India, Boys PG near me, Girls PG near me, Independent rooms for rent" />
             </Helmet>
             <PopUpWrap isOpen={isOpen} togglePopup={togglePopup} user={auth.currentUser} closeForm={closeForm}/>
             <Hero searchedProperties={props.searchedProperties}/>

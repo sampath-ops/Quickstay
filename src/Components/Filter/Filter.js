@@ -114,7 +114,7 @@ const Filter = (props) => {
     }
 
     // show not found page 
-    if(props.snap.size < 1){
+    if(props.snap.size < 1 || propertyarr.length < 1){
         return(
         <MainSub searchedProperties={props.searchedProperties} user={props.user}>
             {propertyarr &&

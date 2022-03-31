@@ -4,7 +4,7 @@ const path = require("path");
 const fs = require("fs");
 const cors = require("cors");
 const app = express();
-const {FooterLinks} = require("./FooterLinksMeta.js");
+const {FooterLinks,tags} = require("./FooterLinksMeta.js");
 
 app.use("/payment", require("./routes/payment"));
 
@@ -22,16 +22,19 @@ app.get("/",(request,response)=>{
 
     const pageDescription = "Live in the best rental stays like PG, Flat, Coliving or Room without brokerage. Choose from Unfurnished, Semi-Furnished, Furnished long-term accommodations only on QuickStay";
 
+    const pageTag = "quickstay, quick stay, quickstay rooms, Co-Living Website, PG Accommodation Services, Hostel Accommodation Services, Rental Room Accommodation, Flats for Rent, Room for Rent, Apartment for Rent, PG for Men, PG for Women, Coliving Space in India, Best PG Website in India, Coliving, best property management company in India, Boys PG near me, Girls PG near me, Independent rooms for rent"
+
     // Changing metas function
-    const setMetas = (title, description) => {
+    const setMetas = (title, description,pageTag) => {
         
         index = index.replace('__META_OG_TITLE__', title);
         index = index.replace('__META_DESCRIPTION__', description);
         index = index.replace('__META_OG_DESCRIPTION__', description);
+        index = index.replace('__META_TAGS__',pageTag)
         
     }
     
-   setMetas(pageTitle, pageDescription);
+   setMetas(pageTitle, pageDescription,pageTag);
 
     // Sending index.html    
    
@@ -47,15 +50,18 @@ app.get("/about",(request,response)=>{
     
     const pageDescription = "QuickStay is a digital solution for students & working professionals that makes the rental home search effortless by providing verified properties without brokerage.";
     // Changing metas function
-    const setMetas = (title, description) => {
+
+    const pageTag = "about quickstay, quickstay, quick stay, quickstay private limited, quickstay company, quickstay pg";
+
+    const setMetas = (title, description,pageTag) => {
         
         index = index.replace('__META_OG_TITLE__', title);
         index = index.replace('__META_DESCRIPTION__', description);
         index = index.replace('__META_OG_DESCRIPTION__', description);
-        
+        index = index.replace('__META_TAGS__',pageTag)
     }
     
-   setMetas(pageTitle, pageDescription);
+   setMetas(pageTitle, pageDescription,pageTag);
 
     // Sending index.html    
    
@@ -71,16 +77,19 @@ app.get("/contact-us",(request,response)=>{
 
   const pageDescription = "Leave a query or get in touch with us for any doubt/query. Call: +91-8387868880. Email: support@quickstayrooms.com.";
 
+  const pageTag = "contact quickstay,quickstay contact number, quickstay address";
+
   // Changing metas function
-  const setMetas = (title, description) => {
+  const setMetas = (title, description,pageTag) => {
       
       index = index.replace('__META_OG_TITLE__', title);
       index = index.replace('__META_DESCRIPTION__', description);
       index = index.replace('__META_OG_DESCRIPTION__', description);
+      index = index.replace('__META_TAGS__',pageTag);
       
   }
   
- setMetas(pageTitle, pageDescription);
+ setMetas(pageTitle, pageDescription,pageTag);
 
   // Sending index.html    
  
@@ -96,16 +105,18 @@ app.get("/list-property",(request,response)=>{
 
   const pageDescription = "We help you list your rental property in a few easy steps. Let us market, manage and maintain your property to save your unnecessary headache.";
 
+    const pageTag = "list your property, property management service, lease your property, rent your property, free property listing, best property management company"
+
   // Changing metas function
-  const setMetas = (title, description) => {
+  const setMetas = (title, description,pageTag) => {
       
       index = index.replace('__META_OG_TITLE__', title);
       index = index.replace('__META_DESCRIPTION__', description);
       index = index.replace('__META_OG_DESCRIPTION__', description);
-      
+      index = index.replace('__META_TAGS__',pageTag);
   }
   
- setMetas(pageTitle, pageDescription);
+ setMetas(pageTitle, pageDescription,pageTag);
 
   // Sending index.html    
  
@@ -176,6 +187,13 @@ app.get("/cities/:id",(req,res)=>{
       let metaObj;
       let pageTitle;
       let pageDescription;
+      let metatags;
+      let metaTagUrl = '';
+      
+      // meta tag url
+     for(var i = 0; i < urlArr.length; i++){
+        metaTagUrl += urlArr[i].charAt(0).toUpperCase() + urlArr[i].slice(1)+" ";
+     }
 
       if(urlArr[0] == "pg"){
           metaObj = FooterLinks[urlArr[0].toUpperCase()];
@@ -220,12 +238,15 @@ app.get("/cities/:id",(req,res)=>{
           pageDescription = metaObj.description.replace("__CITY__",cityName).replace("__NUMBER__",urlArr[0]);
       }
 
+      // set meta tags
+      metatags = tags.metatags.replace(/__CITY__/g,cityName).replace("__URL__",metaTagUrl);
+
       // set meta data
       index = index.replace(
           "<title>QuickStay</title>",
           `<title>${pageTitle}</title>`
       )
-      .replace('__META_DESCRIPTION__', pageDescription).replace('__META_OG_TITLE__', pageTitle).replace('__META_OG_DESCRIPTION__', pageDescription);
+      .replace('__META_DESCRIPTION__', pageDescription).replace('__META_OG_TITLE__', pageTitle).replace('__META_OG_DESCRIPTION__', pageDescription).replace('__META_TAGS__',metatags);
       res.status(200).send(index);
 
 })

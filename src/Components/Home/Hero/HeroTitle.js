@@ -1,8 +1,8 @@
 const HeroTitle = () => {
     return ( 
         <div>
-            <h2>Want Easy Stay?</h2>
-            <h2>Karo QuickStay!</h2>
+            <h1>Want Easy Stay?</h1>
+            <h1>Karo QuickStay!</h1>
         </div>
      );
 }

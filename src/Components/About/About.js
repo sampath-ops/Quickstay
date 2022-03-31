@@ -14,6 +14,7 @@ const About = (props) => {
             <Helmet>
                 <title>Easing the rental home search | About Us | QuickStay</title>
                 <meta name="description" content="QuickStay is a digital solution for students & working professionals that makes the rental home search effortless by providing verified properties without brokerage." />
+                <meta name="keywords" content="about quickstay, quickstay, quick stay, quickstay private limited, quickstay company, quickstay pg" />
             </Helmet>
             <div id="page-wrap">
             <Hero/>

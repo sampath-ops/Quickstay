@@ -10,6 +10,7 @@ export default function ContactUs(props) {
             <Helmet>
                 <title>Contact Us | QuickStay</title>
                 <meta name="description" content="Leave a query or get in touch with us for any doubt/query. Call: +91-8387868880. Email: support@quickstayrooms.com. " />
+                <meta name="keywords" content="contact quickstay,quickstay contact number, quickstay address" />
             </Helmet>
             <Hero/>
             <Locations getAllProperties={props.allProperties}/>
