@@ -1,5 +1,5 @@
 import "./PropertyNotFound.css";
-import notFound from "../../WebsiteMaterial/PropertyNotFound/PropertyNotFound.svg";
+import notFound from "../../WebsiteMaterial/PropertyNotFound/PropertyNotFound.webp";
 import {Link} from "react-router-dom";
 const PropertyNotFound = () => {
     return ( 

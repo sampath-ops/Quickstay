@@ -8,7 +8,7 @@ const PropertyAddress = (props) => {
                 <p>{props.propDetails.propertyCode}</p>
                 <div>
                     <img src={location} alt="location" />
-                    <p>{props.propDetails.originalAddress}</p>
+                    <p>{props.propDetails.propertyFullAddress}</p>
                 </div>
                 <div>
                     <img src={food} alt="food" />

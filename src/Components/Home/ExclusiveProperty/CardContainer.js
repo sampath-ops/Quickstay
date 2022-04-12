@@ -22,6 +22,12 @@ const CardContainer = (props) => {
                         console.log(property);
                     }
 
+                    // change property name to have property type if options[0] = Three Sharing , Two Sharing, Private
+                    let propertyName = property.options[0].name;
+                    if(property.options[0].name === "Three Sharing" || property.options[0].name === "Two Sharing" || property.options[0].name === "Private"){
+                         propertyName = property.propertyType;
+                    }
+
                     const addressarr = property.propertyFullAddress.split(",");
                     let address = addressarr.slice(1,3);
                     if(addressarr.length <= 4){
@@ -52,7 +58,7 @@ const CardContainer = (props) => {
                            }
                            <Link to={`/property-details/${property.listingId}`} style={{textDecoration:'none',color:'black',position:'relative'}}>
                             <div className={`room-details ${details}`}>
-                                <span>{property.options[0].name}</span>
+                                <span>{propertyName}</span>
                                 <span>&#8377; {property.options[0].price}</span>
                                 <span><span><i className="fas fa-map-marker-alt"></i><p>{address.toString()}</p></span></span>
                                 <span>{property.furnishingStatus}</span>

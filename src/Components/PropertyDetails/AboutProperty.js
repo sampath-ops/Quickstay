@@ -5,8 +5,8 @@ const AboutProperty = (props) => {
     return ( 
         <div className="about-property">
             <h2>ABOUT THIS PROPERTY</h2>
-            <p><b>PROPERTY CODE:</b> {about.propertyCode}</p>
-            <p><b>LOCATION:</b> {about.originalAddress}</p>
+            {/* <p><b>PROPERTY CODE:</b> {about.propertyCode}</p>
+            <p><b>LOCATION:</b> {about.originalAddress}</p> */}
             <div className="internal-details">
                     <p>TOTAL FLOORS: {about.totalFloors}</p>
                     <p>FLOOR NO: 2</p>
