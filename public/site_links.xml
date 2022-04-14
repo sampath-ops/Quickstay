@@ -1,77 +1,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
 <url>
-<loc>https://quickstayrooms.com/cities/bangalore</loc>
+<loc>https://quickstayrooms.com/</loc>
 <priority>1</priority>
 <changefreq>Daily</changefreq>
 <lastmod>2022-04-12</lastmod>
 </url>
 
 <url>
-<loc>https://quickstayrooms.com/cities/chandigarh</loc>
+<loc>https://quickstayrooms.com/login</loc>
 <priority>1</priority>
 <changefreq>Daily</changefreq>
 <lastmod>2022-04-12</lastmod>
 </url>
 
 <url>
-<loc>https://quickstayrooms.com/cities/chennai</loc>
+<loc>https://quickstayrooms.com/premium</loc>
 <priority>1</priority>
 <changefreq>Daily</changefreq>
 <lastmod>2022-04-12</lastmod>
 </url>
 
 <url>
-<loc>https://quickstayrooms.com/cities/delhi</loc>
+<loc>https://quickstayrooms.com/blogs</loc>
 <priority>1</priority>
 <changefreq>Daily</changefreq>
 <lastmod>2022-04-12</lastmod>
 </url>
 
 <url>
-<loc>https://quickstayrooms.com/cities/gurgaon</loc>
+<loc>https://quickstayrooms.com/cities/:id</loc>
 <priority>1</priority>
 <changefreq>Daily</changefreq>
 <lastmod>2022-04-12</lastmod>
 </url>
 
 <url>
-<loc>https://quickstayrooms.com/cities/hyderabad</loc>
+<loc>https://quickstayrooms.com/properties</loc>
 <priority>1</priority>
 <changefreq>Daily</changefreq>
 <lastmod>2022-04-12</lastmod>
 </url>
 
 <url>
-<loc>https://quickstayrooms.com/cities/jaipur</loc>
+<loc>https://quickstayrooms.com/choose-plan</loc>
 <priority>1</priority>
 <changefreq>Daily</changefreq>
 <lastmod>2022-04-12</lastmod>
 </url>
 
 <url>
-<loc>https://quickstayrooms.com/cities/kolkata</loc>
+<loc>https://quickstayrooms.com/about</loc>
 <priority>1</priority>
 <changefreq>Daily</changefreq>
 <lastmod>2022-04-12</lastmod>
 </url>
 
 <url>
-<loc>https://quickstayrooms.com/cities/mumbai</loc>
+<loc>https://quickstayrooms.com/property-details/:id</loc>
 <priority>1</priority>
 <changefreq>Daily</changefreq>
 <lastmod>2022-04-12</lastmod>
 </url>
 
 <url>
-<loc>https://quickstayrooms.com/cities/patna</loc>
+<loc>https://quickstayrooms.com/list-property</loc>
 <priority>1</priority>
 <changefreq>Daily</changefreq>
 <lastmod>2022-04-12</lastmod>
 </url>
 
 <url>
-<loc>https://quickstayrooms.com/cities/pune</loc>
+<loc>https://quickstayrooms.com/contact-us</loc>
+<priority>1</priority>
+<changefreq>Daily</changefreq>
+<lastmod>2022-04-12</lastmod>
+</url>
+
+<url>
+<loc>https://quickstayrooms.com/privacy-policy</loc>
+<priority>1</priority>
+<changefreq>Daily</changefreq>
+<lastmod>2022-04-12</lastmod>
+</url>
+
+<url>
+<loc>https://quickstayrooms.com/terms</loc>
+<priority>1</priority>
+<changefreq>Daily</changefreq>
+<lastmod>2022-04-12</lastmod>
+</url>
+
+<url>
+<loc>https://quickstayrooms.com/*</loc>
 <priority>1</priority>
 <changefreq>Daily</changefreq>
 <lastmod>2022-04-12</lastmod>

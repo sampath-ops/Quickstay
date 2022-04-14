@@ -9,7 +9,7 @@ const CitiesTemplate = (props) => {
             lat,lon
         }
         props.searchedProperties(docs,latlng);
-        navigate(`/cities/pg-in-${props.location.name.toLowerCase()}`);
+        navigate(`/cities/${props.location.name.toLowerCase()}`);
     }
     return(
         <div key={props.index} className="places" onClick={()=>cityPropertyhandler(props.location.lat,props.location.lon)}>
