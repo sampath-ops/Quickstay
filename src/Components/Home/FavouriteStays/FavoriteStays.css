@@ -14,10 +14,13 @@
     width: 65%;
 }
 @media(max-width:1023px){
-    .favouritestays{
+    .favouritestays,.furnishing_status,.homes_for_everyone,.quickstay_promise{
         display: block;
     }
     .template > div img{
         width: 100%;
+    }
+    .custom_box-template > .template > div img{
+        width: 90%;
     }
 }
