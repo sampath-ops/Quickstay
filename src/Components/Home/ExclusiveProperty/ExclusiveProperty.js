@@ -9,7 +9,7 @@ import { collection, query, where, getDocs, onSnapshot, getDocsFromCache } from 
 
 const ExclusiveProperty = (props) => {
 
-    const heading = ["Quick Stay Exclusive","Properties"]
+    const heading = ["Quick Stay Verified","Properties"]
     const description = "We won't show you photos that are too good to be true. Find the best room for rent near you!";
 
     const [exclusiveProperties,setExclusiveProperties] = useState([]);
@@ -22,17 +22,6 @@ const ExclusiveProperty = (props) => {
 
         // get data from cache first if not then get from server
         let data = await getDocs(response);
-
-        // if(!data){
-        //     data = await getDocs(response);
-        // }
-
-        // CHECK WHERE DATA COME FROM
-        // onSnapshot(response,{includeMetadataChanges:true},(snapshot)=>{
-        //     const source = snapshot.metadata.fromCache ? "local cache" : "server";
-        //     console.log("Data came from " + source);
-        // })
-        
 
         props.getAllProperties(data);
 

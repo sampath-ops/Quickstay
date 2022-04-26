@@ -5,7 +5,7 @@ const Template = (props) => {
         <div className={className}>
             {
                 props.images.map(image =>{
-                    const imagename = require('../../WebsiteMaterial/Home/'+image.name+'.svg');
+                    const imagename = require('../../WebsiteMaterial/Home/'+image.name+'.webp');
                     return(
                         <div  key={image.id}>
                             <img src={imagename.default} alt={image.alter}/>

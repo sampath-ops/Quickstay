@@ -18,6 +18,9 @@ import { doc, getDoc } from "firebase/firestore";
 import { getAuth } from 'firebase/auth';
 import { app } from '../../firebase.config';
 import {Helmet} from "react-helmet";
+import FurnishingStatus from './FurnishingStatus/FurnishingStatus';
+import HomesForEveryone from './HomesForEveryone/HomeForEveryone';
+import QuickstayPromise from './QuickstayPromise/QuickstayPromise';
 
 const Home = (props) => {
 
@@ -68,11 +71,14 @@ const Home = (props) => {
             <FavouriteStays/>
             {/* <ReferEarn/> */}
             <ExclusiveProperty addPropDetailsHandler={props.addPropDetailsHandler} getAllProperties={props.allProperties}/>
+            <FurnishingStatus/>
             <WhyStay/>
+            <HomesForEveryone/>   
             {/* <Blogs/> */}
             <GetToKnow/>
             <Follow/>
             <Find searchedProperties={props.searchedProperties}/>
+            <QuickstayPromise/>
             <Download/>
             <Locations getAllProperties={props.allProperties}/>   
         </Main>

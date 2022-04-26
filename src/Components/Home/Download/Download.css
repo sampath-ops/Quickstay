@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: space-evenly;
 }
+
 .mobile{
     text-align: center;
     user-select: auto;
@@ -22,6 +23,10 @@
     font-weight: bold;
     font-size: 28px;
     margin: 0;
+}
+.few-clicks{
+    font-size: 18px !important;
+    font-weight: 400 !important;
 }
 .slogan > div:nth-child(1) > p:nth-child(1){
     font-weight: 600;
