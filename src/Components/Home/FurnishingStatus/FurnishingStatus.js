@@ -28,7 +28,7 @@ const FurnishingStatus = () => {
     return (  
         <div className="furnishing_status custom_box-template">
              <Description head={heading} para={description}/>
-            <Template images={furnishingStatus} />
+            <Template images={furnishingStatus} className="custom-card-template" />
         </div>
     );
 }

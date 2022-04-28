@@ -8,10 +8,10 @@
     text-align: center;
 }
 .template > div img{
-    width: 75%;
+    width: 250px;
 }
 .custom_box-template > .template > div img{
-    width: 65%;
+    width: 185px;
 }
 @media(max-width:1023px){
     .favouritestays,.furnishing_status,.homes_for_everyone,.quickstay_promise{
@@ -20,7 +20,10 @@
     .template > div img{
         width: 100%;
     }
+    .custom-card-template{
+        margin-top: 20px;
+    }
     .custom_box-template > .template > div img{
-        width: 90%;
+        width: 110px;
     }
 }

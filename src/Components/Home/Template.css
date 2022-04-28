@@ -1,9 +1,15 @@
 .template{
     display: grid;
-    grid-template-columns: auto auto auto
+    align-items: center;
+    grid-template-columns: auto auto auto;
 }
 .template > div img{
     width: 100%;
+}
+.custom-card-template > div{
+    row-gap: 16px;
+    display: grid;
+    justify-content: center;
 }
 .template > div p{
     text-align: center;
