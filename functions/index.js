@@ -173,81 +173,43 @@ app.get("/terms",(request,response)=>{
 
 app.get("/cities/:id",(req,res)=>{
 
-  // Getting index.html text
-  let index = fs.readFileSync('./web/index.html').toString();
+    // Getting index.html text
+    let index = fs.readFileSync('./web/index.html').toString();
   
-      const urlArr = req.params.id.split("-");
+    const urlArr = req.params.id.split("-");
 
-      let cityName = urlArr[urlArr.length-1].charAt(0).toUpperCase() + urlArr[urlArr.length-1].slice(1);
-
-      if(cityName == "Layout"){
-          cityName = "HSR Layout";
-      }
-
-      let metaObj;
-      let pageTitle;
-      let pageDescription;
-      let metatags;
-      let metaTagUrl = '';
-      
-      // meta tag url
-     for(var i = 0; i < urlArr.length; i++){
+    // get city name
+    const urlString = urlArr.join(" ");
+    const r = "in";
+    let cityName = urlString.slice(urlString.indexOf(r) + r.length);
+    
+    let metaObj;
+    let pageTitle;
+    let pageDescription;
+    let metatags;
+    let metaTagUrl = '';
+    
+    // meta tag url
+    for(var i = 0; i < urlArr.length; i++){
         metaTagUrl += urlArr[i].charAt(0).toUpperCase() + urlArr[i].slice(1)+" ";
-     }
+    }
 
-      if(urlArr[0] == "pg"){
-          metaObj = FooterLinks[urlArr[0].toUpperCase()];
+    metaObj = FooterLinks[urlArr[0].toUpperCase()];
 
-          pageTitle = metaObj.title.replace("__CITY__",cityName);
-  
-          pageDescription = metaObj.description.replace("__CITY__",cityName);
-      }
-      else if(urlArr[0] == "room" || urlArr[0] == "unisex"){
-          metaObj = FooterLinks[urlArr[0].toUpperCase()];
+    pageTitle = metaObj.title.replace("__CITY__",cityName);
 
-          pageTitle = metaObj.title.replace("__CITY__",cityName);
-  
-          pageDescription = metaObj.description.replace("__CITY__",cityName);
-          if(urlArr.length > 6){
-              metaObj = FooterLinks[urlArr[0].toUpperCase()+"_"];
-              pageTitle = metaObj.title.replace("__CITY__",cityName).replace("__GENDER__",urlArr[4]);
-              pageDescription = metaObj.description.replace("__CITY__",cityName).replace("__GENDER__",urlArr[4]);
-          }
-      }
-      else if(urlArr[1] == "rk"){
+    pageDescription = metaObj.description.replace("__CITY__",cityName);
 
-          metaObj = FooterLinks[urlArr[1].toUpperCase()];
+    // set meta tags
+    metatags = tags.metatags.replace(/__CITY__/g,cityName).replace("__URL__",metaTagUrl);
 
-          pageTitle = metaObj.title.replace("__CITY__",cityName).replace("__NUMBER__",urlArr[0]);
-
-          pageDescription = metaObj.description.replace("__CITY__",cityName).replace("__NUMBER__",urlArr[0]);
-
-          if(urlArr.length > 6){
-          metaObj = FooterLinks[urlArr[1].toUpperCase()+"_"];
-
-          pageTitle = metaObj.title.replace("__CITY__",cityName).replace("__NUMBER__",urlArr[0]).replace("__GENDER__",urlArr[5]);
-
-          pageDescription = metaObj.description.replace("__CITY__",cityName).replace("__NUMBER__",urlArr[0]).replace("__GENDER__",urlArr[5]);
-          }
-      }
-      else if(urlArr[1] == "bhk"){
-          metaObj = FooterLinks[urlArr[1].toUpperCase()];
-
-          pageTitle = metaObj.title.replace("__CITY__",cityName).replace("__NUMBER__",urlArr[0]);
-
-          pageDescription = metaObj.description.replace("__CITY__",cityName).replace("__NUMBER__",urlArr[0]);
-      }
-
-      // set meta tags
-      metatags = tags.metatags.replace(/__CITY__/g,cityName).replace("__URL__",metaTagUrl);
-
-      // set meta data
-      index = index.replace(
-          "<title>QuickStay</title>",
-          `<title>${pageTitle}</title>`
-      )
-      .replace('__META_DESCRIPTION__', pageDescription).replace('__META_OG_TITLE__', pageTitle).replace('__META_OG_DESCRIPTION__', pageDescription).replace('__META_TAGS__',metatags);
-      res.status(200).send(index);
+    // set meta data
+    index = index.replace(
+        "<title>QuickStay</title>",
+        `<title>${pageTitle}</title>`
+    )
+    .replace('__META_DESCRIPTION__', pageDescription).replace('__META_OG_TITLE__', pageTitle).replace('__META_OG_DESCRIPTION__', pageDescription).replace('__META_TAGS__',metatags);
+    res.status(200).send(index);
 
 })
 
