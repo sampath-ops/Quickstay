@@ -194,14 +194,28 @@ app.get("/cities/:id",(req,res)=>{
         metaTagUrl += urlArr[i].charAt(0).toUpperCase() + urlArr[i].slice(1)+" ";
     }
 
-    metaObj = FooterLinks[urlArr[0].toUpperCase()];
+    if(urlArr[1] == "rk" || urlArr[1] == "bhk"){
+      metaObj = FooterLinks[urlArr[1].toUpperCase()];
 
-    pageTitle = metaObj.title.replace("__CITY__",cityName);
+      pageTitle = metaObj.title.replace("__CITY__",cityName).replace("__NUMBER__",urlArr[0]);
+  
+      pageDescription = metaObj.description.replace("__CITY__",cityName).replace("__NUMBER__",urlArr[0]);
+  
+      // set meta tags
+      metatags = tags.metatags.replace(/__CITY__/g,cityName).replace("__URL__",metaTagUrl);
+    }
+    else{
+      metaObj = FooterLinks[urlArr[0].toUpperCase()];
 
-    pageDescription = metaObj.description.replace("__CITY__",cityName);
+      pageTitle = metaObj.title.replace("__CITY__",cityName);
 
-    // set meta tags
-    metatags = tags.metatags.replace(/__CITY__/g,cityName).replace("__URL__",metaTagUrl);
+      pageDescription = metaObj.description.replace("__CITY__",cityName);
+
+      // set meta tags
+      metatags = tags.metatags.replace(/__CITY__/g,cityName).replace("__URL__",metaTagUrl);
+    }
+
+    
 
     // set meta data
     index = index.replace(
