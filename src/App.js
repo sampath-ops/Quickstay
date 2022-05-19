@@ -19,6 +19,7 @@ import ScrollToTop from './ScrollToTop';
 import { useState } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Premium from "./Components/PremiumUser/PremiumUser";
+import Refund from "./Components/Terms/Refund";
 
 // const Home = lazy(()=> import('./Components/Home/Home'));
 // const About = lazy(()=> import('./Components/About/About'));
@@ -69,6 +70,7 @@ function App() {
          <Route path="/contact-us" element={<ContactUs searchedProperties={searchedPropertiesHandler} allProperties={allProperties}/>}/>
          <Route path="/privacy-policy" element={<PrivacyPolicy allProperties={allProperties} searchedProperties={searchedPropertiesHandler}/>}/>
          <Route path="/terms" element={<Terms allProperties={allProperties} searchedProperties={searchedPropertiesHandler}/>}/>
+         <Route path="/refund" element={<Refund allProperties={allProperties} searchedProperties={searchedPropertiesHandler}/>}/>
          <Route path="*" element={<PageNotFound/>}></Route>
       </Routes>
       {/* </Suspense> */}

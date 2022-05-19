@@ -2,6 +2,10 @@
     padding: 0px 80px;
     padding-bottom: 50px;
 }
+.policy_text > ol{
+    padding-left: 20px;
+    margin: 0;
+}
 .policy_text,.privacy_policy ul{
     text-align: justify;
     padding: 11.428576px 0;

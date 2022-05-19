@@ -16,10 +16,10 @@ const LinksPart2 = () => {
             to:"/privacy-policy",
             newTab:true
         },
-        // {
-        //     link:"Refund Policy",
-        //     to:"/"
-        // },
+        {
+            link:"Refund Policy",
+            to:"/refund"
+        },
         {
             link:"FAQs",
             to:"/"
