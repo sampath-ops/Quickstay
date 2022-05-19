@@ -18,7 +18,8 @@ const LinksPart2 = () => {
         },
         {
             link:"Refund Policy",
-            to:"/refund"
+            to:"/refund",
+            newTab:true
         },
         {
             link:"FAQs",

@@ -171,6 +171,30 @@ app.get("/terms",(request,response)=>{
   response.status(200).send(index);
 });
 
+app.get("/refund",(request,response)=>{
+    
+  // Getting index.html text
+  let index = fs.readFileSync('./web/index.html').toString();
+
+  const pageTitle = "Refund Policy | QuickStay";
+
+  const pageDescription = "These refund policies apply to the services offered by QuickStay in connection with the https://quickstayrooms.com/ websites and related mobile applications.";
+  // Changing metas function
+  const setMetas = (title, description) => {
+      
+      index = index.replace('__META_OG_TITLE__', title);
+      index = index.replace('__META_DESCRIPTION__', description);
+      index = index.replace('__META_OG_DESCRIPTION__', description);
+      
+  }
+  
+  setMetas(pageTitle, pageDescription);
+
+  // Sending index.html    
+ 
+  response.status(200).send(index);
+});
+
 app.get("/cities/:id",(req,res)=>{
 
     // Getting index.html text

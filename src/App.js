@@ -14,7 +14,7 @@ import ContactUs from './Components/ContactUs/ContactUs';
 import PageNotFound from './Components/404/404';
 import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy';
 import Terms from './Components/Terms/Terms';
-import GeoLocation from './GeoLocation';
+// import GeoLocation from './GeoLocation';
 import ScrollToTop from './ScrollToTop';
 import { useState } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -53,7 +53,7 @@ function App() {
 
   return (  
     <Router>
-      <GeoLocation/>
+      {/* <GeoLocation/> */}
       <ScrollToTop>
       {/* <Suspense fallback={<div>Loading...</div>}> */}
       <Routes id="outer-container">

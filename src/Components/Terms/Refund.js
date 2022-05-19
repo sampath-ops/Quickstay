@@ -1,8 +1,13 @@
 import MainSub from "../NavBar/MainSub";
 import Locations from "../Home/PopularSearches/Locations/Location";
+import { Helmet } from "react-helmet";
 const Refund = (props) => {
     return (  
         <MainSub searchedProperties={props.searchedProperties}>
+            <Helmet>
+            <title>Refund Policy | QuickStay</title>
+                <meta name="description" content="These refund policies apply to the services offered by QuickStay in connection with the https://quickstayrooms.com/ websites and related mobile applications."/>
+            </Helmet>
             <div className="privacy_policy">
                 <h1 className="policy_head">TERMS OF USE & REFUND POLICY:</h1>
                 <div className="policy_section">
