@@ -2,11 +2,11 @@ import { useNavigate } from "react-router-dom";
 import whatsapp from "../../../WebsiteMaterial/PropertyDetailsImages/PropertyContact/whatsapp.png";
 import { app,db } from "../../../firebase.config";
 import { getAuth } from "firebase/auth";
-import {doc,getDoc} from "firebase/firestore"
+import {doc, getDoc, updateDoc} from "firebase/firestore"
 const ContactButton = (props) => {
-
+ 
     const auth = getAuth(app);
-   
+    
     const navigate = useNavigate();
 
     const contactWhatsappHandler = async()=>{    
@@ -33,7 +33,13 @@ const ContactButton = (props) => {
                 // check plan exipiration
                  if(planValidity.getTime() < currentTime.getTime()){
                     alert("Plan Expired :(");
-                    navigate("/choose-plan");
+                    const docRef = doc(db, "users", auth.currentUser.uid);
+                    await updateDoc(docRef,{
+                        premiumUser:false
+                    }).then(()=>{
+                        navigate("/choose-plan");
+                    });
+                    
                     return;
                 }
                 else{
