@@ -11,8 +11,8 @@ router.post("/orders", async (req, res) => {
         const {payment} = req.body;
 
         const instance = new Razorpay({
-            key_id: "rzp_live_pYFmL87XheLUWd",
-            key_secret: "wby5MvGPCJh1OUSWZ8FP8iAD",
+            key_id: "xxxx",
+            key_secret: "xxxx",
         });
 
         const options = {
